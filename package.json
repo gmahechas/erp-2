@@ -7,10 +7,9 @@
     "scripts": {
         "lerna": "lerna",
         "commit": "git-cz",
-        "start:mf": "lerna run start --stream",
-        "start:ms:dev": "lerna run start:dev --stream",
+        "start": "lerna run start --stream",
         "build": "lerna run build --stream",
-        "build:wc": "yarn build --scope @gmahechas/common-webcomponents && yarn build --scope @gmahechas/common-webcomponents-react"
+        "build:wc": "lerna run build --scope @gmahechas/common-webcomponents && lerna run build --scope @gmahechas/common-webcomponents-react"
     },
     "devDependencies": {
         "conventional-changelog": "^3.1.24",
