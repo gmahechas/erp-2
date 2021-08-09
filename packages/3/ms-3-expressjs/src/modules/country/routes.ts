@@ -3,8 +3,8 @@ import * as fromCountryController from './controller';
 
 const router = express.Router();
 
-router.post('/', (request: Request, response: Response) => {
-	const { statusCode, body } = fromCountryController.getCountries(request.irequest);
+router.post('/', async (request: Request, response: Response) => {
+	const { statusCode, body } = await fromCountryController.getCountries(request.irequest);
 	response.status(statusCode).send(body);
 });
 

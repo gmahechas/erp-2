@@ -1,7 +1,5 @@
-import { response } from '../../utils/helper';
-import { IRequest } from '../../utils/request.interface';
-import { IResponse } from '../../utils/response.interface';
+import { IRequest, IResponse, response } from '@gmahechas/erp-common-expressjs';
 
-export const getEstates = (request: IRequest): IResponse => {
+export const getEstates = async (request: IRequest): Promise<IResponse> => {
 	return response(200, request.body);
 };

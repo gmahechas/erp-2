@@ -20,19 +20,11 @@ module.exports = {
 		/* "scope", */
 		"subject",
 		"body",
-		"breaking",
-		"issues",
+		/* "breaking" */,
+		/* "issues", */
 		"lerna"
 	],
-	scopes: [
-		"monorepo",
-		"api-gateway",
-		"auth",
-		"ms1",
-		"ms2",
-		"ms3",
-		"ms4"
-	],
+	scopes: [],
 	types: {
 		build: {
 			description: "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm) ",

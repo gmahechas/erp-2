@@ -1,5 +1,5 @@
 import request from './request.middleware';
 
-export default [
+export const middlewares = [
 	request
 ];

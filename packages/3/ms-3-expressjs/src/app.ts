@@ -1,7 +1,7 @@
 import express from 'express';
 
 import { json } from 'body-parser';
-import middlewares from './middlewares';
+import { middlewares } from '@gmahechas/erp-common-expressjs';
 import routes from './routes';
 
 const app = express();

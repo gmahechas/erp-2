@@ -1,13 +1,13 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
-import router from './router';
-import { response } from '../utils/helper';
+import { response, router } from '@gmahechas/erp-common-expressjs';
+import routes from './routes';
 
 exports.handler = async (event: APIGatewayProxyEvent) => {
 
 	try {
-		const route = router(event);
+		const route = router(event, routes);
 
-		return route!.action({
+		return route.action({
 			headers: event.headers,
 			body: event.body,
 			params: event.pathParameters,
