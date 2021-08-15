@@ -1,5 +1,5 @@
-import { IRequest, IResponse, response } from '@gmahechas/erp-common-expressjs';
+import { IRequest, IResponse, iresponse } from '@gmahechas/erp-common-expressjs';
 
 export const getEstates = async (request: IRequest): Promise<IResponse> => {
-	return response(200, request.body);
+	return iresponse(200, request.body);
 };

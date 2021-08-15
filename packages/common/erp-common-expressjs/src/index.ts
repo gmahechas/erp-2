@@ -1,4 +1,3 @@
-import { IRequest } from './interfaces';
 
 declare global {
 	namespace Express {
@@ -8,6 +7,4 @@ declare global {
 	}
 }
 
-export * from './interfaces';
-export * from './lambda';
 export * from './middlewares';

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-export default (request: Request, response: Response, next: NextFunction) => {
+export const requestMiddleware =  (request: Request, response: Response, next: NextFunction) => {
 	request.irequest = ({
 		headers: request.headers,
 		body: request.body,

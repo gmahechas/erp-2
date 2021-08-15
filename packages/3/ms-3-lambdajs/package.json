@@ -1,0 +1,17 @@
+{
+    "name": "ms-3-lambdajs",
+    "version": "0.0.0",
+    "description": "ms-3-lambdajs",
+    "main": "index.js",
+    "author": "gmahechas",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.82",
+        "@types/node": "^16.6.1",
+        "@types/rimraf": "^3.0.1",
+        "rimraf": "^3.0.2",
+        "ts-node-dev": "^1.1.8",
+        "typescript": "^4.3.5"
+    }
+}
