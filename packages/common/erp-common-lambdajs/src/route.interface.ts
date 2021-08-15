@@ -1,4 +1,4 @@
-import { IRequest, IResponse } from "@gmahechas/erp-common";
+import { IRequest, IResponse } from '@gmahechas/erp-common';
 
 export enum httpMethods {
 	POST = 'POST',

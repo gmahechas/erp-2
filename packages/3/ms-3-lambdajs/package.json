@@ -5,9 +5,14 @@
     "author": "gmahechas",
     "private": true,
     "license": "UNLICENSED",
+    "scripts": {
+        "start": "ts-node-dev --poll src/run.ts",
+        "build": "rimraf dist && tsc"
+    },
     "dependencies": {
         "@gmahechas/erp-common": "^0.0.2",
-        "@gmahechas/erp-common-lambdajs": "^0.0.2"
+        "@gmahechas/erp-common-lambdajs": "^0.0.2",
+        "@gmahechas/erp-common-ms-3-js": "^0.0.2"
     },
     "devDependencies": {
         "@types/aws-lambda": "^8.10.82",

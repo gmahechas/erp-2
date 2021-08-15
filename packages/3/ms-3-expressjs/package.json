@@ -7,12 +7,12 @@
     "license": "UNLICENSED",
     "scripts": {
         "start": "ts-node-dev --poll src/index.ts",
-        "start:lambda": "ts-node-dev --poll src/lambda/run.ts",
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
         "@gmahechas/erp-common": "^0.0.2",
         "@gmahechas/erp-common-expressjs": "^0.0.2",
+        "@gmahechas/erp-common-ms-3-js": "^0.0.2",
         "express": "^4.17.1",
         "express-async-errors": "^3.1.1"
     },

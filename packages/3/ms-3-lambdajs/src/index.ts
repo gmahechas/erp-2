@@ -4,7 +4,6 @@ import { routerLambda } from '@gmahechas/erp-common-lambdajs';
 import routes from './routes';
 
 exports.handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-
 	try {
 		const route = routerLambda(event, routes);
 
@@ -17,5 +16,4 @@ exports.handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyRe
 	} catch (error) {
 		return iresponse(400, null, 'error')
 	}
-
 }
