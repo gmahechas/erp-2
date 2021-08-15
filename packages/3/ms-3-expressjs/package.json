@@ -1,6 +1,6 @@
 {
     "name": "ms-3-expressjs",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "main": "index.js",
     "author": "gmahechas",
     "license": "MIT",
@@ -10,8 +10,8 @@
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
-        "@gmahechas/erp-common": "^0.0.12",
-        "@gmahechas/erp-common-expressjs": "^0.0.12",
+        "@gmahechas/erp-common": "^0.0.1",
+        "@gmahechas/erp-common-expressjs": "^0.0.1",
         "express": "^4.17.1",
         "express-async-errors": "^3.1.1"
     },
