@@ -2,9 +2,13 @@
     "name": "ms-3-lambdajs",
     "version": "0.0.1",
     "description": "ms-3-lambdajs",
-    "main": "index.js",
     "author": "gmahechas",
-    "license": "MIT",
+    "private": true,
+    "license": "UNLICENSED",
+    "dependencies": {
+        "@gmahechas/erp-common": "^0.0.1",
+        "@gmahechas/erp-common-lambdajs": "^0.0.1"
+    },
     "devDependencies": {
         "@types/aws-lambda": "^8.10.82",
         "@types/node": "^16.6.1",

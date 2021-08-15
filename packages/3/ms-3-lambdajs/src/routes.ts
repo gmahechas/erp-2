@@ -1,7 +1,7 @@
-import { httpMethods, IRoute } from "@gmahechas/erp-common-expressjs";
+import { httpMethods, IRouteLambda } from "@gmahechas/erp-common-lambdajs";
 import * as fromCountryController from '../modules/country/controller';
 
-const routes: IRoute[] = [
+const routes: IRouteLambda[] = [
 	{
 		httpMethod: httpMethods.POST,
 		path: '/rest/:version/country',

@@ -1,11 +1,12 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
-import { response, router } from '@gmahechas/erp-common-expressjs';
+import { iresponse } from '@gmahechas/erp-common';
+import { routerLambda } from '@gmahechas/erp-common-lambdajs';
 import routes from './routes';
 
-exports.handler = async (event: APIGatewayProxyEvent) => {
+exports.handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
 
 	try {
-		const route = router(event, routes);
+		const route = routerLambda(event, routes);
 
 		return route.action({
 			headers: event.headers,
@@ -14,7 +15,7 @@ exports.handler = async (event: APIGatewayProxyEvent) => {
 			query: event.queryStringParameters
 		});
 	} catch (error) {
-		return response(400, null, 'error')
+		return iresponse(400, null, 'error')
 	}
 
 }

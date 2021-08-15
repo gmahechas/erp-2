@@ -1,3 +1,5 @@
+import { IRequest } from '@gmahechas/erp-common';
+export * from './middlewares';
 
 declare global {
 	namespace Express {
@@ -6,5 +8,3 @@ declare global {
 		}
 	}
 }
-
-export * from './middlewares';
