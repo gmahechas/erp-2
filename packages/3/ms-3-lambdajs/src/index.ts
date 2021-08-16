@@ -1,11 +1,13 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
-import { iresponse } from '@gmahechas/erp-common';
-import { routerLambda } from '@gmahechas/erp-common-lambdajs';
+import { createOneCountrySchema, iresponse, validate } from '@gmahechas/erp-common';
+import { routerLambda, validatorLambda } from '@gmahechas/erp-common-lambdajs';
 import routes from './routes';
 
-exports.handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+exports.handler = async (event: any): Promise<APIGatewayProxyResult> => {
 	try {
+		const body = JSON.parse(event.body);
 		const route = routerLambda(event, routes);
+		validatorLambda(route.validation, body);
 
 		return route.action({
 			headers: event.headers,

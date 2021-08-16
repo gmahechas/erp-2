@@ -1,3 +1,6 @@
-import { validate } from '@gmahechas/erp-common';
-
-export const validatorLambda: any = (schema: object) => validate(schema);
+export const validatorLambda: any = (valid: any, body: object) => {
+	if (!valid(body)) {
+		console.log(valid.errors);
+		throw Error('error la cago')
+	}
+};
