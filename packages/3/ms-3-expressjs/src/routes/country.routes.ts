@@ -6,8 +6,8 @@ import { getCountries } from '@gmahechas/erp-common-ms-3-js';
 const router = express.Router();
 
 router.post('/', validatorMiddleware(createOneCountrySchema), async (request: Request, response: Response) => {
-	const { statusCode, body } = await getCountries(request.irequest);
-	response.status(statusCode).send(body);
+	const { statusCode, body, error } = await getCountries(request.irequest);
+	response.status(statusCode).send({ body, error });
 });
 
 

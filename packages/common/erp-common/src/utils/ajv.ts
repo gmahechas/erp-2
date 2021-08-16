@@ -1,4 +1,3 @@
-
 import Ajv, { AnySchemaObject } from 'ajv';
 const ajv = new Ajv({ allErrors: true });
 
