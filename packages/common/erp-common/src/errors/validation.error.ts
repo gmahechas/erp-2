@@ -1,17 +1,19 @@
-import { ErrorObject } from 'ajv';
 import { CustomError } from './custom.error';
+import { IError } from './utils';
 import { TypeErrorMessage } from './utils/error-type.enum';
 
 export class ValidationError extends CustomError {
 
-	constructor(public errors: ErrorObject) {
+	statusCode = 400;
+
+	constructor(public errors: IError[]) {
 		super();
 		Object.setPrototypeOf(this, ValidationError.prototype);
 	}
 
 	serializeErrors() {
 		return {
-			message: TypeErrorMessage.VALIDATION_ERROR,
+			type: TypeErrorMessage.VALIDATION_ERROR,
 			errors: this.errors
 		};
 	}

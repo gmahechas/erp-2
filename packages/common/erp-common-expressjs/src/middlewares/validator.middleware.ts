@@ -1,10 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
-import { validate, ValidationError } from '@gmahechas/erp-common';
+import { validate, ValidationError, parseErrors } from '@gmahechas/erp-common';
 
 export const validatorMiddleware = (schema: object) => (request: Request, response: Response, next: NextFunction) => {
-	const valid = validate(schema) as any;
+	const valid = validate(schema);
 	if (!valid(request.body)) {
-		throw new ValidationError(valid.errors);
+		const errors = parseErrors(valid.errors);
+		throw new ValidationError(errors);
 	}
 	next();
 };

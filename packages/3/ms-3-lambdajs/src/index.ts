@@ -8,7 +8,6 @@ exports.handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyRe
 		const bodyParsed: any = body;
 		const route = routerLambda({ httpMethod, path }, routes);
 		validatorLambda(route.validation, JSON.parse(bodyParsed));
-
 		return route.action({
 			body: event.body,
 			params: event.pathParameters,

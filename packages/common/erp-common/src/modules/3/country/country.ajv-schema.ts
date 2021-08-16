@@ -5,10 +5,10 @@ export const createOneCountrySchema: JSONSchemaType<ICreateCountryInput> = {
 	type: 'object',
 	properties: {
 		countryName: { type: 'string' },
-		countryCode: { type: 'string' }
+		countryCode: { type: 'string', minLength: 2, maxLength: 4 }
 	},
 	required: ['countryName', 'countryCode'],
-	additionalProperties: false
+	additionalProperties: false,
 };
 
 export const updateOneCountrySchema: JSONSchemaType<IUpdateCountryInput> = {
