@@ -6,5 +6,5 @@ export const errorMiddleware = (error: Error, request: Request, response: Respon
 	if (error instanceof CustomError) {
 		return response.status(400).send({ errors: error.serializeErrors() });
 	}
-	response.status(400).send({ body: null, error: 'Something went wrong' });
+	response.status(500).send({ body: null, error: 'Something went wrong' });
 };

@@ -10,7 +10,6 @@ exports.handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyRe
 		validatorLambda(route.validation, JSON.parse(bodyParsed));
 
 		return route.action({
-			headers: event.headers,
 			body: event.body,
 			params: event.pathParameters,
 			query: event.queryStringParameters

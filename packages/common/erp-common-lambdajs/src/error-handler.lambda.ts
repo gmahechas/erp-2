@@ -6,5 +6,5 @@ export const errorHandlerLambda = (error: Error) => {
 		console.log(error.serializeErrors())
 		return iresponse(400, null, error.serializeErrors())
 	}
-	return iresponse(400, null, 'Something went wrong');
+	return iresponse(500, null, 'Something went wrong');
 }
