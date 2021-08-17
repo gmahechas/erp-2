@@ -1,3 +1,4 @@
 export const enum TypeErrorMessage {
-  VALIDATION_ERROR = 'error.validation'
+  VALIDATION = 'validation',
+  NOT_FOUND = 'not_found'
 }

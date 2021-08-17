@@ -13,7 +13,7 @@ export class ValidationError extends CustomError {
 
 	serializeErrors() {
 		return {
-			type: TypeErrorMessage.VALIDATION_ERROR,
+			type: TypeErrorMessage.VALIDATION,
 			errors: this.errors
 		};
 	}

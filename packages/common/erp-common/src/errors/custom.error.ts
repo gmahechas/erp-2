@@ -7,5 +7,5 @@ export abstract class CustomError extends Error {
     super();
     Object.setPrototypeOf(this, CustomError.prototype);
   }
-  abstract serializeErrors(): { type: TypeErrorMessage; errors: IError[]; };
+  abstract serializeErrors(): { type: TypeErrorMessage; errors?: IError[]; };
 }
