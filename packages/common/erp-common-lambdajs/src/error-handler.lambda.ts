@@ -1,8 +1,12 @@
-import { CustomError, iresponse } from '@gmahechas/erp-common';
+import { CustomError, IResponse, iresponse } from '@gmahechas/erp-common';
+import { responseLambda } from './response.lambda';
 
 export const errorHandlerLambda = (error: Error) => {
+	let response: IResponse;
 	if (error instanceof CustomError) {
-		return iresponse(error.statusCode, null, error.serializeErrors())
+		response = iresponse(error.statusCode, { data: null, error: error.serializeErrors() });
+	} else {
+		response = iresponse(500, { data: null, error: 'Something went wrong' });
 	}
-	return iresponse(500, null, 'Something went wrong');
+	return responseLambda(response);
 }

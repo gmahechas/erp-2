@@ -5,7 +5,7 @@ import { getCountries } from '@gmahechas/erp-common-ms-3-js';
 const routes: IRouteLambda[] = [
 	{
 		httpMethod: httpMethods.POST,
-		path: '/rest/:version/country',
+		path: '/rest/3/country',
 		action: getCountries,
 		validation: validate(createOneCountrySchema)
 	}
