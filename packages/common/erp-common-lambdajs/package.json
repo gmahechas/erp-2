@@ -1,6 +1,6 @@
 {
     "name": "@gmahechas/erp-common-lambdajs",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "erp-common",
     "author": "gmahechas",
     "private": false,
@@ -11,7 +11,7 @@
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
-        "@gmahechas/erp-common": "^0.0.2",
+        "@gmahechas/erp-common": "^0.0.3",
         "path-to-regexp": "^6.2.0"
     },
     "devDependencies": {
