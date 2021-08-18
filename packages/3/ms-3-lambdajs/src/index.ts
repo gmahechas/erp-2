@@ -1,14 +1,14 @@
-import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
+import { APIGatewayProxyEvent, APIGatewayProxyHandler, APIGatewayProxyResult, Context } from 'aws-lambda';
 import { routerLambda, validatorLambda, responseLambda, errorHandlerLambda } from '@gmahechas/erp-common-lambdajs';
 import routes from './routes';
 
-exports.handler = async (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
+export const handler = async (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
 	try {
-		const { body, httpMethod, path } = event;
-		const bodyParsed: any = body;
+		const { httpMethod, path, pathParameters, queryStringParameters } = event;
+		const body = (event.body) ? JSON.parse(event.body) : null;
 		const route = routerLambda({ httpMethod, path }, routes);
-		validatorLambda(route.validation, JSON.parse(bodyParsed));
-		const response = await route.action({ body: bodyParsed, params: event.pathParameters, query: event.queryStringParameters });
+		validatorLambda(route.validation, body);
+		const response = await route.action({ body, params: pathParameters, query: queryStringParameters });
 		return responseLambda(response);
 	} catch (error) {
 		return errorHandlerLambda(error);
