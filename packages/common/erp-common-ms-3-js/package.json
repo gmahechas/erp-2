@@ -1,6 +1,6 @@
 {
     "name": "@gmahechas/erp-common-ms-3-js",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "erp-common-ms-3-js",
     "author": "gmahechas",
     "private": false,
@@ -11,7 +11,7 @@
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
-        "@gmahechas/erp-common": "^0.0.3"
+        "@gmahechas/erp-common": "^0.0.4"
     },
     "devDependencies": {
         "@types/node": "^16.6.1",

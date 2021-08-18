@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.4 (2021-08-18)</small>
+
+**Note:** Version bump only for package ms-3-expressjs
+
+
+
+
+
 ## <small>0.0.3 (2021-08-18)</small>
 
 * refactor: lambda response ([74dd670](https://github.com/gmahechas/erp/commit/74dd670))

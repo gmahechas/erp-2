@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.4 (2021-08-18)</small>
+
+* fix: error response on lambda ([e92ce7d](https://github.com/gmahechas/erp/commit/e92ce7d))
+
+
+
+
+
 ## <small>0.0.3 (2021-08-18)</small>
 
 * feat: arrow funcion in lambda ([e165e35](https://github.com/gmahechas/erp/commit/e165e35))
