@@ -1,0 +1,4 @@
+syntax = "proto3";
+
+import public "user.proto";
+import public "auth.proto";

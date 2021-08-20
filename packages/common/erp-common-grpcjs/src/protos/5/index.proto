@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+import public "person.proto";
+import public "type-identification.proto";
+import public "type-person.proto";
