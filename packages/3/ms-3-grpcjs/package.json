@@ -7,8 +7,7 @@
     "license": "UNLICENSED",
     "scripts": {
         "start": "ts-node-dev --poll src/index",
-        "build": "rimraf dist && tsc",
-        "proto-loader-gen-types": "proto-loader-gen-types"
+        "build": "rimraf dist && tsc"
     },
     "dependencies": {
         "@gmahechas/erp-common": "^0.0.4",
