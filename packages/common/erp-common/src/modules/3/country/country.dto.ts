@@ -1,19 +1,19 @@
-export interface ICreateCountryInput {
+export interface ICreateCountry {
   countryName: string;
   countryCode: string;
 }
 
-export interface IUpdateCountryInput {
+export interface IUpdateCountry {
   id: string;
   countryName: string;
   countryCode: string;
 }
 
-export interface IDeleteCountryInput {
+export interface IDeleteCountry {
   id: string;
 }
 
-export interface ISearchCountryInput {
+export interface ISearchCountry {
   id: string;
   countryName: string;
   countryCode: string;

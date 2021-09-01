@@ -1,19 +1,19 @@
-export interface ICreateTypeIdentificationInput {
+export interface ICreateTypeIdentification {
   typeIdentificationDescription: string;
   typeIdentificationCode: string;
 }
 
-export interface IUpdateTypeIdentificationInput {
+export interface IUpdateTypeIdentification {
   id: string;
   typeIdentificationDescription: string;
   typeIdentificationCode: string;
 }
 
-export interface IDeleteTypeIdentificationInput {
+export interface IDeleteTypeIdentification {
   id: string;
 }
 
-export interface ISearchTypeIdentificationInput {
+export interface ISearchTypeIdentification {
   id: string;
   typeIdentificationDescription: string;
   typeIdentificationCode: string;

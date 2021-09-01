@@ -1,7 +1,7 @@
 import { JSONSchemaType } from 'ajv';
-import { ICreateEstateInput, IUpdateEstateInput, IDeleteEstateInput, ISearchEstateInput } from './estate.input';
+import { ICreateEstate, IUpdateEstate, IDeleteEstate, ISearchEstate } from './estate.dto';
 
-export const createOneEstateSchema: JSONSchemaType<ICreateEstateInput> = {
+export const createOneEstateSchema: JSONSchemaType<ICreateEstate> = {
 	type: 'object',
 	properties: {
 		estateName: { type: 'string' },
@@ -12,7 +12,7 @@ export const createOneEstateSchema: JSONSchemaType<ICreateEstateInput> = {
 	additionalProperties: false,
 };
 
-export const updateOneEstateSchema: JSONSchemaType<IUpdateEstateInput> = {
+export const updateOneEstateSchema: JSONSchemaType<IUpdateEstate> = {
 	type: 'object',
 	properties: {
 		id: { type: 'string' },
@@ -24,7 +24,7 @@ export const updateOneEstateSchema: JSONSchemaType<IUpdateEstateInput> = {
 	additionalProperties: false
 };
 
-export const deleteOneEstateSchema: JSONSchemaType<IDeleteEstateInput> = {
+export const deleteOneEstateSchema: JSONSchemaType<IDeleteEstate> = {
 	type: 'object',
 	properties: {
 		id: { type: 'string' }
@@ -33,7 +33,7 @@ export const deleteOneEstateSchema: JSONSchemaType<IDeleteEstateInput> = {
 	additionalProperties: false
 };
 
-export const searchOneEstateSchema: JSONSchemaType<ISearchEstateInput> = {
+export const searchOneEstateSchema: JSONSchemaType<ISearchEstate> = {
 	type: 'object',
 	properties: {
 		id: { type: 'string' },

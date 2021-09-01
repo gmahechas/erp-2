@@ -1,21 +1,21 @@
-export interface ICreateUserProfileInput {
+export interface ICreateUserProfile {
   userProfileStatus: boolean;
   userId: string;
   profileId: string;
 }
 
-export interface IUpdateUserProfileInput {
+export interface IUpdateUserProfile {
   id: string;
   userProfileStatus: boolean;
   userId: string;
   profileId: string;
 }
 
-export interface IDeleteUserProfileInput {
+export interface IDeleteUserProfile {
   id: string;
 }
 
-export interface ISearchUserProfileInput {
+export interface ISearchUserProfile {
   id: string;
   userProfileStatus: boolean;
   userId: string;

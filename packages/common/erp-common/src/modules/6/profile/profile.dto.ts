@@ -1,19 +1,19 @@
-export interface ICreateProfileInput {
+export interface ICreateProfile {
   profileName: string;
   profileDescription: string;
 }
 
-export interface IUpdateProfileInput {
+export interface IUpdateProfile {
   id: string;
   profileName: string;
   profileDescription: string;
 }
 
-export interface IDeleteProfileInput {
+export interface IDeleteProfile {
   id: string;
 }
 
-export interface ISearchProfileInput {
+export interface ISearchProfile {
   id: string;
   profileName: string;
   profileDescription: string;

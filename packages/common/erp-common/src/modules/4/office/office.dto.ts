@@ -1,19 +1,19 @@
-export interface ICreateOfficeInput {
+export interface ICreateOffice {
   officeName: string;
   companyId: string;
 }
 
-export interface IUpdateOfficeInput {
+export interface IUpdateOffice {
   id: string;
   officeName: string;
   companyId: string;
 }
 
-export interface IDeleteOfficeInput {
+export interface IDeleteOffice {
   id: string;
 }
 
-export interface ISearchOfficeInput {
+export interface ISearchOffice {
   id: string;
   officeName: string;
   companyId: string;

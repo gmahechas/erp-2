@@ -1,7 +1,7 @@
 import { JSONSchemaType } from 'ajv';
-import { ICreateCountryInput, IDeleteCountryInput, ISearchCountryInput, IUpdateCountryInput } from './country.input';
+import { ICreateCountry, IDeleteCountry, ISearchCountry, IUpdateCountry } from './country.dto';
 
-export const createOneCountrySchema: JSONSchemaType<ICreateCountryInput> = {
+export const createOneCountrySchema: JSONSchemaType<ICreateCountry> = {
 	type: 'object',
 	properties: {
 		countryName: { type: 'string' },
@@ -11,7 +11,7 @@ export const createOneCountrySchema: JSONSchemaType<ICreateCountryInput> = {
 	additionalProperties: false,
 };
 
-export const updateOneCountrySchema: JSONSchemaType<IUpdateCountryInput> = {
+export const updateOneCountrySchema: JSONSchemaType<IUpdateCountry> = {
 	type: 'object',
 	properties: {
 		id: { type: 'string' },
@@ -22,7 +22,7 @@ export const updateOneCountrySchema: JSONSchemaType<IUpdateCountryInput> = {
 	additionalProperties: false
 };
 
-export const deleteOneCountrySchema: JSONSchemaType<IDeleteCountryInput> = {
+export const deleteOneCountrySchema: JSONSchemaType<IDeleteCountry> = {
 	type: 'object',
 	properties: {
 		id: { type: 'string' }
@@ -31,7 +31,7 @@ export const deleteOneCountrySchema: JSONSchemaType<IDeleteCountryInput> = {
 	additionalProperties: false
 };
 
-export const searchOneCountrySchema: JSONSchemaType<ISearchCountryInput> = {
+export const searchOneCountrySchema: JSONSchemaType<ISearchCountry> = {
 	type: 'object',
 	properties: {
 		id: { type: 'string' },

@@ -1,2 +1,2 @@
-export * from './user-profile.input';
+export * from './user-profile.dto';
 export { IUserProfile } from './user-profile.interface';

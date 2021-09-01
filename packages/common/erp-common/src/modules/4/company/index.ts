@@ -1,2 +1,2 @@
-export * from './company.input';
+export * from './company.dto';
 export { ICompany } from './company.interface';

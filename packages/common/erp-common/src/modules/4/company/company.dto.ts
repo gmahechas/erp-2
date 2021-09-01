@@ -1,11 +1,11 @@
-export interface ICreateCompanyInput {
+export interface ICreateCompany {
   companyName: string;
   companyIdentification: string;
   companyKey: string;
   cityId: string;
 }
 
-export interface IUpdateCompanyInput {
+export interface IUpdateCompany {
   id: string;
   companyName: string;
   companyIdentification: string;
@@ -13,11 +13,11 @@ export interface IUpdateCompanyInput {
   cityId: string;
 }
 
-export interface IDeleteCompanyInput {
+export interface IDeleteCompany {
   id: string;
 }
 
-export interface ISearchCompanyInput {
+export interface ISearchCompany {
   id: string;
   companyName: string;
   companyIdentification: string;

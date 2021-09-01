@@ -1,2 +1,2 @@
-export * from './type-person.input';
+export * from './type-person.dto';
 export { ITypePerson } from './type-person.interface';

@@ -1,2 +1,2 @@
-export * from './address.input';
+export * from './address.dto';
 export { IAddress } from './address.interface';

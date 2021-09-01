@@ -1,21 +1,21 @@
-export interface ICreateUserInput {
+export interface ICreateUser {
   userName: string;
   userPassword: string;
   personId: string;
 }
 
-export interface IUpdateUserInput {
+export interface IUpdateUser {
   id: string;
   userName: string;
   userPassword: string;
   personId: string;
 }
 
-export interface IDeleteUserInput {
+export interface IDeleteUser {
   id: string;
 }
 
-export interface ISearchUserInput {
+export interface ISearchUser {
   id: string;
   userName: string;
   personId: string;

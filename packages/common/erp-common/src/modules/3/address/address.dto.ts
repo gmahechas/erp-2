@@ -1,11 +1,11 @@
-export interface ICreateAddressInput {
+export interface ICreateAddress {
   addressLine1: string;
   addressLine2: string;
   addressZipCode: string;
   cityId: string;
 }
 
-export interface IUpdateAddressInput {
+export interface IUpdateAddress {
   id: string;
   addressLine1: string;
   addressLine2: string;
@@ -13,11 +13,11 @@ export interface IUpdateAddressInput {
   cityId: string;
 }
 
-export interface IDeleteAddressInput {
+export interface IDeleteAddress {
   id: string;
 }
 
-export interface ISearchAddressInput {
+export interface ISearchAddress {
   id: string;
   addressLine1: string;
   addressLine2: string;

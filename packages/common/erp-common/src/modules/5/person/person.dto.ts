@@ -1,4 +1,4 @@
-export interface ICreatePersonInput {
+export interface ICreatePerson {
   personIdentification: string;
   personFirstName: string;
   personSecondName: string;
@@ -10,7 +10,7 @@ export interface ICreatePersonInput {
   typeIdentificationId: string;
 }
 
-export interface IUpdatePersonInput {
+export interface IUpdatePerson {
   id: string;
   personIdentification: string;
   personFirstName: string;
@@ -22,11 +22,11 @@ export interface IUpdatePersonInput {
   typeIdentificationId: string;
 }
 
-export interface IDeletePersonInput {
+export interface IDeletePerson {
   id: string;
 }
 
-export interface ISearchPersonInput {
+export interface ISearchPerson {
   id: string;
   personIdentification: string;
   personFirstName: string;

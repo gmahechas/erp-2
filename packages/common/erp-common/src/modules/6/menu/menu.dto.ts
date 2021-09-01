@@ -1,4 +1,4 @@
-export interface ICreateMenuInput {
+export interface ICreateMenu {
   menuName: string;
   menuDescription: string;
   menuUri: string;
@@ -6,7 +6,7 @@ export interface ICreateMenuInput {
   menuIdParent: string;
 }
 
-export interface IUpdateMenuInput {
+export interface IUpdateMenu {
   id: string;
   menuName: string;
   menuDescription: string;
@@ -15,11 +15,11 @@ export interface IUpdateMenuInput {
   menuIdParent: string;
 }
 
-export interface IDeleteMenuInput {
+export interface IDeleteMenu {
   id: string;
 }
 
-export interface ISearchMenuInput {
+export interface ISearchMenu {
   id: string;
   menuName: string;
   menuDescription: string;

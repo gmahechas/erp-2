@@ -1,21 +1,21 @@
-export interface ICreateProfileMenuInput {
+export interface ICreateProfileMenu {
   profileMenuStatus: boolean;
   menuId: string;
   profileId: string;
 }
 
-export interface IUpdateProfileMenuInput {
+export interface IUpdateProfileMenu {
   id: string;
   profileMenuStatus: boolean;
   menuId: string;
   profileId: string;
 }
 
-export interface IDeleteProfileMenuInput {
+export interface IDeleteProfileMenu {
   id: string;
 }
 
-export interface ISearchProfileMenuInput {
+export interface ISearchProfileMenu {
   id: string;
   profileMenuStatus: boolean;
   menuId: string;

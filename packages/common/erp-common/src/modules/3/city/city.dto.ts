@@ -1,21 +1,21 @@
-export interface ICreateCityInput {
+export interface ICreateCity {
   cityName: string;
   cityCode: string;
   estateId: string;
 }
 
-export interface IUpdateCityInput {
+export interface IUpdateCity {
   id: string;
   cityName: string;
   cityCode: string;
   estateId: string;
 }
 
-export interface IDeleteCityInput {
+export interface IDeleteCity {
   id: string;
 }
 
-export interface ISearchCityInput {
+export interface ISearchCity {
   id: string;
   cityName: string;
   cityCode: string;

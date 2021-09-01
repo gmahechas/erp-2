@@ -1,2 +1,2 @@
-export * from './type-identification.input';
+export * from './type-identification.dto';
 export { ITypeIdentification } from './type-identification.interface';
