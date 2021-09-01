@@ -1,4 +1,5 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
+import { iresponse } from '@gmahechas/erp-common';
 import { routerLambda, validatorLambda, responseLambda, errorHandlerLambda } from '@gmahechas/erp-common-lambdajs';
 import routes from './routes';
 
@@ -8,7 +9,8 @@ export const handler = async (event: APIGatewayProxyEvent, context: Context): Pr
 		const body = (event.body) ? JSON.parse(event.body) : null;
 		const route = routerLambda({ httpMethod, path }, routes);
 		validatorLambda(route.validation, body);
-		const response = await route.action({ body, params: pathParameters, query: queryStringParameters });
+		const data = await route.action(body);
+		const response = iresponse(200, data);
 		return responseLambda(response);
 	} catch (error) {
 		return errorHandlerLambda(error);

@@ -1,5 +1,3 @@
-import { IRequest, IResponse } from '@gmahechas/erp-common';
-
 export enum httpMethods {
 	POST = 'POST',
 	GET = 'GET',
@@ -10,6 +8,6 @@ export enum httpMethods {
 export interface IRouteLambda {
 	httpMethod: httpMethods;
 	path: string;
-	action: (request: IRequest) => Promise<IResponse>;
+	action: (data: any) => Promise<any>;
 	validation: any
 }

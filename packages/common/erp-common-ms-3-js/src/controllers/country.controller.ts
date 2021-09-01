@@ -1,5 +1,23 @@
-import { IRequest, IResponse, iresponse } from '@gmahechas/erp-common';
+import {
+	ICreateCountry,
+	IUpdateCountry,
+	IDeleteCountry,
+	ISearchCountry,
+	ICountry
+} from '@gmahechas/erp-common';
 
-export const getCountries = async (request: IRequest): Promise<IResponse> => {
-	return iresponse(200, request.body);
+export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> => {
+	return { id: '1', ...data };
+};
+
+export const updateOneCountry = async (data: IUpdateCountry): Promise<ICountry> => {
+	return data;
+};
+
+export const deleteOneCountry = async (data: IDeleteCountry): Promise<ICountry> => {
+	return { countryName: 'countryName', countryCode: 'countryCode', ...data };
+};
+
+export const searchOneCountry = async (data: ISearchCountry): Promise<ICountry> => {
+	return data;
 };
