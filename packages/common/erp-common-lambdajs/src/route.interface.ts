@@ -8,6 +8,7 @@ export enum httpMethods {
 export interface IRouteLambda {
 	httpMethod: httpMethods;
 	path: string;
+	args: Array<'body' | 'pathParameters' | 'queryStringParameters'>;
+	validation: any;
 	action: (data: any) => Promise<any>;
-	validation: any
 }
