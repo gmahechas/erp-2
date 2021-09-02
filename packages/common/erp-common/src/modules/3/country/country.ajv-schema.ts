@@ -16,7 +16,7 @@ export const updateOneCountrySchema: JSONSchemaType<IUpdateCountry> = {
 	properties: {
 		id: { type: 'string' },
 		countryName: { type: 'string' },
-		countryCode: { type: 'string' }
+		countryCode: { type: 'string', minLength: 2, maxLength: 4 }
 	},
 	required: ['id'],
 	additionalProperties: false
@@ -36,7 +36,7 @@ export const searchOneCountrySchema: JSONSchemaType<ISearchCountry> = {
 	properties: {
 		id: { type: 'string' },
 		countryName: { type: 'string' },
-		countryCode: { type: 'string' }
+		countryCode: { type: 'string', minLength: 2, maxLength: 4 }
 	},
 	required: [],
 	additionalProperties: false

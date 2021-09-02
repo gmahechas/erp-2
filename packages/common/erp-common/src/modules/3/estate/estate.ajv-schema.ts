@@ -17,7 +17,7 @@ export const updateOneEstateSchema: JSONSchemaType<IUpdateEstate> = {
 	properties: {
 		id: { type: 'string' },
 		estateName: { type: 'string' },
-		estateCode: { type: 'string' },
+		estateCode: { type: 'string', minLength: 2, maxLength: 4 },
 		countryId: { type: 'string' }
 	},
 	required: ['id'],
@@ -38,7 +38,7 @@ export const searchOneEstateSchema: JSONSchemaType<ISearchEstate> = {
 	properties: {
 		id: { type: 'string' },
 		estateName: { type: 'string' },
-		estateCode: { type: 'string' },
+		estateCode: { type: 'string', minLength: 2, maxLength: 4 },
 		countryId: { type: 'string' }
 	},
 	required: [],
