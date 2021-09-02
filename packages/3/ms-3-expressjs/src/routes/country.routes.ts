@@ -6,28 +6,27 @@ import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry 
 const router = express.Router();
 
 router.post('/create/one', validatorMiddleware(createOneCountrySchema), async (request: Request, response: Response) => {
-	const data = await createOneCountry({ countryName: 'Colombia', countryCode: 'CO' });
+	const data = await createOneCountry(request.body);
 	const { statusCode, body } = iresponse(200, data);
 	response.status(statusCode).send(body);
 });
 
 router.put('/update/one', validatorMiddleware(updateOneCountrySchema), async (request: Request, response: Response) => {
-	const data = await updateOneCountry({ id: '1', countryName: 'Colombia', countryCode: 'CO' });
+	const data = await updateOneCountry(request.body);
 	const { statusCode, body } = iresponse(200, data);
 	response.status(statusCode).send(body);
 });
 
 router.delete('/delete/one', validatorMiddleware(deleteOneCountrySchema), async (request: Request, response: Response) => {
-	const data = await deleteOneCountry({ id: '1' });
+	const data = await deleteOneCountry(request.body);
 	const { statusCode, body } = iresponse(200, data);
 	response.status(statusCode).send(body);
 });
 
-router.get('/search/one', validatorMiddleware(searchOneCountrySchema), async (request: Request, response: Response) => {
-	const data = await searchOneCountry({ id: '1', countryName: 'Colombia', countryCode: 'CO' });
+router.post('/search/one', validatorMiddleware(searchOneCountrySchema), async (request: Request, response: Response) => {
+	const data = await searchOneCountry(request.body);
 	const { statusCode, body } = iresponse(200, data);
 	response.status(statusCode).send(body);
 });
-
 
 export default router;

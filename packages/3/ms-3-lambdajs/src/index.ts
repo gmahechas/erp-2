@@ -7,9 +7,12 @@ export const handler = async (event: APIGatewayProxyEvent, context: Context): Pr
 	try {
 		const { httpMethod, path, pathParameters, queryStringParameters } = event;
 		const body = (event.body) ? JSON.parse(event.body) : null;
+
 		const route = routerLambda({ httpMethod, path }, routes);
+
 		validatorLambda(route.validation, body);
 		const data = await route.action(body);
+		
 		const response = iresponse(200, data);
 		return responseLambda(response);
 	} catch (error) {

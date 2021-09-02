@@ -6,28 +6,27 @@ import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate } fr
 const router = express.Router();
 
 router.post('/create/one', validatorMiddleware(createOneEstateSchema), async (request: Request, response: Response) => {
-	const data = await createOneEstate({ estateName: 'Tolima', estateCode: 'CO', countryId: '1' });
+	const data = await createOneEstate(request.body);
 	const { statusCode, body } = iresponse(200, data);
 	response.status(statusCode).send(body);
 });
 
 router.put('/update/one', validatorMiddleware(updateOneEstateSchema), async (request: Request, response: Response) => {
-	const data = await updateOneEstate({ id: '1', estateName: 'Tolima', estateCode: 'CO', countryId: '1' });
+	const data = await updateOneEstate(request.body);
 	const { statusCode, body } = iresponse(200, data);
 	response.status(statusCode).send(body);
 });
 
 router.delete('/delete/one', validatorMiddleware(deleteOneEstateSchema), async (request: Request, response: Response) => {
-	const data = await deleteOneEstate({ id: '1' });
+	const data = await deleteOneEstate(request.body);
 	const { statusCode, body } = iresponse(200, data);
 	response.status(statusCode).send(body);
 });
 
-router.get('/search/one', validatorMiddleware(searchOneEstateSchema), async (request: Request, response: Response) => {
-	const data = await searchOneEstate({ id: '1', estateName: 'Tolima', estateCode: 'CO', countryId: '1' });
+router.post('/search/one', validatorMiddleware(searchOneEstateSchema), async (request: Request, response: Response) => {
+	const data = await searchOneEstate(request.body);
 	const { statusCode, body } = iresponse(200, data);
 	response.status(statusCode).send(body);
-});;
-
+});
 
 export default router;
