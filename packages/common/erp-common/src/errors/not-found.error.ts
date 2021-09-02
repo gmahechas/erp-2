@@ -5,6 +5,7 @@ import { TypeErrorMessage } from './utils/error-type.enum';
 export class NotFoundError extends CustomError {
 
 	statusCode = 404;
+	grpcStatusCode = 5;
 
 	constructor() {
 		super();

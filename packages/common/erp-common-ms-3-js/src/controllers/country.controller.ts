@@ -3,7 +3,8 @@ import {
 	IUpdateCountry,
 	IDeleteCountry,
 	ISearchCountry,
-	ICountry
+	ICountry,
+	NotFoundError
 } from '@gmahechas/erp-common';
 
 export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> => {

@@ -1,3 +1,5 @@
+export * from './utils';
+
 export * as grpcType1 from './modules/1';
 export * as authGrpcService from './modules/1/auth/AuthService';
 export * as userGrpcService from './modules/1/user/UserService';
