@@ -1,5 +1,5 @@
 import { createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema, ICountry, ICreateCountry, IUpdateCountry, IDeleteCountry, ISearchCountry } from '@gmahechas/erp-common';
-import { validatorGrpc, asyncHandlerUnaryGrpc, IGrpcMessage } from '@gmahechas/erp-common-grpcjs';
+import { countryGrpcService, validatorGrpc, asyncHandlerUnaryGrpc, IGrpcMessage } from '@gmahechas/erp-common-grpcjs';
 import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry } from '@gmahechas/erp-common-ms-3-js'
 
 export const countryService = {
@@ -31,4 +31,4 @@ export const countryService = {
 		const request = call.request.data;
 		callback(null, { data: request });
 	})
-};
+} as countryGrpcService.CountryServiceHandlers;

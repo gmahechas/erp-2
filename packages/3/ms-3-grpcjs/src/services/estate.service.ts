@@ -1,7 +1,6 @@
 import { createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema, IEstate, ICreateEstate, IUpdateEstate, IDeleteEstate, ISearchEstate } from '@gmahechas/erp-common';
-import { validatorGrpc, asyncHandlerUnaryGrpc, IGrpcMessage } from '@gmahechas/erp-common-grpcjs';
+import { estateGrpcService, validatorGrpc, asyncHandlerUnaryGrpc, IGrpcMessage } from '@gmahechas/erp-common-grpcjs';
 import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate } from '@gmahechas/erp-common-ms-3-js'
-
 
 export const estateService = {
 	CreateOne: asyncHandlerUnaryGrpc<ICreateEstate, IGrpcMessage<IEstate>>(async (call, callback) => {
@@ -32,4 +31,4 @@ export const estateService = {
 		const request = call.request.data;
 		callback(null, { data: request });
 	})
-};
+} as estateGrpcService.EstateServiceHandlers;
