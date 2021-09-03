@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.5 (2021-09-03)</small>
+
+* refactor: remove request interface ([fd23952](https://github.com/gmahechas/erp/commit/fd23952))
+* refactor: rename async handler middleware ([d395c27](https://github.com/gmahechas/erp/commit/d395c27))
+* feat: async handler in express ([219b470](https://github.com/gmahechas/erp/commit/219b470))
+* feat: ms-3 grpc server ([1df36b3](https://github.com/gmahechas/erp/commit/1df36b3))
+* feat: validator in grpc ([a42a7a7](https://github.com/gmahechas/erp/commit/a42a7a7))
+
+
+
+
+
 ## <small>0.0.4 (2021-08-18)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common-expressjs

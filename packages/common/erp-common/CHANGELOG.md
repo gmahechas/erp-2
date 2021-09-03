@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.5 (2021-09-03)</small>
+
+* feat: error handling for grpc ([6a6f509](https://github.com/gmahechas/erp/commit/6a6f509))
+* feat: ms-3 grpc server ([1df36b3](https://github.com/gmahechas/erp/commit/1df36b3))
+* feat: validator in grpc ([a42a7a7](https://github.com/gmahechas/erp/commit/a42a7a7))
+* refactor: change name for DTO ([2eed22f](https://github.com/gmahechas/erp/commit/2eed22f))
+* refactor: remove request interface ([fd23952](https://github.com/gmahechas/erp/commit/fd23952))
+
+
+
+
+
 ## <small>0.0.4 (2021-08-18)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common

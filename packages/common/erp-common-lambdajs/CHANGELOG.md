@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.5 (2021-09-03)</small>
+
+* feat: build action params lambda ([781e48e](https://github.com/gmahechas/erp/commit/781e48e))
+* feat: ms-3 grpc server ([1df36b3](https://github.com/gmahechas/erp/commit/1df36b3))
+* fix: fix error handler in lambda ([d45bf4c](https://github.com/gmahechas/erp/commit/d45bf4c))
+* refactor: fix express and lambda ([f16e8f5](https://github.com/gmahechas/erp/commit/f16e8f5))
+
+
+
+
+
 ## <small>0.0.4 (2021-08-18)</small>
 
 * fix: error response on lambda ([e92ce7d](https://github.com/gmahechas/erp/commit/e92ce7d))

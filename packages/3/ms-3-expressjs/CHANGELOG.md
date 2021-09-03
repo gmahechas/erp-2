@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.5 (2021-09-03)</small>
+
+* feat: add dotenv in ms ([10da9dc](https://github.com/gmahechas/erp/commit/10da9dc))
+* feat: add grpc services handlers ([706fe2a](https://github.com/gmahechas/erp/commit/706fe2a))
+* feat: async handler in express ([219b470](https://github.com/gmahechas/erp/commit/219b470))
+* feat: graphql ([60daf47](https://github.com/gmahechas/erp/commit/60daf47))
+* refactor: fix express and lambda ([f16e8f5](https://github.com/gmahechas/erp/commit/f16e8f5))
+* refactor: pass correct values to controller ([deeaf54](https://github.com/gmahechas/erp/commit/deeaf54))
+* refactor: remove request interface ([fd23952](https://github.com/gmahechas/erp/commit/fd23952))
+
+
+
+
+
 ## <small>0.0.4 (2021-08-18)</small>
 
 **Note:** Version bump only for package ms-3-expressjs

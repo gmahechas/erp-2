@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.5 (2021-09-03)</small>
+
+* feat: add dotenv in ms ([10da9dc](https://github.com/gmahechas/erp/commit/10da9dc))
+* feat: build action params lambda ([781e48e](https://github.com/gmahechas/erp/commit/781e48e))
+* refactor: fix express and lambda ([f16e8f5](https://github.com/gmahechas/erp/commit/f16e8f5))
+* refactor: pass correct values to controller ([deeaf54](https://github.com/gmahechas/erp/commit/deeaf54))
+
+
+
+
+
 ## <small>0.0.4 (2021-08-18)</small>
 
 * fix: error response on lambda ([e92ce7d](https://github.com/gmahechas/erp/commit/e92ce7d))

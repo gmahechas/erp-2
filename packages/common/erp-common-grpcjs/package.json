@@ -1,6 +1,6 @@
 {
     "name": "@gmahechas/erp-common-grpcjs",
-    "version": "0.0.0",
+    "version": "0.0.5",
     "description": "erp-common-grpcjs",
     "author": "gmahechas",
     "private": false,
@@ -12,7 +12,7 @@
         "proto-loader-gen-types": "proto-loader-gen-types"
     },
     "devDependencies": {
-        "@gmahechas/erp-common": "^0.0.4",
+        "@gmahechas/erp-common": "^0.0.5",
         "@grpc/grpc-js": "^1.3.7",
         "@grpc/proto-loader": "^0.6.4",
         "@types/node": "^16.6.2",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.5 (2021-09-03)</small>
+
+**Note:** Version bump only for package mf-0-reactjs
+
+
+
+
+
 ## <small>0.0.4 (2021-08-18)</small>
 
 **Note:** Version bump only for package mf-0-reactjs
