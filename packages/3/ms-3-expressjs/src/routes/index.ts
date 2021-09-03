@@ -1,6 +1,6 @@
 import express from 'express';
-import countryRouter from './routes/country.routes';
-import estateRouter from './routes/estate.routes';
+import countryRouter from './country.routes';
+import estateRouter from './estate.routes';
 
 const router = express.Router();
 
