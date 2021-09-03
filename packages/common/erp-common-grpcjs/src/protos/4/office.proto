@@ -9,20 +9,45 @@ message Office {
   string addressId = 4;
 }
 
+// *********** DTO ***********
+message Create {
+  string officeName = 1;
+  string companyId = 2;
+  string addressId = 3;
+}
+
+message Update {
+  string id = 1;
+  string officeName = 2;
+  string companyId = 3;
+  string addressId = 4;
+}
+
+message Delete {
+  string id = 1;
+}
+
+message Search {
+  string id = 1;
+  string officeName = 2;
+  string companyId = 3;
+  string addressId = 4;
+}
+
 // *********** One ***********
-message IEntityOne {
-  Office entity = 1;
+message One {
+  Office data = 1;
 }
 
 // *********** Many ***********
-message IEntityMany {
-  repeated Office entities = 1;
+message Many {
+  repeated Office data = 1;
 }
 
 service OfficeService {
-  rpc CreateOne (IEntityOne) returns (IEntityOne) {}
-  rpc UpdateOne (IEntityOne) returns (IEntityOne) {}
-  rpc DeleteOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchMany (IEntityMany) returns (IEntityMany) {}
+  rpc CreateOne (Create) returns (One) {}
+  rpc UpdateOne (Update) returns (One) {}
+  rpc DeleteOne (Delete) returns (One) {}
+  rpc SearchOne (Search) returns (One) {}
+  rpc SearchMany (Many) returns (Many) {}
 }

@@ -12,14 +12,22 @@ export interface ProtoGrpcType {
   company: {
     Company: MessageTypeDefinition
     CompanyService: SubtypeConstructor<typeof grpc.Client, _company_CompanyServiceClient> & { service: _company_CompanyServiceDefinition }
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
   }
   office: {
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
     Office: MessageTypeDefinition
     OfficeService: SubtypeConstructor<typeof grpc.Client, _office_OfficeServiceClient> & { service: _office_OfficeServiceDefinition }
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
   }
 }
 

@@ -1,55 +1,35 @@
-import { createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema } from '@gmahechas/erp-common';
-import { estateGrpcService, errorHandlerGrpc, validatorGrpc } from '@gmahechas/erp-common-grpcjs';
+import { createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema, IEstate, ICreateEstate, IUpdateEstate, IDeleteEstate, ISearchEstate } from '@gmahechas/erp-common';
+import { validatorGrpc, asyncHandlerUnaryGrpc, IGrpcMessage } from '@gmahechas/erp-common-grpcjs';
 import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate } from '@gmahechas/erp-common-ms-3-js'
 
-export const estateService = {
-	CreateOne: async (call, callback) => {
-		try {
-			const { id, estateName, estateCode, countryId } = call.request.entity!;
-			validatorGrpc(createOneEstateSchema, { estateName, estateCode, countryId });
-			const entity = await createOneEstate({ estateName, estateCode, countryId });
-			callback(null, { entity });
-		} catch (error) {
-			errorHandlerGrpc(error, callback);
-		}
-	},
-	UpdateOne: async (call, callback) => {
-		try {
-			const { id, estateName, estateCode, countryId } = call.request.entity!;
-			validatorGrpc(updateOneEstateSchema, { id, estateName, estateCode, countryId });
-			const entity = await updateOneEstate({ id, estateName, estateCode, countryId });
-			callback(null, { entity });
-		} catch (error) {
-			errorHandlerGrpc(error, callback);
-		}
 
-	},
-	DeleteOne: async (call, callback) => {
-		try {
-			const { id, estateName, estateCode, countryId } = call.request.entity!;
-			validatorGrpc(deleteOneEstateSchema, { id });
-			const entity = await deleteOneEstate({ id });
-			callback(null, { entity });
-		} catch (error) {
-			errorHandlerGrpc(error, callback);
-		}
-	},
-	SearchOne: async (call, callback) => {
-		try {
-			const { id, estateName, estateCode, countryId } = call.request.entity!;
-			validatorGrpc(searchOneEstateSchema, { id, estateName, estateCode, countryId });
-			const entity = await searchOneEstate({ id, estateName, estateCode, countryId });
-			callback(null, { entity });
-		} catch (error) {
-			errorHandlerGrpc(error, callback);
-		}
-	},
-	SearchMany: async (call, callback) => {
-		try {
-			const [...entities] = call.request.entities!;
-			callback(null, { entities });
-		} catch (error) {
-			errorHandlerGrpc(error, callback);
-		}
-	}
-} as estateGrpcService.EstateServiceHandlers;
+export const estateService = {
+	CreateOne: asyncHandlerUnaryGrpc<ICreateEstate, IGrpcMessage<IEstate>>(async (call, callback) => {
+		const request = call.request;
+		validatorGrpc(createOneEstateSchema, request);
+		const data = await createOneEstate(request);
+		callback(null, { data });
+	}),
+	UpdateOne: asyncHandlerUnaryGrpc<IUpdateEstate, IGrpcMessage<IEstate>>(async (call, callback) => {
+		const request = call.request;
+		validatorGrpc(updateOneEstateSchema, request);
+		const data = await updateOneEstate(request);
+		callback(null, { data });
+	}),
+	DeleteOne: asyncHandlerUnaryGrpc<IDeleteEstate, IGrpcMessage<IEstate>>(async (call, callback) => {
+		const request = call.request;
+		validatorGrpc(deleteOneEstateSchema, request);
+		const data = await deleteOneEstate(request);
+		callback(null, { data });
+	}),
+	SearchOne: asyncHandlerUnaryGrpc<ISearchEstate, IGrpcMessage<IEstate>>(async (call, callback) => {
+		const request = call.request;
+		validatorGrpc(searchOneEstateSchema, request);
+		const data = await searchOneEstate(request);
+		callback(null, { data });
+	}),
+	SearchMany: asyncHandlerUnaryGrpc<IGrpcMessage<ISearchEstate[]>, IGrpcMessage<IEstate[]>>(async (call, callback) => {
+		const request = call.request.data;
+		callback(null, { data: request });
+	})
+};

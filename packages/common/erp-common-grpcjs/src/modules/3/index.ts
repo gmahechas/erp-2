@@ -14,26 +14,42 @@ export interface ProtoGrpcType {
   address: {
     Address: MessageTypeDefinition
     AddressService: SubtypeConstructor<typeof grpc.Client, _address_AddressServiceClient> & { service: _address_AddressServiceDefinition }
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
   }
   city: {
     City: MessageTypeDefinition
     CityService: SubtypeConstructor<typeof grpc.Client, _city_CityServiceClient> & { service: _city_CityServiceDefinition }
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
   }
   country: {
     Country: MessageTypeDefinition
     CountryService: SubtypeConstructor<typeof grpc.Client, _country_CountryServiceClient> & { service: _country_CountryServiceDefinition }
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
   }
   estate: {
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
     Estate: MessageTypeDefinition
     EstateService: SubtypeConstructor<typeof grpc.Client, _estate_EstateServiceClient> & { service: _estate_EstateServiceDefinition }
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
   }
 }
 

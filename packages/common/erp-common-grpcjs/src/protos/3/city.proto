@@ -9,21 +9,46 @@ message City {
   string estateId = 4;
 }
 
+// *********** DTO ***********
+message Create {
+  string cityName = 1;
+  string cityCode = 2;
+  string estateId = 3;
+}
+
+message Update {
+  string id = 1;
+  string cityName = 2;
+  string cityCode = 3;
+  string estateId = 4;
+}
+
+message Delete {
+  string id = 1;
+}
+
+message Search {
+  string id = 1;
+  string cityName = 2;
+  string cityCode = 3;
+  string estateId = 4;
+}
+
 // *********** One ***********
-message IEntityOne {
-  City entity = 1;
+message One {
+  City data = 1;
 }
 
 // *********** Many ***********
-message IEntityMany {
-  repeated City entities = 1;
+message Many {
+  repeated City data = 1;
 }
 
 service CityService {
-  rpc CreateOne (IEntityOne) returns (IEntityOne) {}
-  rpc UpdateOne (IEntityOne) returns (IEntityOne) {}
-  rpc DeleteOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchMany (IEntityMany) returns (IEntityMany) {}
+  rpc CreateOne (Create) returns (One) {}
+  rpc UpdateOne (Update) returns (One) {}
+  rpc DeleteOne (Delete) returns (One) {}
+  rpc SearchOne (Search) returns (One) {}
+  rpc SearchMany (Many) returns (Many) {}
 }
 

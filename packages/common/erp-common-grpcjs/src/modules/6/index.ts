@@ -12,26 +12,42 @@ type SubtypeConstructor<Constructor extends new (...args: any) => any, Subtype> 
 
 export interface ProtoGrpcType {
   menu: {
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
     Menu: MessageTypeDefinition
     MenuService: SubtypeConstructor<typeof grpc.Client, _menu_MenuServiceClient> & { service: _menu_MenuServiceDefinition }
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
   }
   profile: {
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
     Profile: MessageTypeDefinition
     ProfileService: SubtypeConstructor<typeof grpc.Client, _profile_ProfileServiceClient> & { service: _profile_ProfileServiceDefinition }
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
   }
   profile_menu: {
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
     ProfileMenu: MessageTypeDefinition
     ProfileMenuService: SubtypeConstructor<typeof grpc.Client, _profile_menu_ProfileMenuServiceClient> & { service: _profile_menu_ProfileMenuServiceDefinition }
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
   }
   user_profile: {
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
     UserProfile: MessageTypeDefinition
     UserProfileService: SubtypeConstructor<typeof grpc.Client, _user_profile_UserProfileServiceClient> & { service: _user_profile_UserProfileServiceDefinition }
   }

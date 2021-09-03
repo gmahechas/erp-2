@@ -8,21 +8,43 @@ message Country {
   string countryCode = 3;
 }
 
+// *********** DTO ***********
+message Create {
+  string countryName = 1;
+  string countryCode = 2;
+}
+
+message Update {
+  string id = 1;
+  string countryName = 2;
+  string countryCode = 3;
+}
+
+message Delete {
+  string id = 1;
+}
+
+message Search {
+  string id = 1;
+  string countryName = 2;
+  string countryCode = 3;
+}
+
 // *********** One ***********
-message IEntityOne {
-  Country entity = 1;
+message One {
+  Country data = 1;
 }
 
 // *********** Many ***********
-message IEntityMany {
-  repeated Country entities = 1;
+message Many {
+  repeated Country data = 1;
 }
 
 service CountryService {
-  rpc CreateOne (IEntityOne) returns (IEntityOne) {}
-  rpc UpdateOne (IEntityOne) returns (IEntityOne) {}
-  rpc DeleteOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchMany (IEntityMany) returns (IEntityMany) {}
+  rpc CreateOne (Create) returns (One) {}
+  rpc UpdateOne (Update) returns (One) {}
+  rpc DeleteOne (Delete) returns (One) {}
+  rpc SearchOne (Search) returns (One) {}
+  rpc SearchMany (Many) returns (Many) {}
 }
 

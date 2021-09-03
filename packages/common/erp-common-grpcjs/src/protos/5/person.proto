@@ -15,20 +15,63 @@ message Person {
   string typeIdentificationId = 10;
 }
 
+// *********** DTO ***********
+message Create {
+  string personIdentification = 1;
+  string personFirstName = 2;
+  string personSecondName = 3;
+  string personFirstSurname = 4;
+  string personSecondSurname = 5;
+  string personCompanyName = 6;
+  string companyId = 7;
+  string typePersonId = 8;
+  string typeIdentificationId = 9;
+}
+
+message Update {
+  string id = 1;
+  string personIdentification = 2;
+  string personFirstName = 3;
+  string personSecondName = 4;
+  string personFirstSurname = 5;
+  string personSecondSurname = 6;
+  string personCompanyName = 7;
+  string companyId = 8;
+  string typePersonId = 9;
+  string typeIdentificationId = 10;
+}
+
+message Delete {
+  string id = 1;
+}
+
+message Search {
+  string id = 1;
+  string personIdentification = 2;
+  string personFirstName = 3;
+  string personSecondName = 4;
+  string personFirstSurname = 5;
+  string personSecondSurname = 6;
+  string personCompanyName = 7;
+  string companyId = 8;
+  string typePersonId = 9;
+  string typeIdentificationId = 10;
+}
+
 // *********** One ***********
-message IEntityOne {
-  Person entity = 1;
+message One {
+  Person data = 1;
 }
 
 // *********** Many ***********
-message IEntityMany {
-  repeated Person entities = 1;
+message Many {
+  repeated Person data = 1;
 }
 
 service PersonService {
-  rpc CreateOne (IEntityOne) returns (IEntityOne) {}
-  rpc UpdateOne (IEntityOne) returns (IEntityOne) {}
-  rpc DeleteOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchMany (IEntityMany) returns (IEntityMany) {}
+  rpc CreateOne (Create) returns (One) {}
+  rpc UpdateOne (Update) returns (One) {}
+  rpc DeleteOne (Delete) returns (One) {}
+  rpc SearchOne (Search) returns (One) {}
+  rpc SearchMany (Many) returns (Many) {}
 }

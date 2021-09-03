@@ -9,21 +9,46 @@ message Estate {
   string countryId = 4;
 }
 
+// *********** DTO ***********
+message Create {
+  string estateName = 1;
+  string estateCode = 2;
+  string countryId = 3;
+}
+
+message Update {
+  string id = 1;
+  string estateName = 2;
+  string estateCode = 3;
+  string countryId = 4;
+}
+
+message Delete {
+  string id = 1;
+}
+
+message Search {
+  string id = 1;
+  string estateName = 2;
+  string estateCode = 3;
+  string countryId = 4;
+}
+
 // *********** One ***********
-message IEntityOne {
-  Estate entity = 1;
+message One {
+  Estate data = 1;
 }
 
 // *********** Many ***********
-message IEntityMany {
-  repeated Estate entities = 1;
+message Many {
+  repeated Estate data = 1;
 }
 
 service EstateService {
-  rpc CreateOne (IEntityOne) returns (IEntityOne) {}
-  rpc UpdateOne (IEntityOne) returns (IEntityOne) {}
-  rpc DeleteOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchMany (IEntityMany) returns (IEntityMany) {}
+  rpc CreateOne (Create) returns (One) {}
+  rpc UpdateOne (Update) returns (One) {}
+  rpc DeleteOne (Delete) returns (One) {}
+  rpc SearchOne (Search) returns (One) {}
+  rpc SearchMany (Many) returns (Many) {}
 }
 

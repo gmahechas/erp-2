@@ -15,8 +15,12 @@ export interface ProtoGrpcType {
     SingInResponse: MessageTypeDefinition
   }
   user: {
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
     User: MessageTypeDefinition
     UserService: SubtypeConstructor<typeof grpc.Client, _user_UserServiceClient> & { service: _user_UserServiceDefinition }
   }

@@ -8,20 +8,42 @@ message TypeIdentification {
   string typeIdentificationCode = 3;
 }
 
+// *********** DTO ***********
+message Create {
+  string typeIdentificationDescription = 1;
+  string typeIdentificationCode = 2;
+}
+
+message Update {
+  string id = 1;
+  string typeIdentificationDescription = 2;
+  string typeIdentificationCode = 3;
+}
+
+message Delete {
+  string id = 1;
+}
+
+message Search {
+  string id = 1;
+  string typeIdentificationDescription = 2;
+  string typeIdentificationCode = 3;
+}
+
 // *********** One ***********
-message IEntityOne {
-  TypeIdentification entity = 1;
+message One {
+  TypeIdentification data = 1;
 }
 
 // *********** Many ***********
-message IEntityMany {
-  repeated TypeIdentification entities = 1;
+message Many {
+  repeated TypeIdentification data = 1;
 }
 
 service TypeIdentificationService {
-  rpc CreateOne (IEntityOne) returns (IEntityOne) {}
-  rpc UpdateOne (IEntityOne) returns (IEntityOne) {}
-  rpc DeleteOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchMany (IEntityMany) returns (IEntityMany) {}
+  rpc CreateOne (Create) returns (One) {}
+  rpc UpdateOne (Update) returns (One) {}
+  rpc DeleteOne (Delete) returns (One) {}
+  rpc SearchOne (Search) returns (One) {}
+  rpc SearchMany (Many) returns (Many) {}
 }

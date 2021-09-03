@@ -12,21 +12,55 @@ message Address {
   string cityId = 7;
 }
 
+// *********** DTO ***********
+message Create {
+  string addressLine1 = 1;
+  string addressLine2 = 2;
+  string addressZipCode = 3;
+  string addressFullName = 4;
+  string addressPhone = 5;
+  string cityId = 6;
+}
+
+message Update {
+  string id = 1;
+  string addressLine1 = 2;
+  string addressLine2 = 3;
+  string addressZipCode = 4;
+  string addressFullName = 5;
+  string addressPhone = 6;
+  string cityId = 7;
+}
+
+message Delete {
+  string id = 1;
+}
+
+message Search {
+  string id = 1;
+  string addressLine1 = 2;
+  string addressLine2 = 3;
+  string addressZipCode = 4;
+  string addressFullName = 5;
+  string addressPhone = 6;
+  string cityId = 7;
+}
+
 // *********** One ***********
-message IEntityOne {
-  Address entity = 1;
+message One {
+  Address data = 1;
 }
 
 // *********** Many ***********
-message IEntityMany {
-  repeated Address entities = 1;
+message Many {
+  repeated Address data = 1;
 }
 
 service AddressService {
-  rpc CreateOne (IEntityOne) returns (IEntityOne) {}
-  rpc UpdateOne (IEntityOne) returns (IEntityOne) {}
-  rpc DeleteOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchOne (IEntityOne) returns (IEntityOne) {}
-  rpc SearchMany (IEntityMany) returns (IEntityMany) {}
+  rpc CreateOne (Create) returns (One) {}
+  rpc UpdateOne (Update) returns (One) {}
+  rpc DeleteOne (Delete) returns (One) {}
+  rpc SearchOne (Search) returns (One) {}
+  rpc SearchMany (Many) returns (Many) {}
 }
 

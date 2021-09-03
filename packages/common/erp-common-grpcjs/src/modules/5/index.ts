@@ -11,22 +11,34 @@ type SubtypeConstructor<Constructor extends new (...args: any) => any, Subtype> 
 
 export interface ProtoGrpcType {
   person: {
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
     Person: MessageTypeDefinition
     PersonService: SubtypeConstructor<typeof grpc.Client, _person_PersonServiceClient> & { service: _person_PersonServiceDefinition }
+    Search: MessageTypeDefinition
+    Update: MessageTypeDefinition
   }
   type_identification: {
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
     TypeIdentification: MessageTypeDefinition
     TypeIdentificationService: SubtypeConstructor<typeof grpc.Client, _type_identification_TypeIdentificationServiceClient> & { service: _type_identification_TypeIdentificationServiceDefinition }
+    Update: MessageTypeDefinition
   }
   type_person: {
-    IEntityMany: MessageTypeDefinition
-    IEntityOne: MessageTypeDefinition
+    Create: MessageTypeDefinition
+    Delete: MessageTypeDefinition
+    Many: MessageTypeDefinition
+    One: MessageTypeDefinition
+    Search: MessageTypeDefinition
     TypePerson: MessageTypeDefinition
     TypePersonService: SubtypeConstructor<typeof grpc.Client, _type_person_TypePersonServiceClient> & { service: _type_person_TypePersonServiceDefinition }
+    Update: MessageTypeDefinition
   }
 }
 
