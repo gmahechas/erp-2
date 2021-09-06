@@ -1,3 +1,3 @@
 export default ({
-	ms_port: 50003 
+	ms_port: 50003
 });

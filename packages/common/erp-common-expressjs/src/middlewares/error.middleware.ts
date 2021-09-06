@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { CustomError } from '@gmahechas/erp-common';
+import { CustomError } from '@gmahechas/erp-common-ms-utils-js';
 
 export const errorMiddleware = (error: Error, request: Request, response: Response, next: NextFunction) => {
 	if (error instanceof CustomError) {

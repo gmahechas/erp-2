@@ -1,9 +1,5 @@
 import { ErrorObject } from 'ajv';
-
-export interface IError {
-	field: string;
-	message?: string;
-}
+import { IError } from './error.interface';
 
 export const parseErrors = (errors: ErrorObject[] | null | undefined): IError[] => {
 	if(errors) {

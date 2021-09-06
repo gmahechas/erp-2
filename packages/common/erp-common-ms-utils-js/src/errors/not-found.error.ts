@@ -1,5 +1,4 @@
 import { CustomError } from './custom.error';
-import { IError } from './utils';
 import { TypeErrorMessage } from './utils/error-type.enum';
 
 export class NotFoundError extends CustomError {

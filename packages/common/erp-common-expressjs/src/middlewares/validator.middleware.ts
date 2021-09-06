@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { validate, ValidationError, parseErrors } from '@gmahechas/erp-common';
+import { validate, parseErrors} from '@gmahechas/erp-common';
+import { ValidationError } from '@gmahechas/erp-common-ms-utils-js';
 
 // TODO: ERP-4
 export const validatorMiddleware = (schema: object) => (request: Request, response: Response, next: NextFunction) => {

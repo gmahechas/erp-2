@@ -1,5 +1,5 @@
+import { IError } from '@gmahechas/erp-common';
 import { CustomError } from './custom.error';
-import { IError } from './utils';
 import { TypeErrorMessage } from './utils/error-type.enum';
 
 export class ValidationError extends CustomError {

@@ -1,4 +1,5 @@
-import { ValidationError, parseErrors } from '@gmahechas/erp-common';
+import { parseErrors } from '@gmahechas/erp-common';
+import { ValidationError } from '@gmahechas/erp-common-ms-utils-js';
 
 // TODO: ERP-4
 export const validatorLambda: any = (valid: any, body: object) => {

@@ -5,10 +5,12 @@ export enum httpMethods {
 	DELETE = 'DELETE',
 };
 
+export type argsType = Array<'body' | 'pathParameters' | 'queryStringParameters'>;
+
 export interface IRouteLambda {
 	httpMethod: httpMethods;
 	path: string;
-	args: Array<'body' | 'pathParameters' | 'queryStringParameters'>;
+	args: argsType;
 	validation: any;
 	action: (data: any) => Promise<any>;
 }
