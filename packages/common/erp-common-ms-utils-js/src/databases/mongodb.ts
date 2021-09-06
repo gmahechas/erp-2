@@ -3,7 +3,16 @@ import { ConnectDbError } from '../errors/connect-db.error';
 
 let connection: Promise<Mongoose>;
 
-export const mongodb = async (uri: string, connectOptions: ConnectOptions) => {
+export interface IMongodbConnectArgs {
+	uri: string;
+	connectOptions?: ConnectOptions;
+}
+
+export interface IMongodbConnect {
+	(uri: string, connectOptions?: ConnectOptions): Promise<void>
+}
+
+export const mongodb: IMongodbConnect = async (uri, connectOptions) => {
 	try {
 		if (connection == undefined) {
 			connection = mongosee.connect(uri, connectOptions);
@@ -24,3 +33,5 @@ export const mongodb = async (uri: string, connectOptions: ConnectOptions) => {
 		throw new ConnectDbError();
 	}
 }
+
+export { ConnectOptions };

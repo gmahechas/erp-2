@@ -6,8 +6,8 @@ import env from './config/env';
 
 const start = async () => {
 	try {
-		await connectDatabases();
-		app.bindAsync(`0.0.0.0:${env.ms_port}`, ServerCredentials.createInsecure(), (error, port) => {
+		await connectDatabases({ uri: env.msMongodbUri });
+		app.bindAsync(`0.0.0.0:${env.msPort}`, ServerCredentials.createInsecure(), (error, port) => {
 			if (error) {
 				console.log('error');
 			} else {

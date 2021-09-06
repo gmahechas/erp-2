@@ -1,3 +1,4 @@
 export default ({
-	ms_port: 50003
+	msPort: 50003,
+	msMongodbUri: 'mongodb://root:root@10.1.0.229:27017/erp?authSource=admin&w=majority&readPreference=primary&retryWrites=true&ssl=false'
 });
