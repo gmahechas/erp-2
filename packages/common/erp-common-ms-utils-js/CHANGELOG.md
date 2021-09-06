@@ -5,12 +5,5 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## <small>0.0.6 (2021-09-06)</small>
 
-**Note:** Version bump only for package ms-0-graphqljs
-
-
-
-
-
-## <small>0.0.5 (2021-09-03)</small>
-
-* feat: graphql ([60daf47](https://github.com/gmahechas/erp/commit/60daf47))
+* feat: dot env and ms utils ([e6acc59](https://github.com/gmahechas/erp/commit/e6acc59))
+* feat: updates ([8e1817c](https://github.com/gmahechas/erp/commit/8e1817c))
