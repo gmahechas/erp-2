@@ -12,7 +12,8 @@
     "dependencies": {
         "@gmahechas/erp-common": "^0.0.7",
         "@gmahechas/erp-common-lambdajs": "^0.0.7",
-        "@gmahechas/erp-common-ms-3-js": "^0.0.7"
+        "@gmahechas/erp-common-ms-3-js": "^0.0.7",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.7"
     },
     "devDependencies": {
         "@types/node": "^16.7.10",
