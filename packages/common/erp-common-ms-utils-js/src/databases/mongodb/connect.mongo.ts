@@ -1,26 +1,35 @@
-import mongosee, { Mongoose } from 'mongoose';
+import mongosee, { Connection } from 'mongoose';
 import { IMongodbConnect } from '../mongodb/mongo.interface';
 import { ConnectDbError } from '../../errors/connect-db.error';
 
-let connection: Promise<Mongoose>;
+let connection: Promise<Connection>;
 
 export const mongodbConnect: IMongodbConnect = async (uri, connectOptions) => {
 	try {
 		if (connection == undefined) {
-			connection = mongosee.connect(uri, connectOptions);
-			mongosee.connection.on('connecting', () => console.log('connecting'));
-			mongosee.connection.on('connected', () => console.log('connected'));
-			//mongosee.connection.on('open', () => console.log('open'));
-			mongosee.connection.on('disconnecting', () => console.log('disconnecting'));
-			mongosee.connection.on('disconnected', () => console.log('disconnected'));
-			mongosee.connection.on('close', () => console.log('close'));
-			mongosee.connection.on('reconnected', () => console.log('reconnected'));
-			mongosee.connection.on('error', () => console.log('error'));
-			mongosee.connection.on('fullsetup', () => console.log('close'));
-			mongosee.connection.on('all', () => console.log('close'));
-			mongosee.connection.on('reconnectFailed', () => console.log('close'));
-			await connection;
+			connection = new Promise((resolve, reject) => {
+				const conn = mongosee.createConnection(uri, connectOptions);
+				if(conn) {
+					resolve(conn);
+				} else {
+					reject(conn)
+				}
+			});
+			const mongoConnection = await connection;
+
+			mongoConnection.on('connecting to mongodb', () => console.log('connecting'));
+			mongoConnection.on('mongodb connected', () => console.log('connected'));
+			//mongoConnection.on('open', () => console.log('open'));
+			mongoConnection.on('disconnecting mongodb', () => console.log('disconnecting'));
+			mongoConnection.on('mongodb disconnected', () => console.log('disconnected'));
+			mongoConnection.on('mongodb connection closed', () => console.log('close'));
+			mongoConnection.on('mongodb connection reconnected', () => console.log('reconnected'));
+			mongoConnection.on('mongo error', () => console.log('error'));
+			mongoConnection.on('fullsetup', () => console.log('close'));
+			mongoConnection.on('all', () => console.log('close'));
+			mongoConnection.on('reconnectFailed', () => console.log('close'));
 		}
+		return connection;
 	} catch (error) {
 		throw new ConnectDbError();
 	}

@@ -1,6 +1,6 @@
-import { ConnectOptions, Schema, Document } from 'mongoose';
+import { ConnectOptions, Schema, Document, Model, Connection } from 'mongoose';
 
-export { Schema, Document };
+export { Schema, Document, Model, Connection };
 
 export interface IMongodbConnectArgs {
 	uri: string;
@@ -8,5 +8,5 @@ export interface IMongodbConnectArgs {
 }
 
 export interface IMongodbConnect {
-	(uri: string, connectOptions?: ConnectOptions): Promise<void>
+	(uri: string, connectOptions?: ConnectOptions): Promise<Connection>
 }

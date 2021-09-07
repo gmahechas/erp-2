@@ -5,9 +5,11 @@ import {
 	ISearchCountry,
 	ICountry
 } from '@gmahechas/erp-common';
+import { Country } from './country.mongo';
 
 export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> => {
-	return { id: '1', ...data };
+	const country = new Country(data);
+	return await country.save();
 };
 
 export const updateOneCountry = async (data: IUpdateCountry): Promise<ICountry> => {
