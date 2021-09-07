@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.7 (2021-09-07)</small>
+
+* feat: mongo connection ([18c703b](https://github.com/gmahechas/erp/commit/18c703b))
+* refactor: mongo connection ([fdff1b4](https://github.com/gmahechas/erp/commit/fdff1b4))
+* refactor: serverSelectionTimeoutMS on lambda ([070f56a](https://github.com/gmahechas/erp/commit/070f56a))
+
+
+
+
+
 ## <small>0.0.6 (2021-09-06)</small>
 
 * feat: dot env and ms utils ([e6acc59](https://github.com/gmahechas/erp/commit/e6acc59))

@@ -1,6 +1,6 @@
 {
     "name": "@gmahechas/erp-common-expressjs",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "erp-common-expressjs",
     "author": "gmahechas",
     "private": false,
@@ -11,8 +11,8 @@
         "build": "rimraf dist && tsc"
     },
     "devDependencies": {
-        "@gmahechas/erp-common": "^0.0.6",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.6",
+        "@gmahechas/erp-common": "^0.0.7",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.7",
         "@types/express": "^4.17.13",
         "@types/node": "^16.7.10",
         "rimraf": "^3.0.2",
