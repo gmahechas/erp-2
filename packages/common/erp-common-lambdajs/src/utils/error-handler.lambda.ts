@@ -7,7 +7,7 @@ export const errorHandlerLambda = (error: any | Error) => {
 	if (error instanceof CustomError) {
 		response = iresponse(error.statusCode, null, error.serializeErrors());
 	} else {
-		response = iresponse(500, null, 'Something went wrong');
+		response = iresponse(500, null, { type: 'unknown: Something went wrong :(' });
 	}
 	return responseLambda(response);
 }

@@ -8,8 +8,8 @@ import {
 import { Country } from './country.mongo';
 
 export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> => {
-	const country = new Country(data);
-	return await country.save();
+		const country = new Country(data);
+		return await country.save();
 };
 
 export const updateOneCountry = async (data: IUpdateCountry): Promise<ICountry> => {

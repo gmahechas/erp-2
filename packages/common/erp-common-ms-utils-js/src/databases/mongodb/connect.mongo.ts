@@ -17,14 +17,14 @@ export const mongodbConnect: IMongodbConnect = async (uri, connectOptions) => {
 			});
 			const mongoConnection = await connection;
 
-			mongoConnection.on('connecting to mongodb', () => console.log('connecting'));
-			mongoConnection.on('mongodb connected', () => console.log('connected'));
+			mongoConnection.on('connecting', () => console.log('connecting to mongodb'));
+			mongoConnection.on('connected', () => console.log('mongodb connected'));
 			//mongoConnection.on('open', () => console.log('open'));
-			mongoConnection.on('disconnecting mongodb', () => console.log('disconnecting'));
-			mongoConnection.on('mongodb disconnected', () => console.log('disconnected'));
-			mongoConnection.on('mongodb connection closed', () => console.log('close'));
-			mongoConnection.on('mongodb connection reconnected', () => console.log('reconnected'));
-			mongoConnection.on('mongo error', () => console.log('error'));
+			mongoConnection.on('disconnecting', () => console.log('disconnecting mongodb'));
+			mongoConnection.on('disconnected', () => console.log('mongodb disconnected'));
+			mongoConnection.on('close', () => console.log('mongodb connection close'));
+			mongoConnection.on('reconnected', () => console.log('mongodb reconnected'));
+			mongoConnection.on('error', () => console.log('mongodb error'));
 			mongoConnection.on('fullsetup', () => console.log('close'));
 			mongoConnection.on('all', () => console.log('close'));
 			mongoConnection.on('reconnectFailed', () => console.log('close'));

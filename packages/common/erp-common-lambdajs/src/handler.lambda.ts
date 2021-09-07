@@ -17,7 +17,6 @@ export const handlerLambda: IHandlerLambda = (routes, connectDatabases, mongodbC
 		const response = iresponse(200, data);
 		return responseLambda(response);
 	} catch (error) {
-		console.log('error', error);
 		return errorHandlerLambda(error);
 	}
 }
