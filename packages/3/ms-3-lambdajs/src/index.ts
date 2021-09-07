@@ -3,4 +3,4 @@ import { handlerLambda } from '@gmahechas/erp-common-lambdajs';
 import env from './config/env';
 import routes from './routes';
 
-export const handler = handlerLambda(routes, connectDatabases, { uri: env.msMongodbUri });
+export const handler = handlerLambda(routes, connectDatabases, { uri: env.msMongodbUri, connectOptions: { serverSelectionTimeoutMS: 5000 } });
