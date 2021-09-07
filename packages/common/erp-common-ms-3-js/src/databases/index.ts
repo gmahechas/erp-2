@@ -1,4 +1,4 @@
-import { mongodb, ConnectDbError, IConnectDatabases, IMongodbConnectArgs } from '@gmahechas/erp-common-ms-utils-js';
+import { mongodbConnect, ConnectDbError, IConnectDatabases, IMongodbConnectArgs } from '@gmahechas/erp-common-ms-utils-js';
 
 export const connectDatabases: IConnectDatabases = async (mongodbConnectArgs) => {
 	await initMongo(mongodbConnectArgs);
@@ -9,7 +9,7 @@ const initMongo = async (mongodbConnectArgs: IMongodbConnectArgs) => {
 	if (!uri) {
 		throw new ConnectDbError();
 	}
-	await mongodb(
+	await mongodbConnect(
 		uri,
 		connectOptions
 	);
