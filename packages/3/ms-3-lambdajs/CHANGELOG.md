@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.8 (2021-09-08)</small>
+
+* refactor: envs ans starupError ([1bf42ff](https://github.com/gmahechas/erp/commit/1bf42ff))
+* feat: added ms-utils to common-lambda ([4ff945b](https://github.com/gmahechas/erp/commit/4ff945b))
+
+
+
+
+
 ## <small>0.0.7 (2021-09-07)</small>
 
 * refactor: serverSelectionTimeoutMS on lambda ([070f56a](https://github.com/gmahechas/erp/commit/070f56a))

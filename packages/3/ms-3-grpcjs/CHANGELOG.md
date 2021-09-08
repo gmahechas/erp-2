@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.8 (2021-09-08)</small>
+
+* refactor: envs ans starupError ([1bf42ff](https://github.com/gmahechas/erp/commit/1bf42ff))
+
+
+
+
+
 ## <small>0.0.7 (2021-09-07)</small>
 
 **Note:** Version bump only for package ms-3-grpcjs

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.8 (2021-09-08)</small>
+
+* fix: createConnection mongo ([e311b4f](https://github.com/gmahechas/erp/commit/e311b4f))
+* refactor: back to mongoose connect ([7421e9b](https://github.com/gmahechas/erp/commit/7421e9b))
+* refactor: change default error ([3665218](https://github.com/gmahechas/erp/commit/3665218))
+* refactor: envs ans starupError ([1bf42ff](https://github.com/gmahechas/erp/commit/1bf42ff))
+
+
+
+
+
 ## <small>0.0.7 (2021-09-07)</small>
 
 * feat: mongo connection ([18c703b](https://github.com/gmahechas/erp/commit/18c703b))
