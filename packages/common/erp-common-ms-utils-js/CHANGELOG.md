@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.9 (2021-09-08)</small>
+
+**Note:** Version bump only for package @gmahechas/erp-common-ms-utils-js
+
+
+
+
+
 ## <small>0.0.8 (2021-09-08)</small>
 
 * fix: createConnection mongo ([e311b4f](https://github.com/gmahechas/erp/commit/e311b4f))
