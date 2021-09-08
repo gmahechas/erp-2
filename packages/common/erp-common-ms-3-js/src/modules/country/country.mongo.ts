@@ -1,7 +1,7 @@
 import { ICountry } from '@gmahechas/erp-common'
-import { Schema, Document, uuidv4, Model, Connection } from '@gmahechas/erp-common-ms-utils-js';
+import { mongoose, uuidv4 } from '@gmahechas/erp-common-ms-utils-js';
 
-const countrySchema = new Schema({
+const countrySchema = new mongoose.Schema({
 	_id: {
 		type: String,
 		default: uuidv4,
@@ -25,6 +25,7 @@ const countrySchema = new Schema({
 });
 
 type CountryDocument = ICountry & Document;
-let Country: Model<CountryDocument>;
-export const registerCountryModel = (connection: Connection) => Country = connection.model('Country', countrySchema, 'countries');
+let Country: mongoose.Model<CountryDocument>;
+Country = mongoose.model<CountryDocument>('Country', countrySchema, 'countries');
+export const registerCountryModel = (connection: mongoose.Connection) => Country = connection.model('Country', countrySchema, 'countries');
 export { Country }

@@ -1,12 +1,16 @@
-import { ConnectOptions, Schema, Document, Model, Connection, Mongoose } from 'mongoose';
+import mongoose from 'mongoose';
 
-export { Schema, Document, Model, Connection };
+export { mongoose };
 
 export interface IMongodbConnectArgs {
 	uri?: string;
-	connectOptions?: ConnectOptions;
+	connectOptions?: mongoose.ConnectOptions;
 }
 
 export interface IMongodbConnect {
-	(uri: string, connectOptions?: ConnectOptions): Promise<Mongoose>
+	(uri: string, connectOptions?: mongoose.ConnectOptions): Promise<mongoose.Mongoose>
+}
+
+export interface IMongodbCreateConnection {
+	(uri: string, connectOptions?: mongoose.ConnectOptions): Promise<mongoose.Connection>
 }
