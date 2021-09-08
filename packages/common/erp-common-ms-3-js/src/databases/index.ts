@@ -10,7 +10,7 @@ const initMongo = async (mongodbConnectArgs: IMongodbConnectArgs) => {
 	if (!uri) {
 		throw new ConnectDbError();
 	}
-	const connection = await mongodbConnect(uri,connectOptions);
+	const connection = await mongodbConnect(uri, connectOptions);
 	for (const register of registerMongoModels) {
 		register(connection)
 	};
