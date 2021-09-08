@@ -1,4 +1,4 @@
-import { ConnectOptions, Schema, Document, Model, Connection } from 'mongoose';
+import { ConnectOptions, Schema, Document, Model, Connection, Mongoose } from 'mongoose';
 
 export { Schema, Document, Model, Connection };
 
@@ -8,5 +8,5 @@ export interface IMongodbConnectArgs {
 }
 
 export interface IMongodbConnect {
-	(uri: string, connectOptions?: ConnectOptions): Promise<Connection>
+	(uri: string, connectOptions?: ConnectOptions): Promise<Mongoose>
 }
