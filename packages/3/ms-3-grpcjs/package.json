@@ -1,6 +1,6 @@
 {
     "name": "ms-3-grpcjs",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "description": "ms-3-grpcjs",
     "author": "gmahechas",
     "private": true,
@@ -10,10 +10,10 @@
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
-        "@gmahechas/erp-common": "^0.0.10",
-        "@gmahechas/erp-common-grpcjs": "^0.0.10",
-        "@gmahechas/erp-common-ms-3-js": "^0.0.10",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.10",
+        "@gmahechas/erp-common": "^0.0.11",
+        "@gmahechas/erp-common-grpcjs": "^0.0.11",
+        "@gmahechas/erp-common-ms-3-js": "^0.0.11",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.11",
         "@grpc/grpc-js": "^1.3.7",
         "@grpc/proto-loader": "^0.6.4",
         "dotenv": "^10.0.0"

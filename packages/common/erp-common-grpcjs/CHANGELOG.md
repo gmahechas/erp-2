@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.11 (2021-09-09)</small>
+
+**Note:** Version bump only for package @gmahechas/erp-common-grpcjs
+
+
+
+
+
 ## <small>0.0.10 (2021-09-09)</small>
 
 * refactor: mongo connection ([2543d4b](https://github.com/gmahechas/erp/commit/2543d4b))

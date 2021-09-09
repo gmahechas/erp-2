@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.11 (2021-09-09)</small>
+
+* chore: pucblish message changed ([ba52f8a](https://github.com/gmahechas/erp/commit/ba52f8a))
+* chore: test versions ([81ec438](https://github.com/gmahechas/erp/commit/81ec438))
+
+
+
+
+
 ## <small>0.0.10 (2021-09-09)</small>
 
 * refactor: mongo connection ([2c5e8c8](https://github.com/gmahechas/erp/commit/2c5e8c8))
