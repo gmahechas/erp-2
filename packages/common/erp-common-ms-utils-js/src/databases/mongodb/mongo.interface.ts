@@ -8,9 +8,5 @@ export interface IMongodbConnectArgs {
 }
 
 export interface IMongodbConnect {
-	(uri: string, connectOptions?: mongoose.ConnectOptions): Promise<mongoose.Mongoose>
-}
-
-export interface IMongodbCreateConnection {
-	(uri: string, connectOptions?: mongoose.ConnectOptions): Promise<mongoose.Connection>
+	(uri: string, connectOptions?: mongoose.ConnectOptions): Promise<mongoose.Mongoose> | Promise<mongoose.Connection>
 }

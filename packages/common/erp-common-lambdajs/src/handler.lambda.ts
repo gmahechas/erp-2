@@ -12,7 +12,9 @@ export const handlerLambda: IHandlerLambda = (routes, connectDatabases, mongodbC
 		const { args, validation, action } = routerLambda(event, routes);
 		const actionParams = actionArgs(args, event);
 		validatorLambda(validation, actionParams);
-		await connectDatabases(mongodbConnectArgs);
+		for (const mongodbConnectArg of mongodbConnectArgs) {
+			await connectDatabases(mongodbConnectArg, 'createConnection');
+		}
 		const data = await action(actionParams);
 		const response = iresponse(200, data);
 		return responseLambda(response);

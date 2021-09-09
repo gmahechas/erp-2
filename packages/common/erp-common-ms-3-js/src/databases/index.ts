@@ -1,24 +1,29 @@
-import { mongodbConnect, mongodbCreateConnection, ConnectDbError, IConnectDatabases, IMongodbConnectArgs, mongoose } from '@gmahechas/erp-common-ms-utils-js';
+import { mongodbConnect, mongodbCreateConnection, ConnectDbError, IConnectDatabases } from '@gmahechas/erp-common-ms-utils-js';
 import { registerMongoModels } from '../databases/register-mongo-models';
 
-export const connectDatabases: IConnectDatabases = async (mongodbConnectArgs) => {
-	await msMongodb(mongodbConnectArgs);
-}
+let connections: string[] = [];
 
-let connection: mongoose.Mongoose;
-
-const msMongodb = async (mongodbConnectArgs: IMongodbConnectArgs) => {
+export const connectDatabases: IConnectDatabases = async (mongodbConnectArgs, mode) => {
 	const { uri, connectOptions } = mongodbConnectArgs;
 	if (!uri) {
 		throw new ConnectDbError();
 	}
-	if (connection == undefined) {
-		console.log('new mongodb connection');
-		connection = await mongodbConnect(uri, connectOptions);
-	}
+	const connection = connections.find(connection => connection === uri);
 
-/* 	const connection = await mongodbCreateConnection(uri, connectOptions);
-	for (const register of registerMongoModels) {
-		register(connection)
-	}; */
+	if (connection == undefined) {
+		switch (mode) {
+			case 'connect':
+				await mongodbConnect(uri, connectOptions);
+				break;
+			case 'createConnection':
+				const newConnection = await mongodbCreateConnection(uri, connectOptions);
+				for (const register of registerMongoModels) {
+					register(newConnection)
+				};
+				break;
+			default:
+				break;
+		}
+		connections.push(uri);
+	}
 }

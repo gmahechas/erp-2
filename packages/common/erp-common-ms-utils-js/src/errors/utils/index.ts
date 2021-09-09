@@ -1,2 +1,2 @@
 export * from './error-type.enum';
-export * from './startup.error';
+export * from './general-handler.error';

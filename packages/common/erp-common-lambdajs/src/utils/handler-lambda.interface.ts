@@ -3,5 +3,5 @@ import { IConnectDatabases, IMongodbConnectArgs } from '@gmahechas/erp-common-ms
 import { IRouteLambda } from '../route.interface';
 
 export interface IHandlerLambda {
-	(routes: IRouteLambda[], connectDatabases: IConnectDatabases, mongodbConnectArgs: IMongodbConnectArgs): (event: APIGatewayProxyEvent, context: Context) => Promise<APIGatewayProxyResult>
+	(routes: IRouteLambda[], connectDatabases: IConnectDatabases, mongodbConnectArgs: IMongodbConnectArgs[]): (event: APIGatewayProxyEvent, context: Context) => Promise<APIGatewayProxyResult>
 }

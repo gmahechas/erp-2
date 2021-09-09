@@ -1,5 +1,7 @@
 import { IMongodbConnectArgs } from './mongodb';
 
+export type mongodbConnectionMode = 'connect' | 'createConnection';
+
 export interface IConnectDatabases {
-	(mongodbConnectArgs: IMongodbConnectArgs): Promise<void>;
+	(mongodbConnectArgs: IMongodbConnectArgs, mode: mongodbConnectionMode): Promise<void>;
 }

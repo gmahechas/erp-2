@@ -1,5 +1,5 @@
 import mongosee from 'mongoose';
-import { IMongodbConnect, IMongodbCreateConnection } from './mongo.interface';
+import { IMongodbConnect } from './mongo.interface';
 
 export const mongodbConnect: IMongodbConnect = (uri, connectOptions) => {
 	const connection = mongosee.connect(uri, connectOptions);
@@ -17,8 +17,7 @@ export const mongodbConnect: IMongodbConnect = (uri, connectOptions) => {
 	return connection;
 }
 
-
-export const mongodbCreateConnection: IMongodbCreateConnection = (uri, connectOptions) => {
+export const mongodbCreateConnection: IMongodbConnect = (uri, connectOptions) => {
 	const connection = mongosee.createConnection(uri, connectOptions);
 	connection.on('connecting', () => console.log('connecting to mongodb'))
 	connection.on('connected', () => console.log('mongodb connected'))
