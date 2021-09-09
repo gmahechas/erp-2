@@ -1,9 +1,10 @@
-import { mongodbConnect, mongodbCreateConnection, ConnectDbError, IConnectDatabases } from '@gmahechas/erp-common-ms-utils-js';
-import { registerMongoModels } from '../databases/register-mongo-models';
+import { mongodbConnect, mongodbCreateConnection } from './connections.mongo';
+import { ConnectDbError } from '../../errors/connect-db.error';
+import { IConnectToMongo } from '../connect-databases.interface';
 
 let connections: string[] = [];
 
-export const connectDatabases: IConnectDatabases = async (mongodbConnectArgs, mode) => {
+export const connectToMongo: IConnectToMongo = async (mongodbConnectArgs, mode, registerModelFunc = []) => {
 	const { uri, connectOptions } = mongodbConnectArgs;
 	if (!uri) {
 		throw new ConnectDbError();
@@ -17,7 +18,7 @@ export const connectDatabases: IConnectDatabases = async (mongodbConnectArgs, mo
 				break;
 			case 'createConnection':
 				const newConnection = await mongodbCreateConnection(uri, connectOptions);
-				for (const register of registerMongoModels) {
+				for (const register of registerModelFunc) {
 					register(newConnection)
 				};
 				break;

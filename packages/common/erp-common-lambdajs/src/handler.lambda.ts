@@ -7,13 +7,13 @@ import { responseLambda } from './utils/response.lambda';
 import { errorHandlerLambda } from './utils/error-handler.lambda';
 import { IHandlerLambda } from './utils/handler-lambda.interface';
 
-export const handlerLambda: IHandlerLambda = (routes, connectDatabases, mongodbConnectArgs) => async (event, context) => {
+export const handlerLambda: IHandlerLambda = (routes, connectToMongo, mongodbConnectArgs) => async (event, context) => {
 	try {
 		const { args, validation, action } = routerLambda(event, routes);
 		const actionParams = actionArgs(args, event);
 		validatorLambda(validation, actionParams);
-		for (const mongodbConnectArg of mongodbConnectArgs) {
-			await connectDatabases(mongodbConnectArg, 'createConnection');
+		for (const { mongodbConnectArg, registerModelFunc } of mongodbConnectArgs) {
+			await connectToMongo(mongodbConnectArg, 'createConnection', registerModelFunc);
 		}
 		const data = await action(actionParams);
 		const response = iresponse(200, data);
