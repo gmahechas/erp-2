@@ -1,2 +1,2 @@
 export * from './mongodb';
-export * from './connect-databases.interface';
+export * from './connect-to-mongo.interface';
