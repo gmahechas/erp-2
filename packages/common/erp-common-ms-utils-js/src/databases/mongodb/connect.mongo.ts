@@ -1,6 +1,6 @@
 import { mongodbConnect, mongodbCreateConnection } from './connections.mongo';
 import { ConnectDbError } from '../../errors/connect-db.error';
-import { IConnectToMongo } from '../connect-databases.interface';
+import { IConnectToMongo } from './mongo.interface';
 
 let connections: string[] = [];
 
