@@ -5,9 +5,11 @@ import {
 	ISearchEstate,
 	IEstate
 } from '@gmahechas/erp-common';
+import { Estate } from './estate.mongo';
 
 export const createOneEstate = async (data: ICreateEstate): Promise<IEstate> => {
-	return { id: '1', ...data };
+	const estate = new Estate(data);
+	return await estate.save();
 };
 
 export const updateOneEstate = async (data: IUpdateEstate): Promise<IEstate> => {

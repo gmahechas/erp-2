@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema, iresponse } from '@gmahechas/erp-common';
 import { validatorMiddleware, asyncHandler } from '@gmahechas/erp-common-expressjs';
-import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry } from '@gmahechas/erp-common-ms-3-js';
+import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry, createOneEstate } from '@gmahechas/erp-common-ms-3-js';
 
 const router = express.Router();
 
