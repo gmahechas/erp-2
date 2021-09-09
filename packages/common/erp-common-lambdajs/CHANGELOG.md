@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.10 (2021-09-09)</small>
+
+* refactor: mongo connection ([2c5e8c8](https://github.com/gmahechas/erp/commit/2c5e8c8))
+* refactor: mongo connection ([2543d4b](https://github.com/gmahechas/erp/commit/2543d4b))
+
+
+
+
+
 ## <small>0.0.9 (2021-09-08)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common-lambdajs

@@ -1,6 +1,6 @@
 {
     "name": "ms-0-graphqljs",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "ms-0-graphqljs",
     "author": "gmahechas",
     "private": true,
@@ -10,7 +10,7 @@
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
-        "@gmahechas/erp-common": "^0.0.9",
+        "@gmahechas/erp-common": "^0.0.10",
         "apollo-server-core": "^3.3.0",
         "apollo-server-express": "^3.3.0",
         "express": "^4.17.1",

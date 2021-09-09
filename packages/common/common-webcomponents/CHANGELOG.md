@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.10 (2021-09-09)</small>
+
+**Note:** Version bump only for package @gmahechas/common-webcomponents
+
+
+
+
+
 ## <small>0.0.9 (2021-09-08)</small>
 
 **Note:** Version bump only for package @gmahechas/common-webcomponents
