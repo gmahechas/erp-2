@@ -18,7 +18,7 @@ const Country: FC<IProps> = ({ country, searchMany }) => {
     };
 
     const handleSearchMany = () => {
-        searchMany('hello');
+        searchMany('search many');
     };
 
     return (
