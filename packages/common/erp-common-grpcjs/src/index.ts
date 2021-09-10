@@ -1,3 +1,4 @@
+export * from './grpc';
 export * from './utils';
 
 export * as grpcType1 from './modules/1';
