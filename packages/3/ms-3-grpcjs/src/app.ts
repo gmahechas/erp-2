@@ -1,8 +1,8 @@
 import path from 'path';
 import { Server, loadPackageDefinition } from '@grpc/grpc-js';
 import { loadSync } from '@grpc/proto-loader';
-import dotenv from 'dotenv';
 
+import { dotenv } from '@gmahechas/erp-common-ms-utils-js';
 import { grpcType3 } from '@gmahechas/erp-common-grpcjs';
 import { countryService } from './services/country.service';
 import { estateService } from './services/estate.service';

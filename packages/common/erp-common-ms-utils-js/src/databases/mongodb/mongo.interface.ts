@@ -17,5 +17,3 @@ export interface IConnectToMongo {
 		registerModelFunc?: Array<(connection: mongoose.Connection | mongoose.Mongoose) => void>
 	): Promise<void>;
 }
-
-export { mongoose };
