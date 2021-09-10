@@ -1,9 +1,5 @@
-import express from 'express';
-import 'express-async-errors';
-import { json } from 'body-parser';
 import { dotenv } from '@gmahechas/erp-common-ms-utils-js';
-
-import { notFoundMiddleware, errorMiddleware } from '@gmahechas/erp-common-expressjs';
+import { express, json, notFoundMiddleware, errorMiddleware } from '@gmahechas/erp-common-expressjs';
 import routes from './routes';
 
 dotenv.config();

@@ -1,4 +1,4 @@
-import express from 'express';
+import { express } from '@gmahechas/erp-common-expressjs';
 import countryRouter from './country.routes';
 import estateRouter from './estate.routes';
 
