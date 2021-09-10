@@ -10,7 +10,6 @@ export const connectToMongo: IConnectToMongo = async (mongodbConnectArgs, mode, 
 		throw new ConnectDbError();
 	}
 	const connection = connections.find(connection => connection === uri);
-
 	if (connection == undefined) {
 		switch (mode) {
 			case 'connect':

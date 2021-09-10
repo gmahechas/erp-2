@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 
-export { mongoose };
-
-export interface IMongodbConnectArgs {
+type mongodbConnectionMode = 'connect' | 'createConnection';
+interface IMongodbConnectArgs {
 	uri?: string;
 	connectOptions?: mongoose.ConnectOptions;
 }
@@ -11,8 +10,6 @@ export interface IMongodbConnect {
 	(uri: string, connectOptions?: mongoose.ConnectOptions): Promise<mongoose.Mongoose> | Promise<mongoose.Connection>
 }
 
-export type mongodbConnectionMode = 'connect' | 'createConnection';
-
 export interface IConnectToMongo {
 	(
 		mongodbConnectArgs: IMongodbConnectArgs,
@@ -20,3 +17,5 @@ export interface IConnectToMongo {
 		registerModelFunc?: Array<(connection: mongoose.Connection | mongoose.Mongoose) => void>
 	): Promise<void>;
 }
+
+export { mongoose };
