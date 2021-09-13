@@ -10,45 +10,32 @@ export const typeDefs = gql`
 	}
 
   type Query {
-  	estates(id: String): [Estate]
+  	searchOneEstate(id: String): Estate
 	}
 
 	type Mutation {
-  	addEstate(id: String, estateName: String, estateCode: String, countryId: String): Estate
+  	createOneEstate(id: String, estateName: String, estateCode: String, countryId: String): Estate
 	}
 `;
 
 export const resolvers = {
 	Query: {
-		estates: () => {
-			return [
-				{
-					id: '1',
-					estateName: 'Tolima',
-					estateCode: 'TOL',
-					countryId: '1',
-					country: {
-						id: '1',
-						countryName: 'Colombia',
-						countryCode: 'CO'
-					}
-				},
-				{
+		searchOneEstate: () => {
+			return ({
+				id: '2',
+				estateName: 'Quintanarro',
+				estateCode: 'QUIN',
+				countryId: '2',
+				country: {
 					id: '2',
-					estateName: 'Quintanarro',
-					estateCode: 'QUIN',
-					countryId: '2',
-					country: {
-						id: '2',
-						countryName: 'Mexico',
-						countryCode: 'MX'
-					}
+					countryName: 'Mexico',
+					countryCode: 'MX'
 				}
-			];
+			});
 		}
 	},
 	Mutation: {
-		addEstate: (_: any, args: any) => {
+		createOneEstate: (_: any, args: any) => {
 			const { id, estateName, estateCode, countryId } = args;
 			return { id, estateName, estateCode, countryId };
 		}

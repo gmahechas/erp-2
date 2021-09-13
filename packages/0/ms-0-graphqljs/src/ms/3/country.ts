@@ -8,35 +8,27 @@ export const typeDefs = gql`
 	}
 
   type Query {
-  	countries(id: String): [Country]
+  	searchOneCountry(id: String): Country
 	}
 
 	type Mutation {
-  	addCountry(id: String, countryName: String, countryCode: String): Country
+  	createOneCountry(id: String, countryName: String, countryCode: String): Country
 	}
 `;
 
 export const resolvers = {
 	Query: {
-		countries: (_: any, args: any) => {
-			return [
-				{
-					id: '1',
-					countryName: 'Colombia',
-					countryCode: 'CO'
-				},
-				{
-					id: '2',
-					countryName: 'Mexico',
-					countryCode: 'MX'
-				}
-			];
+		searchOneCountry: (_: any, args: any) => {
+			return ({
+				id: '1',
+				countryName: 'Colombia',
+				countryCode: 'CO'
+			});
 		}
 	},
 	Mutation: {
-		addCountry: (_: any, args: any) => {
+		createOneCountry: (_: any, args: any) => {
 			const { id, countryName, countryCode } = args;
-			console.log(id, countryName, countryCode)
 			return { id, countryName, countryCode };
 		}
 	}
