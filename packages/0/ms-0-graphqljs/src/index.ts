@@ -1,8 +1,9 @@
 import bootstrap from './app';
+import env from './config/env';
 
 const start = async () => {
 	const app = await bootstrap();
-	app.listen(50000, () => console.log('runnig on port 50000'));
+	app.listen(env.msPort, () => console.log(`runnig on port ${env.msPort}`));
 };
 start();
 
