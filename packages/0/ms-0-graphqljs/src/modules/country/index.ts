@@ -1,5 +1,5 @@
-import { gql } from 'apollo-server-core';
-import { ICountry, IEstate } from '@gmahechas/erp-common';
+import { gql } from '@gmahechas/erp-common-graphqljs';
+import { ICountry } from '@gmahechas/erp-common';
 
 export const typeDefs = gql`
 	type Country {

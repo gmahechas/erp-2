@@ -1,4 +1,4 @@
-import { ApolloServer } from 'apollo-server-express';
+import { ApolloServer } from '@gmahechas/erp-common-graphqljs';
 import { typeDefs, resolvers } from './modules/country';
 
 export default async () => {
