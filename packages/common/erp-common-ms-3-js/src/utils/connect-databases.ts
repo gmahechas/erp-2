@@ -5,5 +5,5 @@ const env = import('../config/env');
 export const connectDatabases = async () => {
 	const { msPort, msMongodbUri, msQueryMongodbUri } = (await env).default;
 	await connectToMongo({ uri: msMongodbUri }, 'createConnection', registerMsMongoModels);
-	await connectToMongo({ uri: msQueryMongodbUri }, 'createConnection', registerMsQueryMongoModels);
+	//await connectToMongo({ uri: msQueryMongodbUri }, 'createConnection', registerMsQueryMongoModels);
 }

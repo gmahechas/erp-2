@@ -1,4 +1,9 @@
+import util from 'util';
 import { gql } from '@gmahechas/erp-common-graphqljs';
+import { ICreateCountry } from '@gmahechas/erp-common';
+import { countryClient } from '../../grpc-client';
+
+const createOneCountry = util.promisify(countryClient.createOne).bind(countryClient);
 
 export const typeDefs = gql`
 	type Country {
@@ -6,19 +11,17 @@ export const typeDefs = gql`
   	countryName: String
   	countryCode: String
 	}
-
   type Query {
-  	searchOneCountry(id: String): Country
+  	searchOneCountry: Country
 	}
-
 	type Mutation {
-  	createOneCountry(id: String, countryName: String, countryCode: String): Country
+  	createOneCountry(countryName: String, countryCode: String): Country
 	}
 `;
 
 export const resolvers = {
 	Query: {
-		searchOneCountry: (_: any, args: any) => {
+		searchOneCountry: () => {
 			return ({
 				id: '1',
 				countryName: 'Colombia',
@@ -27,9 +30,13 @@ export const resolvers = {
 		}
 	},
 	Mutation: {
-		createOneCountry: (_: any, args: any) => {
-			const { id, countryName, countryCode } = args;
-			return { id, countryName, countryCode };
+		createOneCountry: async (parent: any, args: ICreateCountry) => {
+			try {
+				const result = await createOneCountry(args);
+				return result?.data;
+			} catch (error) {
+				throw error;
+			}
 		}
 	}
 };

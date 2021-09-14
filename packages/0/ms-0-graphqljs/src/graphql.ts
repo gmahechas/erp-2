@@ -4,7 +4,8 @@ import { typeDefs, resolvers } from './ms';
 export default async () => {
 	const graphql = new ApolloServer({
 		typeDefs,
-		resolvers
+		resolvers,
+		debug: false
 	});
 	await graphql.start();
 	return graphql;
