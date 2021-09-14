@@ -1,11 +1,11 @@
 import { iresponse } from '@gmahechas/erp-common'
 
-import { routerLambda } from './utils/router.lambda';
-import { actionArgs } from './utils/action-args';
-import { validatorLambda } from './utils/validator.lambda';
-import { responseLambda } from './utils/response.lambda';
-import { errorHandlerLambda } from './utils/error-handler.lambda';
-import { IHandlerLambda } from './utils/handler-lambda.interface';
+import { routerLambda } from './helpers/router.lambda';
+import { actionArgs } from './helpers/action-args';
+import { validatorLambda } from './helpers/validator.lambda';
+import { responseLambda } from './helpers/response.lambda';
+import { errorHandlerLambda } from './helpers/error-handler.lambda';
+import { IHandlerLambda } from './helpers/handler-lambda.interface';
 
 export const handlerLambda: IHandlerLambda = (routes, connectDatabases) => async (event, context) => {
 	try {
