@@ -1,7 +1,8 @@
-import Ajv, { AnySchemaObject } from 'ajv';
+import ajv, { AnySchemaObject } from 'ajv';
 import addFormats from 'ajv-formats';
 
-const ajv = new Ajv({ allErrors: true });
-addFormats(ajv);
+const ajvObj = new ajv({ allErrors: true });
+addFormats(ajvObj);
 
-export const validate = (schema: AnySchemaObject) => ajv.compile(schema);
+export { ajv };
+export const validate = (schema: AnySchemaObject) => ajvObj.compile(schema);
