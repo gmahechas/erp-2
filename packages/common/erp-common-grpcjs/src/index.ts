@@ -1,4 +1,4 @@
-export * from './grpc';
+export * from './helpers';
 export * from './utils';
 
 export * as grpcType1 from './ms/1';
