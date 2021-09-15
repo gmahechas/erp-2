@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.21 (2021-09-15)</small>
+
+* refactor: move database connection to ms logic ([6fca9b2](https://github.com/gmahechas/erp/commit/6fca9b2))
+* refactor: move dot env to ms-utils ([be56d59](https://github.com/gmahechas/erp/commit/be56d59))
+* refactor: remove @types/node from all packages ([2eb23fb](https://github.com/gmahechas/erp/commit/2eb23fb))
+* refactor: remove iconnec databases file ([bfbffa5](https://github.com/gmahechas/erp/commit/bfbffa5))
+* chore: rename iconnnect databases file ([3384ca0](https://github.com/gmahechas/erp/commit/3384ca0))
+
+
+
+
+
 ## <small>0.0.20 (2021-09-09)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common-ms-utils-js

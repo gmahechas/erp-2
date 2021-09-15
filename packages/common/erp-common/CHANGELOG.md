@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.21 (2021-09-15)</small>
+
+* refactor: erp-common ([79a1ff7](https://github.com/gmahechas/erp/commit/79a1ff7))
+* refactor: remove @types/node ([30271e8](https://github.com/gmahechas/erp/commit/30271e8))
+* refactor: remove @types/node from all packages ([2eb23fb](https://github.com/gmahechas/erp/commit/2eb23fb))
+* chore: update @types/node erp-common ([88cac08](https://github.com/gmahechas/erp/commit/88cac08))
+
+
+
+
+
 ## <small>0.0.20 (2021-09-09)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common

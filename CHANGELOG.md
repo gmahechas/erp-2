@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.21 (2021-09-15)</small>
+
+* refactor: common-expressjs ([2e647e1](https://github.com/gmahechas/erp/commit/2e647e1))
+* refactor: common-grpc ([9dac8ad](https://github.com/gmahechas/erp/commit/9dac8ad))
+* refactor: erp-common ([79a1ff7](https://github.com/gmahechas/erp/commit/79a1ff7))
+* refactor: match name resolvers convetion ([1a63154](https://github.com/gmahechas/erp/commit/1a63154))
+* refactor: move database connection to ms logic ([6fca9b2](https://github.com/gmahechas/erp/commit/6fca9b2))
+* refactor: move dot env to ms-utils ([be56d59](https://github.com/gmahechas/erp/commit/be56d59))
+* refactor: move express to common-express ([251fb62](https://github.com/gmahechas/erp/commit/251fb62))
+* refactor: move grpc pack's to comoon-grpc ([7b0500b](https://github.com/gmahechas/erp/commit/7b0500b))
+* refactor: ms model - ms query model registrations separated ([cee512b](https://github.com/gmahechas/erp/commit/cee512b))
+* refactor: refactor utils/helpers ([45c3c12](https://github.com/gmahechas/erp/commit/45c3c12))
+* refactor: remove @types/node ([30271e8](https://github.com/gmahechas/erp/commit/30271e8))
+* refactor: remove @types/node ([ab5303e](https://github.com/gmahechas/erp/commit/ab5303e))
+* refactor: remove @types/node from all packages ([2eb23fb](https://github.com/gmahechas/erp/commit/2eb23fb))
+* refactor: remove iconnec databases file ([bfbffa5](https://github.com/gmahechas/erp/commit/bfbffa5))
+* refactor: rename folder to "ms" ([083130f](https://github.com/gmahechas/erp/commit/083130f))
+* refactor: separate country and estate resolvers ([c71da0a](https://github.com/gmahechas/erp/commit/c71da0a))
+* feat: consume grpc endpoint from graphql ([96a125a](https://github.com/gmahechas/erp/commit/96a125a))
+* feat: dotenv in ms-0-graphql ([f2e1e67](https://github.com/gmahechas/erp/commit/f2e1e67))
+* feat: move graphql dependecies to common ([05ae656](https://github.com/gmahechas/erp/commit/05ae656))
+* chore: rename iconnnect databases file ([3384ca0](https://github.com/gmahechas/erp/commit/3384ca0))
+* chore: update @types/node erp-common ([88cac08](https://github.com/gmahechas/erp/commit/88cac08))
+
+
+
+
+
 ## <small>0.0.20 (2021-09-09)</small>
 
 * chore: changes ([a14a601](https://github.com/gmahechas/erp/commit/a14a601))

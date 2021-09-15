@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.21 (2021-09-15)</small>
+
+* refactor: common-grpc ([9dac8ad](https://github.com/gmahechas/erp/commit/9dac8ad))
+* refactor: move grpc pack's to comoon-grpc ([7b0500b](https://github.com/gmahechas/erp/commit/7b0500b))
+* refactor: remove @types/node ([ab5303e](https://github.com/gmahechas/erp/commit/ab5303e))
+* refactor: rename folder to "ms" ([083130f](https://github.com/gmahechas/erp/commit/083130f))
+* feat: consume grpc endpoint from graphql ([96a125a](https://github.com/gmahechas/erp/commit/96a125a))
+
+
+
+
+
 ## <small>0.0.20 (2021-09-09)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common-grpcjs

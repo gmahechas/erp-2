@@ -1,6 +1,6 @@
 {
     "name": "ms-3-expressjs",
-    "version": "0.0.20",
+    "version": "0.0.21",
     "description": "ms-3-expressjs",
     "author": "gmahechas",
     "private": true,
@@ -10,10 +10,10 @@
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
-        "@gmahechas/erp-common": "^0.0.20",
-        "@gmahechas/erp-common-expressjs": "^0.0.20",
-        "@gmahechas/erp-common-ms-3-js": "^0.0.20",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.20"
+        "@gmahechas/erp-common": "^0.0.21",
+        "@gmahechas/erp-common-expressjs": "^0.0.21",
+        "@gmahechas/erp-common-ms-3-js": "^0.0.21",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.21"
     },
     "devDependencies": {
         "rimraf": "^3.0.2",

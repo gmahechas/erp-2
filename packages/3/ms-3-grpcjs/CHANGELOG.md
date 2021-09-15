@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.21 (2021-09-15)</small>
+
+* refactor: move database connection to ms logic ([6fca9b2](https://github.com/gmahechas/erp/commit/6fca9b2))
+* refactor: move dot env to ms-utils ([be56d59](https://github.com/gmahechas/erp/commit/be56d59))
+* refactor: move grpc pack's to comoon-grpc ([7b0500b](https://github.com/gmahechas/erp/commit/7b0500b))
+* refactor: ms model - ms query model registrations separated ([cee512b](https://github.com/gmahechas/erp/commit/cee512b))
+* refactor: remove @types/node ([ab5303e](https://github.com/gmahechas/erp/commit/ab5303e))
+
+
+
+
+
 ## <small>0.0.20 (2021-09-09)</small>
 
 **Note:** Version bump only for package ms-3-grpcjs

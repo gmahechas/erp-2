@@ -1,6 +1,6 @@
 {
     "name": "@gmahechas/erp-common-grpcjs",
-    "version": "0.0.20",
+    "version": "0.0.21",
     "description": "erp-common-grpcjs",
     "author": "gmahechas",
     "private": false,
@@ -16,8 +16,8 @@
         "@grpc/proto-loader": "^0.6.4"
     },
     "devDependencies": {
-        "@gmahechas/erp-common": "^0.0.20",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.20",
+        "@gmahechas/erp-common": "^0.0.21",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.21",
         "rimraf": "^3.0.2",
         "typescript": "^4.3.5"
     },

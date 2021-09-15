@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.21 (2021-09-15)</small>
+
+* refactor: move database connection to ms logic ([6fca9b2](https://github.com/gmahechas/erp/commit/6fca9b2))
+* refactor: refactor utils/helpers ([45c3c12](https://github.com/gmahechas/erp/commit/45c3c12))
+* refactor: remove @types/node ([ab5303e](https://github.com/gmahechas/erp/commit/ab5303e))
+
+
+
+
+
 ## <small>0.0.20 (2021-09-09)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common-lambdajs

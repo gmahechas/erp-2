@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.21 (2021-09-15)</small>
+
+* refactor: common-expressjs ([2e647e1](https://github.com/gmahechas/erp/commit/2e647e1))
+* refactor: move express to common-express ([251fb62](https://github.com/gmahechas/erp/commit/251fb62))
+* refactor: remove @types/node ([ab5303e](https://github.com/gmahechas/erp/commit/ab5303e))
+
+
+
+
+
 ## <small>0.0.20 (2021-09-09)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common-expressjs
