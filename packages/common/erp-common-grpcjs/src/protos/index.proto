@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import public "1/index.proto";
+import public "3/index.proto";
+import public "4/index.proto";
+import public "5/index.proto";
+import public "6/index.proto";

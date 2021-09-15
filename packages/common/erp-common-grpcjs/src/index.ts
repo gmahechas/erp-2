@@ -1,27 +1,19 @@
 export * from './helpers';
 export * from './utils';
 
-export * as grpcType1 from './ms/1';
-export * as authGrpcService from './ms/1/auth/AuthService';
-export * as userGrpcService from './ms/1/user/UserService';
-
-export * as grpcType3 from './ms/3';
-export * as addressGrpcService from './ms/3/address/AddressService';
-export * as cityGrpcService from './ms/3/city/CityService';
-export * as countryGrpcService from './ms/3/country/CountryService';
-export * as estateGrpcService from './ms/3/estate/EstateService';
-
-export * as grpcType4 from './ms/4';
-export * as companyGrpcService from './ms/4/company/CompanyService';
-export * as officeGrpcService from './ms/4/office/OfficeService';
-
-export * as grpcType5 from './ms/5';
-export * as personGrpcService from './ms/5/person/PersonService';
-export * as typeIdentificationGrpcService from './ms/5/type_identification/TypeIdentificationService';
-export * as typePesonGrpcService from './ms/5/type_person/TypePersonService';
-
-export * as grpcType6 from './ms/6';
-export * as menuGrpcService from './ms/6/menu/MenuService';
-export * as profileGrpcService from './ms/6/profile/ProfileService';
-export * as profileMenuGrpcService from './ms/6/profile_menu/ProfileMenuService';
-export * as userProfileGrpcService from './ms/6/user_profile/UserProfileService';
+export * as grpcType from './ms';
+export * as authGrpcService from './ms/auth/AuthService';
+export * as userGrpcService from './ms/user/UserService';
+export * as addressGrpcService from './ms/address/AddressService';
+export * as cityGrpcService from './ms/city/CityService';
+export * as countryGrpcService from './ms/country/CountryService';
+export * as estateGrpcService from './ms/estate/EstateService';
+export * as companyGrpcService from './ms/company/CompanyService';
+export * as officeGrpcService from './ms/office/OfficeService';
+export * as personGrpcService from './ms/person/PersonService';
+export * as typeIdentificationGrpcService from './ms/type_identification/TypeIdentificationService';
+export * as typePesonGrpcService from './ms/type_person/TypePersonService';
+export * as menuGrpcService from './ms/menu/MenuService';
+export * as profileGrpcService from './ms/profile/ProfileService';
+export * as profileMenuGrpcService from './ms/profile_menu/ProfileMenuService';
+export * as userProfileGrpcService from './ms/user_profile/UserProfileService';

@@ -1,9 +1,6 @@
-import util from 'util';
-import { gql } from '@gmahechas/erp-common-graphqljs';
 import { ICreateCountry } from '@gmahechas/erp-common';
-import { countryClient } from '../../grpc-client';
-
-const createOneCountry = util.promisify(countryClient.createOne).bind(countryClient);
+import { gql } from '@gmahechas/erp-common-graphqljs';
+import { grpcClients3 } from '@gmahechas/erp-common-grpcjs';
 
 export const typeDefs = gql`
 	type Country {
@@ -32,7 +29,7 @@ export const resolvers = {
 	Mutation: {
 		createOneCountry: async (parent: any, args: ICreateCountry) => {
 			try {
-				const result = await createOneCountry(args);
+				const result = await grpcClients3.countryClientAsync.createOne(args);
 				return result?.data;
 			} catch (error) {
 				throw error;
