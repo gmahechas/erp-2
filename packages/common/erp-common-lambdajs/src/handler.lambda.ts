@@ -1,4 +1,5 @@
 import { iresponse } from '@gmahechas/erp-common';
+import { initEnv } from '@gmahechas/erp-common-ms-utils-js';
 
 import { routerLambda } from './helpers/router.lambda';
 import { actionArgs } from './helpers/action-args';
@@ -9,6 +10,7 @@ import { IHandlerLambda } from './helpers/handler-lambda.interface';
 
 export const handlerLambda: IHandlerLambda = (routes, connectDatabases) => async (event, context) => {
 	try {
+		await initEnv(false);
 		const { args, validation, action } = routerLambda(event, routes);
 		const actionParams = actionArgs(args, event);
 		validatorLambda(validation, actionParams);

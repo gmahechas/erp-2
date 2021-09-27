@@ -6,8 +6,10 @@ import { paths } from './paths';
 
 export let env: IConfig;
 
-export const initEnv = async () => {
-	dotenv.config();
+export const initEnv = async (useDotEnv = true) => {
+	if(useDotEnv) {
+		dotenv.config();
+	}
 	const environment = process.env.ENVIRONMENT;
 	if (!environment) {
 		throw new ConfigError();
@@ -17,18 +19,6 @@ export const initEnv = async () => {
 		throw new ConfigError();
 	}
 
-	const { config } = await import(file);
-	env = config;
-}
-
-export const initEnvOutside = async (environment: string | undefined) => {
-	if (!environment) {
-		throw new ConfigError();
-	}
-	const file = paths.appEnvironments + '/' + environment + '.ts';
-	if (!existsSync(file)) {
-		throw new ConfigError();
-	}
 	const { config } = await import(file);
 	env = config;
 }
