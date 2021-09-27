@@ -1,6 +1,6 @@
 {
     "name": "@gmahechas/erp-common-lambdajs",
-    "version": "0.0.21",
+    "version": "0.0.22",
     "description": "erp-common",
     "author": "gmahechas",
     "private": false,
@@ -14,8 +14,8 @@
         "path-to-regexp": "^6.2.0"
     },
     "devDependencies": {
-        "@gmahechas/erp-common": "^0.0.21",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.21",
+        "@gmahechas/erp-common": "^0.0.22",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.22",
         "@types/aws-lambda": "^8.10.83",
         "@types/node": "^16.9.1",
         "rimraf": "^3.0.2",

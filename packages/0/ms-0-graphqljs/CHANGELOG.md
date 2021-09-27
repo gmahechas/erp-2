@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.22 (2021-09-27)</small>
+
+* feat: install @types/node in all ms packages ([3763e26](https://github.com/gmahechas/erp/commit/3763e26))
+* feat: promisify gprcClients ([bc2082d](https://github.com/gmahechas/erp/commit/bc2082d))
+
+
+
+
+
 ## <small>0.0.21 (2021-09-15)</small>
 
 * feat: consume grpc endpoint from graphql ([96a125a](https://github.com/gmahechas/erp/commit/96a125a))

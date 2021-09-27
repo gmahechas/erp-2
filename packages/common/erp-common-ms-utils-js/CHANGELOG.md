@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.22 (2021-09-27)</small>
+
+* feat: environments in lambda ([69348e2](https://github.com/gmahechas/erp/commit/69348e2))
+* feat: install @types/node in all ms packages ([3763e26](https://github.com/gmahechas/erp/commit/3763e26))
+* feat: setup environments ([167a3c1](https://github.com/gmahechas/erp/commit/167a3c1))
+
+
+
+
+
 ## <small>0.0.21 (2021-09-15)</small>
 
 * refactor: move database connection to ms logic ([6fca9b2](https://github.com/gmahechas/erp/commit/6fca9b2))
