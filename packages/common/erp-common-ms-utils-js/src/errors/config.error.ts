@@ -13,7 +13,7 @@ export class ConfigError extends CustomError {
 
 	serializeErrors() {
 		return {
-			type: TypeErrorMessage.NOT_FOUND,
+			type: TypeErrorMessage.CONFIG,
 		};
 	}
 }
