@@ -1,4 +1,4 @@
-import { iresponse } from '@gmahechas/erp-common'
+import { iresponse } from '@gmahechas/erp-common';
 
 import { routerLambda } from './helpers/router.lambda';
 import { actionArgs } from './helpers/action-args';

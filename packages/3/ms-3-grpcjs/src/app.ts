@@ -1,11 +1,8 @@
 import path from 'path';
 
-import { dotenv } from '@gmahechas/erp-common-ms-utils-js';
 import { grpc, protoLoader, grpcType } from '@gmahechas/erp-common-grpcjs';
 import { countryService } from './services/country.service';
 import { estateService } from './services/estate.service';
-
-dotenv.config();
 
 const app = new grpc.Server();
 const packageDefinition = protoLoader.loadSync(path.resolve(__dirname, '../node_modules/@gmahechas/erp-common-grpcjs/src/protos/3/index.proto'));
