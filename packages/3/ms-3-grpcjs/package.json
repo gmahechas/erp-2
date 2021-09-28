@@ -6,7 +6,8 @@
     "private": true,
     "license": "UNLICENSED",
     "scripts": {
-        "start": "ts-node-dev --poll src/index",
+        "start": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
+        "start:prod": "node dist/index.js",
         "build": "rimraf dist && tsc"
     },
     "dependencies": {

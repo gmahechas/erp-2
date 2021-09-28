@@ -2,8 +2,5 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 const appDirectory = fs.realpathSync(process.cwd());
-const resolveApp = (relativePath: string) => path.resolve(appDirectory, relativePath);
-
-export const paths = ({
-	appEnvironments: resolveApp('src/environments'),
-});
+export const resolveApp = (relativePath: string) => path.resolve(appDirectory, relativePath);
+export const checkExistsFile = (file: string) => fs.existsSync(file);

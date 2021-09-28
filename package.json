@@ -8,6 +8,7 @@
         "lerna": "lerna",
         "commit": "git-cz",
         "start": "lerna run start --no-prefix --stream",
+        "start:prod": "lerna run start:prod --no-prefix --stream",
         "build": "lerna run build --stream",
         "build:wc": "lerna run build --scope @gmahechas/common-webcomponents && lerna run build --scope @gmahechas/common-webcomponents-react"
     },
