@@ -13,7 +13,7 @@ export const connectToMongo: IConnectToMongo = async (mongodbConnectArgs, mode, 
 	if (connection == undefined) {
 		switch (mode) {
 			case 'connect':
-				await mongodbConnect(uri, connectOptions);
+				const newConnection2 = await mongodbConnect(uri, connectOptions);
 				break;
 			case 'createConnection':
 				const newConnection = await mongodbCreateConnection(uri, connectOptions);

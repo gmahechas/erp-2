@@ -31,5 +31,5 @@ const schema = new mongoose.Schema({
 type EstateDocument = IEstate & Document;
 let Estate: mongoose.Model<EstateDocument>;
 Estate = mongoose.model<EstateDocument>('Estate', schema, 'estates');
-export const registerEstateModel = (connection: mongoose.Connection | mongoose.Mongoose) => Estate = connection.model('Estate', schema, 'estates');
+export const registerEstateModel = (connection: mongoose.Connection) => Estate = connection.model('Estate', schema, 'estates');
 export { Estate };

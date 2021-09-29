@@ -7,13 +7,13 @@ interface IMongodbConnectArgs {
 }
 
 export interface IMongodbConnect {
-	(uri: string, connectOptions?: mongoose.ConnectOptions): Promise<mongoose.Mongoose> | Promise<mongoose.Connection>
+	(uri: string, connectOptions?: mongoose.ConnectOptions): Promise<mongoose.Connection>
 }
 
 export interface IConnectToMongo {
 	(
 		mongodbConnectArgs: IMongodbConnectArgs,
 		mode: mongodbConnectionMode,
-		registerModelFunc?: Array<(connection: mongoose.Connection | mongoose.Mongoose) => void>
+		registerModelFunc?: Array<(connection: mongoose.Connection) => void>
 	): Promise<void>;
 }

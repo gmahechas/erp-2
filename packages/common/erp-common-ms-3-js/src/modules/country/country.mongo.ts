@@ -27,5 +27,5 @@ const schema = new mongoose.Schema({
 type CountryDocument = ICountry & Document;
 let Country: mongoose.Model<CountryDocument>;
 Country = mongoose.model<CountryDocument>('Country', schema, 'countries');
-export const registerCountryModel = (connection: mongoose.Connection | mongoose.Mongoose) => Country = connection.model('Country', schema, 'countries');
+export const registerCountryModel = (connection: mongoose.Connection) => Country = connection.model('Country', schema, 'countries');
 export { Country }
