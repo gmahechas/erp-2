@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.23 (2021-09-30)</small>
+
+* refactor: config error message - src in paths ([493d514](https://github.com/gmahechas/erp/commit/493d514))
+* refactor: mongoose connection ([be24b8b](https://github.com/gmahechas/erp/commit/be24b8b))
+* feat: final environments ([ef3b677](https://github.com/gmahechas/erp/commit/ef3b677))
+* feat: show database name when connected ([7b5e9e2](https://github.com/gmahechas/erp/commit/7b5e9e2))
+
+
+
+
+
 ## <small>0.0.22 (2021-09-27)</small>
 
 * feat: environments in lambda ([69348e2](https://github.com/gmahechas/erp/commit/69348e2))

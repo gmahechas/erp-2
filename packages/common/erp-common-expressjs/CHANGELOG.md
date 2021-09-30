@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.23 (2021-09-30)</small>
+
+**Note:** Version bump only for package @gmahechas/erp-common-expressjs
+
+
+
+
+
 ## <small>0.0.22 (2021-09-27)</small>
 
 * refactor: remove async handler in express app ([c2b92a9](https://github.com/gmahechas/erp/commit/c2b92a9))

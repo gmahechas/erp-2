@@ -1,6 +1,6 @@
 {
     "name": "ms-3-lambdajs",
-    "version": "0.0.22",
+    "version": "0.0.23",
     "description": "ms-3-lambdajs",
     "author": "gmahechas",
     "private": true,
@@ -11,10 +11,10 @@
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
-        "@gmahechas/erp-common": "^0.0.22",
-        "@gmahechas/erp-common-lambdajs": "^0.0.22",
-        "@gmahechas/erp-common-ms-3-js": "^0.0.22",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.22"
+        "@gmahechas/erp-common": "^0.0.23",
+        "@gmahechas/erp-common-lambdajs": "^0.0.23",
+        "@gmahechas/erp-common-ms-3-js": "^0.0.23",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.23"
     },
     "devDependencies": {
         "@types/node": "^16.9.1",

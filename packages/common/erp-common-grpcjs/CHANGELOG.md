@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.23 (2021-09-30)</small>
+
+**Note:** Version bump only for package @gmahechas/erp-common-grpcjs
+
+
+
+
+
 ## <small>0.0.22 (2021-09-27)</small>
 
 * feat: install @types/node in all ms packages ([3763e26](https://github.com/gmahechas/erp/commit/3763e26))
