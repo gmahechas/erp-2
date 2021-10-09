@@ -1,5 +1,4 @@
 import { gql } from '@gmahechas/erp-common-graphqljs';
-import { grpcClients3 } from '@gmahechas/erp-common-grpcjs';
 
 export const typeDefs = gql`
 	type Country {
@@ -28,8 +27,8 @@ export const resolvers = {
 	Mutation: {
 		createOneCountry: async (parent: any, args: any) => {
 			try {
-				const result = await grpcClients3.countryClientAsync.createOne(args);
-				return result?.data;
+				const { countryName, countryCode } = args;
+				return { id: '1', countryName, countryCode };
 			} catch (error) {
 				throw error;
 			}

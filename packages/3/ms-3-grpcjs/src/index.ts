@@ -12,7 +12,8 @@ const start = async () => {
 				console.log('error');
 			} else {
 				app.start();
-				console.log(`runnig on port ${port}`)
+				console.log(`environment: ${env.environment}`);
+				console.log(`runnig on port: ${port}`);
 			}
 		})
 	} catch (error) {

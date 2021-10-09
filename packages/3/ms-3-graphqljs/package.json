@@ -1,0 +1,25 @@
+{
+    "name": "ms-3-graphqljs",
+    "version": "0.0.23",
+    "description": "ms-3-graphqljs",
+    "author": "gmahechas",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
+        "start:prod": "node dist/index.js",
+        "build": "rimraf dist && tsc"
+    },
+    "dependencies": {
+        "@gmahechas/erp-common": "^0.0.23",
+        "@gmahechas/erp-common-graphqljs": "^0.0.23",
+        "@gmahechas/erp-common-ms-3-js": "^0.0.23",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.23"
+    },
+    "devDependencies": {
+        "@types/node": "^16.9.1",
+        "rimraf": "^3.0.2",
+        "ts-node-dev": "^1.1.8",
+        "typescript": "^4.3.5"
+    }
+}

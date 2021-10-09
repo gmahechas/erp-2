@@ -6,7 +6,10 @@ const start = async () => {
 	try {
 		await initEnv();
 		await connectDatabases();
-		app.listen(env.app.port, () => console.log(`runnig on port ${env.app.port}`));
+		app.listen(env.app.port, () => {
+			console.log(`environment: ${env.environment}`);
+			console.log(`runnig on port: ${env.app.port}`);
+		});
 	} catch (error) {
 		generalHandlerError(error);
 	}
