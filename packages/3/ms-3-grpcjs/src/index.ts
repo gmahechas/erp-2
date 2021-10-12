@@ -8,9 +8,7 @@ const start = async () => {
 		await initEnv();
 		await connectDatabases();
 		app.bindAsync(`0.0.0.0:${env.app.port}`, grpc.ServerCredentials.createInsecure(), (error, port) => {
-			if (error) {
-				console.log('error');
-			} else {
+			if (!error) {
 				app.start();
 				console.log(`environment: ${env.environment}`);
 				console.log(`runnig on port: ${port}`);

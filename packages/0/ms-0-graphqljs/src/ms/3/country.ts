@@ -1,4 +1,4 @@
-import { gql } from '@gmahechas/erp-common-graphqljs';
+import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
 import { grpcClients3 } from '@gmahechas/erp-common-grpcjs';
 
 export const typeDefs = gql`
@@ -17,7 +17,7 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Query: {
-		searchOneCountry: () => {
+		searchOneCountry: (parent: any, args: any, context: IContext) => {
 			return ({
 				id: '1',
 				countryName: 'Colombia',
@@ -26,13 +26,9 @@ export const resolvers = {
 		}
 	},
 	Mutation: {
-		createOneCountry: async (parent: any, args: any) => {
-			try {
-				const result = await grpcClients3.countryClientAsync.createOne(args);
-				return result?.data;
-			} catch (error) {
-				throw error;
-			}
+		createOneCountry: async (parent: any, args: any, context: IContext) => {
+			const result = await grpcClients3.countryClientAsync.createOne(args);
+			return result?.data;
 		}
 	}
 };
