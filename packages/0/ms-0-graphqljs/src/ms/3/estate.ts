@@ -1,4 +1,4 @@
-import { gql } from '@gmahechas/erp-common-graphqljs';
+import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
 
 export const typeDefs = gql`
 	type Estate {
@@ -20,7 +20,7 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Query: {
-		searchOneEstate: () => {
+		searchOneEstate: (parent: any, args: any, context: IContext) => {
 			return ({
 				id: '2',
 				estateName: 'Quintanarro',
@@ -35,9 +35,19 @@ export const resolvers = {
 		}
 	},
 	Mutation: {
-		createOneEstate: (_: any, args: any) => {
+		createOneEstate: (parent: any, args: any, context: IContext) => {
 			const { id, estateName, estateCode, countryId } = args;
-			return { id, estateName, estateCode, countryId };
+			return {
+				id,
+				estateName,
+				estateCode,
+				countryId,
+				country: {
+					id: '2',
+					countryName: 'Mexico',
+					countryCode: 'MX'
+				}
+			};
 		}
 	}
 };
