@@ -8,7 +8,7 @@ export const config: IConfig = ({
 	databases: {
 		session: {
 			redis: {
-				url: process.env.REDIS_URL
+				url: process.env.DATABASES_SESSION_REDIS_URL
 			}
 		}
 	}

@@ -12,7 +12,6 @@ const start = async () => {
 			console.log(`runnig on port: ${env.app.port}`);
 		});
 	} catch (error) {
-		console.log(error)
 		generalHandlerError(error)
 	}
 
