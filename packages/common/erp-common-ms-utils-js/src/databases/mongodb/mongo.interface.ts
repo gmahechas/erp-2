@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 type mongodbConnectionMode = 'connect' | 'createConnection';
 interface IMongodbConnectArgs {
-	uri?: string;
+	uri: string;
 	connectOptions?: mongoose.ConnectOptions;
 }
 

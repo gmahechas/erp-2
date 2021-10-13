@@ -1,14 +1,10 @@
 import { mongodbConnect, mongodbCreateConnection } from './connections.mongo';
-import { ConnectDbError } from '../../errors/connect-db.error';
 import { IConnectToMongo } from './mongo.interface';
 
 let connections: string[] = [];
 
 export const connectToMongo: IConnectToMongo = async (mongodbConnectArgs, mode, registerModelFunc = []) => {
 	const { uri, connectOptions } = mongodbConnectArgs;
-	if (!uri) {
-		throw new ConnectDbError();
-	}
 	const connection = connections.find(connection => connection === uri);
 	if (connection == undefined) {
 		switch (mode) {

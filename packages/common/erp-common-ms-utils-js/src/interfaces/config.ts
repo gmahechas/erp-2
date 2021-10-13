@@ -1,14 +1,23 @@
 export interface IConfig {
 	environment: string;
 	app: {
-		port: string | undefined;
+		port?: string;
 	};
-	mongo: {
-		command: {
-			uri: string | undefined;
+	databases?: {
+		cqrs?: {
+			mongo?: {
+				command?: {
+					uri?: string;
+				},
+				query?: {
+					uri?: string;
+				}
+			}
 		};
-		query: {
-			uri: string | undefined;
+		session?: {
+			redis?: {
+				url?: string;
+			}
 		};
 	};
 }

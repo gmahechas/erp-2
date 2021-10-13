@@ -5,12 +5,16 @@ export const config: IConfig = ({
 	app: {
 		port: process.env.APP_PORT
 	},
-	mongo: {
-		command: {
-			uri: process.env.MONGO_COMMAND_URI,
-		},
-		query: {
-			uri: process.env.MONGO_QUERY_URI
+	databases: {
+		cqrs: {
+			mongo: {
+				command: {
+					uri: process.env.DATABASES_CQRS_MONGO_COMMAND_URI,
+				},
+				query: {
+					uri: process.env.DATABASES_CQRS_MONGO_QUERY_URI
+				}
+			}
 		}
 	}
 });
