@@ -1,7 +1,7 @@
 {
-    "name": "ms-3-lambdajs",
+    "name": "ms-1-lambdajs",
     "version": "0.0.23",
-    "description": "ms-3-lambdajs",
+    "description": "ms-1-lambdajs",
     "author": "gmahechas",
     "private": true,
     "license": "UNLICENSED",
@@ -13,7 +13,7 @@
     "dependencies": {
         "@gmahechas/erp-common": "^0.0.23",
         "@gmahechas/erp-common-lambdajs": "^0.0.23",
-        "@gmahechas/erp-common-ms-3-js": "^0.0.23",
+        "@gmahechas/erp-common-ms-1-js": "^0.0.23",
         "@gmahechas/erp-common-ms-utils-js": "^0.0.23"
     },
     "devDependencies": {
