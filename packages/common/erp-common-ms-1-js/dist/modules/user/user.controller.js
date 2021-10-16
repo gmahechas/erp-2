@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createOneUser = void 0;
+exports.searchOneUser = exports.createOneUser = void 0;
 var user_mongo_1 = require("./user.mongo");
 var createOneUser = function (data) { return __awaiter(void 0, void 0, void 0, function () {
     var user;
@@ -50,3 +50,12 @@ var createOneUser = function (data) { return __awaiter(void 0, void 0, void 0, f
     });
 }); };
 exports.createOneUser = createOneUser;
+var searchOneUser = function (data) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, user_mongo_1.User.findOne(data)];
+            case 1: return [2 /*return*/, _a.sent()];
+        }
+    });
+}); };
+exports.searchOneUser = searchOneUser;

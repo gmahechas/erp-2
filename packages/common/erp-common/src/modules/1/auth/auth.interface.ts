@@ -1,6 +1,5 @@
-export interface IAuthSigninResponse {
+export interface IAuth {
   id: string;
   userName: string;
-  personId: string;
-  jwt: string;
+  token: string;
 }

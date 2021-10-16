@@ -57,6 +57,12 @@ var schema = new erp_common_ms_utils_js_1.mongoose.Schema({
     },
 }, {
     versionKey: false,
+    toObject: {
+        transform: function (doc, ret) {
+            ret.id = ret._id;
+            delete ret._id;
+        }
+    },
     toJSON: {
         transform: function (doc, ret) {
             ret.id = ret._id;
