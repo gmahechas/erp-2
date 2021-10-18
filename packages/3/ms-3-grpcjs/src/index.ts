@@ -1,4 +1,4 @@
-import { generalHandlerError, initEnv, env } from '@gmahechas/erp-common-ms-utils-js';
+import { generalHandlerError, initEnv, env, ConfigError } from '@gmahechas/erp-common-ms-utils-js';
 import { grpc } from '@gmahechas/erp-common-grpcjs';
 import { connectDatabases } from '@gmahechas/erp-common-ms-3-js';
 import app from './app';
@@ -7,7 +7,11 @@ const start = async () => {
 	try {
 		await initEnv();
 		await connectDatabases();
-		app.bindAsync(`0.0.0.0:${env.app.port}`, grpc.ServerCredentials.createInsecure(), (error, port) => {
+		const appPort = env?.app?.port;
+		if (!appPort) {
+			throw new ConfigError();
+		}
+		app.bindAsync(`0.0.0.0:${appPort}`, grpc.ServerCredentials.createInsecure(), (error, port) => {
 			if (!error) {
 				app.start();
 				console.log(`environment: ${env.environment}`);

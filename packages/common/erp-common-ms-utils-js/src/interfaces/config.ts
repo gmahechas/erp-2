@@ -1,6 +1,6 @@
 export interface IConfig {
 	environment: string;
-	app: {
+	app?: {
 		port?: string;
 	};
 	databases?: {
