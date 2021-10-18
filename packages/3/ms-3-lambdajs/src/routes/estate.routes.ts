@@ -5,28 +5,28 @@ import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate } fr
 export const routes: IRouteLambda[] = [
 	{
 		httpMethod: httpMethods.POST,
-		path: '/rest/3/estate/create/one',
+		path: '/create/one',
 		args: ['body'],
 		validation: validate(createOneEstateSchema),
 		action: createOneEstate
 	},
 	{
 		httpMethod: httpMethods.POST,
-		path: '/rest/3/estate/update/one',
+		path: '/update/one',
 		args: ['body'],
 		validation: validate(updateOneEstateSchema),
 		action: updateOneEstate
 	},
 	{
 		httpMethod: httpMethods.POST,
-		path: '/rest/3/estate/delete/one',
+		path: '/delete/one',
 		args: ['body'],
 		validation: validate(deleteOneEstateSchema),
 		action: deleteOneEstate
 	},
 	{
 		httpMethod: httpMethods.POST,
-		path: '/rest/3/estate/search/one',
+		path: '/search/one',
 		args: ['body'],
 		validation: validate(searchOneEstateSchema),
 		action: searchOneEstate

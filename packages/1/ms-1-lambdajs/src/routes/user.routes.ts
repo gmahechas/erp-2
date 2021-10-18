@@ -5,7 +5,7 @@ import { createOneUser } from '@gmahechas/erp-common-ms-1-js';
 export const routes: IRouteLambda[] = [
 	{
 		httpMethod: httpMethods.POST,
-		path: '/rest/1/user/create/one',
+		path: '/create/one',
 		args: ['body'],
 		validation: validate(createOneUserSchema),
 		action: createOneUser

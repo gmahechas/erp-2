@@ -5,28 +5,28 @@ import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry 
 export const routes: IRouteLambda[] = [
 	{
 		httpMethod: httpMethods.POST,
-		path: '/rest/3/country/create/one',
+		path: '/create/one',
 		args: ['body'],
 		validation: validate(createOneCountrySchema),
 		action: createOneCountry
 	},
 	{
 		httpMethod: httpMethods.POST,
-		path: '/rest/3/country/update/one',
+		path: '/update/one',
 		args: ['body'],
 		validation: validate(updateOneCountrySchema),
 		action: updateOneCountry
 	},
 	{
 		httpMethod: httpMethods.POST,
-		path: '/rest/3/country/delete/one',
+		path: '/delete/one',
 		args: ['body'],
 		validation: validate(deleteOneCountrySchema),
 		action: deleteOneCountry
 	},
 	{
 		httpMethod: httpMethods.POST,
-		path: '/rest/3/country/search/one',
+		path: '/search/one',
 		args: ['body'],
 		validation: validate(searchOneCountrySchema),
 		action: searchOneCountry

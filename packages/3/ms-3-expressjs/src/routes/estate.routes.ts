@@ -1,4 +1,4 @@
-import { createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema, iresponse } from '@gmahechas/erp-common';
+import { iresponse, createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema } from '@gmahechas/erp-common';
 import { express, validatorMiddleware } from '@gmahechas/erp-common-expressjs';
 import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate } from '@gmahechas/erp-common-ms-3-js';;
 
