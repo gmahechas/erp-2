@@ -7,7 +7,7 @@ export class ValidationError extends CustomError {
 	statusCode = 400;
 	grpcStatusCode = 3;
 
-	constructor(public errors: IError[]) {
+	constructor(public errors?: IError[]) {
 		super();
 		Object.setPrototypeOf(this, ValidationError.prototype);
 	}

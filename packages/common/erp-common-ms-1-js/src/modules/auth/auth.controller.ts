@@ -2,7 +2,7 @@ import {
 	ISigninAuth,
 	IAuth
 } from '@gmahechas/erp-common';
-import { AuthError, compareHash, jwtSign } from '@gmahechas/erp-common-ms-utils-js';
+import { sendError, compareHash, jwtSign } from '@gmahechas/erp-common-ms-utils-js';
 import { searchOneUser } from '../user/user.controller';
 
 export const signinAuth = async (data: ISigninAuth): Promise<IAuth> => {
@@ -11,14 +11,14 @@ export const signinAuth = async (data: ISigninAuth): Promise<IAuth> => {
 	const user = await searchOneUser({ userName });
 
 	if (!user) {
-		throw new AuthError();
+		sendError('authentication_error');
 	}
 
 	const { id } = user;
 	const passwordsMatch = await compareHash(userPassword, user.userPassword);
 
 	if (!passwordsMatch) {
-		throw new AuthError();
+		sendError('authentication_error');
 	}
 
 	const token = jwtSign({

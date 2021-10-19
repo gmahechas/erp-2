@@ -1,4 +1,6 @@
-import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
+import { axiosClient, IResponse } from '@gmahechas/erp-common';
+import { gql, IContext, asyncMiddleware } from '@gmahechas/erp-common-graphqljs';
+import { sendError } from '@gmahechas/erp-common-ms-utils-js';
 
 export const typeDefs = gql`
 	type Country {
@@ -25,12 +27,10 @@ export const resolvers = {
 		}
 	},
 	Mutation: {
-		createOneCountry: async (parent: any, args: any, context: IContext) => {
-			return ({
-				id: '1',
-				countryName: 'Colombia',
-				countryCode: 'CO'
-			});
-		}
+		createOneCountry: asyncMiddleware(async (parent: any, args: any, context: IContext) => {
+			const { data: response } = await axiosClient('http://localhost:50003').post<{ data: IResponse }>('/rest/v1/3/country/create/one', args);
+			const { id, countryName, countryCode } = response.data as any;
+			return ({ id, countryName, countryCode });
+		})
 	}
 };

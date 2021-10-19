@@ -1,3 +1,3 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import { AxiosError } from 'axios';
 
-export const axiosClient = (baseURL: string, axiosRequestConfig?: AxiosRequestConfig) => axios.create({ baseURL, ...axiosRequestConfig });
+export { AxiosError };

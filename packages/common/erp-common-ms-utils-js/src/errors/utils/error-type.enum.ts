@@ -3,5 +3,6 @@ export const enum TypeErrorMessage {
   NOT_FOUND = 'not_found',
   DB_CONNECTION = 'db_connection',
   CONFIG = 'error_config',
-  AUTH = 'authentication_error'
-}
+  AUTH = 'authentication_error',
+  UNKNOWN = 'unknown'
+};

@@ -12,7 +12,6 @@ export const errorHandlerGraphQL = (error: GraphQLError): any => {
 		}
 		return { type: originalError.details }
 	} else {
-		console.log(originalError.details);
 		return { type: 'unknown: Something went wrong :(' }
 	}
 }

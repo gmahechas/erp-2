@@ -1,6 +1,6 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { match } from 'path-to-regexp';
-import { NotFoundError } from '@gmahechas/erp-common-ms-utils-js';
+import { sendError } from '@gmahechas/erp-common-ms-utils-js';
 import { IRouteLambda } from '../route.interface';
 
 export const routerLambda = (event: APIGatewayProxyEvent, routes: IRouteLambda[]): IRouteLambda => {
@@ -8,7 +8,7 @@ export const routerLambda = (event: APIGatewayProxyEvent, routes: IRouteLambda[]
 		return event.httpMethod === route.httpMethod && match(route.path, { decode: decodeURIComponent })(event.path);
 	});
 	if (!route) {
-		throw new NotFoundError();
+		sendError('not_found')
 	}
 	return route;
 }

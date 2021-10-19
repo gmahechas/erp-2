@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { ConfigError } from '../errors/config.error';
+import { sendError } from '../errors/utils/send-error';
 import { IConfig } from '../interfaces/config';
 import { resolveApp, checkExistsFile } from './paths';
 
@@ -11,7 +11,7 @@ export const initEnv = async (useDotEnv = true) => {
 	}
 	const environment = process.env.ENVIRONMENT;
 	if (!environment) {
-		throw new ConfigError();
+		sendError('error_config');
 	}
 	const fileFolder = ((environment == 'development') ? 'src' : 'dist') + '/environments/';
 	const filePath = resolveApp(fileFolder + environment)
@@ -19,7 +19,7 @@ export const initEnv = async (useDotEnv = true) => {
 	const fullFilePath = filePath + extension;
 
 	if (!checkExistsFile(fullFilePath)) {
-		throw new ConfigError();
+		sendError('error_config');
 	}
 	const { config } = await import(filePath);
 	env = config;

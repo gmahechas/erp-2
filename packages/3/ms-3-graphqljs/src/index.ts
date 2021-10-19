@@ -1,4 +1,4 @@
-import { generalHandlerError, initEnv, env, ConfigError } from '@gmahechas/erp-common-ms-utils-js';
+import { generalHandlerError, initEnv, env, sendError } from '@gmahechas/erp-common-ms-utils-js';
 import { connectDatabases } from '@gmahechas/erp-common-ms-3-js';
 import bootstrap from './app';
 
@@ -8,7 +8,7 @@ const start = async () => {
 		await connectDatabases();
 		const appPort = env?.app?.port;
 		if (!appPort) {
-			throw new ConfigError();
+			sendError('error_config')
 		}
 		const app = await bootstrap();
 		app.listen(appPort, () => {
