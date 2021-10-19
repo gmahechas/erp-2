@@ -1,14 +1,6 @@
 import express from 'express';
-import { IAuth } from '@gmahechas/erp-common';
+import { IContext } from '../interfaces/context.interface';
 
-declare global {
-	namespace Express {
-		interface Request {
-			auth?: IAuth
-		}
-	}
-}
-export const authMiddleware = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
-	request.auth = { id: 'tim', userName: 'theUser', token: 'dkjdsdklsd' };
-	next();
+export const authMiddleware = async (req: express.Request, res: express.Response): Promise<IContext> => {
+	return { req, res, auth: { id: 'theId', userName: 'theUserName', token: 'theToken' } }
 }

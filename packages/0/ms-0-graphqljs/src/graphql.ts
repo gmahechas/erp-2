@@ -7,7 +7,7 @@ export default async () => {
 		resolvers,
 		debug: true,
 		formatError: (error: GraphQLError) => errorHandlerGraphQL(error),
-		context: async ({ req, res }) => ({ req, res })
+		context: async ({ req, res }) => await authMiddleware(req, res)
 	});
 	await graphql.start();
 	return graphql;
