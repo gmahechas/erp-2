@@ -17,10 +17,10 @@ export const resolvers = {
 		signinAuth: asyncMiddleware(async (parent: any, args: any, context: IContext) => {
 			const { data: response } = await axiosClient('http://localhost:50001').post<{ data: IResponse }>('/rest/v1/1/auth/signin', args);
 			const { id, userName, token } = response.data as any;
-			context.response.cookie('cerp', token, {
+			/* context.response.cookie('cerp', token, {
 				httpOnly: true,
 				maxAge: 1000 * 60 * 60 * 24 * 7
-			});
+			}); */
 			return ({ id, userName, token });
 		})
 	}

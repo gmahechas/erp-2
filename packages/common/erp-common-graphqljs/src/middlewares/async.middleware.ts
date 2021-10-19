@@ -1,6 +1,6 @@
 import { AxiosError } from '@gmahechas/erp-common';
 import { sendError } from '@gmahechas/erp-common-ms-utils-js';
-import { IContext } from '../helpers/context.interface';
+import { IContext } from '../interfaces/context.interface';
 
 type AsyncFunction = (parent: any, args: any, context: IContext) => Promise<any>;
 

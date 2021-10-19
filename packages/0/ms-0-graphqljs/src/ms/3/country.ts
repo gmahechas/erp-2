@@ -1,6 +1,5 @@
 import { axiosClient, IResponse } from '@gmahechas/erp-common';
 import { gql, IContext, asyncMiddleware } from '@gmahechas/erp-common-graphqljs';
-import { sendError } from '@gmahechas/erp-common-ms-utils-js';
 
 export const typeDefs = gql`
 	type Country {
