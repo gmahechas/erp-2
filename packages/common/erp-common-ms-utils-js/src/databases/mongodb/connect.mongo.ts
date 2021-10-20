@@ -4,7 +4,7 @@ import { IConnectToMongo } from './mongo.interface';
 
 let connections: { uri: string, connection: mongoose.Connection }[] = [];
 
-export const connectToMongo: IConnectToMongo = async (mongodbConnectArgs, mode, registerModelFunc = []) => {
+export const connectToMongo: IConnectToMongo = async (mongodbConnectArgs, mode, registerModelFuncs = []) => {
 	const { uri, connectOptions } = mongodbConnectArgs;
 	const connection = connections.find(connection => connection.uri === uri);
 	if (connection == undefined) {
@@ -13,7 +13,7 @@ export const connectToMongo: IConnectToMongo = async (mongodbConnectArgs, mode, 
 			conn = await mongodbConnect(uri, connectOptions);
 		} else {
 			conn = await mongodbCreateConnection(uri, connectOptions);
-			for (const register of registerModelFunc) {
+			for (const register of registerModelFuncs) {
 				register(conn)
 			};
 		}
