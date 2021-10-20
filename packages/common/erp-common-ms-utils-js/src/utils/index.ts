@@ -1,3 +1,4 @@
+export * from './axios';
 export * from './bcrypt';
 export * from './dotenv';
 export * from './jsonwebtoken';

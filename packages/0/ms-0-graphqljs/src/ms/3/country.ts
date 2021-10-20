@@ -1,4 +1,5 @@
-import { axiosClient, IResponse } from '@gmahechas/erp-common';
+import { IResponse } from '@gmahechas/erp-common';
+import { axiosClient } from '@gmahechas/erp-common-ms-utils-js';
 import { gql, IContext, asyncMiddleware } from '@gmahechas/erp-common-graphqljs';
 
 export const typeDefs = gql`
