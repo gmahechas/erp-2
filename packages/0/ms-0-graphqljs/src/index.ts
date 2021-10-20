@@ -1,9 +1,11 @@
 import { generalHandlerError, initEnv, env, sendError } from '@gmahechas/erp-common-ms-utils-js';
+import { connectDatabases } from '@gmahechas/erp-common-ms-0-js';
 import bootstrap from './app';
 
 const start = async () => {
 	try {
 		await initEnv();
+		await connectDatabases();
 		const appPort = env?.app?.port;
 		if (!appPort) {
 			sendError('error_config')

@@ -1,3 +1,4 @@
+import { RedisClient } from 'redis';
 export interface IConnectToRedis {
-	(url: string): Promise<void>
+	(url: string): Promise<RedisClient>
 }

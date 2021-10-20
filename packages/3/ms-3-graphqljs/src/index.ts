@@ -18,7 +18,6 @@ const start = async () => {
 	} catch (error) {
 		generalHandlerError(error)
 	}
-
 };
 start();
 

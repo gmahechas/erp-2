@@ -13,6 +13,7 @@
     "dependencies": {
         "@gmahechas/erp-common": "^0.0.23",
         "@gmahechas/erp-common-graphqljs": "^0.0.23",
+        "@gmahechas/erp-common-ms-0-js": "^0.0.23",
         "@gmahechas/erp-common-ms-utils-js": "^0.0.23"
     },
     "devDependencies": {

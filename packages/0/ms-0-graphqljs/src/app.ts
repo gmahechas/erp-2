@@ -1,4 +1,4 @@
-import { express, authMiddleware } from '@gmahechas/erp-common-graphqljs';
+import { express } from '@gmahechas/erp-common-graphqljs';
 import graphql from './graphql';
 
 export default async () => {

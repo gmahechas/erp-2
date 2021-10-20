@@ -1,15 +1,16 @@
+import { RedisClient } from 'redis';
 import { createRedisClient } from './client.redis';
-import { ConnectDbError } from '../../errors/connect-db.error';
 import { IConnectToRedis } from './redis.interface';
 
-let connections: string[] = [];
+let connections: { url: string, client: RedisClient }[] = [];
 
 export const connectToRedis: IConnectToRedis = async (url) => {
-	const connection = connections.find(connection => connection === url)
+	const connection = connections.find(connection => connection.url === url)
 	if (connection == undefined) {
-		const client = createRedisClient(url)
-		const redisConnection = await client.connect();
-		connections.push(url);
-		return redisConnection;
+		const client = await createRedisClient(url)
+		connections.push({ url, client });
+		return client;
+	} else {
+		return connection.client;
 	}
 }
