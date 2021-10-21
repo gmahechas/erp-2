@@ -1,3 +1,5 @@
+import { ICreateEstate, ISearchEstate } from '@gmahechas/erp-common';
+import { axiosClient } from '@gmahechas/erp-common-ms-utils-js';
 import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
 import { asyncMiddleware } from '../../middlewares/async.middleware';
 
@@ -21,7 +23,7 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Query: {
-		searchOneEstate: asyncMiddleware(async (parent: any, args: any, context: IContext) => {
+		searchOneEstate: asyncMiddleware(async (parent: any, args: ISearchEstate, context: IContext) => {
 			return ({
 				id: '2',
 				estateName: 'Quintanarro',
@@ -36,10 +38,10 @@ export const resolvers = {
 		})
 	},
 	Mutation: {
-		createOneEstate: asyncMiddleware(async (parent: any, args: any, context: IContext) => {
-			const { id, estateName, estateCode, countryId } = args;
+		createOneEstate: asyncMiddleware(async (parent: any, args: ICreateEstate, context: IContext) => {
+			const { estateName, estateCode, countryId } = args;
 			return {
-				id,
+				id: '1',
 				estateName,
 				estateCode,
 				countryId,

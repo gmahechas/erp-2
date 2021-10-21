@@ -1,5 +1,5 @@
-import { GraphQLError } from 'graphql';
 import { CustomError } from '@gmahechas/erp-common-ms-utils-js';
+import { GraphQLError } from '@gmahechas/erp-common-graphqljs';
 
 export const errorHandlerGraphQL = (error: GraphQLError | CustomError): any => {
 	 if(error instanceof GraphQLError) {
@@ -12,7 +12,9 @@ export const errorHandlerGraphQL = (error: GraphQLError | CustomError): any => {
 				return { type: errorParsed.type, errors: errorParsed.errors }
 			}
 			return { type: originalError.details }
-		} 
+		} else {
+			return { type: 'unknown: Something went wrong :(' };
+		}
 	 } else if (error instanceof CustomError) {
 		 return { ...error.serializeErrors() }
 	 } else {
