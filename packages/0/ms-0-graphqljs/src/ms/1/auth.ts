@@ -16,7 +16,7 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Query: {
-		signinAuth: asyncMiddleware(async (parent: any, args: ISigninAuth, context: IContext) => {
+		signinAuth: asyncMiddleware(async (_: object, args: ISigninAuth, context: IContext): Promise<IAuth> => {
 			const { data: response } = await axiosClient('http://localhost:50001').post<{ data: IAuth }>('/rest/v1/1/auth/signin', args);
 			context.req.session.auth = response.data;
 			return response.data;

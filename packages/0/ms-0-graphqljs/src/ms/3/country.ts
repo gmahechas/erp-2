@@ -1,4 +1,4 @@
-import { ICountry, ICreateCountry, ISearchCountry } from '@gmahechas/erp-common';
+import { ICountry, ICreateCountry, IEstate, ISearchCountry } from '@gmahechas/erp-common';
 import { axiosClient } from '@gmahechas/erp-common-ms-utils-js';
 import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
 import { asyncMiddleware } from '../../middlewares/async.middleware';
@@ -8,6 +8,7 @@ export const typeDefs = gql`
 		id: String
   	countryName: String
   	countryCode: String
+		estates: [Estate]
 	}
   type Query {
   	searchOneCountry: Country
@@ -19,18 +20,25 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Query: {
-		searchOneCountry: asyncMiddleware(async (parent: any, args: ISearchCountry, context: IContext) => {
-			return ({
+		searchOneCountry: asyncMiddleware(async (_: object, args: ISearchCountry, context: IContext): Promise<ICountry> => {
+			return {
 				id: '1',
-				countryName: 'Colombia',
+				countryName: 'Colombianos',
 				countryCode: 'CO'
-			});
+			};
 		})
 	},
 	Mutation: {
-		createOneCountry: asyncMiddleware(async (parent: any, args: ICreateCountry, context: IContext) => {
+		createOneCountry: asyncMiddleware(async (_: any, args: ICreateCountry, context: IContext): Promise<ICountry> => {
 			const { data: response } = await axiosClient('http://localhost:50003').post<{ data: ICountry }>('/rest/v1/3/country/create/one', args);
 			return response.data;
 		})
-	}
+	},
+	Country: {
+		estates: asyncMiddleware(async (parent: ICountry, _: object, context: IContext): Promise<IEstate[]> => {
+			return [
+				{ id: '2', estateName: 'Quintanarro', estateCode: 'QUIN', countryId: '1' }
+			];
+		})
+	},
 };
