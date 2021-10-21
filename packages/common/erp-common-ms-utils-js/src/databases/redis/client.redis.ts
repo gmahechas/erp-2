@@ -1,4 +1,4 @@
-import { createClient, RedisClient, ClientOpts } from 'redis';
+import { createClient, RedisClient } from 'redis';
 
 export const createRedisClient = (url: string): Promise<RedisClient> => {
 	return new Promise((resolve, reject) => {
