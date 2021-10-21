@@ -1,6 +1,7 @@
-import { IResponse } from '@gmahechas/erp-common';
+import { IAuth } from '@gmahechas/erp-common';
 import { axiosClient } from '@gmahechas/erp-common-ms-utils-js';
-import { gql, IContext, asyncMiddleware } from '@gmahechas/erp-common-graphqljs';
+import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
+import { asyncMiddleware } from '../../middlewares/async.middleware';
 
 export const typeDefs = gql`
 	type Auth {
@@ -16,13 +17,9 @@ export const typeDefs = gql`
 export const resolvers = {
 	Query: {
 		signinAuth: asyncMiddleware(async (parent: any, args: any, context: IContext) => {
-			const { data: response } = await axiosClient('http://localhost:50001').post<{ data: IResponse }>('/rest/v1/1/auth/signin', args);
-			const { id, userName, token } = response.data as any;
-			/* context.response.cookie('cerp', token, {
-				httpOnly: true,
-				maxAge: 1000 * 60 * 60 * 24 * 7
-			}); */
-			return ({ id, userName, token });
+			const { data: response } = await axiosClient('http://localhost:50001').post<{ data: IAuth }>('/rest/v1/1/auth/signin', args);
+			context.req.session.auth = response.data;
+			return response.data;
 		})
 	}
 };

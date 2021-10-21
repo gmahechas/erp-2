@@ -1,4 +1,5 @@
-import { GraphQLError, ApolloServer, authMiddleware, errorHandlerGraphQL } from '@gmahechas/erp-common-graphqljs';
+import { GraphQLError, ApolloServer, errorHandlerGraphQL } from '@gmahechas/erp-common-graphqljs';
+import { authMiddleware } from './middlewares/auth.middleware';
 import { typeDefs, resolvers } from './ms';
 
 export default async () => {

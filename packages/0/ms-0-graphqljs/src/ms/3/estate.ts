@@ -1,4 +1,5 @@
 import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
+import { asyncMiddleware } from '../../middlewares/async.middleware';
 
 export const typeDefs = gql`
 	type Estate {
@@ -20,7 +21,7 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Query: {
-		searchOneEstate: (parent: any, args: any, context: IContext) => {
+		searchOneEstate: asyncMiddleware(async (parent: any, args: any, context: IContext) => {
 			return ({
 				id: '2',
 				estateName: 'Quintanarro',
@@ -32,10 +33,10 @@ export const resolvers = {
 					countryCode: 'MX'
 				}
 			});
-		}
+		})
 	},
 	Mutation: {
-		createOneEstate: (parent: any, args: any, context: IContext) => {
+		createOneEstate: asyncMiddleware(async (parent: any, args: any, context: IContext) => {
 			const { id, estateName, estateCode, countryId } = args;
 			return {
 				id,
@@ -48,6 +49,6 @@ export const resolvers = {
 					countryCode: 'MX'
 				}
 			};
-		}
+		})
 	}
 };

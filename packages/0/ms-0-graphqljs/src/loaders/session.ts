@@ -9,7 +9,7 @@ export const session = async () => {
 	client.on('connect', () => console.error(`redis connected`));
 	return expressSession({
 		store: new RedisStore({ client }),
-		name: 'qid',
+		name: 'cerp',
 		secret: 'aslkdfjoiq12312',
 		resave: false,
 		saveUninitialized: false,
