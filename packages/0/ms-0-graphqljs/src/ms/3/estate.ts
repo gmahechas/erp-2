@@ -13,11 +13,9 @@ export const typeDefs = gql`
   	countryId: String
 		country: Country
 	}
-
   type Query {
   	searchOneEstate: Estate
 	}
-
 	type Mutation {
   	createOneEstate(estateName: String, estateCode: String, countryId: String): Estate
 	}
