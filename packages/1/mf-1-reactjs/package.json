@@ -14,7 +14,6 @@
     "dependencies": {
         "@gmahechas/common-webcomponents": "^0.0.23",
         "@gmahechas/common-webcomponents-react": "^0.0.23",
-        "axios": "^0.21.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-hook-form": "^7.12.0",
