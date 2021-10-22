@@ -1,3 +1,3 @@
-import { AxiosError } from 'axios';
+import axios , { AxiosError } from 'axios';
 
-export { AxiosError };
+export { axios, AxiosError };

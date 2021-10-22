@@ -1,11 +1,8 @@
-import {
-	ISigninAuth,
-	IAuth
-} from '@gmahechas/erp-common';
+import { ISigninAuth } from '@gmahechas/erp-common';
 import { sendError, compareHash, jwtSign } from '@gmahechas/erp-common-ms-utils-js';
 import { searchOneUser } from '../user/user.controller';
 
-export const signinAuth = async (data: ISigninAuth): Promise<IAuth> => {
+export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> => {
 	const { userName, userPassword } = data;
 
 	const user = await searchOneUser({ userName });
@@ -26,5 +23,5 @@ export const signinAuth = async (data: ISigninAuth): Promise<IAuth> => {
 		userName
 	}, 'AnaLu');
 
-	return { id, userName, token };
+	return { token };
 };
