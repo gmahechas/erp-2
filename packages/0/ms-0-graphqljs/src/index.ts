@@ -14,7 +14,6 @@ const start = async () => {
 			console.log(`runnig on port: ${appPort}`);
 		});
 	} catch (error) {
-		console.log('aca')
 		generalHandlerError(error)
 	}
 };
