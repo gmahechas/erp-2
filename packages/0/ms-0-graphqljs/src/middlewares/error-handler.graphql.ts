@@ -2,7 +2,7 @@ import { CustomError } from '@gmahechas/erp-common-ms-utils-js';
 import { GraphQLError } from '@gmahechas/erp-common-graphqljs';
 
 export const errorHandlerGraphQL = (error: GraphQLError | CustomError): any => {
-	 if(error instanceof GraphQLError) {
+	if(error instanceof GraphQLError) {
 		const { originalError } = error as any;
 		if (originalError instanceof CustomError) {
 			return { ...originalError.serializeErrors() }
@@ -13,9 +13,9 @@ export const errorHandlerGraphQL = (error: GraphQLError | CustomError): any => {
 			}
 			return { type: originalError.details }
 		} else {
-			return { type: 'unknown: Something went wrong :(' };
-		}
-	 } else if (error instanceof CustomError) {
+				return { type: 'unknown: Something went wrong :(' };
+			}
+		} else if (error instanceof CustomError) {
 		 return { ...error.serializeErrors() }
 	 } else {
 		 return { type: 'unknown: Something went wrong :(' }

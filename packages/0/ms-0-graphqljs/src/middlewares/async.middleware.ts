@@ -11,6 +11,7 @@ export const asyncMiddleware = (execution: AsyncFunction) => async (parent: any,
 		if (response) {
 			const { data } = response;
 			const parsedData = JSON.parse(JSON.stringify(data));
+			console.log(parsedData)
 			const { type, errors } = parsedData.error;
 			sendError(type, errors);
 		} else {

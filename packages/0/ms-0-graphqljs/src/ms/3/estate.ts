@@ -2,6 +2,9 @@ import { ICountry, ICreateEstate, IEstate, ISearchEstate } from '@gmahechas/erp-
 import { axiosClient } from '@gmahechas/erp-common-ms-utils-js';
 import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
 import { asyncMiddleware } from '../../middlewares/async.middleware';
+import { asyncChainMiddleware } from '../../middlewares/async-chain.middleware';
+
+import { resolvers as countryResolvers } from './country';
 
 export const typeDefs = gql`
 	type Estate {
@@ -17,7 +20,7 @@ export const typeDefs = gql`
 	}
 
 	type Mutation {
-  	createOneEstate(id: String, estateName: String, estateCode: String, countryId: String): Estate
+  	createOneEstate(estateName: String, estateCode: String, countryId: String): Estate
 	}
 `;
 
@@ -34,22 +37,13 @@ export const resolvers = {
 	},
 	Mutation: {
 		createOneEstate: asyncMiddleware(async (_: object, args: ICreateEstate, context: IContext): Promise<IEstate> => {
-			const { estateName, estateCode, countryId } = args;
-			return {
-				id: '1',
-				estateName,
-				estateCode,
-				countryId
-			};
+			const { data: response } = await axiosClient('http://localhost:50003').post<{ data: IEstate }>('/rest/v1/3/estate/create/one', args);
+			return response.data;
 		})
 	},
 	Estate: {
-		country: asyncMiddleware(async (parent: IEstate, _: object, context: IContext): Promise<ICountry> => {
-			return {
-				id: '2',
-				countryName: 'Mexico',
-				countryCode: 'MXT'
-			};
+		country: asyncChainMiddleware(async (parent: IEstate, _: object, context: IContext): Promise<ICountry> => {
+			return await countryResolvers.Query.searchOneCountry({}, parent, context);
 		})
 	},
 };
