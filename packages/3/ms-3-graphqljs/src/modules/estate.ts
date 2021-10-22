@@ -1,4 +1,5 @@
-import { gql } from '@gmahechas/erp-common-graphqljs';
+import { ICountry, ICreateEstate, IEstate, ISearchEstate } from '@gmahechas/erp-common';
+import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
 
 export const typeDefs = gql`
 	type Estate {
@@ -12,30 +13,25 @@ export const typeDefs = gql`
   	searchOneEstate: Estate
 	}
 	type Mutation {
-  	createOneEstate(id: String, estateName: String, estateCode: String, countryId: String): Estate
+  	createOneEstate(estateName: String, estateCode: String, countryId: String): Estate
 	}
 `;
 
 export const resolvers = {
 	Query: {
-		searchOneEstate: () => {
-			return ({
-				id: '2',
-				estateName: 'Quintanarro',
-				estateCode: 'QUIN',
-				countryId: '2',
-				country: {
-					id: '2',
-					countryName: 'Mexico',
-					countryCode: 'MX'
-				}
-			});
+		searchOneEstate: async (_: object, args: ISearchEstate, context: IContext): Promise<IEstate> => {
+			return { id: '1', estateName: 'Quintanarro', estateCode: 'QUIN', countryId: '2' };
 		}
 	},
 	Mutation: {
-		createOneEstate: (parent: any, args: any) => {
-			const { id, estateName, estateCode, countryId } = args;
-			return { id, estateName, estateCode, countryId };
+		createOneEstate: async (_: object, args: ICreateEstate, context: IContext): Promise<IEstate> => {
+			const { estateName, estateCode, countryId } = args;
+			return { id: '1', estateName, estateCode, countryId };
+		}
+	},
+	Estate: {
+		country: async (parent: IEstate, _: object, context: IContext): Promise<ICountry> => {
+			return { id: '2', countryName: 'Colombia', countryCode: 'CO' }
 		}
 	}
 };

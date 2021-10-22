@@ -1,10 +1,12 @@
-import { gql } from '@gmahechas/erp-common-graphqljs';
+import { ICountry, ICreateCountry, IEstate, ISearchCountry } from '@gmahechas/erp-common';
+import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
 
 export const typeDefs = gql`
 	type Country {
 		id: String
   	countryName: String
   	countryCode: String
+		estates: [Estate]
 	}
   type Query {
   	searchOneCountry: Country
@@ -16,22 +18,21 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Query: {
-		searchOneCountry: () => {
-			return ({
-				id: '1',
-				countryName: 'Colombia',
-				countryCode: 'CO'
-			});
+		searchOneCountry: async (_: object, args: ISearchCountry, context: IContext): Promise<ICountry> => {
+			return { id: '1', countryName: 'Colombia', countryCode: 'CO' };
 		}
 	},
 	Mutation: {
-		createOneCountry: async (parent: any, args: any) => {
-			try {
-				const { countryName, countryCode } = args;
-				return { id: '1', countryName, countryCode };
-			} catch (error) {
-				throw error;
-			}
+		createOneCountry: async (_: any, args: ICreateCountry, context: IContext): Promise<ICountry> => {
+			const { countryName, countryCode } = args;
+			return { id: '1', countryName, countryCode };
 		}
-	}
+	},
+	Country: {
+		estates: async (parent: ICountry, _: object, context: IContext): Promise<IEstate[]> => {
+			return [
+				{ id: '2', estateName: 'Quintanarro', estateCode: 'QUIN', countryId: '1' }
+			];
+		}
+	},
 };
