@@ -3,21 +3,49 @@ export interface IConfig {
 	app?: {
 		port?: string;
 	};
-	databases?: {
-		cqrs?: {
-			mongo?: {
-				command?: {
-					uri?: string;
-				},
-				query?: {
-					uri?: string;
+	ms?: {
+		zero?: {
+			session?: {
+				redis?: {
+					url?: string;
+				}
+			};
+		}
+		one?: {
+			command?: {
+				url?: string;
+				databases?: {
+					mongo?: {
+						uri?: string;
+					}
+				}
+			};
+			query?: {
+				url?: string;
+				databases?: {
+					mongo?: {
+						uri?: string;
+					}
 				}
 			}
-		};
-		session?: {
-			redis?: {
+		}
+		three?: {
+			command?: {
 				url?: string;
+				databases?: {
+					mongo?: {
+						uri?: string;
+					}
+				}
+			};
+			query?: {
+				url?: string;
+				databases?: {
+					mongo?: {
+						uri?: string;
+					}
+				}
 			}
-		};
-	};
+		}
+	}
 }

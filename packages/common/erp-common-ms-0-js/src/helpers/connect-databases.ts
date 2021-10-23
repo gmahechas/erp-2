@@ -1,12 +1,12 @@
 import { sendError, connectToRedis, env } from '@gmahechas/erp-common-ms-utils-js';
 
 export const connectDatabases = async () => {
-	const { databases } = env;
+	const { ms } = env;
 	if (
-		!databases?.session?.redis?.url
+		!ms?.zero?.session?.redis?.url
 	) {
 		sendError('db_connection');
 	}
-	const { session: { redis: { url } }} = databases;
+	const { zero: { session: { redis: { url } } } } = ms;
 	await connectToRedis(url);
 }

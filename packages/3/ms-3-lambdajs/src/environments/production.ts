@@ -2,14 +2,20 @@ import { IConfig } from '@gmahechas/erp-common-ms-utils-js';
 
 export const config: IConfig = ({
 	environment: 'production',
-	databases: {
-		cqrs: {
-			mongo: {
-				command: {
-					uri: process.env.DATABASES_CQRS_MONGO_COMMAND_URI,
-				},
-				query: {
-					uri: process.env.DATABASES_CQRS_MONGO_QUERY_URI
+	ms: {
+		three: {
+			command: {
+				databases: {
+					mongo: {
+						uri: process.env.MS_THREE_COMMAND_DATABASES_MONGO_URI
+					}
+				}
+			},
+			query: {
+				databases: {
+					mongo: {
+						uri: process.env.MS_THREE_QUERY_DATABASES_MONGO_URI
+					}
 				}
 			}
 		}

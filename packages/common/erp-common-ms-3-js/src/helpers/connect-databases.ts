@@ -2,11 +2,19 @@ import { sendError, connectToMongo, env } from '@gmahechas/erp-common-ms-utils-j
 import { registerMsMongoModels, registerMsQueryMongoModels } from './register-mongo-models';
 
 export const connectDatabases = async () => {
-	const { databases } = env;
-	if (!databases?.cqrs?.mongo?.command?.uri || !databases?.cqrs?.mongo.query?.uri) {
+	const { ms } = env;
+	if (
+		!ms?.three?.command?.databases?.mongo?.uri ||
+		!ms.three.query?.databases?.mongo?.uri
+	) {
 		sendError('db_connection');
 	}
-	const { cqrs: { mongo: { command: { uri: commandUri }, query: { uri: queryUri } } } } = databases;
+	const {
+		three: {
+			command: { databases: { mongo: { uri: commandUri } } },
+			query: { databases: { mongo: { uri: queryUri } } }
+		}
+	} = ms;
 	await connectToMongo({ uri: commandUri }, 'createConnection', registerMsMongoModels);
 	await connectToMongo({ uri: queryUri }, 'createConnection', registerMsQueryMongoModels);
 }

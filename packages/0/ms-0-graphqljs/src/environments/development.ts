@@ -5,10 +5,12 @@ export const config: IConfig = ({
 	app: {
 		port: process.env.APP_PORT
 	},
-	databases: {
-		session: {
-			redis: {
-				url: process.env.DATABASES_SESSION_REDIS_URL
+	ms: {
+		zero: {
+			session: {
+				redis: {
+					url: process.env.MS_ZERO_SESSION_REDIS_URL
+				}
 			}
 		}
 	}
