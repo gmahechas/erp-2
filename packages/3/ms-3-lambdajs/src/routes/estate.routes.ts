@@ -1,6 +1,6 @@
-import { validate, createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema } from '@gmahechas/erp-common'
+import { validate, createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema, searchManyEstateSchema } from '@gmahechas/erp-common'
 import { httpMethods, IRouteLambda } from '@gmahechas/erp-common-lambdajs';
-import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate } from '@gmahechas/erp-common-ms-3-js';
+import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate, searchManyEstate } from '@gmahechas/erp-common-ms-3-js';
 
 export const routes: IRouteLambda[] = [
 	{
@@ -30,5 +30,12 @@ export const routes: IRouteLambda[] = [
 		args: ['body'],
 		validation: validate(searchOneEstateSchema),
 		action: searchOneEstate
+	},
+	{
+		httpMethod: httpMethods.POST,
+		path: '/search/many',
+		args: ['body'],
+		validation: validate(searchManyEstateSchema),
+		action: searchManyEstate
 	}
 ];

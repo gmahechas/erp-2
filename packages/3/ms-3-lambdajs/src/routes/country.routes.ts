@@ -1,6 +1,6 @@
-import { validate, createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema } from '@gmahechas/erp-common'
+import { validate, createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema, searchManyCountrySchema } from '@gmahechas/erp-common'
 import { httpMethods, IRouteLambda } from '@gmahechas/erp-common-lambdajs';
-import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry } from '@gmahechas/erp-common-ms-3-js';
+import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry, searchManyCountry } from '@gmahechas/erp-common-ms-3-js';
 
 export const routes: IRouteLambda[] = [
 	{
@@ -30,5 +30,12 @@ export const routes: IRouteLambda[] = [
 		args: ['body'],
 		validation: validate(searchOneCountrySchema),
 		action: searchOneCountry
+	},
+	{
+		httpMethod: httpMethods.POST,
+		path: '/search/many',
+		args: ['body'],
+		validation: validate(searchManyCountrySchema),
+		action: searchManyCountry
 	}
 ];
