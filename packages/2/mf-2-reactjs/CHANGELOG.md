@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.24 (2021-10-23)</small>
+
+* refactor: remove axios ([5b77cb5](https://github.com/gmahechas/erp/commit/5b77cb5))
+
+
+
+
+
 ## <small>0.0.23 (2021-09-30)</small>
 
 **Note:** Version bump only for package mf-2-reactjs

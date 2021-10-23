@@ -1,6 +1,6 @@
 {
   "name": "@gmahechas/common-webcomponents-react",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "common-webcomponents-react",
   "author": "gmahechas",
   "private": false,
@@ -20,7 +20,7 @@
     "dist/"
   ],
   "dependencies": {
-    "@gmahechas/common-webcomponents": "^0.0.23"
+    "@gmahechas/common-webcomponents": "^0.0.24"
   },
   "devDependencies": {
     "@types/react": "^17.0.3",

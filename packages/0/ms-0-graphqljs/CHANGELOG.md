@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.24 (2021-10-23)</small>
+
+* feat: auth and handler error graphql ([e611459](https://github.com/gmahechas/erp/commit/e611459))
+* feat: auth middleware graphql ([9ebc4bf](https://github.com/gmahechas/erp/commit/9ebc4bf))
+* feat: chains added ([afea699](https://github.com/gmahechas/erp/commit/afea699))
+* feat: createUser ([77029b8](https://github.com/gmahechas/erp/commit/77029b8))
+* feat: error handling from ms in api ([5c2c8fe](https://github.com/gmahechas/erp/commit/5c2c8fe))
+* feat: express-session redis ([498ccb3](https://github.com/gmahechas/erp/commit/498ccb3))
+* feat: general improvements ([d998c08](https://github.com/gmahechas/erp/commit/d998c08))
+* feat: graphql agw auth ([6a24025](https://github.com/gmahechas/erp/commit/6a24025))
+* feat: graphql chains ([3a83371](https://github.com/gmahechas/erp/commit/3a83371))
+* feat: ms-0-js ([659aa42](https://github.com/gmahechas/erp/commit/659aa42))
+* feat: ms-3-graphql ([2b9b5ef](https://github.com/gmahechas/erp/commit/2b9b5ef))
+* feat: redis url from env ([58158f5](https://github.com/gmahechas/erp/commit/58158f5))
+* refactor: APP_PORT as undedfined ([bbede29](https://github.com/gmahechas/erp/commit/bbede29))
+* refactor: enn vars name ([5537da9](https://github.com/gmahechas/erp/commit/5537da9))
+* refactor: move axios to ms-utils ([75da72b](https://github.com/gmahechas/erp/commit/75da72b))
+* refactor: move error handling api to project ([5bba6f4](https://github.com/gmahechas/erp/commit/5bba6f4))
+* refactor: move http request to common-ms-0-js ([86395fd](https://github.com/gmahechas/erp/commit/86395fd))
+* refactor: redis env names ([48b2dab](https://github.com/gmahechas/erp/commit/48b2dab))
+* refactor: remove grpc from graphql-0 ([baebd58](https://github.com/gmahechas/erp/commit/baebd58))
+* refactor: remove spaces ([c7c2e4a](https://github.com/gmahechas/erp/commit/c7c2e4a))
+* chore: return to authMiddlewRE ([f29b2c5](https://github.com/gmahechas/erp/commit/f29b2c5))
+
+
+
+
+
 ## <small>0.0.23 (2021-09-30)</small>
 
 * feat: final environments ([ef3b677](https://github.com/gmahechas/erp/commit/ef3b677))

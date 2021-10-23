@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.24 (2021-10-23)</small>
+
+* feat: auth and handler error graphql ([e611459](https://github.com/gmahechas/erp/commit/e611459))
+* feat: error handling from ms in api ([5c2c8fe](https://github.com/gmahechas/erp/commit/5c2c8fe))
+* feat: ms-3-graphql ([2b9b5ef](https://github.com/gmahechas/erp/commit/2b9b5ef))
+* refactor: APP_PORT as undedfined ([bbede29](https://github.com/gmahechas/erp/commit/bbede29))
+* refactor: enn vars name ([5537da9](https://github.com/gmahechas/erp/commit/5537da9))
+
+
+
+
+
 ## <small>0.0.23 (2021-09-30)</small>
 
 * feat: final environments ([ef3b677](https://github.com/gmahechas/erp/commit/ef3b677))

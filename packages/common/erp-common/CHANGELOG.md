@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.24 (2021-10-23)</small>
+
+* feat: axios added in common ([4411292](https://github.com/gmahechas/erp/commit/4411292))
+* feat: createUser ([77029b8](https://github.com/gmahechas/erp/commit/77029b8))
+* feat: error handling from ms in api ([5c2c8fe](https://github.com/gmahechas/erp/commit/5c2c8fe))
+* feat: general improvements ([d998c08](https://github.com/gmahechas/erp/commit/d998c08))
+* feat: match user in signin ([e083160](https://github.com/gmahechas/erp/commit/e083160))
+* refactor: move axios to ms-utils ([75da72b](https://github.com/gmahechas/erp/commit/75da72b))
+
+
+
+
+
 ## <small>0.0.23 (2021-09-30)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common

@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.24 (2021-10-23)</small>
+
+* feat: auth and handler error graphql ([e611459](https://github.com/gmahechas/erp/commit/e611459))
+* feat: createUser ([77029b8](https://github.com/gmahechas/erp/commit/77029b8))
+* feat: error handling from ms in api ([5c2c8fe](https://github.com/gmahechas/erp/commit/5c2c8fe))
+* feat: express-session redis ([498ccb3](https://github.com/gmahechas/erp/commit/498ccb3))
+* feat: general improvements ([d998c08](https://github.com/gmahechas/erp/commit/d998c08))
+* feat: jwt implemented ([d5c72d9](https://github.com/gmahechas/erp/commit/d5c72d9))
+* feat: ms-0-js ([659aa42](https://github.com/gmahechas/erp/commit/659aa42))
+* refactor: APP_PORT as undedfined ([bbede29](https://github.com/gmahechas/erp/commit/bbede29))
+* refactor: enn vars name ([5537da9](https://github.com/gmahechas/erp/commit/5537da9))
+* refactor: mongo connections ([c2c9c94](https://github.com/gmahechas/erp/commit/c2c9c94))
+* refactor: move axios to ms-utils ([75da72b](https://github.com/gmahechas/erp/commit/75da72b))
+* refactor: rename registerModelFuncs ([626cacc](https://github.com/gmahechas/erp/commit/626cacc))
+
+
+
+
+
 ## <small>0.0.23 (2021-09-30)</small>
 
 * refactor: config error message - src in paths ([493d514](https://github.com/gmahechas/erp/commit/493d514))
