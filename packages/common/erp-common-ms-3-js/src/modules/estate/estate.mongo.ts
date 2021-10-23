@@ -6,6 +6,9 @@ const schema = new mongoose.Schema({
 		type: String,
 		default: uuidv4,
 	},
+	id: {
+		type: String,
+	},
 	estateName: {
 		type: String,
 		required: true
@@ -22,16 +25,19 @@ const schema = new mongoose.Schema({
 	versionKey: false,
 	toObject: {
 		transform(doc, ret) {
-			ret.id = ret._id;
 			delete ret._id;
 		}
 	},
 	toJSON: {
 		transform(doc, ret) {
-			ret.id = ret._id;
 			delete ret._id;
 		}
 	}
+});
+
+schema.pre('save', async function (next) {
+	this.set('id', this.get('_id'));
+	next();
 });
 
 type EstateDocument = IEstate & Document;

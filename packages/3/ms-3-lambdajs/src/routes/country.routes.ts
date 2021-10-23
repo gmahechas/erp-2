@@ -11,14 +11,14 @@ export const routes: IRouteLambda[] = [
 		action: createOneCountry
 	},
 	{
-		httpMethod: httpMethods.POST,
+		httpMethod: httpMethods.PUT,
 		path: '/update/one',
 		args: ['body'],
 		validation: validate(updateOneCountrySchema),
 		action: updateOneCountry
 	},
 	{
-		httpMethod: httpMethods.POST,
+		httpMethod: httpMethods.DELETE,
 		path: '/delete/one',
 		args: ['body'],
 		validation: validate(deleteOneCountrySchema),

@@ -44,3 +44,8 @@ export const searchOneEstateSchema: JSONSchemaType<ISearchEstate> = {
 	required: [],
 	additionalProperties: false
 };
+
+export const searchManyEstateSchema: JSONSchemaType<ISearchEstate[]> = {
+	type: 'array',
+	items: searchOneEstateSchema
+};

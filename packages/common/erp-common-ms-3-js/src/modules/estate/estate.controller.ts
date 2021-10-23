@@ -13,13 +13,22 @@ export const createOneEstate = async (data: ICreateEstate): Promise<IEstate> => 
 };
 
 export const updateOneEstate = async (data: IUpdateEstate): Promise<IEstate> => {
-	return data;
+	const { id, estateName, estateCode, countryId } = data;
+	const estate = await Estate.findOneAndUpdate({ id }, { estateName, estateCode, countryId }) as IEstate;
+	return estate;
 };
 
 export const deleteOneEstate = async (data: IDeleteEstate): Promise<IEstate> => {
-	return { estateName: 'estateName', estateCode: 'estateCode', countryId: '1', ...data };
+	const estate = await Estate.findOneAndDelete(data) as IEstate;
+	return estate;
 };
 
 export const searchOneEstate = async (data: ISearchEstate): Promise<IEstate> => {
-	return data;
+	const estate = await Estate.findOne({ estateName: { $regex: data.estateName } }) as IEstate;
+	return estate;
+};
+
+export const searchManyEstate = async (data: ISearchEstate[]): Promise<IEstate[]> => {
+	const estates = await Estate.find({ $in: data }) as IEstate[];
+	return estates;
 };

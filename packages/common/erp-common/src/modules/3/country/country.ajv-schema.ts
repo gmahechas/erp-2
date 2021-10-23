@@ -41,3 +41,8 @@ export const searchOneCountrySchema: JSONSchemaType<ISearchCountry> = {
 	required: [],
 	additionalProperties: false
 };
+
+export const searchManyCountrySchema: JSONSchemaType<ISearchCountry[]> = {
+	type: 'array',
+	items: searchOneCountrySchema
+};

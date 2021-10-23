@@ -13,13 +13,22 @@ export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> 
 };
 
 export const updateOneCountry = async (data: IUpdateCountry): Promise<ICountry> => {
-	return data;
+	const { id, countryName, countryCode } = data;
+	const country = await Country.findOneAndUpdate({ id }, { countryName, countryCode }) as ICountry;
+	return country;
 };
 
 export const deleteOneCountry = async (data: IDeleteCountry): Promise<ICountry> => {
-	return { countryName: 'countryName', countryCode: 'countryCode', ...data };
+	const country = await Country.findOneAndDelete(data) as ICountry;
+	return country;
 };
 
 export const searchOneCountry = async (data: ISearchCountry): Promise<ICountry> => {
-	return data;
+	const country = await Country.findOne({ countryName: { $regex: data.countryName } }) as ICountry;
+	return country;
+};
+
+export const searchManyCountry = async (data: ISearchCountry[]): Promise<ICountry[]> => {
+	const countries = await Country.find({ $in: data }) as ICountry[];
+	return countries;
 };
