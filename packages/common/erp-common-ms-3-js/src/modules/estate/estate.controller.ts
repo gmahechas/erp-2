@@ -1,10 +1,4 @@
-import {
-	ICreateEstate,
-	IUpdateEstate,
-	IDeleteEstate,
-	ISearchEstate,
-	IEstate
-} from '@gmahechas/erp-common';
+import { IEstate, ICreateEstate, IUpdateEstate, IDeleteEstate, ISearchEstate } from '@gmahechas/erp-common';
 import { Estate } from './estate.mongo';
 
 export const createOneEstate = async (data: ICreateEstate): Promise<IEstate> => {

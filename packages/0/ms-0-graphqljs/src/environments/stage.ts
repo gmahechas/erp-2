@@ -12,6 +12,16 @@ export const config: IConfig = ({
 					url: process.env.MS_ZERO_SESSION_REDIS_URL
 				}
 			}
+		},
+		one: {
+			command: {
+				url: process.env.MS_ONE_COMMAND_URL
+			}
+		},
+		three: {
+			command: {
+				url: process.env.MS_THREE_COMMAND_URL
+			}
 		}
 	}
 });
