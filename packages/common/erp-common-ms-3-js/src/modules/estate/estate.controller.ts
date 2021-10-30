@@ -2,27 +2,36 @@ import { IEstate, ICreateEstate, IUpdateEstate, IDeleteEstate, ISearchEstate } f
 import { Estate } from './estate.mongo';
 
 export const createOneEstate = async (data: ICreateEstate): Promise<IEstate> => {
-	const estate = new Estate(data);
-	return await estate.save();
+	const result = await Estate.create(data);
+	return result;
 };
 
-export const updateOneEstate = async (data: IUpdateEstate): Promise<IEstate> => {
+export const updateOneEstate = async (data: IUpdateEstate): Promise<IEstate | null> => {
 	const { id, estateName, estateCode, countryId } = data;
-	const estate = await Estate.findOneAndUpdate({ id }, { estateName, estateCode, countryId }) as IEstate;
-	return estate;
+	const result = await Estate.updateOne({ id }, { estateName, estateCode, countryId });
+	if (result.modifiedCount == 1) {
+		return { id, estateName, estateCode, countryId };
+	} else {
+		return null;
+	}
 };
 
-export const deleteOneEstate = async (data: IDeleteEstate): Promise<IEstate> => {
-	const estate = await Estate.findOneAndDelete(data) as IEstate;
-	return estate;
+export const deleteOneEstate = async (data: IDeleteEstate): Promise<IEstate | null> => {
+	const result = await Estate.deleteOne(data);
+	if (result.deletedCount == 1) {
+		return { id: data.id, estateName: 'fixme', estateCode: 'fixme', countryId: 'fixme' };
+	} else {
+		return null;
+	}
 };
 
-export const searchOneEstate = async (data: ISearchEstate): Promise<IEstate> => {
-	const estate = await Estate.findOne({ estateName: { $regex: data.estateName } }) as IEstate;
-	return estate;
+export const searchOneEstate = async (data: ISearchEstate): Promise<IEstate | null> => {
+	const { id } = data;
+	const result = await Estate.findOne({ id });
+	return result;
 };
 
 export const searchManyEstate = async (data: ISearchEstate[]): Promise<IEstate[]> => {
-	const estates = await Estate.find({ $in: data }) as IEstate[];
-	return estates;
+	const result = await Estate.find({ $or: data });
+	return result;
 };

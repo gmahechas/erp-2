@@ -6,17 +6,17 @@ export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> 
 	return response.data;
 };
 
-export const updateOneCountry = async (data: IUpdateCountry): Promise<ICountry> => {
+export const updateOneCountry = async (data: IUpdateCountry): Promise<ICountry | null> => {
 	const { data: response } = await axiosClient(env.ms!.three!.command!.url!).put<{ data: ICountry }>('/rest/v1/3/country/update/one', data);
 	return response.data;
 };
 
-export const deleteOneCountry = async (data: IDeleteCountry): Promise<ICountry> => {
+export const deleteOneCountry = async (data: IDeleteCountry): Promise<ICountry | null> => {
 	const { data: response } = await axiosClient(env.ms!.three!.command!.url!).delete<{ data: ICountry }>('/rest/v1/3/country/delete/one', { data });
 	return response.data;
 };
 
-export const searchOneCountry = async (data: Partial<ISearchCountry>): Promise<ICountry> => {
+export const searchOneCountry = async (data: Partial<ISearchCountry>): Promise<ICountry | null> => {
 	const { data: response } = await axiosClient(env.ms!.three!.command!.url!).post<{ data: ICountry }>('/rest/v1/3/country/search/one', data);
 	return response.data;
 };
