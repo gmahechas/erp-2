@@ -1,5 +1,5 @@
 import { IAuth, ISigninAuth } from '@gmahechas/erp-common';
-import { jwtVerify } from '@gmahechas/erp-common-ms-utils-js';
+import { jwtDecode } from '@gmahechas/erp-common-ms-utils-js';
 import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
 import { signinAuth } from '@gmahechas/erp-common-ms-0-js';
 
@@ -16,14 +16,14 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Query: {
-		signinAuth: async (_: object, args: ISigninAuth, context: IContext): Promise<IAuth> => {
-			if (!context.auth) {
-				const { token } = await signinAuth(args);
+		signinAuth: async (_: object, args: ISigninAuth, context: IContext): Promise<any> => {
+			let token = context.token;
+			if (!token) {
+				const { token: newToken } = await signinAuth(args);
+				token = newToken;
 				context.req.session.token = token;
-				return jwtVerify(token, 'AnaLu') as IAuth;
-			} else {
-				return context.auth;
 			}
+			return jwtDecode(token) as IAuth;
 		}
 	}
 };

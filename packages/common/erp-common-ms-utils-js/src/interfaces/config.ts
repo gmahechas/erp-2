@@ -12,6 +12,12 @@ export interface IConfig {
 			};
 		}
 		one?: {
+			auth?: {
+				jwt?: {
+					privateKey?: string;
+					publicKey?: string;
+				}
+			},
 			command?: {
 				url?: string;
 				databases?: {

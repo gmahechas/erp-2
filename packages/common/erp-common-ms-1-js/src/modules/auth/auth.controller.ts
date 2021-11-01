@@ -1,5 +1,5 @@
 import { ISigninAuth } from '@gmahechas/erp-common';
-import { sendError, compareHash, jwtSign } from '@gmahechas/erp-common-ms-utils-js';
+import { sendError, compareHash, jwtSign, resolvePath, checkExistsFile, readFileSync, env } from '@gmahechas/erp-common-ms-utils-js';
 import { searchOneUser } from '../user/user.controller';
 
 export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> => {
@@ -18,10 +18,17 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 		sendError('authentication_error');
 	}
 
+	const privateKeyPath = resolvePath(env.ms?.one?.auth?.jwt?.privateKey!);
+	if (!checkExistsFile(privateKeyPath)) {
+		sendError('error_config');
+	}
+
+	const privateKey = readFileSync(privateKeyPath);
+
 	const token = jwtSign({
 		id,
 		userName
-	}, 'AnaLu');
+	}, privateKey, { algorithm: 'RS256' });
 
 	return { token };
 };

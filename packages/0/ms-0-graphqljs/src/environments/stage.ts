@@ -14,6 +14,11 @@ export const config: IConfig = ({
 			}
 		},
 		one: {
+			auth: {
+				jwt: {
+					publicKey: process.env.MS_ONE_AUTH_JWT_PUBLIC_KEY
+				}
+			},
 			command: {
 				url: process.env.MS_ONE_COMMAND_URL
 			}

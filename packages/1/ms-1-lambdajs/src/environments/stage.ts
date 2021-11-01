@@ -4,6 +4,11 @@ export const config: IConfig = ({
 	environment: 'stage',
 	ms: {
 		one: {
+			auth: {
+				jwt: {
+					publicKey: process.env.MS_ONE_AUTH_JWT_PUBLIC_KEY
+				}
+			},
 			command: {
 				databases: {
 					mongo: {

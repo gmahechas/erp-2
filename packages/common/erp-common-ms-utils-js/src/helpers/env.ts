@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { sendError } from '../errors/utils/send-error';
 import { IConfig } from '../interfaces/config';
-import { resolveApp, checkExistsFile } from './paths';
+import { resolvePath, checkExistsFile } from './node';
 
 export let env: IConfig;
 
@@ -14,7 +14,7 @@ export const initEnv = async (useDotEnv = true) => {
 		sendError('error_config');
 	}
 	const fileFolder = ((environment == 'development') ? 'src' : 'dist') + '/environments/';
-	const filePath = resolveApp(fileFolder + environment)
+	const filePath = resolvePath(fileFolder + environment)
 	const extension = (environment == 'development') ? '.ts' : '.js'
 	const fullFilePath = filePath + extension;
 

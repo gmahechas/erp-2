@@ -1,5 +1,4 @@
-import { IAuth } from '@gmahechas/erp-common';
-import { sendError, jwtVerify } from '@gmahechas/erp-common-ms-utils-js';
+import { sendError } from '@gmahechas/erp-common-ms-utils-js';
 import { express, IContext } from '@gmahechas/erp-common-graphqljs';
 declare module 'express-session' {
 	interface SessionData {
@@ -13,13 +12,8 @@ export const authMiddleware = async (req: express.Request, res: express.Response
 		if (!token) {
 			sendError('authentication_error')
 		}
-		const auth = jwtVerify(token, 'AnaLu') as IAuth;
-		return { req, res, auth };
+		return { req, res, token };
 	} else {
-		if (!token) {
-			return { req, res };
-		}
-		const auth = jwtVerify(token, 'AnaLu') as IAuth;
-		return { req, res, auth };
+		return { req, res, token };
 	}
 }

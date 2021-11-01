@@ -7,6 +7,11 @@ export const config: IConfig = ({
 	},
 	ms: {
 		one: {
+			auth: {
+				jwt: {
+					privateKey: process.env.MS_ONE_AUTH_JWT_PRIVATE_KEY
+				}
+			},
 			command: {
 				databases: {
 					mongo: {
