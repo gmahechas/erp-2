@@ -6,7 +6,7 @@ export const config: IConfig = ({
 		one: {
 			auth: {
 				jwt: {
-					publicKey: process.env.MS_ONE_AUTH_JWT_PUBLIC_KEY
+					privateKey: process.env.MS_ONE_AUTH_JWT_PRIVATE_KEY
 				}
 			},
 			command: {
