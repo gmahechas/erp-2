@@ -10,4 +10,4 @@ router.post('/signin', validatorMiddleware(signinAuthSchema), async (request: ex
 	response.status(statusCode).send(body);
 });
 
-export default router;
+export const authRouter = router;

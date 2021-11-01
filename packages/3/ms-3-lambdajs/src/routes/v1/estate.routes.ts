@@ -2,7 +2,7 @@ import { validate, createOneEstateSchema, updateOneEstateSchema, deleteOneEstate
 import { httpMethods, IRouteLambda } from '@gmahechas/erp-common-lambdajs';
 import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate, searchManyEstate } from '@gmahechas/erp-common-ms-3-js';
 
-export const routes: IRouteLambda[] = [
+export const estateRoutes: IRouteLambda[] = [
 	{
 		httpMethod: httpMethods.POST,
 		path: '/create/one',

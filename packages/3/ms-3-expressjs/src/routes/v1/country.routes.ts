@@ -34,4 +34,4 @@ router.post('/search/many', validatorMiddleware(searchManyCountrySchema), async 
 	response.status(statusCode).send(body);
 });
 
-export default router;
+export const countryRouter = router;

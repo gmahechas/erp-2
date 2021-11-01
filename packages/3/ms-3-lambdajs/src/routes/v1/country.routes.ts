@@ -2,7 +2,7 @@ import { validate, createOneCountrySchema, updateOneCountrySchema, deleteOneCoun
 import { httpMethods, IRouteLambda } from '@gmahechas/erp-common-lambdajs';
 import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry, searchManyCountry } from '@gmahechas/erp-common-ms-3-js';
 
-export const routes: IRouteLambda[] = [
+export const countryRoutes: IRouteLambda[] = [
 	{
 		httpMethod: httpMethods.POST,
 		path: '/create/one',

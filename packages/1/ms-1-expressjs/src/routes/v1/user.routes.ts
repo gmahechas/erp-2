@@ -10,4 +10,4 @@ router.post('/create/one', validatorMiddleware(createOneUserSchema), async (requ
 	response.status(statusCode).send(body);
 });
 
-export default router;
+export const userRouter = router;

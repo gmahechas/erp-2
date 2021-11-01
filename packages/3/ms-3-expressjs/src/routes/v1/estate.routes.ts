@@ -34,4 +34,4 @@ router.post('/search/many', validatorMiddleware(searchManyEstateSchema), async (
 	response.status(statusCode).send(body);
 });
 
-export default router;
+export const estateRouter = router;
