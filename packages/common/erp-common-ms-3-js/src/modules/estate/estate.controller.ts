@@ -7,27 +7,17 @@ export const createOneEstate = async (data: ICreateEstate): Promise<IEstate> => 
 };
 
 export const updateOneEstate = async (data: IUpdateEstate): Promise<IEstate | null> => {
-	const { id, estateName, estateCode, countryId } = data;
-	const result = await Estate.updateOne({ id }, { estateName, estateCode, countryId });
-	if (result.modifiedCount == 1) {
-		return { id, estateName, estateCode, countryId };
-	} else {
-		return null;
-	}
+	const result = await Estate.findOneAndUpdate({ id: data.id }, data);
+	return result;
 };
 
 export const deleteOneEstate = async (data: IDeleteEstate): Promise<IEstate | null> => {
-	const result = await Estate.deleteOne(data);
-	if (result.deletedCount == 1) {
-		return { id: data.id, estateName: 'fixme', estateCode: 'fixme', countryId: 'fixme' };
-	} else {
-		return null;
-	}
+	const result = await Estate.findOneAndDelete(data);
+	return result;	
 };
 
 export const searchOneEstate = async (data: ISearchEstate): Promise<IEstate | null> => {
-	const { id } = data;
-	const result = await Estate.findOne({ id });
+	const result = await Estate.findOne({ id: data.id });
 	return result;
 };
 

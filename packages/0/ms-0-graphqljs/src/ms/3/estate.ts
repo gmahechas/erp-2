@@ -49,26 +49,32 @@ export const typeDefs = gql`
 export const resolvers = {
 	Mutation: {
 		createOneEstate: async (_: object, { data }: { data: ICreateEstate }, context: IContext): Promise<IEstate> => {
-			return await createOneEstate(data);
+			const result = await createOneEstate(data);
+			return result;
 		},
 		updateOneEstate: async (_: any, { data }: { data: IUpdateEstate }, context: IContext): Promise<IEstate | null> => {
-			return await updateOneEstate(data);
+			const result = await updateOneEstate(data);
+			return result;
 		},
 		deleteOneEstate: async (_: any, { data }: { data: IDeleteEstate }, context: IContext): Promise<IEstate | null> => {
-			return await deleteOneEstate(data);
+			const result = await deleteOneEstate(data);
+			return result;
 		}
 	},
 	Query: {
 		searchOneEstate: async (_: object, { data }: { data: ISearchEstate }, context: IContext): Promise<IEstate | null> => {
-			return await searchOneEstate(data);
+			const result = await searchOneEstate(data);
+			return result;
 		},
 		searchManyEstate: async (_: object, { data }: { data: ISearchEstate[] }, context: IContext): Promise<IEstate[]> => {
-			return await searchManyEstate(data);
+			const result = await searchManyEstate(data);
+			return result;
 		}
 	},
 	Estate: {
 		country: async (parent: IEstate, _: object, context: IContext): Promise<ICountry | null> => {
-			return await searchOneCountry({ id: parent.countryId });
+			const result = await searchOneCountry({ id: parent.countryId });
+			return result;
 		}
 	},
 };

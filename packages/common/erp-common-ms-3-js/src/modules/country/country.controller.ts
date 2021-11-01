@@ -7,27 +7,17 @@ export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> 
 };
 
 export const updateOneCountry = async (data: IUpdateCountry): Promise<ICountry | null> => {
-	const { id, countryName, countryCode } = data;
-	const result = await Country.updateOne({ id }, { countryName, countryCode });
-	if (result.modifiedCount == 1) {
-		return { id, countryName, countryCode };
-	} else {
-		return null;
-	}
+	const result = await Country.findOneAndUpdate({ id: data.id }, data);
+	return result;
 };
 
 export const deleteOneCountry = async (data: IDeleteCountry): Promise<ICountry | null> => {
-	const result = await Country.deleteOne(data);
-	if (result.deletedCount == 1) {
-		return { id: data.id, countryName: 'fixme', countryCode: 'fixme' };
-	} else {
-		return null;
-	}
+	const result = await Country.findOneAndDelete(data);
+	return result;
 };
 
 export const searchOneCountry = async (data: ISearchCountry): Promise<ICountry | null> => {
-	const { id } = data;
-	const result = await Country.findOne({ id });
+	const result = await Country.findOne({ id: data.id });
 	return result;
 };
 
