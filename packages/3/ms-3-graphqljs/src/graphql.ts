@@ -1,7 +1,7 @@
 import { ApolloServer } from '@gmahechas/erp-common-graphqljs';
 import { typeDefs, resolvers } from './modules';
 
-export default async () => {
+export const graphqlV1 = async () => {
 	const graphql = new ApolloServer({
 		typeDefs,
 		resolvers,

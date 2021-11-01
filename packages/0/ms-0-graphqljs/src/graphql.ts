@@ -1,11 +1,11 @@
 import { ApolloServer } from '@gmahechas/erp-common-graphqljs';
-import { typeDefs, resolvers } from './ms';
+import { v1TypeDefs, v1Resolvers } from './ms';
 import { authMiddleware, errorMiddleware } from './middlewares';
 
-export default async () => {
+export const graphqlV1 = async () => {
 	const graphql = new ApolloServer({
-		typeDefs,
-		resolvers,
+		typeDefs: v1TypeDefs,
+		resolvers: v1Resolvers,
 		debug: false,
 		formatError: (error) => errorMiddleware(error),
 		context: async ({ req, res }) => await authMiddleware(req, res)
@@ -13,6 +13,3 @@ export default async () => {
 	await graphql.start();
 	return graphql;
 }
-
-
-
