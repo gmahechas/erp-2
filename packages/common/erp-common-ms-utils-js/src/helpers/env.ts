@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import { sendError } from '../errors/utils/send-error';
-import { IConfig } from '../interfaces/config';
+import { IConfig } from '../interfaces/config.interface';
 import { resolvePath, checkExistsFile } from './node';
 
 export let env: IConfig;

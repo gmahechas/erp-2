@@ -5,7 +5,7 @@ import app from './app';
 const start = async () => {
 	try {
 		await initEnv();
-		await connectDatabases();
+		await connectDatabases({ command: true });
 		const appPort = env?.app?.port;
 		if (!appPort) {
 			sendError('error_config')
@@ -19,4 +19,4 @@ const start = async () => {
 	}
 };
 
-start();50003
+start(); 50003

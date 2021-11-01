@@ -8,13 +8,13 @@ import { responseLambda } from './helpers/response.lambda';
 import { errorHandlerLambda } from './helpers/error-handler.lambda';
 import { IHandlerLambda } from './helpers/handler-lambda.interface';
 
-export const handlerLambda: IHandlerLambda = (routes, connectDatabases) => async (event, context) => {
+export const handlerLambda: IHandlerLambda = (routes, connectDatabases, cq) => async (event, context) => {
 	try {
 		await initEnv(false);
 		const { args, validation, action } = routerLambda(event, routes);
 		const actionParams = actionArgs(args, event);
 		validatorLambda(validation, actionParams);
-		await connectDatabases();
+		await connectDatabases(cq);
 		const data = await action(actionParams);
 		const response = iresponse(200, data);
 		return responseLambda(response);

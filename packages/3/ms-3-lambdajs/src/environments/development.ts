@@ -11,13 +11,6 @@ export const config: IConfig = ({
 					}
 				}
 			},
-			query: {
-				databases: {
-					mongo: {
-						uri: process.env.MS_THREE_QUERY_DATABASES_MONGO_URI
-					}
-				}
-			}
 		}
 	}
 });
