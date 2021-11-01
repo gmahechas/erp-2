@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import { IAuth } from '@gmahechas/erp-common';
 import { env } from './env';
 import { sendError } from '../errors/utils/send-error';
-import { resolvePath, checkExistsFile, readFileSync } from './node';
+import { checkExistsFile, readFileSync } from './node';
 
 export const jwtSign = (
 	payload: string | object | SourceBufferEventMap,
@@ -15,7 +15,7 @@ export const jwtVerify = (
 	options?: jwt.SignOptions | undefined) => jwt.verify(token, secretOrPrivateKey, options);
 
 export const jwtDecode = (token: string) => {
-	const publicKeyPath = resolvePath(env.ms?.one?.auth?.jwt?.publicKey!);
+	const publicKeyPath = env.ms?.one?.auth?.jwt?.publicKey!;
 	if (!checkExistsFile(publicKeyPath)) {
 		sendError('error_config');
 	}
