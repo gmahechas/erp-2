@@ -58,7 +58,6 @@ export const resolvers = {
 	},
 	Query: {
 		searchOneUser: async (_: object, { data }: { data: Partial<ISearchUser> }, context: IContext): Promise<IUser | null> => {
-			console.log(data);
 			const result = await searchOneUser(data);
 			return result;
 		},
