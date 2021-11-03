@@ -16,7 +16,7 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Query: {
-		signinAuth: async (_: object, args: ISigninAuth, context: IContext): Promise<any> => {
+		signinAuth: async (_: object, args: ISigninAuth, context: IContext): Promise<IAuth> => {
 			let token = context.token;
 			if (!token) {
 				const { token: newToken } = await signinAuth(args);
