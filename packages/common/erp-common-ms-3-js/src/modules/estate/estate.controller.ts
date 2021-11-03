@@ -8,7 +8,7 @@ export const createOneEstate = async (data: ICreateEstate): Promise<IEstate> => 
 
 export const updateOneEstate = async (data: IUpdateEstate): Promise<IEstate | null> => {
 	const result = await Estate.findOneAndUpdate({ id: data.id }, data);
-	return result;
+	return Object.assign(result, data);
 };
 
 export const deleteOneEstate = async (data: IDeleteEstate): Promise<IEstate | null> => {
@@ -16,12 +16,12 @@ export const deleteOneEstate = async (data: IDeleteEstate): Promise<IEstate | nu
 	return result;	
 };
 
-export const searchOneEstate = async (data: ISearchEstate): Promise<IEstate | null> => {
-	const result = await Estate.findOne({ id: data.id });
+export const searchOneEstate = async (data: Partial<ISearchEstate>): Promise<IEstate | null> => {
+	const result = await Estate.findOne(data);
 	return result;
 };
 
-export const searchManyEstate = async (data: ISearchEstate[]): Promise<IEstate[]> => {
+export const searchManyEstate = async (data: Partial<ISearchEstate>[]): Promise<IEstate[]> => {
 	const result = await Estate.find({ $or: data });
 	return result;
 };

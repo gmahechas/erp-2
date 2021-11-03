@@ -24,9 +24,6 @@ export const typeDefs = gql`
 	}
 	input SearchOneCountry {
 		id: String
-	}
-	input SearchManyCountry {
-		id: String
 		countryName: String
   	countryCode: String
 	}
@@ -38,7 +35,7 @@ export const typeDefs = gql`
 	}
   type Query {
   	searchOneCountry(data: SearchOneCountry): Country
-		searchManyCountry(data: [SearchManyCountry]): [Country]
+		searchManyCountry(data: [SearchOneCountry]): [Country]
 	}
 `;
 
@@ -58,11 +55,11 @@ export const resolvers = {
 		}
 	},
 	Query: {
-		searchOneCountry: async (_: object, { data }: { data: ISearchCountry }, context: IContext): Promise<ICountry | null> => {
+		searchOneCountry: async (_: object, { data }: { data: Partial<ISearchCountry> }, context: IContext): Promise<ICountry | null> => {
 			const result = await searchOneCountry(data);
 			return result;
 		},
-		searchManyCountry: async (_: object, { data }: { data: ISearchCountry[] }, context: IContext): Promise<ICountry[]> => {
+		searchManyCountry: async (_: object, { data }: { data: Partial<ISearchCountry>[] }, context: IContext): Promise<ICountry[]> => {
 			const result = await searchManyCountry(data);
 			return result;
 		}

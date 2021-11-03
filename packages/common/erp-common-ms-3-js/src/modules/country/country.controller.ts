@@ -8,7 +8,7 @@ export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> 
 
 export const updateOneCountry = async (data: IUpdateCountry): Promise<ICountry | null> => {
 	const result = await Country.findOneAndUpdate({ id: data.id }, data);
-	return result;
+	return Object.assign(result, data);
 };
 
 export const deleteOneCountry = async (data: IDeleteCountry): Promise<ICountry | null> => {
@@ -16,12 +16,12 @@ export const deleteOneCountry = async (data: IDeleteCountry): Promise<ICountry |
 	return result;
 };
 
-export const searchOneCountry = async (data: ISearchCountry): Promise<ICountry | null> => {
-	const result = await Country.findOne({ id: data.id });
+export const searchOneCountry = async (data: Partial<ISearchCountry>): Promise<ICountry | null> => {
+	const result = await Country.findOne(data);
 	return result;
 };
 
-export const searchManyCountry = async (data: ISearchCountry[]): Promise<ICountry[]> => {
+export const searchManyCountry = async (data: Partial<ISearchCountry>[]): Promise<ICountry[]> => {
 	const result = await Country.find({ $or: data });
 	return result;
 };

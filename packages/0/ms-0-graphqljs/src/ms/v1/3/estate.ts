@@ -27,9 +27,6 @@ export const typeDefs = gql`
 	}
 	input SearchOneEstate {
 		id: String
-	}
-	input SearchManyEstate {
-		id: String
   	estateName: String
   	estateCode: String
   	countryId: String
@@ -42,7 +39,7 @@ export const typeDefs = gql`
 	}
   type Query {
   	searchOneEstate(data: SearchOneEstate): Estate
-		searchManyEstate(data: [SearchManyEstate]): [Estate]
+		searchManyEstate(data: [SearchOneEstate]): [Estate]
 	}
 `;
 
@@ -62,11 +59,11 @@ export const resolvers = {
 		}
 	},
 	Query: {
-		searchOneEstate: async (_: object, { data }: { data: ISearchEstate }, context: IContext): Promise<IEstate | null> => {
+		searchOneEstate: async (_: object, { data }: { data: Partial<ISearchEstate> }, context: IContext): Promise<IEstate | null> => {
 			const result = await searchOneEstate(data);
 			return result;
 		},
-		searchManyEstate: async (_: object, { data }: { data: ISearchEstate[] }, context: IContext): Promise<IEstate[]> => {
+		searchManyEstate: async (_: object, { data }: { data: Partial<ISearchEstate>[] }, context: IContext): Promise<IEstate[]> => {
 			const result = await searchManyEstate(data);
 			return result;
 		}
