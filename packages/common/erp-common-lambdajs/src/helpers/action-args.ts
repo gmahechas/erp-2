@@ -1,5 +1,5 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
-import { argsType } from '../route.interface';
+import { argsType } from '../interfaces/route.interface';
 
 export const actionArgs = (fields: argsType, event: APIGatewayProxyEvent) => {
 	let args = {};

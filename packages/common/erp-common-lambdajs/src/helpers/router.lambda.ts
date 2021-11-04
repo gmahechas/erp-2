@@ -1,7 +1,7 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { match } from 'path-to-regexp';
 import { sendError } from '@gmahechas/erp-common-ms-utils-js';
-import { IRouteLambda } from '../route.interface';
+import { IRouteLambda } from '../interfaces/route.interface';
 
 export const routerLambda = (event: APIGatewayProxyEvent, routes: IRouteLambda[]): IRouteLambda => {
 	const route = routes.find(route => {
