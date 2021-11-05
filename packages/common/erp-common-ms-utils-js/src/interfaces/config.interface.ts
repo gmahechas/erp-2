@@ -12,46 +12,26 @@ export interface IConfig {
 			};
 		}
 		one?: {
+			url?: string;
 			auth?: {
 				jwt?: {
 					privateKey?: string;
 					publicKey?: string;
 				}
 			},
-			command?: {
-				url?: string;
-				databases?: {
-					mongo?: {
-						uri?: string;
-					}
+			databases?: {
+				mongo?: {
+					uri?: string;
 				}
 			};
-			query?: {
-				url?: string;
-				databases?: {
-					mongo?: {
-						uri?: string;
-					}
-				}
-			}
 		}
 		three?: {
-			command?: {
-				url?: string;
-				databases?: {
-					mongo?: {
-						uri?: string;
-					}
+			url?: string;
+			databases?: {
+				mongo?: {
+					uri?: string;
 				}
 			};
-			query?: {
-				url?: string;
-				databases?: {
-					mongo?: {
-						uri?: string;
-					}
-				}
-			}
 		}
 	}
 }

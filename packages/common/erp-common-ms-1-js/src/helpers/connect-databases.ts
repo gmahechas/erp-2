@@ -3,13 +3,9 @@ import { registerMongoModels } from './register-mongo-models';
 
 export const connectDatabases = async () => {
 	const { ms } = env;
-	if (!ms?.one?.command?.databases?.mongo?.uri) {
+	if (!ms?.one?.databases?.mongo?.uri) {
 		sendError('db_connection');
 	}
-	const {
-		one: {
-			command: { databases: { mongo: { uri: commandUri } } }
-		}
-	} = ms;
-	await connectToMongo({ uri: commandUri }, 'createConnection', registerMongoModels);
+	const { one: { databases: { mongo: { uri } } } } = ms;
+	await connectToMongo({ uri }, 'createConnection', registerMongoModels);
 }

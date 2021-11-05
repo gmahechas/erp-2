@@ -12,11 +12,9 @@ export const config: IConfig = ({
 					privateKey: process.env.MS_ONE_AUTH_JWT_PRIVATE_KEY
 				}
 			},
-			command: {
-				databases: {
-					mongo: {
-						uri: process.env.MS_ONE_COMMAND_DATABASES_MONGO_URI
-					}
+			databases: {
+				mongo: {
+					uri: process.env.MS_ONE_DATABASES_MONGO_URI
 				}
 			}
 		}

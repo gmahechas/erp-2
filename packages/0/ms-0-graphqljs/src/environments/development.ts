@@ -14,19 +14,15 @@ export const config: IConfig = ({
 			}
 		},
 		one: {
+			url: process.env.MS_ONE_URL,
 			auth: {
 				jwt: {
 					publicKey: process.env.MS_ONE_AUTH_JWT_PUBLIC_KEY
 				}
-			},
-			command: {
-				url: process.env.MS_ONE_COMMAND_URL
 			}
 		},
 		three: {
-			command: {
-				url: process.env.MS_THREE_COMMAND_URL
-			}
+			url: process.env.MS_THREE_URL
 		}
 	}
 });
