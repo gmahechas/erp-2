@@ -11,7 +11,7 @@ export const handler = async (event: APIGatewayProxyEvent, context: Context) => 
 		const actionParams = actionArgs(args, event);
 		validatorLambda(validation, actionParams);
 		context.callbackWaitsForEmptyEventLoop = false;
-		await connectDatabases({ command: true });
+		await connectDatabases();
 		const data = await action(actionParams);
 		const response = iresponse(200, data);
 		return responseLambda(response);

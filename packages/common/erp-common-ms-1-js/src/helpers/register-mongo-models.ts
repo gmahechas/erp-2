@@ -1,8 +1,5 @@
 import { registerUserModel } from '../modules/v1/user/user.mongo';
 
-export const registerMsMongoModels = [
+export const registerMongoModels = [
 	registerUserModel
-];
-
-export const registerMsQueryMongoModels = [
 ];
