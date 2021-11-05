@@ -10,4 +10,4 @@ const proto = (grpc.loadPackageDefinition(packageDefinition) as unknown) as Pick
 app.addService(proto.country.CountryService.service, countryService);
 app.addService(proto.estate.EstateService.service, estateService);
 
-export default app;
+export { app };

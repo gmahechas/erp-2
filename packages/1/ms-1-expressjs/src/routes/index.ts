@@ -1,5 +1,5 @@
 import { v1Routes } from './v1';
 
-export default [
+export const routes = [
 	...v1Routes
 ];

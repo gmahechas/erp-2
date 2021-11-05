@@ -1,5 +1,5 @@
 import { generalHandlerError, initEnv, env, sendError } from '@gmahechas/erp-common-ms-utils-js';
-import bootstrap from './app';
+import { bootstrap } from './app';
 
 const start = async () => {
 	try {

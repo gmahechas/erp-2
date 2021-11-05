@@ -1,6 +1,6 @@
 import { generalHandlerError, initEnv, env, sendError } from '@gmahechas/erp-common-ms-utils-js';
 import { connectDatabases } from '@gmahechas/erp-common-ms-3-js';
-import app from './app';
+import { app } from './app';
 
 const start = async () => {
 	try {
