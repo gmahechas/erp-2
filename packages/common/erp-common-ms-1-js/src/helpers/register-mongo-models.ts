@@ -1,4 +1,4 @@
-import { registerUserModel } from '../modules/user/user.mongo';
+import { registerUserModel } from '../modules/v1/user/user.mongo';
 
 export const registerMsMongoModels = [
 	registerUserModel
