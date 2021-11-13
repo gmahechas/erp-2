@@ -1,6 +1,7 @@
 import connectRedis from 'connect-redis';
 import expressSession from 'express-session';
-import { env, redis, sendError } from '@gmahechas/erp-common-ms-utils-js';
+import redis from 'redis';
+import { env, sendError } from '@gmahechas/erp-common-ms-utils-js';
 
 export const session = async () => {
 	if(!env.ms?.zero?.session?.redis?.url) {

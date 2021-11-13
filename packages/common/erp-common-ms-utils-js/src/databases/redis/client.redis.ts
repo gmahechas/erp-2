@@ -1,15 +1,9 @@
-import { createClient, RedisClient } from 'redis';
+import { createClient } from 'redis';
+import { IRedisCreateClient } from './redis.interface';
 
-export const createRedisClient = (url: string): Promise<RedisClient> => {
-	return new Promise((resolve, reject) => {
-		const client = createClient({ url });
-		client.on('error', (error) => {
-			console.error(`redis error in: ${url}`)
-			reject(error);
-		} );
-		client.on('connect', () => {
-			console.info(`redis connected to: ${url}`);
-			resolve(client);
-		});
-	})
+export const redisCreateClient: IRedisCreateClient = (url: string) => {
+	const client = createClient({ url });
+	client.on('error', () => console.error(`redis error in: ${url}`));
+	client.on('connect', () => console.info(`redis connected to: ${url}`));
+	return client;
 }
