@@ -1,2 +1,1 @@
-export * from './connect-databases';
-export * from './register-mongo-models';
+export * from './mongodb';
