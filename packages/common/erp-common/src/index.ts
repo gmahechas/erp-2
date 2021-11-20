@@ -1,3 +1,3 @@
 export * from './helpers';
-export * from './modules';
+export * from './ms';
 export * from './utils';
