@@ -12,8 +12,13 @@ export class CountryCreatedConsumer extends BaseConsumer<CountryCreatedEvent> {
 	constructor(consumer: Consumer) {
 		super(consumer);
 	}
-	onMessage(value: CountryCreatedEvent['value'], message: KafkaMessage, resolveOffset: (offset: string) => void) {
-		console.log('CountryCreatedListener.onMessage', value);
+	async onMessage(
+		value: CountryCreatedEvent['value'],
+		message: KafkaMessage,
+		resolveOffset: (offset: string) => void,
+		resolveFunction: (value: CountryCreatedEvent['value']) => Promise<void>
+	) {
+		await resolveFunction(value);
 		resolveOffset(message.offset);
 	}
 }
@@ -23,8 +28,13 @@ export class CountryUpdatedConsumer extends BaseConsumer<CountryUpdatedEvent> {
 	constructor(consumer: Consumer) {
 		super(consumer);
 	}
-	onMessage(value: CountryUpdatedEvent['value'], message: KafkaMessage, resolveOffset: (offset: string) => void) {
-		console.log('CountryUpdatedConsumer.onMessage', value);
+	async onMessage(
+		value: CountryUpdatedEvent['value'],
+		message: KafkaMessage,
+		resolveOffset: (offset: string) => void,
+		resolveFunction: (value: CountryUpdatedEvent['value']) => Promise<void>
+	) {
+		await resolveFunction(value);
 		resolveOffset(message.offset);
 	}
 }
@@ -34,8 +44,13 @@ export class CountryDeletedConsumer extends BaseConsumer<CountryDeletedEvent> {
 	constructor(consumer: Consumer) {
 		super(consumer);
 	}
-	onMessage(value: CountryUpdatedEvent['value'], message: KafkaMessage, resolveOffset: (offset: string) => void) {
-		console.log('CountryUpdatedConsumer.onMessage', value);
+	async onMessage(
+		value: CountryUpdatedEvent['value'],
+		message: KafkaMessage,
+		resolveOffset: (offset: string) => void,
+		resolveFunction: (value: CountryDeletedEvent['value']) => Promise<void>
+	) {
+		await resolveFunction(value);
 		resolveOffset(message.offset);
 	}
 }

@@ -8,11 +8,12 @@ export class KafkaWrapperConsumer {
 		}
 		return this._consumer;
 	}
-	async connect(config: KafkaConfig, groupId: string) {
+	async connect(config: KafkaConfig, groupId: string, topic: string | RegExp) {
 		const kafka = new Kafka(config);
 		this._consumer = kafka.consumer({ groupId });
-		this.consumer.on('consumer.connect', () => console.log(`kafka consumer.connect`));
 		await this.consumer.connect();
+		this.consumer.on('consumer.connect', () => console.log(`kafka consumer.connect`));
+		await this.consumer.subscribe({ topic, fromBeginning: true });
 	}
 }
 

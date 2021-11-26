@@ -7,26 +7,25 @@ interface Event {
 	value: any;
 }
 
+type resolveOffsetType = (offset: string) => void;
+type resolveFunctionType = <T extends Event>(value: T['value']) => Promise<void>
+
 export abstract class BaseConsumer<T extends Event> {
 	protected consumer: Consumer;
 	abstract topic: T['topic'];
-	abstract onMessage(value: T['value'], msg: KafkaMessage, resolveOffset: (offset: string) => void): void;
+	abstract onMessage(value: T['value'], msg: KafkaMessage, resolveOffset: resolveOffsetType, resolveFunction: resolveFunctionType): Promise<void>;
 
 	constructor(consumer: Consumer) {
 		this.consumer = consumer;
 	}
 
-	async subscribe() {
-		await this.consumer.subscribe({ topic: this.topic, fromBeginning: true });
-	}
-
-	async run() {
+	async run(resolveFunction: resolveFunctionType) {
 		await this.consumer.run({
 			eachBatchAutoResolve: false,
 			eachBatch: async ({ batch, resolveOffset, heartbeat }) => {
 				for (let message of batch.messages) {
 					const value = this.parseMessage(message);
-					this.onMessage(value, message, resolveOffset);
+					await this.onMessage(value, message, resolveOffset, resolveFunction);
 					await heartbeat();
 				}
 			}
