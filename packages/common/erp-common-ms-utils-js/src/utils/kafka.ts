@@ -1,3 +1,3 @@
-import { Kafka, KafkaMessage } from 'kafkajs';
+import { Producer, Consumer, KafkaMessage, logLevel } from 'kafkajs';
 
-export { Kafka, KafkaMessage };
+export { Producer, Consumer, KafkaMessage, logLevel };

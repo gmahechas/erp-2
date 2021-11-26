@@ -1,12 +1,12 @@
-import { generalHandlerError, initEnv, env, sendError, initCountryProducers } from '@gmahechas/erp-common-ms-utils-js';
-import { connectDatabases } from '@gmahechas/erp-common-ms-3-js';
+import { generalHandlerError, initEnv, env, sendError  } from '@gmahechas/erp-common-ms-utils-js';
+import { connectDatabases, initKafkaProducers } from '@gmahechas/erp-common-ms-3-js';
 import { app } from './app';
 
 const start = async () => {
 	try {
 		await initEnv();
 		await connectDatabases();
-		await initCountryProducers();
+		await initKafkaProducers();
 		const appPort = env?.app?.port;
 		if (!appPort) {
 			sendError('error_config')

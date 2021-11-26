@@ -1,40 +1,29 @@
-import { Kafka } from 'kafkajs';
+import { Producer } from 'kafkajs';
 import { BaseProducer } from '../../../../bases/base.producer';
-import { CountryCreatedEvent, CountryUpdatedEvent, CountryDeletedEvent } from './country.event';
 import { CountryTopics } from './country.topics';
+import {
+	CountryCreatedEvent,
+	CountryUpdatedEvent,
+	CountryDeletedEvent
+} from './country.events';
 
 export class CountryCreatedProducer extends BaseProducer<CountryCreatedEvent> {
 	readonly topic = CountryTopics.COUNTRY_CREATE;
-
-	constructor(kafka: Kafka) {
-		super(kafka);
-	}
-
-	async initProducer() {
-		await super.init();
+	constructor(producer: Producer) {
+		super(producer);
 	}
 }
 
 export class CountryUpdatedProducer extends BaseProducer<CountryUpdatedEvent> {
 	readonly topic = CountryTopics.COUNTRY_UPDATED;
-
-	constructor(kafka: Kafka) {
-		super(kafka);
-	}
-
-	async initProducer() {
-		await super.init();
+	constructor(producer: Producer) {
+		super(producer);
 	}
 }
 
 export class CountryDeletedProducer extends BaseProducer<CountryDeletedEvent> {
 	readonly topic = CountryTopics.COUNTRY_DELETED;
-
-	constructor(kafka: Kafka) {
-		super(kafka);
-	}
-
-	async initProducer() {
-		await super.init();
+	constructor(producer: Producer) {
+		super(producer);
 	}
 }

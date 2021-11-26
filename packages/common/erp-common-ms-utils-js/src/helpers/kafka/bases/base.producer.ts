@@ -8,18 +8,11 @@ interface Event {
 }
 
 export abstract class BaseProducer<T extends Event> {
-	private kafka: Kafka;
-	private producer: Producer;
+	protected producer: Producer;
 	abstract topic: T['topic'];
 
-	constructor(kafka: Kafka) {
-		this.kafka = kafka;
-		this.producer = this.kafka.producer({ idempotent: true });
-	}
-
-	async init() {
-		//this.producer.on('producer.connect', () => console.log(`kafka producer.connect to topic ${this.topic}`));
-		await this.producer.connect();
+	constructor(producer: Producer) {
+		this.producer = producer;
 	}
 
 	async send(value: T['value']) {

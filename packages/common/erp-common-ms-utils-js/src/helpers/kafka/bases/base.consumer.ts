@@ -1,4 +1,4 @@
-import { Kafka, Consumer, KafkaMessage, CompressionCodecs, CompressionTypes } from 'kafkajs';
+import { Consumer, KafkaMessage, CompressionCodecs, CompressionTypes } from 'kafkajs';
 const snappy = require('kafkajs-snappy');
 CompressionCodecs[CompressionTypes.Snappy] = snappy;
 
@@ -8,23 +8,16 @@ interface Event {
 }
 
 export abstract class BaseConsumer<T extends Event> {
-	private kafka: Kafka;
-	private groupId: string;
-	private consumer: Consumer;
+	protected consumer: Consumer;
 	abstract topic: T['topic'];
 	abstract onMessage(value: T['value'], msg: KafkaMessage, resolveOffset: (offset: string) => void): void;
 
-	constructor(kafka: Kafka, groupId: string) {
-		this.kafka = kafka;
-		this.groupId = groupId;
-		this.consumer = this.kafka.consumer({ groupId: this.groupId });
+	constructor(consumer: Consumer) {
+		this.consumer = consumer;
 	}
-	
-	async init() {
-		//this.consumer.on('consumer.connect', () => console.log(`kafka consumer.connect to topic ${this.topic}`));
-		await this.consumer.connect();
+
+	async subscribe() {
 		await this.consumer.subscribe({ topic: this.topic, fromBeginning: true });
-		await this.run();
 	}
 
 	async run() {

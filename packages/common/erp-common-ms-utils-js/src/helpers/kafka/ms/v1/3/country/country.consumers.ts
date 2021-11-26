@@ -1,19 +1,17 @@
-import { Kafka, KafkaMessage } from 'kafkajs';
+import { Consumer, KafkaMessage } from 'kafkajs';
 import { BaseConsumer } from '../../../../bases/base.consumer';
-import { CountryCreatedEvent, CountryUpdatedEvent, CountryDeletedEvent } from './country.event';
 import { CountryTopics } from './country.topics';
+import {
+	CountryCreatedEvent,
+	CountryUpdatedEvent,
+	CountryDeletedEvent
+} from './country.events';
 
 export class CountryCreatedConsumer extends BaseConsumer<CountryCreatedEvent> {
 	readonly topic = CountryTopics.COUNTRY_CREATE;
-
-	constructor(kafka: Kafka) {
-		super(kafka, CountryTopics.COUNTRY_CREATE);
+	constructor(consumer: Consumer) {
+		super(consumer);
 	}
-
-	async initConsumer() {
-		await super.init();
-	}
-
 	onMessage(value: CountryCreatedEvent['value'], message: KafkaMessage, resolveOffset: (offset: string) => void) {
 		console.log('CountryCreatedListener.onMessage', value);
 		resolveOffset(message.offset);
@@ -22,15 +20,9 @@ export class CountryCreatedConsumer extends BaseConsumer<CountryCreatedEvent> {
 
 export class CountryUpdatedConsumer extends BaseConsumer<CountryUpdatedEvent> {
 	readonly topic = CountryTopics.COUNTRY_UPDATED;
-
-	constructor(kafka: Kafka) {
-		super(kafka, CountryTopics.COUNTRY_UPDATED);
+	constructor(consumer: Consumer) {
+		super(consumer);
 	}
-
-	async initConsumer() {
-		await super.init();
-	}
-
 	onMessage(value: CountryUpdatedEvent['value'], message: KafkaMessage, resolveOffset: (offset: string) => void) {
 		console.log('CountryUpdatedConsumer.onMessage', value);
 		resolveOffset(message.offset);
@@ -39,15 +31,9 @@ export class CountryUpdatedConsumer extends BaseConsumer<CountryUpdatedEvent> {
 
 export class CountryDeletedConsumer extends BaseConsumer<CountryDeletedEvent> {
 	readonly topic = CountryTopics.COUNTRY_DELETED;
-
-	constructor(kafka: Kafka) {
-		super(kafka, CountryTopics.COUNTRY_DELETED);
+	constructor(consumer: Consumer) {
+		super(consumer);
 	}
-
-	async initConsumer() {
-		await super.init();
-	}
-
 	onMessage(value: CountryUpdatedEvent['value'], message: KafkaMessage, resolveOffset: (offset: string) => void) {
 		console.log('CountryUpdatedConsumer.onMessage', value);
 		resolveOffset(message.offset);
