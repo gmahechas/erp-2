@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+**Note:** Version bump only for package ms-3-flaskpy
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 * refactor: routes ([5f89e7a](https://github.com/gmahechas/erp/commit/5f89e7a))

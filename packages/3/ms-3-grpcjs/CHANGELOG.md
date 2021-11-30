@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+* refactor: change config ([032b767](https://github.com/gmahechas/erp/commit/032b767))
+* refactor: config interface ([486eba9](https://github.com/gmahechas/erp/commit/486eba9))
+* refactor: remove cq interface ([34840c1](https://github.com/gmahechas/erp/commit/34840c1))
+* refactor: remove default exports ([22e9c1e](https://github.com/gmahechas/erp/commit/22e9c1e))
+* refactor: remove query database endpoint ([cad473e](https://github.com/gmahechas/erp/commit/cad473e))
+* feat: debug .vscode ([87f1055](https://github.com/gmahechas/erp/commit/87f1055))
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 * feat: auth and handler error graphql ([e611459](https://github.com/gmahechas/erp/commit/e611459))

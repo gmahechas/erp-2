@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+**Note:** Version bump only for package @gmahechas/common-webcomponents-react
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 **Note:** Version bump only for package @gmahechas/common-webcomponents-react

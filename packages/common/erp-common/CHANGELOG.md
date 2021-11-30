@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+* feat: auth by companyKey ([019f442](https://github.com/gmahechas/erp/commit/019f442))
+* feat: companyId added in user ([b01507d](https://github.com/gmahechas/erp/commit/b01507d))
+* feat: country, estate CRUD ([0555b17](https://github.com/gmahechas/erp/commit/0555b17))
+* feat: ms-4 ([8c4e62b](https://github.com/gmahechas/erp/commit/8c4e62b))
+* feat: user crud ([f679135](https://github.com/gmahechas/erp/commit/f679135))
+* refactor: common package.json ([e10c7b7](https://github.com/gmahechas/erp/commit/e10c7b7))
+* refactor: folders ([d620ceb](https://github.com/gmahechas/erp/commit/d620ceb))
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 * feat: axios added in common ([4411292](https://github.com/gmahechas/erp/commit/4411292))

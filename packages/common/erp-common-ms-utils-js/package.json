@@ -1,6 +1,6 @@
 {
     "name": "@gmahechas/erp-common-ms-utils-js",
-    "version": "0.0.24",
+    "version": "0.0.25",
     "description": "erp-common-ms-3-js",
     "author": "gmahechas",
     "private": false,
@@ -25,7 +25,7 @@
         "uuid": "^8.3.2"
     },
     "devDependencies": {
-        "@gmahechas/erp-common": "^0.0.24",
+        "@gmahechas/erp-common": "^0.0.25",
         "@types/bcrypt": "^5.0.0",
         "@types/jsonwebtoken": "^8.5.5",
         "@types/node": "^16.9.1",

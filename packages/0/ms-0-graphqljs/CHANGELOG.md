@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+* feat: auth by companyKey ([019f442](https://github.com/gmahechas/erp/commit/019f442))
+* feat: companyId added in user ([b01507d](https://github.com/gmahechas/erp/commit/b01507d))
+* feat: completed crud for country and estate ([15e3dca](https://github.com/gmahechas/erp/commit/15e3dca))
+* feat: debug .vscode ([87f1055](https://github.com/gmahechas/erp/commit/87f1055))
+* feat: fix crud ([b57ef19](https://github.com/gmahechas/erp/commit/b57ef19))
+* feat: fixes update and delete ([77d881f](https://github.com/gmahechas/erp/commit/77d881f))
+* feat: keys for jwt ([6d7b1dc](https://github.com/gmahechas/erp/commit/6d7b1dc))
+* feat: user crud ([f679135](https://github.com/gmahechas/erp/commit/f679135))
+* refactor: change config ([032b767](https://github.com/gmahechas/erp/commit/032b767))
+* refactor: config interface ([486eba9](https://github.com/gmahechas/erp/commit/486eba9))
+* refactor: multiple graphql endpoints ([7e1bdc2](https://github.com/gmahechas/erp/commit/7e1bdc2))
+* refactor: only use redis 3 in api GW ([2414078](https://github.com/gmahechas/erp/commit/2414078))
+* refactor: remove default exports ([22e9c1e](https://github.com/gmahechas/erp/commit/22e9c1e))
+* refactor: remove keys from projects ([5c5eea1](https://github.com/gmahechas/erp/commit/5c5eea1))
+* fix: IAuth type ([39b7b49](https://github.com/gmahechas/erp/commit/39b7b49))
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 * feat: auth and handler error graphql ([e611459](https://github.com/gmahechas/erp/commit/e611459))

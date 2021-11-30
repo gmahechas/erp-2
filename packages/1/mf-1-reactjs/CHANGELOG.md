@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+* feat: debug .vscode ([87f1055](https://github.com/gmahechas/erp/commit/87f1055))
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 * refactor: remove axios ([5b77cb5](https://github.com/gmahechas/erp/commit/5b77cb5))

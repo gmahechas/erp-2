@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+* refactor: common package.json ([e10c7b7](https://github.com/gmahechas/erp/commit/e10c7b7))
+* refactor: lambdas ([66881ca](https://github.com/gmahechas/erp/commit/66881ca))
+* refactor: remove query database endpoint ([cad473e](https://github.com/gmahechas/erp/commit/cad473e))
+* chore: lerna clean and bootstrap ([5c7ae95](https://github.com/gmahechas/erp/commit/5c7ae95))
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 * feat: error handling from ms in api ([5c2c8fe](https://github.com/gmahechas/erp/commit/5c2c8fe))

@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+* feat: add search many in lambda ([f1c9515](https://github.com/gmahechas/erp/commit/f1c9515))
+* feat: auth by companyKey ([019f442](https://github.com/gmahechas/erp/commit/019f442))
+* feat: companyId added in user ([b01507d](https://github.com/gmahechas/erp/commit/b01507d))
+* feat: completed crud for country and estate ([15e3dca](https://github.com/gmahechas/erp/commit/15e3dca))
+* feat: country, estate CRUD ([0555b17](https://github.com/gmahechas/erp/commit/0555b17))
+* feat: debug .vscode ([87f1055](https://github.com/gmahechas/erp/commit/87f1055))
+* feat: fix crud ([b57ef19](https://github.com/gmahechas/erp/commit/b57ef19))
+* feat: fixes update and delete ([77d881f](https://github.com/gmahechas/erp/commit/77d881f))
+* feat: global consumers ([7783af6](https://github.com/gmahechas/erp/commit/7783af6))
+* feat: kafka ([5d18918](https://github.com/gmahechas/erp/commit/5d18918))
+* feat: kafka ([577c237](https://github.com/gmahechas/erp/commit/577c237))
+* feat: keys for jwt ([6d7b1dc](https://github.com/gmahechas/erp/commit/6d7b1dc))
+* feat: ms-4 ([8c4e62b](https://github.com/gmahechas/erp/commit/8c4e62b))
+* feat: user crud ([f679135](https://github.com/gmahechas/erp/commit/f679135))
+* refactor: change config ([032b767](https://github.com/gmahechas/erp/commit/032b767))
+* refactor: common package.json ([e10c7b7](https://github.com/gmahechas/erp/commit/e10c7b7))
+* refactor: config interface ([486eba9](https://github.com/gmahechas/erp/commit/486eba9))
+* refactor: folders ([d620ceb](https://github.com/gmahechas/erp/commit/d620ceb))
+* refactor: helpers ([f734dbd](https://github.com/gmahechas/erp/commit/f734dbd))
+* refactor: lambdas ([66881ca](https://github.com/gmahechas/erp/commit/66881ca))
+* refactor: multiple graphql endpoints ([7e1bdc2](https://github.com/gmahechas/erp/commit/7e1bdc2))
+* refactor: multiple versions ([26506af](https://github.com/gmahechas/erp/commit/26506af))
+* refactor: only use redis 3 in api GW ([2414078](https://github.com/gmahechas/erp/commit/2414078))
+* refactor: remove cq interface ([34840c1](https://github.com/gmahechas/erp/commit/34840c1))
+* refactor: remove default exports ([22e9c1e](https://github.com/gmahechas/erp/commit/22e9c1e))
+* refactor: remove keys from projects ([5c5eea1](https://github.com/gmahechas/erp/commit/5c5eea1))
+* refactor: remove query database endpoint ([cad473e](https://github.com/gmahechas/erp/commit/cad473e))
+* refactor: remove unnecessary data ([99927bd](https://github.com/gmahechas/erp/commit/99927bd))
+* refactor: versioning in common packages ([f7a9c93](https://github.com/gmahechas/erp/commit/f7a9c93))
+* fix: IAuth type ([39b7b49](https://github.com/gmahechas/erp/commit/39b7b49))
+* fix: ms-1-lambdajs private key ([57d1c3c](https://github.com/gmahechas/erp/commit/57d1c3c))
+* fix: private key in lambda ([1b3d99b](https://github.com/gmahechas/erp/commit/1b3d99b))
+* chore: lerna clean and bootstrap ([5c7ae95](https://github.com/gmahechas/erp/commit/5c7ae95))
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 * refactor: APP_PORT as undedfined ([bbede29](https://github.com/gmahechas/erp/commit/bbede29))

@@ -1,13 +1,15 @@
 {
     "name": "@gmahechas/erp-common",
-    "version": "0.0.24",
+    "version": "0.0.25",
     "description": "erp-common",
     "author": "gmahechas",
     "private": false,
     "license": "UNLICENSED",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "files": ["dist/**/*"],
+    "files": [
+        "dist/**/*"
+    ],
     "scripts": {
         "build": "rimraf dist && tsc"
     },

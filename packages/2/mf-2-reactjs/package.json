@@ -1,6 +1,6 @@
 {
     "name": "mf-2-reactjs",
-    "version": "0.0.24",
+    "version": "0.0.25",
     "description": "ms-2-nestjs",
     "author": "gmahechas",
     "private": true,
@@ -12,8 +12,8 @@
         "build": "webpack --config config/webpack.prod.js"
     },
     "dependencies": {
-        "@gmahechas/common-webcomponents": "^0.0.24",
-        "@gmahechas/common-webcomponents-react": "^0.0.24",
+        "@gmahechas/common-webcomponents": "^0.0.25",
+        "@gmahechas/common-webcomponents-react": "^0.0.25",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-hook-form": "^7.12.0",

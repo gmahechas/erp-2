@@ -1,19 +1,21 @@
 {
     "name": "@gmahechas/erp-common-ms-4-js",
-    "version": "0.0.24",
+    "version": "0.0.25",
     "description": "erp-common-ms-4-js",
     "author": "gmahechas",
     "private": false,
     "license": "UNLICENSED",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "files": ["dist/**/*"],
+    "files": [
+        "dist/**/*"
+    ],
     "scripts": {
         "build": "rimraf dist && tsc"
     },
     "devDependencies": {
-        "@gmahechas/erp-common": "^0.0.24",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.24",
+        "@gmahechas/erp-common": "^0.0.25",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.25",
         "@types/node": "^16.9.1",
         "rimraf": "^3.0.2",
         "typescript": "^4.3.5"

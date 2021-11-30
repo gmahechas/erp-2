@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+* refactor: common package.json ([e10c7b7](https://github.com/gmahechas/erp/commit/e10c7b7))
+* feat: keys for jwt ([6d7b1dc](https://github.com/gmahechas/erp/commit/6d7b1dc))
+* chore: lerna clean and bootstrap ([5c7ae95](https://github.com/gmahechas/erp/commit/5c7ae95))
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 * refactor: move axios to ms-utils ([75da72b](https://github.com/gmahechas/erp/commit/75da72b))

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+* feat: country, estate CRUD ([0555b17](https://github.com/gmahechas/erp/commit/0555b17))
+* feat: debug .vscode ([87f1055](https://github.com/gmahechas/erp/commit/87f1055))
+* feat: kafka ([5d18918](https://github.com/gmahechas/erp/commit/5d18918))
+* feat: kafka ([577c237](https://github.com/gmahechas/erp/commit/577c237))
+* refactor: change config ([032b767](https://github.com/gmahechas/erp/commit/032b767))
+* refactor: config interface ([486eba9](https://github.com/gmahechas/erp/commit/486eba9))
+* refactor: multiple versions ([26506af](https://github.com/gmahechas/erp/commit/26506af))
+* refactor: remove cq interface ([34840c1](https://github.com/gmahechas/erp/commit/34840c1))
+* refactor: remove default exports ([22e9c1e](https://github.com/gmahechas/erp/commit/22e9c1e))
+* refactor: remove query database endpoint ([cad473e](https://github.com/gmahechas/erp/commit/cad473e))
+* refactor: remove unnecessary data ([99927bd](https://github.com/gmahechas/erp/commit/99927bd))
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 * feat: error handling from ms in api ([5c2c8fe](https://github.com/gmahechas/erp/commit/5c2c8fe))

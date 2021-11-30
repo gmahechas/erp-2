@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.25 (2021-11-30)</small>
+
+* feat: global consumers ([7783af6](https://github.com/gmahechas/erp/commit/7783af6))
+* feat: kafka ([5d18918](https://github.com/gmahechas/erp/commit/5d18918))
+* feat: kafka ([577c237](https://github.com/gmahechas/erp/commit/577c237))
+* feat: keys for jwt ([6d7b1dc](https://github.com/gmahechas/erp/commit/6d7b1dc))
+* feat: ms-4 ([8c4e62b](https://github.com/gmahechas/erp/commit/8c4e62b))
+* refactor: change config ([032b767](https://github.com/gmahechas/erp/commit/032b767))
+* refactor: common package.json ([e10c7b7](https://github.com/gmahechas/erp/commit/e10c7b7))
+* refactor: config interface ([486eba9](https://github.com/gmahechas/erp/commit/486eba9))
+* refactor: only use redis 3 in api GW ([2414078](https://github.com/gmahechas/erp/commit/2414078))
+* refactor: remove cq interface ([34840c1](https://github.com/gmahechas/erp/commit/34840c1))
+* refactor: remove keys from projects ([5c5eea1](https://github.com/gmahechas/erp/commit/5c5eea1))
+* refactor: remove query database endpoint ([cad473e](https://github.com/gmahechas/erp/commit/cad473e))
+
+
+
+
+
 ## <small>0.0.24 (2021-10-23)</small>
 
 * feat: auth and handler error graphql ([e611459](https://github.com/gmahechas/erp/commit/e611459))

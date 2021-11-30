@@ -1,13 +1,15 @@
 {
     "name": "@gmahechas/erp-common-expressjs",
-    "version": "0.0.24",
+    "version": "0.0.25",
     "description": "erp-common-expressjs",
     "author": "gmahechas",
     "private": false,
     "license": "UNLICENSED",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "files": ["dist/**/*"],
+    "files": [
+        "dist/**/*"
+    ],
     "scripts": {
         "build": "rimraf dist && tsc"
     },
@@ -16,8 +18,8 @@
         "express-async-errors": "^3.1.1"
     },
     "devDependencies": {
-        "@gmahechas/erp-common": "^0.0.24",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.24",
+        "@gmahechas/erp-common": "^0.0.25",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.25",
         "@types/express": "^4.17.13",
         "@types/node": "^16.9.1",
         "rimraf": "^3.0.2",
