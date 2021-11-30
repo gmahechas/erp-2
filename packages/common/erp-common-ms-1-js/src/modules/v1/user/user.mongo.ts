@@ -17,6 +17,10 @@ const schema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
+	companyKey: {
+		type: String,
+		required: true,
+	},
 	personId: {
 		type: String,
 		required: true

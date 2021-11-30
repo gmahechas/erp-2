@@ -7,12 +7,14 @@ export const typeDefs = gql`
 		id: String
     userName: String
     userPassword: String
+		companyKey: String
     personId: String
 	}
 
 	input CreateOneUser {
     userName: String
     userPassword: String
+		companyKey: String
     personId: String
 	}
 	input UpdateOneUser {
@@ -27,6 +29,7 @@ export const typeDefs = gql`
 	input SearchOneUser {
 		id: String
     userName: String
+		companyKey: String
     personId: String
 	}
 	

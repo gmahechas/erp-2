@@ -6,9 +6,10 @@ export const createOneUserSchema: JSONSchemaType<ICreateUser> = {
 	properties: {
 		userName: { type: 'string' },
 		userPassword: { type: 'string' },
+		companyKey: { type: 'string' },
 		personId: { type: 'string' }
 	},
-	required: ['userName', 'userPassword', 'personId'],
+	required: ['userName', 'userPassword', 'personId', 'companyKey'],
 	additionalProperties: false,
 };
 
@@ -38,6 +39,7 @@ export const searchOneUserSchema: JSONSchemaType<ISearchUser> = {
 	properties: {
 		id: { type: 'string' },
 		userName: { type: 'string' },
+		companyKey: { type: 'string' },
 		personId: { type: 'string' }
 	},
 	required: [],
