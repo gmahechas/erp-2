@@ -19,7 +19,6 @@ export const updateOneCompanySchema: JSONSchemaType<IUpdateCompany> = {
 		id: { type: 'string' },
 		companyName: { type: 'string' },
 		companyIdentification: { type: 'string' },
-		companyKey: { type: 'string' },
 		cityId: { type: 'string' },
 	},
 	required: ['id'],

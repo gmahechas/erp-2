@@ -9,7 +9,6 @@ export interface IUpdateCompany {
   id: string;
   companyName: string;
   companyIdentification: string;
-  companyKey: string;
   cityId: string;
 }
 

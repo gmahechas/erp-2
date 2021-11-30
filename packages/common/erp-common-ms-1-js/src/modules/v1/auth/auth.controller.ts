@@ -3,9 +3,9 @@ import { sendError, compareHash, jwtSign, resolvePath, checkExistsFile, readFile
 import { searchOneUser } from '../user/user.controller';
 
 export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> => {
-	const { userName, userPassword } = data;
+	const { companyKey, userName, userPassword } = data;
 
-	const user = await searchOneUser({ userName });
+	const user = await searchOneUser({ userName, companyKey });
 
 	if (!user) {
 		sendError('authentication_error');
@@ -27,7 +27,8 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 
 	const token = jwtSign({
 		id,
-		userName
+		userName,
+		companyKey,
 	}, privateKey, { algorithm: 'RS256' });
 
 	return { token };
