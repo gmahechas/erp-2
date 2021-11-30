@@ -1,7 +1,7 @@
 {
-    "name": "@gmahechas/erp-common-lambdajs",
+    "name": "@gmahechas/erp-common-reactjs",
     "version": "0.0.25",
-    "description": "erp-common-lambdajs",
+    "description": "erp-common-reactjs",
     "author": "gmahechas",
     "private": false,
     "license": "UNLICENSED",
@@ -14,13 +14,14 @@
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
-        "path-to-regexp": "^6.2.0"
+        "react-redux": "^7.2.6",
+        "redux": "^4.1.2",
+        "redux-devtools-extension": "^2.13.9",
+        "redux-thunk": "^2.4.1"
     },
     "devDependencies": {
-        "@gmahechas/erp-common": "^0.0.25",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.25",
-        "@types/aws-lambda": "^8.10.83",
         "@types/node": "^16.9.1",
+        "@types/react-redux": "^7.1.20",
         "rimraf": "^3.0.2",
         "typescript": "^4.3.5"
     },
