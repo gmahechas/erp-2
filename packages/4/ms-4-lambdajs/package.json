@@ -1,0 +1,25 @@
+{
+    "name": "ms-4-lambdajs",
+    "version": "0.0.24",
+    "description": "ms-4-lambdajs",
+    "author": "gmahechas",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "ts-node-dev --respawn --pretty --transpile-only src/run.ts",
+        "start:prod": "node dist/index.js",
+        "build": "rimraf dist && tsc"
+    },
+    "dependencies": {
+        "@gmahechas/erp-common": "^0.0.24",
+        "@gmahechas/erp-common-lambdajs": "^0.0.24",
+        "@gmahechas/erp-common-ms-4-js": "^0.0.24",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.24"
+    },
+    "devDependencies": {
+        "@types/node": "^16.9.1",
+        "rimraf": "^3.0.2",
+        "ts-node-dev": "^1.1.8",
+        "typescript": "^4.3.5"
+    }
+}

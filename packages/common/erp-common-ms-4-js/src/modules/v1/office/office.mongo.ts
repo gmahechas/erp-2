@@ -1,4 +1,4 @@
-import { ICountry } from '@gmahechas/erp-common'
+import { IOffice } from '@gmahechas/erp-common';
 import { mongoose, uuidv4 } from '@gmahechas/erp-common-ms-utils-js';
 
 const schema = new mongoose.Schema({
@@ -9,14 +9,14 @@ const schema = new mongoose.Schema({
 	id: {
 		type: String,
 	},
-	countryName: {
+	officeName: {
 		type: String,
-		required: true
+		required: true,
 	},
-	countryCode: {
+	companyId: {
 		type: String,
-		required: true
-	},
+		require: true,
+	}
 }, {
 	toObject: {
 		transform(doc, ret) {
@@ -35,8 +35,8 @@ schema.pre('save', async function (next) {
 	next();
 });
 
-type CountryDocument = ICountry & Document;
-let Country: mongoose.Model<CountryDocument>;
-Country = mongoose.model<CountryDocument>('Country', schema, 'countries');
-export const registerCountryModel = (connection: mongoose.Connection) => Country = connection.model('Country', schema, 'countries');
-export { Country }
+type OfficeDocument = IOffice & Document;
+let Office: mongoose.Model<OfficeDocument>;
+Office = mongoose.model<OfficeDocument>('Office', schema, 'offices');
+export const registerOfficeyModel = (connection: mongoose.Connection) => Office = connection.model('Office', schema, 'offices');
+export { Office }

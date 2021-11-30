@@ -22,7 +22,6 @@ const schema = new mongoose.Schema({
 		required: true
 	}
 }, {
-	versionKey: false,
 	toObject: {
 		transform(doc, ret) {
 			delete ret._id;

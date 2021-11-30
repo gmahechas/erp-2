@@ -32,6 +32,14 @@ export interface IConfig {
 					uri?: string;
 				}
 			};
+		},
+		four?: {
+			url?: string;
+			databases?: {
+				mongo?: {
+					uri?: string;
+				}
+			}
 		}
 	}
 }
