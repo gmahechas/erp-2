@@ -14,6 +14,7 @@
     "dependencies": {
         "@gmahechas/common-webcomponents": "^0.0.25",
         "@gmahechas/common-webcomponents-react": "^0.0.25",
+        "@gmahechas/erp-common": "^0.0.25",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-hook-form": "^7.12.0",
