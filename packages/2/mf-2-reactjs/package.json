@@ -8,8 +8,9 @@
     "scripts": {
         "start": "concurrently -n 'tsc:check,webpack:dev' -c 'yellow,magenta' \"yarn start:tsc:check\" \"yarn start:webpack:dev\"",
         "start:tsc:check": "tsc --noEmit --watch",
-        "start:webpack:dev": "webpack serve --config config/webpack.dev.js",
-        "build": "webpack --config config/webpack.prod.js"
+        "start:webpack:dev": "webpack serve --config config/webpack.development.js",
+        "build:stage": "webpack --config config/webpack.stage.js",
+        "build": "webpack --config config/webpack.production.js"
     },
     "dependencies": {
         "@gmahechas/common-webcomponents": "^0.0.25",

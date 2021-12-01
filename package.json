@@ -9,15 +9,13 @@
         "commit": "git-cz",
         "start": "lerna run start --no-prefix --stream",
         "start:prod": "lerna run start:prod --no-prefix --stream",
-        "build": "lerna run build --stream",
+        "build:stage": "lerna run build:stage --no-prefix --stream",
+        "build": "lerna run build --no-prefix --stream",
         "build:wc": "lerna run build --scope @gmahechas/common-webcomponents && lerna run build --scope @gmahechas/common-webcomponents-react"
     },
     "devDependencies": {
         "conventional-changelog": "^3.1.24",
-        "git-cz": "^4.7.6",
+        "git-cz": "^4.8.0",
         "lerna": "^4.0.0"
-    },
-    "version": "1.0.0",
-    "main": "index.js",
-    "repository": "https://github.com/gmahechas/erp.git"
+    }
 }
