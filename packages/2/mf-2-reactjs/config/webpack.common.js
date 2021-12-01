@@ -69,10 +69,10 @@ module.exports = function (webpackEnv) {
       : isEnvDevelopment && 'cheap-module-source-map',
     optimization: {
       minimize: isEnvProduction,
-      splitChunks: {
+      /* splitChunks: {
         chunks: 'all',
         name: false,
-      },
+      }, */
     },
     resolve: {
       alias: {
