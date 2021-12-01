@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, Store, ReducersMapObject, Reducer } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import auth from '../../auth/store/reducers';
+import auth from '@mf-3/auth/store/reducers';
 import { State as CountryState } from '@mf-3/modules/country/store/reducers';
 
 interface IStore extends Store {
