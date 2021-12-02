@@ -23,7 +23,7 @@ const Country: FC<IProps> = ({ country, searchMany }) => {
 
     return (
         <FragmentHco>
-            <div>Country</div>
+            <div>Country Page</div>
             <Link to='/estate'>Link Estate</Link>
             <button onClick={handleSearchMany}>Buscar</button>
             {handleContries()}

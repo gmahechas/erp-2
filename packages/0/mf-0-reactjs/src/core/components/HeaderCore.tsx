@@ -5,7 +5,7 @@ import FragmentHco from '@mf-0/utils/hoc/FragmentHco';
 const HeaderCore = () => {
     return (
         <FragmentHco>
-            <Link to='/'>Home | </Link>
+            <Link to='/'>Dashboard | </Link>
             <Link to='/auth'>Auth | </Link>
             <Link to='/user'>User | </Link>
             <Link to='/country'>Country | </Link>
