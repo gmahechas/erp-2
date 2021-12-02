@@ -5,7 +5,7 @@ import FragmentHco from '@mf-3/utils/hoc/FragmentHco';
 const Address = () => {
   return (
     <FragmentHco>
-      <div>Address</div>
+      <div>Address page</div>
       <Link to='/country'>Link to Country</Link>
     </FragmentHco>
   );

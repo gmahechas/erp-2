@@ -20,7 +20,7 @@ const User = () => {
 
     return (
         <FragmentHco>
-            <div>User page</div>
+            <div>User</div>
             <Link to='/auth'>Link to Auth</Link>
             <form onSubmit={onSubmit}>
                 <Controller
