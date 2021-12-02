@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: stage
     steps:
-      - name: building
       - uses: actions/checkout@v2
       - run: yarn install
       - run: yarn build
