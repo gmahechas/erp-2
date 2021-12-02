@@ -1,0 +1,39 @@
+name: stage-mf-0-reactjs
+
+on:
+  push:
+    branches:
+      - stage
+    paths:
+      - "packages/0/mf-0-reactjs/**"
+
+defaults:
+  run:
+    working-directory: packages/0/mf-0-reactjs
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: stage
+    steps:
+      - name: building with node ${{ matrix.node-version }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: yarn install
+      - run: yarn build
+        env:
+          ERP_DOMAIN: ${{ secrets.ERP_DOMAIN }}
+
+      - name: aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_CLI_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_CLI_SECRET_KEY_ID }}
+          aws-region: us-east-2
+
+      - name: sync in s3 and create cloudfront nnvalidations
+        run: |
+          aws s3 sync dist s3://${{ secrets.AWS_S3_ERP_BUCKET_NAME }}/0/mf-0-reactjs/latest
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/0/mf-0-reactjs/latest/index.html"
