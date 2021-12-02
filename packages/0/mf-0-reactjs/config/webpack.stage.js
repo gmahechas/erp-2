@@ -6,7 +6,7 @@ const commonConfig = require('./webpack.common');
 const packageJson = require('../package.json');
 const path = require('path');
 
-const domain = process.env.ERP_STAGE_DOMAIN;
+const domain = process.env.ERP_DOMAIN;
 const prodConfig = {
   entry: './src/index.ts',
   output: {
