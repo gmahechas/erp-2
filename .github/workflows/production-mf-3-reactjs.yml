@@ -16,11 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
+      - name: building
       - uses: actions/checkout@v2
-      - name: building with node ${{ matrix.node-version }}
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
       - run: yarn install
       - run: yarn build
 
