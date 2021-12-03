@@ -31,7 +31,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_CLI_SECRET_KEY_ID }}
           aws-region: us-east-2
 
-      - name: sync ${{ secrets.AWS_S3_ERP_BUCKET_NAME }} bucket and create cloudfront invalidations for ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
+      - name: sync s3 bucket and create cloudfront invalidations
         run: |
           aws s3 sync dist s3://${{ secrets.AWS_S3_ERP_BUCKET_NAME }}/1/mf-1-reactjs/latest
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/1/mf-1-reactjs/latest/remoteEntry.js"
