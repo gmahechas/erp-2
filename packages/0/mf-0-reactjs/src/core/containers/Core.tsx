@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import HeaderCore from '@mf-0/core/components/HeaderCore';
+import Layout from '@mf-0/core/components/Layout';
 import NotFoundCore from '@mf-0/core/components/NotFoundCore';
 
 const Mf1 = lazy(() => import('@mf-0/microfrontends/Mf1'));
@@ -10,9 +10,8 @@ const Mf3 = lazy(() => import('@mf-0/microfrontends/Mf3'));
 
 const Core = () => {
     return (
-        <>
-            <BrowserRouter>
-                <HeaderCore />
+        <BrowserRouter>
+            <Layout>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
                         <Route path='/auth' component={Mf1} />
@@ -22,11 +21,11 @@ const Core = () => {
                         <Route path='/city' component={Mf3} />
                         <Route path='/address' component={Mf3} />
                         <Route exact path='/' component={Mf2} />
-                        <Route path='*' component={NotFoundCore} />
+                        <Route path='*'component={NotFoundCore} />
                     </Switch>
                 </Suspense>
-            </BrowserRouter>
-        </>
+            </Layout>
+        </BrowserRouter>
     );
 };
 

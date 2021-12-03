@@ -2,6 +2,7 @@ import { FC, lazy, Suspense } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import { History, MemoryHistory } from 'history';
 
+import Layout from '../components/Layout';
 const Auth = lazy(() => import('@mf-1/modules/auth/containers/Auth'));
 const User = lazy(() => import('@mf-1/modules/user/containers/User'));
 
@@ -11,7 +12,7 @@ interface IProps {
 
 const Core: FC<IProps> = ({ history }) => {
     return (
-        <>
+        <Layout>
             <Router history={history}>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
@@ -20,7 +21,7 @@ const Core: FC<IProps> = ({ history }) => {
                     </Switch>
                 </Suspense>
             </Router>
-        </>
+        </Layout>
     );
 };
 

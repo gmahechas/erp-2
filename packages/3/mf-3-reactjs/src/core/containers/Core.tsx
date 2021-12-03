@@ -7,6 +7,7 @@ import { reducers as countryReducers } from '../../modules/country/store/reducer
 import createStore from '../store';
 const store = createStore();
 
+import Layout from '../components/Layout';
 const Country = lazy(() =>
     import('@mf-3/modules/country/containers/Country').then((module) => {
         store.injectReducer('country', countryReducers);
@@ -36,16 +37,18 @@ interface IProps {
 const Core: FC<IProps> = ({ history }) => {
     return (
         <Provider store={store}>
-            <Router history={history}>
-                <Suspense fallback={<div>Loading...</div>}>
-                    <Switch>
-                        <Route path='/address' component={Address} />
-                        <Route path='/city' component={City} />
-                        <Route path='/estate' component={Estate} />
-                        <Route path='/country' component={Country} />
-                    </Switch>
-                </Suspense>
-            </Router>
+            <Layout>
+                <Router history={history}>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Switch>
+                            <Route path='/address' component={Address} />
+                            <Route path='/city' component={City} />
+                            <Route path='/estate' component={Estate} />
+                            <Route path='/country' component={Country} />
+                        </Switch>
+                    </Suspense>
+                </Router>
+            </Layout>
         </Provider>
     );
 };
