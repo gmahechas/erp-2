@@ -1,14 +1,11 @@
-import { Link } from 'react-router-dom';
+import { FC } from 'react';
 
-import FragmentHco from '@mf-3/utils/hoc/FragmentHco';
-
-const Estate = () => {
-  return (
-    <FragmentHco>
-      <div>Estate</div>
-      <Link to='/city'>Link to City</Link>
-    </FragmentHco>
-  );
+const Estate: FC = () => {
+    return (
+        <>
+            <div>Estate</div>
+        </>
+    );
 };
 
 export default Estate;
