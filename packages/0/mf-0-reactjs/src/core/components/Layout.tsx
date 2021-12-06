@@ -4,7 +4,9 @@ import HeaderCore from './HeaderCore';
 const Layout: FC = ({ children }) => {
     return (
         <>
-            <HeaderCore />
+            <header>
+                <HeaderCore />
+            </header>
             <main>{children}</main>
         </>
     );

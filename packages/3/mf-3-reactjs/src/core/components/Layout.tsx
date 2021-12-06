@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 const Layout: FC = ({ children }) => {
-    return <main>{children}</main>;
+    return <section>{children}</section>;
 };
 
 export default Layout;
