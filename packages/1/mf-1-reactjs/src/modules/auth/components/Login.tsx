@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { ISigninAuth } from '@gmahechas/erp-common';
-import { WcInput } from '@gmahechas/common-webcomponents-react';
+import { WcInput, WcButton } from '@gmahechas/common-webcomponents-react';
 
 interface IProps {
     onLogin: (data: ISigninAuth) => void;
@@ -66,7 +66,7 @@ const Login: FC<IProps> = ({ onLogin }) => {
                     />
                 )}
             />
-            <input type='submit' />
+            <WcButton type='raised'>Login</WcButton>
         </form>
     );
 };
