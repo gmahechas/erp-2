@@ -13,7 +13,7 @@ const Login: FC = () => {
     const onSubmit = handleSubmit((data) => console.log(data));
 
     return (
-        <div>
+        <>
             <form onSubmit={onSubmit}>
                 <Controller
                     control={control}
@@ -71,7 +71,7 @@ const Login: FC = () => {
                 />
                 <input type='submit' />
             </form>
-        </div>
+        </>
     );
 };
 
