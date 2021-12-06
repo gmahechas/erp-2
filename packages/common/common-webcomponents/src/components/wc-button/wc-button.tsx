@@ -10,7 +10,8 @@ export class WcButton {
   @Element() element: HTMLElement;
   button: MDCRipple;
 
-  @Prop() type = '';
+  @Prop() type = 'button' || 'submit' || 'reset';
+  @Prop() buttonStyle = '';
   @Prop() icon = '';
   @Prop() disabled = false;
 
@@ -22,7 +23,7 @@ export class WcButton {
   render() {
     return (
       <Host>
-        <button class={`mdc-button ${this.handleType()}`} disabled={this.disabled}>
+        <button type={this.type} class={`mdc-button ${this.handleButtonStyle()}`} disabled={this.disabled}>
           <span class="mdc-button__ripple"></span>
           {this.handleIcon()}
           <span class="mdc-button__label">
@@ -33,10 +34,10 @@ export class WcButton {
     );
   }
 
-  private handleType() {
-    if (this.type === 'outlined') {
+  private handleButtonStyle() {
+    if (this.buttonStyle === 'outlined') {
       return 'mdc-button--outlined';
-    } else if (this.type === 'raised') {
+    } else if (this.buttonStyle === 'raised') {
       return 'mdc-button--raised';
     } else {
       return '';

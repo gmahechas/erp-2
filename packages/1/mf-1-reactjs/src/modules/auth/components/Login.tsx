@@ -8,7 +8,7 @@ interface IProps {
 }
 const Login: FC<IProps> = ({ onLogin }) => {
     const { control, handleSubmit, formState } = useForm<ISigninAuth>();
-    const onSubmit = handleSubmit(data => onLogin(data));
+    const onSubmit = handleSubmit((data) => onLogin(data));
 
     return (
         <form onSubmit={onSubmit}>
@@ -66,7 +66,9 @@ const Login: FC<IProps> = ({ onLogin }) => {
                     />
                 )}
             />
-            <WcButton type='raised'>Login</WcButton>
+            <WcButton type='submit' button-style='raised'>
+                Login
+            </WcButton>
         </form>
     );
 };

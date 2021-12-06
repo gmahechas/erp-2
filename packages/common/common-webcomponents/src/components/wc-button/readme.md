@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type      | Default |
-| ---------- | ---------- | ----------- | --------- | ------- |
-| `disabled` | `disabled` |             | `boolean` | `false` |
-| `icon`     | `icon`     |             | `string`  | `''`    |
-| `type`     | `type`     |             | `string`  | `''`    |
+| Property      | Attribute      | Description | Type      | Default    |
+| ------------- | -------------- | ----------- | --------- | ---------- |
+| `buttonStyle` | `button-style` |             | `string`  | `''`       |
+| `disabled`    | `disabled`     |             | `boolean` | `false`    |
+| `icon`        | `icon`         |             | `string`  | `''`       |
+| `type`        | `type`         |             | `string`  | `'button'` |
 
 
 ----------------------------------------------

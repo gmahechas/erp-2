@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface WcButton {
+        "buttonStyle": string;
         "disabled": boolean;
         "icon": string;
         "type": string;
@@ -98,6 +99,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface WcButton {
+        "buttonStyle"?: string;
         "disabled"?: boolean;
         "icon"?: string;
         "type"?: string;

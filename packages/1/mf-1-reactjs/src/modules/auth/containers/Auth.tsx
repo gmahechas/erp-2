@@ -3,6 +3,7 @@ import Login from '../components/Login';
 
 const Auth = () => {
     const onLogin = (data: ISigninAuth) => {
+        console.log(data);
     };
     return <Login onLogin={onLogin} />;
 };
