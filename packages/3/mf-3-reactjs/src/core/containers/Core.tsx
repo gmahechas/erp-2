@@ -4,8 +4,8 @@ import { History, MemoryHistory } from 'history';
 
 import { Provider } from 'react-redux';
 import { reducers as countryReducers } from '../../modules/country/store/reducers';
-import createStore from '../store';
-const store = createStore();
+import { storeFactory } from '../store';
+const store = storeFactory();
 
 import Layout from '../components/Layout';
 const Country = lazy(() =>
