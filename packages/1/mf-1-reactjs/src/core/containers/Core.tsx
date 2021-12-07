@@ -1,10 +1,8 @@
-import { FC, lazy, Suspense } from 'react';
-import { Router, Switch, Route } from 'react-router-dom';
+import { FC } from 'react';
 import { History, MemoryHistory } from 'history';
 
-import Layout from '../components/Layout';
-const Auth = lazy(() => import('@mf-1/modules/auth/containers/Auth'));
-const User = lazy(() => import('@mf-1/modules/user/containers/User'));
+import WithStore from '@mf-1/hoc/WithStore';
+import WithRouter from '@mf-1/hoc/WithRouter';
 
 interface IProps {
     history: History | MemoryHistory;
@@ -12,16 +10,9 @@ interface IProps {
 
 const Core: FC<IProps> = ({ history }) => {
     return (
-        <Layout>
-            <Router history={history}>
-                <Suspense fallback={<div>Loading...</div>}>
-                    <Switch>
-                        <Route path='/user' component={User} />
-                        <Route path='/auth' component={Auth} />
-                    </Switch>
-                </Suspense>
-            </Router>
-        </Layout>
+        <WithStore>
+            <WithRouter history={history} />
+        </WithStore>
     );
 };
 

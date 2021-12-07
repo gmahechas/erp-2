@@ -3,12 +3,12 @@ import { connect, ConnectedProps } from 'react-redux'
 import * as fromDucks from '@mf-3/modules/country/store/ducks';
 
 import { RootState } from '@mf-3/core/store';
-import { reducer as entity, State as entityState } from './entity.reducer';
-import { reducer as pagination, State as paginationState } from './pagination.reducer'
+import { reducer as entity, State as EntityState } from './entity.reducer';
+import { reducer as pagination, State as PaginationState } from './pagination.reducer'
 
 export interface State {
-	entity: entityState;
-	pagination: paginationState;
+	entity: EntityState;
+	pagination: PaginationState;
 }
 
 export const reducers = combineReducers<State>({ entity, pagination });
