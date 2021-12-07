@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.26 (2021-12-07)</small>
+
+**Note:** Version bump only for package ms-3-graphqljs
+
+
+
+
+
 ## <small>0.0.25 (2021-11-30)</small>
 
 * refactor: change config ([032b767](https://github.com/gmahechas/erp/commit/032b767))

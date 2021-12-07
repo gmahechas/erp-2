@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.26 (2021-12-07)</small>
+
+* feat: erp--common-reactjs ([1ba220a](https://github.com/gmahechas/erp/commit/1ba220a))
+
+
+
+
+
 ## <small>0.0.25 (2021-11-30)</small>
 
 * refactor: common package.json ([e10c7b7](https://github.com/gmahechas/erp/commit/e10c7b7))

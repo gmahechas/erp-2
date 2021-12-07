@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.26 (2021-12-07)</small>
+
+* feat: layout in all mf ([6dc84a6](https://github.com/gmahechas/erp/commit/6dc84a6))
+* feat: normalized added ([d9fab66](https://github.com/gmahechas/erp/commit/d9fab66))
+* feat: stage env added ([ca0bae9](https://github.com/gmahechas/erp/commit/ca0bae9))
+* refactor: all ([0329b82](https://github.com/gmahechas/erp/commit/0329b82))
+* refactor: minor updates ([fe57acb](https://github.com/gmahechas/erp/commit/fe57acb))
+* refactor: minors updates ([f5ea992](https://github.com/gmahechas/erp/commit/f5ea992))
+* refactor: react common removed ([998a32c](https://github.com/gmahechas/erp/commit/998a32c))
+* refactor: updates ([1f1e2b2](https://github.com/gmahechas/erp/commit/1f1e2b2))
+* refactor: upgrade all (expect react-router) ([0985aab](https://github.com/gmahechas/erp/commit/0985aab))
+* refactor: upgrade babel ([9afdc21](https://github.com/gmahechas/erp/commit/9afdc21))
+* refactor: upgrade webpack plugins ([4f2d8ed](https://github.com/gmahechas/erp/commit/4f2d8ed))
+* ci: last test ([f876e2e](https://github.com/gmahechas/erp/commit/f876e2e))
+* ci: mf-{1-2-3} ([3951b57](https://github.com/gmahechas/erp/commit/3951b57))
+* fix: historyApiFallback ([2755119](https://github.com/gmahechas/erp/commit/2755119))
+
+
+
+
+
 ## <small>0.0.25 (2021-11-30)</small>
 
 * feat: debug .vscode ([87f1055](https://github.com/gmahechas/erp/commit/87f1055))

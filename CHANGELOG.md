@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.26 (2021-12-07)</small>
+
+* chore: lerna allow branch ([765ace9](https://github.com/gmahechas/erp/commit/765ace9))
+* feat: erp--common-reactjs ([1ba220a](https://github.com/gmahechas/erp/commit/1ba220a))
+* feat: home title ([d226647](https://github.com/gmahechas/erp/commit/d226647))
+* feat: layout in all mf ([6dc84a6](https://github.com/gmahechas/erp/commit/6dc84a6))
+* feat: normalized added ([d9fab66](https://github.com/gmahechas/erp/commit/d9fab66))
+* feat: stage env added ([ca0bae9](https://github.com/gmahechas/erp/commit/ca0bae9))
+* feat: type button added ([60a5b1d](https://github.com/gmahechas/erp/commit/60a5b1d))
+* feat: upgrade stencil ([6d5e206](https://github.com/gmahechas/erp/commit/6d5e206))
+* refactor: all ([0329b82](https://github.com/gmahechas/erp/commit/0329b82))
+* refactor: minor updates ([fe57acb](https://github.com/gmahechas/erp/commit/fe57acb))
+* refactor: minors updates ([f5ea992](https://github.com/gmahechas/erp/commit/f5ea992))
+* refactor: react common removed ([998a32c](https://github.com/gmahechas/erp/commit/998a32c))
+* refactor: remove secrets in jobs name ([2e6da64](https://github.com/gmahechas/erp/commit/2e6da64))
+* refactor: updates ([1f1e2b2](https://github.com/gmahechas/erp/commit/1f1e2b2))
+* refactor: upgrade all (expect react-router) ([0985aab](https://github.com/gmahechas/erp/commit/0985aab))
+* refactor: upgrade babel ([9afdc21](https://github.com/gmahechas/erp/commit/9afdc21))
+* refactor: upgrade webpack plugins ([4f2d8ed](https://github.com/gmahechas/erp/commit/4f2d8ed))
+* ci: change domain env name ([f89c82d](https://github.com/gmahechas/erp/commit/f89c82d))
+* ci: ci updates ([dad0b33](https://github.com/gmahechas/erp/commit/dad0b33))
+* ci: delete ([fd22900](https://github.com/gmahechas/erp/commit/fd22900))
+* ci: divide envs ([ee65f75](https://github.com/gmahechas/erp/commit/ee65f75))
+* ci: last test ([f876e2e](https://github.com/gmahechas/erp/commit/f876e2e))
+* ci: mf-{1-2-3} ([3951b57](https://github.com/gmahechas/erp/commit/3951b57))
+* ci: mf-0 ([64f6cc9](https://github.com/gmahechas/erp/commit/64f6cc9))
+* ci: mf-0 ci ([fd33af6](https://github.com/gmahechas/erp/commit/fd33af6))
+* ci: refactor ([47791cb](https://github.com/gmahechas/erp/commit/47791cb))
+* ci: refactor names ([8327c9b](https://github.com/gmahechas/erp/commit/8327c9b))
+* ci: remove .github folder ([9408cce](https://github.com/gmahechas/erp/commit/9408cce))
+* ci: remove setup node ([caf850a](https://github.com/gmahechas/erp/commit/caf850a))
+* ci: test branch ([582e020](https://github.com/gmahechas/erp/commit/582e020))
+* ci: testing env ([e8614a4](https://github.com/gmahechas/erp/commit/e8614a4))
+* ci: updates ([aaf1aea](https://github.com/gmahechas/erp/commit/aaf1aea))
+* ci: updates ([a1570a5](https://github.com/gmahechas/erp/commit/a1570a5))
+* fix: historyApiFallback ([2755119](https://github.com/gmahechas/erp/commit/2755119))
+
+
+
+
+
 ## <small>0.0.25 (2021-11-30)</small>
 
 * feat: add search many in lambda ([f1c9515](https://github.com/gmahechas/erp/commit/f1c9515))
