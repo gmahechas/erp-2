@@ -2,6 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
+const postcssNormalize = require('postcss-normalize');
+
 const paths = require('./paths');
 const shouldUseSourceMap = true;
 
@@ -31,6 +33,7 @@ module.exports = function (webpackEnv) {
                   stage: 3,
                 },
               ],
+              postcssNormalize()
             ],
             sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
           }
