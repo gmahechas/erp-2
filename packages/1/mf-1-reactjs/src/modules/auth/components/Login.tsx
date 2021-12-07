@@ -67,7 +67,7 @@ const Login: FC<IProps> = ({ onLogin }) => {
                 )}
             />
             <WcButton type='submit' button-style='raised'>
-                Login
+                Signin
             </WcButton>
         </form>
     );
