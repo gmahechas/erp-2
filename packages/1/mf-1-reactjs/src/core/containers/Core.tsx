@@ -6,12 +6,13 @@ import WithRouter from '@mf-1/hoc/WithRouter';
 
 interface IProps {
     history: History | MemoryHistory;
+    onAuthChange: () => void;
 }
 
-const Core: FC<IProps> = ({ history }) => {
+const Core: FC<IProps> = ({ history, onAuthChange }) => {
     return (
         <WithStore>
-            <WithRouter history={history} />
+            <WithRouter history={history} onAuthChange={onAuthChange} />
         </WithStore>
     );
 };

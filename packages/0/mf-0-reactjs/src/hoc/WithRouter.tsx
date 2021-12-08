@@ -1,5 +1,6 @@
 import { FC, lazy, Suspense } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
 import Layout from '@mf-0/core/components/Layout';
 const Mf1 = lazy(() => import('@mf-0/microfrontends/Mf1'));
@@ -7,9 +8,11 @@ const Mf2 = lazy(() => import('@mf-0/microfrontends/Mf2'));
 const Mf3 = lazy(() => import('@mf-0/microfrontends/Mf3'));
 import NotFoundCore from '@mf-0/core/components/NotFoundCore';
 
+const history = createBrowserHistory();
+
 const WithRouter: FC = () => {
     return (
-        <BrowserRouter>
+        <Router history={history}>
             <Layout>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
@@ -24,7 +27,7 @@ const WithRouter: FC = () => {
                     </Switch>
                 </Suspense>
             </Layout>
-        </BrowserRouter>
+        </Router>
     );
 };
 

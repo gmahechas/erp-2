@@ -23,10 +23,12 @@ const mount = (
         onNavigate,
         defaultHistory,
         initialPath,
+        onAuthChange
     }: {
         onNavigate?: () => void;
         defaultHistory: History | MemoryHistory;
         initialPath: string;
+        onAuthChange: () => void;
     }
 ) => {
     const history =
@@ -40,7 +42,7 @@ const mount = (
 
     ReactDOM.render(
         <React.StrictMode>
-            <Core history={history} />
+            <Core history={history} onAuthChange={onAuthChange} />
         </React.StrictMode>,
         element
     );
@@ -48,7 +50,7 @@ const mount = (
     applyPolyfills().then(() => {
         defineCustomElements();
     });
-    
+
     return {
         onParentNavigate({ pathname: nextPathname }: Location) {
             const { pathname } = history.location;
@@ -65,6 +67,9 @@ if (process.env.NODE_ENV === 'development') {
         mount(element, {
             defaultHistory: createBrowserHistory(),
             initialPath: '',
+            onAuthChange: () => {
+                console.log('isAuthenticated local');
+            },
         });
     }
 }

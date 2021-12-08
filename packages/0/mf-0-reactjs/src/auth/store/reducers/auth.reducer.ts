@@ -1,9 +1,9 @@
 import { IAuth } from '@gmahechas/erp-common';
-import { AuthTypes, AuthActionTypes } from '../actions';
+import { AuthTypes, AuthActionTypes } from '../actions/auth.actions';
 
 export interface State {
 	info: IAuth | null;
-	isLogged: boolean;
+	isLogged : boolean;
 }
 
 const initialState: State = {

@@ -8,16 +8,19 @@ const User = lazy(() => import('@mf-1/modules/user/containers/User'));
 
 interface IProps {
     history: History | MemoryHistory;
+    onAuthChange: () => void;
 }
 
-const WithRouter: FC<IProps> = ({ history }) => {
+const WithRouter: FC<IProps> = ({ history, onAuthChange }) => {
     return (
         <Router history={history}>
             <Layout>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
                         <Route path='/user' component={User} />
-                        <Route path='/auth' component={Auth} />
+                        <Route path='/auth'>
+                            <Auth onAuthChange={onAuthChange} />
+                        </Route>
                     </Switch>
                 </Suspense>
             </Layout>
