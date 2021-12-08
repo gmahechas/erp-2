@@ -13,9 +13,11 @@
         "build": "webpack --config config/webpack.production.js"
     },
     "dependencies": {
+        "@apollo/client": "^3.5.6",
         "@gmahechas/common-webcomponents": "^0.0.26",
         "@gmahechas/common-webcomponents-react": "^0.0.26",
         "@gmahechas/erp-common": "^0.0.26",
+        "graphql": "^16.1.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-hook-form": "^7.12.0",

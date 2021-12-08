@@ -9,7 +9,6 @@ interface IProps {
 const Auth: FC<IProps> = ({ onAuthChange }) => {
     const onLogin = (data: ISigninAuth) => {
         console.log(data);
-        onAuthChange && onAuthChange();
     };
     return <Login onLogin={onLogin} />;
 };
