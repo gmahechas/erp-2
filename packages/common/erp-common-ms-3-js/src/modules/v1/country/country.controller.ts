@@ -19,7 +19,7 @@ export const updateOneCountry = async (data: IUpdateCountry): Promise<ICountry |
 
 export const deleteOneCountry = async (data: IDeleteCountry): Promise<ICountry | null> => {
 	let result = await Country.findOneAndDelete(data);
-	if(result){
+	if (result) {
 		await new CountryDeletedProducer(kafkaWrapperProducer.producer).send(result);
 	}
 	return result;
@@ -31,6 +31,7 @@ export const searchOneCountry = async (data: Partial<ISearchCountry>): Promise<I
 };
 
 export const searchManyCountry = async (data: Partial<ISearchCountry>[]): Promise<ICountry[]> => {
-	let result = await Country.find({ $or: data });
+	const search = data.length === 0 ? [{}] : data;
+	let result = await Country.find({ $or: search });
 	return result;
 };

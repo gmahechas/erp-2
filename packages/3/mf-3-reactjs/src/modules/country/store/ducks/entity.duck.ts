@@ -1,11 +1,15 @@
 import { Dispatch } from 'redux';
-import { EntityActionTypes, entityCreateActionTypes } from '@mf-3/modules/country/store/actions';
+import { ApolloClient, NormalizedCacheObject, ApolloError } from '@apollo/client';
+import { ISearchCountry } from '@gmahechas/erp-common';
 
-export const searchMany = (search: any) => async (dispatch: Dispatch, getState: () => void) => {
-	dispatch(entityCreateActionTypes.searchMany({search}));
+import { entityCreateActionTypes } from '@mf-3/modules/country/store/actions';
+import { searchManyQuery } from '@mf-3/modules/country/graphql/queries';
+
+export const searchMany = (search: ISearchCountry[]) => async (dispatch: Dispatch, getState: () => void, { gqlClientV1 }: { gqlClientV1: ApolloClient<NormalizedCacheObject> }) => {
 	try {
-/* 		const response = await fixme.get('/todos');
-		dispatch(entityCreateActionTypes.searchManySuccess(response.data)); */
+		dispatch(entityCreateActionTypes.searchMany(search));
+		const result = await gqlClientV1.query({ query: searchManyQuery, variables: { data: search } });
+		dispatch(entityCreateActionTypes.searchManySuccess(result.data.searchManyCountry));
 	} catch (error) {
 		dispatch(entityCreateActionTypes.searchManyError(error));
 	}

@@ -22,6 +22,7 @@ export const searchOneEstate = async (data: Partial<ISearchEstate>): Promise<IEs
 };
 
 export const searchManyEstate = async (data: Partial<ISearchEstate>[]): Promise<IEstate[]> => {
-	let result = await Estate.find({ $or: data });
+	const search = data.length === 0 ? [{}] : data;
+	let result = await Estate.find({ $or: search });
 	return result;
 };

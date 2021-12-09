@@ -23,6 +23,7 @@ export const searchOneOffice = async (data: Partial<ISearchOffice>): Promise<IOf
 };
 
 export const searchManyOffice = async (data: Partial<ISearchOffice>[]): Promise<IOffice[]> => {
-	let result = await Office.find({ $or: data });
+	const search = data.length === 0 ? [{}] : data;
+	let result = await Office.find({ $or: search });
 	return result;
 };

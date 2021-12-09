@@ -22,6 +22,7 @@ export const searchOneUser = async (data: Partial<ISearchUser>): Promise<IUser |
 };
 
 export const searchManyUser = async (data: Partial<ISearchUser>[]): Promise<IUser[]> => {
-	const result = await User.find({ $or: data });
+	const search = data.length === 0 ? [{}] : data;
+	const result = await User.find({ $or: search });
 	return result;
 };

@@ -8,20 +8,15 @@ const Country: FC<IProps> = ({ country, searchMany }) => {
             <ul>
                 {country.entity.data &&
                     country.entity.data.map((country: any) => {
-                        return <li key={country.id}>{country.title}</li>;
+                        return <li key={country.id}>{country.countryName}</li>;
                     })}
             </ul>
         );
     };
-
-    const handleSearchMany = () => {
-        searchMany('search many');
-    };
-
     return (
         <>
             <div>Country Page</div>
-            <button onClick={handleSearchMany}>Buscar</button>
+            <button onClick={() => searchMany([])}>Buscar</button>
             {handleContries()}
         </>
     );

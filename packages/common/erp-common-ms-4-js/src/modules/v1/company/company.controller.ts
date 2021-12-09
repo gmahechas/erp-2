@@ -23,6 +23,7 @@ export const searchOneCompany = async (data: Partial<ISearchCompany>): Promise<I
 };
 
 export const searchManyCompany = async (data: Partial<ISearchCompany>[]): Promise<ICompany[]> => {
-	let result = await Company.find({ $or: data });
+	const search = data.length === 0 ? [{}] : data;
+	let result = await Company.find({ $or: search });
 	return result;
 };
