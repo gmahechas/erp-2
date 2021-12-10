@@ -3,7 +3,7 @@ import { env } from '../../environments';
 
 const Dashboard = () => {
     useEffect(() => {
-        console.log('2:::', env);
+        console.log('new 2:::', env);
     }, []);
     return <div>Dashboard</div>;
 };

@@ -22,7 +22,7 @@ jobs:
         run: yarn install
         
       - name: building
-        run: yarn build
+        run: yarn build:stage
         env:
           ERP_DOMAIN: ${{ secrets.ERP_DOMAIN }}
 

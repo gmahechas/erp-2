@@ -8,7 +8,7 @@ interface IProps {
 }
 const Auth: FC<IProps> = ({ onAuthChange }) => {
     useEffect(() => {
-        console.log('1:::', env);
+        console.log('new 1:::', env);
     }, []);
     const onLogin = (data: ISigninAuth) => {
         console.log(data);

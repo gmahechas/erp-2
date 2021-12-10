@@ -5,7 +5,7 @@ import { env } from '../../environments';
 
 const Core = () => {
     useEffect(() => {
-        console.log('0:::', env);
+        console.log('new 0:::', env);
     }, []);
     return (
         <WithStore>
