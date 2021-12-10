@@ -1,6 +1,6 @@
 {
     "name": "@gmahechas/erp-common-graphqljs",
-    "version": "0.0.26",
+    "version": "0.0.27",
     "description": "erp-common-graphqljs",
     "author": "gmahechas",
     "private": false,
@@ -20,8 +20,8 @@
         "graphql": "^15.5.3"
     },
     "devDependencies": {
-        "@gmahechas/erp-common": "^0.0.26",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.26",
+        "@gmahechas/erp-common": "^0.0.27",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.27",
         "@types/express": "^4.17.13",
         "@types/node": "^16.9.1",
         "rimraf": "^3.0.2",

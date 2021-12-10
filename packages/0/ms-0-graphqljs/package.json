@@ -1,6 +1,6 @@
 {
     "name": "ms-0-graphqljs",
-    "version": "0.0.26",
+    "version": "0.0.27",
     "description": "ms-0-graphqljs",
     "author": "gmahechas",
     "private": true,
@@ -11,10 +11,10 @@
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
-        "@gmahechas/erp-common": "^0.0.26",
-        "@gmahechas/erp-common-graphqljs": "^0.0.26",
-        "@gmahechas/erp-common-ms-0-js": "^0.0.26",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.26",
+        "@gmahechas/erp-common": "^0.0.27",
+        "@gmahechas/erp-common-graphqljs": "^0.0.27",
+        "@gmahechas/erp-common-ms-0-js": "^0.0.27",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.27",
         "connect-redis": "^6.0.0",
         "express-session": "^1.17.2",
         "redis": "^3.1.2"

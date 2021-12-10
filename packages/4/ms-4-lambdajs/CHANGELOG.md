@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.27 (2021-12-10)</small>
+
+**Note:** Version bump only for package ms-4-lambdajs
+
+
+
+
+
 ## <small>0.0.26 (2021-12-07)</small>
 
 **Note:** Version bump only for package ms-4-lambdajs

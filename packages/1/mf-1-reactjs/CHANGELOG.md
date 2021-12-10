@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.27 (2021-12-10)</small>
+
+* feat: envs ([f3cdcfc](https://github.com/gmahechas/erp/commit/f3cdcfc))
+* feat: init auth ([ff8a5cc](https://github.com/gmahechas/erp/commit/ff8a5cc))
+* feat: install apollo ([32eda65](https://github.com/gmahechas/erp/commit/32eda65))
+* feat: testing material grid ([2d0cba3](https://github.com/gmahechas/erp/commit/2d0cba3))
+* refactor: button name ([dcae11f](https://github.com/gmahechas/erp/commit/dcae11f))
+* refactor: store ([c0d9b9e](https://github.com/gmahechas/erp/commit/c0d9b9e))
+
+
+
+
+
 ## <small>0.0.26 (2021-12-07)</small>
 
 * feat: layout in all mf ([6dc84a6](https://github.com/gmahechas/erp/commit/6dc84a6))
