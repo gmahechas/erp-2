@@ -18,7 +18,7 @@ import '@mf-2/index.css';
 import Core from '@mf-2/core/containers/Core';
 import { initEnv } from './environments';
 
-const mount = (
+const mount = async (
     element: HTMLElement,
     {
         onNavigate,
@@ -30,7 +30,7 @@ const mount = (
         initialPath: string;
     }
 ) => {
-    initEnv();
+    await initEnv();
     const history =
         defaultHistory ||
         createMemoryHistory({

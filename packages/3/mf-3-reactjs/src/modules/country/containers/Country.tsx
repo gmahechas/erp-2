@@ -1,12 +1,8 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { connector, PropsFromRedux } from '../store/reducers';
-import { env } from '../../../environments';
 
 interface IProps extends PropsFromRedux {}
 const Country: FC<IProps> = ({ country, searchMany }) => {
-    useEffect(() => {
-        console.log('new 3:::', env);
-    }, []);
     const handleContries = () => {
         return (
             <ul>
