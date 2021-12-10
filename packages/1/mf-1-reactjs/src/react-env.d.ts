@@ -1,3 +1,5 @@
+declare const ENVIRONMENT: string;
+
 declare module '*.avif' {
   const src: string;
   export default src;

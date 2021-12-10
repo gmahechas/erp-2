@@ -9,14 +9,20 @@ import {
 
 import '@mf-0/index.css';
 import Core from '@mf-0/core/containers/Core';
+import { initEnv } from './environments';
 
-ReactDOM.render(
-    <React.StrictMode>
-        <Core />
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+const mount = async () => {
+    await initEnv();
+    ReactDOM.render(
+        <React.StrictMode>
+            <Core />
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
 
-applyPolyfills().then(() => {
-    defineCustomElements();
-});
+    applyPolyfills().then(() => {
+        defineCustomElements();
+    });
+};
+
+mount();

@@ -1,3 +1,4 @@
+const { DefinePlugin } = require('webpack');
 const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -20,6 +21,9 @@ const devConfig = {
     hot: false,
   },
   plugins: [
+    new DefinePlugin({
+      ENVIRONMENT: JSON.stringify('development')
+    }),
     new ModuleFederationPlugin({
       name: 'mf2',
       filename: 'remoteEntry.js',

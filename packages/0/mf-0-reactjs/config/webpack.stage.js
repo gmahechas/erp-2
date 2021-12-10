@@ -1,3 +1,4 @@
+const { DefinePlugin } = require('webpack');
 const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -17,6 +18,9 @@ const prodConfig = {
     globalObject: 'this'
   },
   plugins: [
+    new DefinePlugin({
+      ENVIRONMENT: JSON.stringify('stage')
+    }),
     new ModuleFederationPlugin({
       name: 'mf0',
       remotes: {

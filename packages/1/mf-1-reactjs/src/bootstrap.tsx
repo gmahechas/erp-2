@@ -16,6 +16,7 @@ import {
 
 import '@mf-1/index.css';
 import Core from '@mf-1/core/containers/Core';
+import { initEnv } from './environments';
 
 const mount = (
     element: HTMLElement,
@@ -31,6 +32,7 @@ const mount = (
         onAuthChange: () => void;
     }
 ) => {
+    initEnv();
     const history =
         defaultHistory ||
         createMemoryHistory({

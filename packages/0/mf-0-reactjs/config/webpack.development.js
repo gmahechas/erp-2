@@ -1,3 +1,4 @@
+const { DefinePlugin } = require('webpack');
 const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const commonConfig = require('./webpack.common');
@@ -19,6 +20,9 @@ const devConfig = {
     hot: false,
   },
   plugins: [
+    new DefinePlugin({
+      ENVIRONMENT: JSON.stringify('development')
+    }),
     new ModuleFederationPlugin({
       name: 'mf0',
       remotes: {

@@ -1,3 +1,5 @@
+declare const ENVIRONMENT: string;
+
 declare module 'mf1/Mf1App';
 declare module 'mf2/Mf2App';
 declare module 'mf3/Mf3App';
