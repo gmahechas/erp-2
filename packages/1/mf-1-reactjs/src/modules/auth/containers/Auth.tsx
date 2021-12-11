@@ -1,15 +1,20 @@
 import { FC } from 'react';
 import { ISigninAuth } from '@gmahechas/erp-common';
 import Login from '../components/Login';
+import { connector, PropsFromRedux } from '../store/reducers';
 
-interface IProps {
+interface IProps extends PropsFromRedux {
     onAuthChange: () => void;
 }
-const Auth: FC<IProps> = ({ onAuthChange }) => {
+const Auth: FC<IProps> = ({ onAuthChange, auth, signin }) => {
     const onLogin = (data: ISigninAuth) => {
-        console.log(data);
+        signin(data);
     };
-    return <Login onLogin={onLogin} />;
+    return (
+        <>
+            <Login onLogin={onLogin} />
+        </>
+    );
 };
 
-export default Auth;
+export default connector(Auth);

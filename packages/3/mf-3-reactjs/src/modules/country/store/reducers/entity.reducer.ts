@@ -12,7 +12,7 @@ const initialState: State = {
 export const reducer = (state = initialState, action: EntityActionTypes): State => {
 	switch (action.type) {
 		case EntityTypes.SEARCH_MANY_SUCCESS:
-			return {...state, data: action.payload.entities }
+			return { ...state, data: action.payload.data }
 		case EntityTypes.SEARCH_MANY_ERROR:
 			return { ...state, data: [] }
 		default:

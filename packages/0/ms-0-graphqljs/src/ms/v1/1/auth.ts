@@ -10,17 +10,22 @@ export const typeDefs = gql`
 		companyKey: String
 		iat: Int
 	}
+	input SigninAuth {
+		companyKey: String
+		userName: String
+  	userPassword: String
+	}
   type Query {
-  	signinAuth(companyKey: String, userName: String, userPassword: String): Auth
+  	signinAuth(data: SigninAuth): Auth
 	}
 `;
 
 export const resolvers = {
 	Query: {
-		signinAuth: async (_: object, args: ISigninAuth, context: IContext): Promise<IAuth> => {
+		signinAuth: async (_: any, { data }: { data: ISigninAuth }, context: IContext): Promise<IAuth> => {
 			let token = context.token;
 			if (!token) {
-				const { token: newToken } = await signinAuth(args);
+				const { token: newToken } = await signinAuth(data);
 				token = newToken;
 				context.req.session.token = token;
 			}

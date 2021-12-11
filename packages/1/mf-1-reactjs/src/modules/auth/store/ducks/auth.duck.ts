@@ -1,13 +1,15 @@
 import { Dispatch } from 'redux';
-import { useQuery, gql } from '@apollo/client';
 import { ISigninAuth } from '@gmahechas/erp-common';
-import { AuthActionTypes, authCreateActionTypes } from '@mf-1/modules/auth/store/actions/auth.actions';
 
-export const signin = (signinAuth: ISigninAuth) => async (dispatch: Dispatch, getState: () => void) => {
-	dispatch(authCreateActionTypes.signin(signinAuth));
+import { graphqlClientV1 } from '@mf-1/helpers/graphql';
+import { signinAuth } from '@mf-1/modules/auth/graphql/queries';
+import { authCreateActionTypes } from '@mf-1/modules/auth/store/actions/auth.actions';
+
+export const signin = (data: ISigninAuth) => async (dispatch: Dispatch, getState: () => void) => {
 	try {
-		/* 		const response = await fixme.get('/todos');
-				dispatch(entityCreateActionTypes.searchManySuccess(response.data)); */
+		dispatch(authCreateActionTypes.signin(data));
+		const result = await graphqlClientV1.query({ query: signinAuth, variables: { data } });
+		dispatch(authCreateActionTypes.signinSuccess(result.data.signinAuth));
 	} catch (error) {
 		dispatch(authCreateActionTypes.signinError(error));
 	}
