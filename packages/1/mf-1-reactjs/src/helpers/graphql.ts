@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, NormalizedCacheObject } from '@apollo/client';
+import { ApolloClient, InMemoryCache, NormalizedCacheObject, createHttpLink } from '@apollo/client';
 import { env } from '@mf-1/environments';
 
 export let graphqlClientV1: ApolloClient<NormalizedCacheObject>;
@@ -10,9 +10,12 @@ export class GraphQLClient {
 	}
 	constructor(uri: string) {
 		this._client = new ApolloClient({
-			uri,
 			cache: new InMemoryCache({
 				addTypename: false,
+			}),
+			link: createHttpLink({
+				uri,
+				credentials: 'include'
 			})
 		})
 	}
