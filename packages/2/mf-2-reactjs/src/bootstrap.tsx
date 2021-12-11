@@ -16,7 +16,8 @@ import {
 
 import '@mf-2/index.css';
 import Core from '@mf-2/core/containers/Core';
-import { initEnv } from './environments';
+import { initEnv } from '@mf-2/environments';
+import { initHelpers } from '@mf-2/helpers';
 
 const mount = async (
     element: HTMLElement,
@@ -31,6 +32,7 @@ const mount = async (
     }
 ) => {
     await initEnv();
+    await initHelpers();
     const history =
         defaultHistory ||
         createMemoryHistory({

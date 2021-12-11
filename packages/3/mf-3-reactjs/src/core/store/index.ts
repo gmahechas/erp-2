@@ -1,7 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, Store, ReducersMapObject, Reducer } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { reducers as auth } from '@mf-3/auth/store/reducers';
 import { State as CountryState } from '@mf-3/modules/country/store/reducers';
 
@@ -9,13 +8,6 @@ interface IStore extends Store {
 	asyncReducers: ReducersMapObject,
 	injectReducer: (key: string, asyncReducer: Reducer) => void
 }
-
-const gqlClientV1 = new ApolloClient({
-	uri: 'http://localhost:50000/graphql/v1',
-	cache: new InMemoryCache({
-		addTypename: false,
-	})
-});
 
 const storeFactory = (): IStore => {
 	const createReducer = (asyncReducers: ReducersMapObject = {}) => combineReducers({ auth, ...asyncReducers });
@@ -27,7 +19,7 @@ const storeFactory = (): IStore => {
 			this.asyncReducers[key] = asyncReducer;
 			this.replaceReducer(createReducer(this.asyncReducers))
 		},
-		...createStore(rootReducer, composeEnhancers(applyMiddleware(thunk.withExtraArgument({ gqlClientV1 }))))
+		...createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 	});
 }
 

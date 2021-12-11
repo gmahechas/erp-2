@@ -7,7 +7,7 @@ declare module 'express-session' {
 }
 
 export const authMiddleware = async (req: express.Request, res: express.Response): Promise<IContext> => {
-	const token = req.session.token;
+/* 	const token = req.session.token;
 	if (!req.body.query.includes('signinAuth')) {
 		if (!token) {
 			sendError('authentication_error')
@@ -15,5 +15,6 @@ export const authMiddleware = async (req: express.Request, res: express.Response
 		return { req, res, token };
 	} else {
 		return { req, res, token };
-	}
+	} */
+	return { req, res, token: '' };
 }

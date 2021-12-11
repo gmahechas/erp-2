@@ -10,9 +10,11 @@ import {
 import '@mf-0/index.css';
 import Core from '@mf-0/core/containers/Core';
 import { initEnv } from './environments';
+import { initHelpers } from '@mf-0/helpers';
 
 const mount = async () => {
     await initEnv();
+    await initHelpers();
     ReactDOM.render(
         <React.StrictMode>
             <Core />
