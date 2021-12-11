@@ -18,7 +18,7 @@ export const reducer = (state = initialState, action: AuthActionTypes): State =>
 		case AuthTypes.SIGNIN_SUCCESS:
 			return { ...state, info: action.payload.data, isLogged: true };
 		case AuthTypes.SIGNIN_ERROR:
-			return { ...state };
+			return { ...state, ...initialState };
 		default:
 			return state;
 	}
