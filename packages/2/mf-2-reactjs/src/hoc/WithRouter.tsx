@@ -8,7 +8,6 @@ const Dashboard = lazy(() => import('@mf-2/modules/dashboard/Dashboard'));
 interface IProps {
     history: History | MemoryHistory;
 }
-
 const WithRouter: FC<IProps> = ({ history }) => {
     return (
         <Router history={history}>

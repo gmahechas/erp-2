@@ -1,9 +1,9 @@
 import { IAuth } from '@gmahechas/erp-common';
-import { AuthTypes, AuthActionTypes } from '../actions/auth.actions';
+import { AuthTypes, AuthActionTypes } from '../actions';
 
 export interface State {
 	info: IAuth | null;
-	isLogged : boolean;
+	isLogged: boolean;
 }
 
 const initialState: State = {
@@ -16,9 +16,9 @@ export const reducer = (state = initialState, action: AuthActionTypes): State =>
 		case AuthTypes.SIGNIN:
 			return { ...state };
 		case AuthTypes.SIGNIN_SUCCESS:
-			return { ...state };
+			return { ...state, info: action.payload.data, isLogged: true };
 		case AuthTypes.SIGNIN_ERROR:
-			return { ...state };
+			return { ...state, ...initialState };
 		default:
 			return state;
 	}

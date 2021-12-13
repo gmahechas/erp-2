@@ -31,7 +31,6 @@ const Address = lazy(() =>
 interface IProps {
     history: History | MemoryHistory;
 }
-
 const WithRouter: FC<IProps> = ({ history }) => {
     return (
         <Router history={history}>

@@ -2,9 +2,9 @@ import { Dispatch } from 'redux';
 import { ApolloError } from '@apollo/client';
 import { ISigninAuth } from '@gmahechas/erp-common';
 
-import { graphqlClientV1 } from '@mf-1/helpers/graphql';
-import { signinAuth } from '@mf-1/modules/auth/graphql/queries';
-import { authCreateActionTypes } from '@mf-1/modules/auth/store/actions/auth.actions';
+import { graphqlClientV1 } from '@mf-0/helpers/graphql';
+import { signinAuth } from '@mf-0/auth/graphql/queries';
+import { authCreateActionTypes } from '@mf-0/auth/store/actions/auth.actions';
 
 export const signin = (data: ISigninAuth) => async (dispatch: Dispatch, getState: () => void) => {
 	try {

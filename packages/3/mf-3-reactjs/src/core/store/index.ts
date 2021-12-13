@@ -1,7 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, Store, ReducersMapObject, Reducer } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { reducers as auth } from '@mf-3/auth/store/reducers';
 import { State as CountryState } from '@mf-3/modules/country/store/reducers';
 
 interface IStore extends Store {
@@ -10,7 +9,7 @@ interface IStore extends Store {
 }
 
 const storeFactory = (): IStore => {
-	const createReducer = (asyncReducers: ReducersMapObject = {}) => combineReducers({ auth, ...asyncReducers });
+	const createReducer = (asyncReducers: ReducersMapObject = {}) => combineReducers({ ...asyncReducers });
 	const rootReducer = createReducer();
 	const composeEnhancers = composeWithDevTools({ name: 'mf-3-reactjs' });
 	return ({

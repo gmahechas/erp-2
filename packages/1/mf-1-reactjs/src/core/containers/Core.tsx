@@ -1,21 +1,19 @@
 import { FC } from 'react';
 import { History, MemoryHistory } from 'history';
+import { ISigninAuth } from '@gmahechas/erp-common';
 
-import WithApollo from '@mf-1/hoc/WithApollo';
 import WithStore from '@mf-1/hoc/WithStore';
 import WithRouter from '@mf-1/hoc/WithRouter';
 
 interface IProps {
     history: History | MemoryHistory;
-    onAuthChange: () => void;
+    signin: (data: ISigninAuth) => void;
 }
-const Core: FC<IProps> = ({ history, onAuthChange }) => {
+const Core: FC<IProps> = ({ history, signin }) => {
     return (
-        <WithApollo>
-            <WithStore>
-                <WithRouter history={history} onAuthChange={onAuthChange} />
-            </WithStore>
-        </WithApollo>
+        <WithStore>
+            <WithRouter history={history} signin={signin} />
+        </WithStore>
     );
 };
 

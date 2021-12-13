@@ -7,6 +7,7 @@ import {
     MemoryHistory,
     Location,
 } from 'history';
+import { ISigninAuth } from '@gmahechas/erp-common';
 
 import '@gmahechas/common-webcomponents/dist/common-webcomponents/common-webcomponents.css';
 import {
@@ -25,12 +26,12 @@ const mount = async (
         onNavigate,
         defaultHistory,
         initialPath,
-        onAuthChange
+        signin,
     }: {
         onNavigate?: () => void;
         defaultHistory: History | MemoryHistory;
         initialPath: string;
-        onAuthChange: () => void;
+        signin: (data: ISigninAuth) => void;
     }
 ) => {
     await initEnv();
@@ -46,7 +47,7 @@ const mount = async (
 
     ReactDOM.render(
         <React.StrictMode>
-            <Core history={history} onAuthChange={onAuthChange} />
+            <Core history={history} signin={signin} />
         </React.StrictMode>,
         element
     );
@@ -71,9 +72,8 @@ if (process.env.NODE_ENV === 'development') {
         mount(element, {
             defaultHistory: createBrowserHistory(),
             initialPath: '',
-            onAuthChange: () => {
-                console.log('isAuthenticated local');
-            },
+            signin: (data: ISigninAuth) =>
+                console.log('isAuthenticated local', data),
         });
     }
 }
