@@ -8,15 +8,9 @@ import {
     Location,
 } from 'history';
 
-import '@gmahechas/common-webcomponents/dist/common-webcomponents/common-webcomponents.css';
-import {
-    applyPolyfills,
-    defineCustomElements,
-} from '@gmahechas/common-webcomponents/loader';
-
 import '@mf-2/index.css';
 import Core from '@mf-2/core/containers/Core';
-import { initEnv } from '@mf-2/environments';
+import { env, initEnv } from '@mf-2/environments';
 import { initHelpers } from '@mf-2/helpers';
 
 const mount = async (
@@ -49,10 +43,6 @@ const mount = async (
         element
     );
 
-    applyPolyfills().then(() => {
-        defineCustomElements();
-    });
-
     return {
         onParentNavigate({ pathname: nextPathname }: Location) {
             const { pathname } = history.location;
@@ -66,10 +56,13 @@ const mount = async (
 if (process.env.NODE_ENV === 'development') {
     const element = document.getElementById('_mf-2-root');
     if (element) {
+        require('@gmahechas/common-webcomponents/dist/common-webcomponents/common-webcomponents.css');
+        const loader = require('@gmahechas/common-webcomponents/loader');
         mount(element, {
             defaultHistory: createBrowserHistory(),
             initialPath: '',
         });
+        loader.applyPolyfills().then(() => loader.defineCustomElements());
     }
 }
 

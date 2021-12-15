@@ -9,15 +9,9 @@ import {
 } from 'history';
 import { ISigninAuth } from '@gmahechas/erp-common';
 
-import '@gmahechas/common-webcomponents/dist/common-webcomponents/common-webcomponents.css';
-import {
-    applyPolyfills,
-    defineCustomElements,
-} from '@gmahechas/common-webcomponents/loader';
-
 import '@mf-1/index.css';
 import Core from '@mf-1/core/containers/Core';
-import { initEnv } from '@mf-1/environments';
+import { env, initEnv } from '@mf-1/environments';
 import { initHelpers } from '@mf-1/helpers';
 
 const mount = async (
@@ -52,10 +46,6 @@ const mount = async (
         element
     );
 
-    applyPolyfills().then(() => {
-        defineCustomElements();
-    });
-
     return {
         onParentNavigate({ pathname: nextPathname }: Location) {
             const { pathname } = history.location;
@@ -69,12 +59,15 @@ const mount = async (
 if (process.env.NODE_ENV === 'development') {
     const element = document.getElementById('_mf-1-root');
     if (element) {
+        require('@gmahechas/common-webcomponents/dist/common-webcomponents/common-webcomponents.css');
+        const loader = require('@gmahechas/common-webcomponents/loader');
         mount(element, {
             defaultHistory: createBrowserHistory(),
             initialPath: '',
             signin: (data: ISigninAuth) =>
-                console.log('isAuthenticated local', data),
+            console.log('isAuthenticated local', data),
         });
+        loader.applyPolyfills().then(() => loader.defineCustomElements());
     }
 }
 
