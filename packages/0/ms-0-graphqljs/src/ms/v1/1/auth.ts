@@ -7,13 +7,11 @@ export const typeDefs = gql`
 	type Auth {
 		id: String
   	userName: String
-		companyKey: String
-		iat: Int
 	}
 	input SigninAuth {
-		companyKey: String
 		userName: String
   	userPassword: String
+		companyKey: String
 	}
   type Query {
   	signinAuth(data: SigninAuth): Auth

@@ -17,14 +17,14 @@ const schema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	companyKey: {
+	companyId: {
 		type: String,
 		required: true,
 	},
-	personId: {
+	companyKey: {
 		type: String,
-		required: true
-	},
+		required: true,
+	}
 }, {
 	toObject: {
 		transform(doc, ret) {

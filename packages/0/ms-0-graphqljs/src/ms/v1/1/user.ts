@@ -6,22 +6,16 @@ export const typeDefs = gql`
 	type User {
 		id: String
     userName: String
-    userPassword: String
-		companyKey: String
-    personId: String
 	}
 
 	input CreateOneUser {
     userName: String
     userPassword: String
-		companyKey: String
-    personId: String
 	}
 	input UpdateOneUser {
 		id: String
     userName: String
     userPassword: String
-    personId: String
 	}
 	input DeleteOneUser {
 		id: String
@@ -29,8 +23,6 @@ export const typeDefs = gql`
 	input SearchOneUser {
 		id: String
     userName: String
-		companyKey: String
-    personId: String
 	}
 	
 	type Mutation {
