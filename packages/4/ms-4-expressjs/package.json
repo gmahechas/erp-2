@@ -1,0 +1,25 @@
+{
+    "name": "ms-4-expressjs",
+    "version": "0.0.27",
+    "description": "ms-4-expressjs",
+    "author": "gmahechas",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
+        "start:prod": "node dist/index.js",
+        "build": "rimraf dist && tsc"
+    },
+    "dependencies": {
+        "@gmahechas/erp-common": "^0.0.27",
+        "@gmahechas/erp-common-expressjs": "^0.0.27",
+        "@gmahechas/erp-common-ms-4-js": "^0.0.27",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.27"
+    },
+    "devDependencies": {
+        "@types/node": "^16.9.1",
+        "rimraf": "^3.0.2",
+        "ts-node-dev": "^1.1.8",
+        "typescript": "^4.3.5"
+    }
+}
