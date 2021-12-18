@@ -1,7 +1,6 @@
 import { JSONSchemaType } from 'ajv';
 import { ICreateUser, IUpdateUser, IDeleteUser, ISearchUser } from './user.dto';
 
-
 export const createOneUserSchema: JSONSchemaType<ICreateUser> = {
 	type: 'object',
 	properties: {

@@ -1,4 +1,5 @@
-import { sendError } from '@gmahechas/erp-common-ms-utils-js';
+import { IAuth } from '@gmahechas/erp-common';
+import { jwtDecode, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 import { express, IContext } from '@gmahechas/erp-common-graphqljs';
 declare module 'express-session' {
 	interface SessionData {
@@ -10,8 +11,9 @@ export const authMiddleware = async (req: express.Request, res: express.Response
 	const token = req.session.token;
 	if (!req.body.query.includes('query signinAuth($data: SigninAuth)')) {
 		if (!token) {
-			sendError('authentication_error')
+			sendError(TypeErrorMessage.AUTH);
 		}
 	}
-	return { req, res, token };
+	const auth = token ? jwtDecode(token) as IAuth : undefined;
+	return { req, res, token, auth };
 }

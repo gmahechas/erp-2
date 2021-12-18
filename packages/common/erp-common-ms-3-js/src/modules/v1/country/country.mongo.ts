@@ -35,7 +35,7 @@ schema.pre('save', async function (next) {
 	next();
 });
 
-type CountryDocument = ICountry & Document;
+type CountryDocument = ICountry & mongoose.Document;
 let Country: mongoose.Model<CountryDocument>;
 Country = mongoose.model<CountryDocument>('Country', schema, 'countries');
 export const registerCountryModel = (connection: mongoose.Connection) => Country = connection.model('Country', schema, 'countries');

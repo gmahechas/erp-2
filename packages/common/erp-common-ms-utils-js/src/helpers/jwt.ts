@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 import { IAuth } from '@gmahechas/erp-common';
 import { env } from './env';
 import { sendError } from '../errors/utils/send-error';
+import { TypeErrorMessage } from '../errors/utils/error-type.enum';
 import { checkExistsFile, readFileSync } from './node';
 
 export const jwtSign = (
@@ -17,7 +18,7 @@ export const jwtVerify = (
 export const jwtDecode = (token: string) => {
 	const publicKeyPath = env.ms?.one?.auth?.jwt?.publicKey!;
 	if (!checkExistsFile(publicKeyPath)) {
-		sendError('error_config');
+		sendError(TypeErrorMessage.CONFIG);
 	}
 	const publicKey = readFileSync(publicKeyPath);
 	return jwtVerify(token, publicKey, { algorithm: 'RS256' }) as IAuth;

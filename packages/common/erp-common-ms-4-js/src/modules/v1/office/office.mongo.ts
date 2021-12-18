@@ -35,7 +35,7 @@ schema.pre('save', async function (next) {
 	next();
 });
 
-type OfficeDocument = IOffice & Document;
+type OfficeDocument = IOffice & mongoose.Document;
 let Office: mongoose.Model<OfficeDocument>;
 Office = mongoose.model<OfficeDocument>('Office', schema, 'offices');
 export const registerOfficeyModel = (connection: mongoose.Connection) => Office = connection.model('Office', schema, 'offices');

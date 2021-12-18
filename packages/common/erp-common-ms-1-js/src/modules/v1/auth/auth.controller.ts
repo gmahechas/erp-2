@@ -1,5 +1,5 @@
 import { ISigninAuth } from '@gmahechas/erp-common';
-import { sendError, compareHash, jwtSign, resolvePath, checkExistsFile, readFileSync, env } from '@gmahechas/erp-common-ms-utils-js';
+import { sendError, TypeErrorMessage, compareHash, jwtSign, checkExistsFile, readFileSync, env } from '@gmahechas/erp-common-ms-utils-js';
 import { searchOneUser } from '../user/user.controller';
 
 export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> => {
@@ -8,19 +8,19 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 	const user = await searchOneUser({ userName, companyKey });
 
 	if (!user) {
-		sendError('authentication_error');
+		sendError(TypeErrorMessage.AUTH);
 	}
 
-	const { id } = user;
+	const { id, companyId } = user;
 	const passwordsMatch = await compareHash(userPassword, user.userPassword);
 
 	if (!passwordsMatch) {
-		sendError('authentication_error');
+		sendError(TypeErrorMessage.AUTH);
 	}
 
 	const privateKeyPath = env.ms?.one?.auth?.jwt?.privateKey!;
 	if (!checkExistsFile(privateKeyPath)) {
-		sendError('error_config');
+		sendError(TypeErrorMessage.CONFIG);
 	}
 
 	const privateKey = readFileSync(privateKeyPath);
@@ -28,6 +28,7 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 	const token = jwtSign({
 		id,
 		userName,
+		companyId,
 		companyKey,
 	}, privateKey, { algorithm: 'RS256' });
 

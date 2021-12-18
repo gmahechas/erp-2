@@ -39,7 +39,7 @@ schema.pre('save', async function (next) {
 	next();
 });
 
-type EstateDocument = IEstate & Document;
+type EstateDocument = IEstate & mongoose.Document;
 let Estate: mongoose.Model<EstateDocument>;
 Estate = mongoose.model<EstateDocument>('Estate', schema, 'estates');
 export const registerEstateModel = (connection: mongoose.Connection) => Estate = connection.model('Estate', schema, 'estates');

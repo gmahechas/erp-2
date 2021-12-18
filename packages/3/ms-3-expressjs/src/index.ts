@@ -1,4 +1,4 @@
-import { generalHandlerError, initEnv, env, sendError  } from '@gmahechas/erp-common-ms-utils-js';
+import { generalHandlerError, initEnv, env, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 import { connectDatabases, initKafkaProducers } from '@gmahechas/erp-common-ms-3-js';
 import { app } from './app';
 
@@ -9,7 +9,7 @@ const start = async () => {
 		await initKafkaProducers();
 		const appPort = env?.app?.port;
 		if (!appPort) {
-			sendError('error_config')
+			sendError(TypeErrorMessage.CONFIG);
 		}
 		app.listen(appPort, () => {
 			console.log(`environment: ${env.environment}`);

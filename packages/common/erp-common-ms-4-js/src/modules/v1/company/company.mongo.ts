@@ -43,7 +43,7 @@ schema.pre('save', async function (next) {
 	next();
 });
 
-type CompanyDocument = ICompany & Document;
+type CompanyDocument = ICompany & mongoose.Document;
 let Company: mongoose.Model<CompanyDocument>;
 Company = mongoose.model<CompanyDocument>('Company', schema, 'companies');
 export const registerCompanyModel = (connection: mongoose.Connection) => Company = connection.model('Company', schema, 'companies');

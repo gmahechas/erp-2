@@ -1,11 +1,11 @@
 import connectRedis from 'connect-redis';
 import expressSession from 'express-session';
 import redis from 'redis';
-import { env, sendError } from '@gmahechas/erp-common-ms-utils-js';
+import { env, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 
 export const session = async () => {
 	if(!env.ms?.zero?.session?.redis?.url) {
-		sendError('error_config');
+		sendError(TypeErrorMessage.CONFIG);
 	}
 	const RedisStore = connectRedis(expressSession);
 	const client = redis.createClient(env.ms.zero.session.redis.url);
