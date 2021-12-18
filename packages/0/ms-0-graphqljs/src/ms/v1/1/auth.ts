@@ -15,6 +15,7 @@ export const typeDefs = gql`
 	}
   type Query {
   	signinAuth(data: SigninAuth): Auth
+  	meAuth: Auth
 	}
 `;
 
@@ -28,6 +29,7 @@ export const resolvers = {
 				context.req.session.token = token;
 			}
 			return jwtDecode(token) as IAuth;
-		}
+		},
+		meAuth: async (_: any, __: any, { auth }: IContext): Promise<IAuth> => auth!
 	}
 };
