@@ -1,5 +1,5 @@
 import { IAuth } from '@gmahechas/erp-common';
-import { AuthError, jwtDecode  } from '@gmahechas/erp-common-ms-utils-js';
+import { AuthError, jwtDecode } from '@gmahechas/erp-common-ms-utils-js';
 import { express, IContext } from '@gmahechas/erp-common-graphqljs';
 declare module 'express-session' {
 	interface SessionData {
