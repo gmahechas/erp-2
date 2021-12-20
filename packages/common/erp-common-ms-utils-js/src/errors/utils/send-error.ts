@@ -14,11 +14,11 @@ export const sendError = (type: TypeErrorMessage, errors?: IError[]) => {
 		case TypeErrorMessage.VALIDATION:
 			throw new ValidationError(errors);
 		case TypeErrorMessage.NOT_FOUND:
-				throw new NotFoundError();
+			throw new NotFoundError();
 		case TypeErrorMessage.DB_CONNECTION:
-				throw new ConnectDbError();
+			throw new ConnectDbError();
 		case TypeErrorMessage.CONFIG:
-				throw new ConfigError();
+			throw new ConfigError();
 		case TypeErrorMessage.AUTH:
 			throw new AuthError();
 		case TypeErrorMessage.AUTHORIZATION:

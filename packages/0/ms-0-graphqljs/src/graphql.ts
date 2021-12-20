@@ -7,8 +7,8 @@ export const graphqlV1 = async () => {
 		typeDefs: v1TypeDefs,
 		resolvers: v1Resolvers,
 		debug: false,
-		formatError: (error) => errorMiddleware(error),
-		context: async ({ req, res }) => await authMiddleware(req, res)
+		context: async ({ req, res }) => await authMiddleware(req, res),
+		formatError: (error) => errorMiddleware(error)
 	});
 	await graphql.start();
 	return graphql;
