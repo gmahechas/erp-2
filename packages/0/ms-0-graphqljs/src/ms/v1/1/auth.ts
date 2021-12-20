@@ -22,13 +22,13 @@ export const typeDefs = gql`
 export const resolvers = {
 	Query: {
 		signinAuth: async (_: any, { data }: { data: ISigninAuth }, context: IContext): Promise<IAuth> => {
-			let token = context.token;
+			let { token, auth } = context;
 			if (!token) {
 				const { token: newToken } = await signinAuth(data);
 				token = newToken;
 				context.req.session.token = token;
 			}
-			return jwtDecode(token) as IAuth;
+			return auth ? auth : jwtDecode(token) as IAuth;
 		},
 		meAuth: async (_: any, __: any, { auth }: IContext): Promise<IAuth> => auth!
 	}
