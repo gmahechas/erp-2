@@ -10,6 +10,16 @@ export const signinAuth = gql`
   }
 `;
 
+export const signoutAuth = gql`
+  query signoutAuth {
+    signoutAuth {
+      id
+      userName
+      companyKey
+    }
+  }
+`;
+
 export const meAuth = gql`
   query meAuth {
     meAuth {

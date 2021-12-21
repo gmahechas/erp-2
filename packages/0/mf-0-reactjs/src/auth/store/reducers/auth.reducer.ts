@@ -19,6 +19,12 @@ export const reducer = (state = initialState, action: AuthActionTypes): State =>
 			return { ...state, info: action.payload.data, isLogged: true };
 		case AuthTypes.SIGNIN_ERROR:
 			return { ...state, ...initialState };
+		case AuthTypes.SIGNOUT:
+			return { ...state };
+		case AuthTypes.SIGNOUT_SUCCESS:
+			return { ...state, ...initialState };
+		case AuthTypes.SIGNOUT_ERROR:
+			return { ...state };
 		case AuthTypes.ME:
 			return state;
 		case AuthTypes.ME_SUCCESS:

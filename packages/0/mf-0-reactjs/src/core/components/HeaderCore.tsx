@@ -1,6 +1,10 @@
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-const HeaderCore = () => {
+interface IProps {
+    signout: () => void;
+}
+const HeaderCore: FC<IProps> = ({ signout }) => {
     return (
         <nav>
             <Link to='/'>Dashboard | </Link>
@@ -10,6 +14,7 @@ const HeaderCore = () => {
             <Link to='/estate'>Estate | </Link>
             <Link to='/city'>City | </Link>
             <Link to='/address'>Address</Link>
+            <button onClick={signout}>Signout</button>
         </nav>
     );
 };
