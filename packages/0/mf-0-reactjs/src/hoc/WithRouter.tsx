@@ -1,7 +1,8 @@
-import { FC, lazy, Suspense } from 'react';
+import { FC, lazy, Suspense, useEffect } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
+import { PropsFromRedux, connector } from '@mf-0/auth/store/reducers';
 import Layout from '@mf-0/core/components/Layout';
 const Mf1 = lazy(() => import('@mf-0/microfrontends/Mf1'));
 const Mf2 = lazy(() => import('@mf-0/microfrontends/Mf2'));
@@ -10,7 +11,9 @@ import NotFoundCore from '@mf-0/core/components/NotFoundCore';
 
 const history = createBrowserHistory();
 
-const WithRouter: FC = () => {
+interface IProps extends PropsFromRedux {}
+const WithRouter: FC<IProps> = ({ me }) => {
+    useEffect(() => { me() }, [])
     return (
         <Router history={history}>
             <Layout>
@@ -31,4 +34,4 @@ const WithRouter: FC = () => {
     );
 };
 
-export default WithRouter;
+export default connector(WithRouter);

@@ -6,7 +6,16 @@ export const signinAuth = gql`
       id
       userName
       companyKey
-      iat
+    }
+  }
+`;
+
+export const meAuth = gql`
+  query meAuth {
+    meAuth {
+      id
+      userName
+      companyKey
     }
   }
 `;
