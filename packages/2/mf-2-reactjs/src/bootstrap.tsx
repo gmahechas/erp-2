@@ -10,7 +10,7 @@ import {
 
 import '@mf-2/index.css';
 import Core from '@mf-2/core/containers/Core';
-import { env, initEnv } from '@mf-2/environments';
+import { initEnv } from '@mf-2/environments';
 import { initHelpers } from '@mf-2/helpers';
 
 const mount = async (

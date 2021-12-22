@@ -11,7 +11,7 @@ import { ISigninAuth } from '@gmahechas/erp-common';
 
 import '@mf-1/index.css';
 import Core from '@mf-1/core/containers/Core';
-import { env, initEnv } from '@mf-1/environments';
+import { initEnv } from '@mf-1/environments';
 import { initHelpers } from '@mf-1/helpers';
 
 const mount = async (
