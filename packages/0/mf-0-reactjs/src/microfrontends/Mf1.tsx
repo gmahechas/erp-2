@@ -1,6 +1,5 @@
 import { FC, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import { ISigninAuth } from '@gmahechas/erp-common';
 import { mount } from 'mf1/Mf1App';
 import { connector, PropsFromRedux } from '@mf-0/auth/store/reducers';
 
