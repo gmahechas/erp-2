@@ -16,12 +16,8 @@ const WithRouter: FC = () => {
             <Layout>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
-                        <Route path='/auth' component={Mf1} />
-                        <Route path='/user' component={Mf1} />
-                        <Route path='/country' component={Mf3} />
-                        <Route path='/estate' component={Mf3} />
-                        <Route path='/city' component={Mf3} />
-                        <Route path='/address' component={Mf3} />
+                        <Route path='/1' component={Mf1} />
+                        <Route path='/3' component={Mf3} />
                         <Route exact path='/' component={Mf2} />
                         <Route path='*' component={NotFoundCore} />
                     </Switch>

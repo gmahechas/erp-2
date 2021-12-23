@@ -37,10 +37,11 @@ const WithRouter: FC<IProps> = ({ history }) => {
             <Layout>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
-                        <Route path='/address' component={Address} />
-                        <Route path='/city' component={City} />
-                        <Route path='/estate' component={Estate} />
-                        <Route path='/country' component={Country} />
+                        <Route path='/3/address' component={Address} />
+                        <Route path='/3/city' component={City} />
+                        <Route path='/3/estate' component={Estate} />
+                        <Route path='/3/country' component={Country} />
+                        <Route path='*' render={() => <span>Not found</span>} />
                     </Switch>
                 </Suspense>
             </Layout>

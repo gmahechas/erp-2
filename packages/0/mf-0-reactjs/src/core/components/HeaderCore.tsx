@@ -8,12 +8,12 @@ const HeaderCore: FC<IProps> = ({ signout }) => {
     return (
         <nav>
             <Link to='/'>Dashboard | </Link>
-            <Link to='/auth'>Auth | </Link>
-            <Link to='/user'>User | </Link>
-            <Link to='/country'>Country | </Link>
-            <Link to='/estate'>Estate | </Link>
-            <Link to='/city'>City | </Link>
-            <Link to='/address'>Address</Link>
+            <Link to='/1/auth'>Auth | </Link>
+            <Link to='/1/user'>User | </Link>
+            <Link to='/3/country'>Country | </Link>
+            <Link to='/3/estate'>Estate | </Link>
+            <Link to='/3/city'>City | </Link>
+            <Link to='/3/address'>Address</Link>
             <button onClick={signout}>Signout</button>
         </nav>
     );

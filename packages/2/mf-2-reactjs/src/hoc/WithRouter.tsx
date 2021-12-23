@@ -15,6 +15,7 @@ const WithRouter: FC<IProps> = ({ history }) => {
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
                         <Route path='/' component={Dashboard} />
+                        <Route path='*' render={() => <span>Not found</span>} />
                     </Switch>
                 </Suspense>
             </Layout>

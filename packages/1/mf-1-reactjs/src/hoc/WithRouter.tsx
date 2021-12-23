@@ -17,10 +17,11 @@ const WithRouter: FC<IProps> = ({ history, signin }) => {
             <Layout>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
-                        <Route path='/user' component={User} />
-                        <Route path='/auth'>
+                        <Route path='/1/user' component={User} />
+                        <Route path='/1/auth'>
                             <Auth signin={signin} />
                         </Route>
+                        <Route path='*' render={() => <span>Not found</span>} />
                     </Switch>
                 </Suspense>
             </Layout>
