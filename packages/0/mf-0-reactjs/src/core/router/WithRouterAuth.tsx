@@ -7,7 +7,7 @@ const Mf2 = lazy(() => import('@mf-0/microfrontends/Mf2'));
 const Mf3 = lazy(() => import('@mf-0/microfrontends/Mf3'));
 import NotFoundCore from '@mf-0/core/components/NotFoundCore';
 
-const RouterAuth = () => {
+const WithRouterAuth = () => {
     return (
         <Layout>
             <Suspense fallback={<div>Loading ...</div>}>
@@ -22,4 +22,4 @@ const RouterAuth = () => {
     );
 };
 
-export default RouterAuth;
+export default WithRouterAuth;
