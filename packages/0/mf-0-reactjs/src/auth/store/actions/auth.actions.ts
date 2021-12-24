@@ -23,7 +23,7 @@ type IMeSuccess = { type: typeof AuthTypes.ME_SUCCESS, payload: { data: IAuth } 
 type IMeError = { type: typeof AuthTypes.ME_ERROR, payload: { error: any } };
 export type AuthActionTypes = ISignin | ISigninSuccess | ISigninError | ISignout | ISignoutSuccess | ISignoutError | IMe | IMeSuccess | IMeError;
 
-export const authCreateActionTypes = {
+export const authActionCreators = {
 	signin: (data: ISigninAuth): ISignin => ({ type: AuthTypes.SIGNIN, payload: { data } }),
 	signinSuccess: (data: IAuth): ISigninSuccess => ({ type: AuthTypes.SIGNIN_SUCCESS, payload: { data } }),
 	signinError: (error: any): ISigninError => ({ type: AuthTypes.SIGNIN_ERROR, payload: { error } }),

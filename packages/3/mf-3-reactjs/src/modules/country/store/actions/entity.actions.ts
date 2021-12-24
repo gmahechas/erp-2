@@ -11,7 +11,7 @@ type ISearchManySuccess = { type: typeof EntityTypes.SEARCH_MANY_SUCCESS, payloa
 type ISearchManyError = { type: typeof EntityTypes.SEARCH_MANY_ERROR, payload: { error: any } };
 export type EntityActionTypes = ISearchMany | ISearchManySuccess | ISearchManyError;
 
-export const entityCreateActionTypes = {
+export const entityActionCreators = {
 	searchMany: (data: ISearchCountry[]): ISearchMany => ({ type: EntityTypes.SEARCH_MANY, payload: { data } }),
 	searchManySuccess: (data: ICountry[]): ISearchManySuccess => ({ type: EntityTypes.SEARCH_MANY_SUCCESS, payload: { data } }),
 	searchManyError: (error: any): ISearchManyError => ({ type: EntityTypes.SEARCH_MANY_ERROR, payload: { error } })

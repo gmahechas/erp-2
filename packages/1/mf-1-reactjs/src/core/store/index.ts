@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, Store, ReducersMapObject, Reducer, AnyAction } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { reducers as core, State as CoreState } from './reducers';
 
 interface IStore extends Store {
 	asyncReducers: ReducersMapObject,
@@ -8,7 +9,7 @@ interface IStore extends Store {
 }
 
 const storeFactory = (): IStore => {
-	const createReducer = (asyncReducers: ReducersMapObject = {}) => combineReducers({ ...asyncReducers });
+	const createReducer = (asyncReducers: ReducersMapObject = {}) => combineReducers({ core, ...asyncReducers });
 	const rootReducer = createReducer();
 	const composeEnhancers = composeWithDevTools({ name: 'mf-1-reactjs' });
 	return ({
@@ -24,4 +25,5 @@ const storeFactory = (): IStore => {
 export const store = storeFactory();
 
 export interface RootState {
+	core: CoreState; 
 };

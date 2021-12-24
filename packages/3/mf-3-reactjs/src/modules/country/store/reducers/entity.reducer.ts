@@ -1,5 +1,5 @@
 import { ICountry } from '@gmahechas/erp-common';
-import { EntityTypes, EntityActionTypes } from '../actions/index';
+import { EntityTypes, EntityActionTypes } from '../actions';
 
 export interface State {
 	readonly data: ICountry[];
