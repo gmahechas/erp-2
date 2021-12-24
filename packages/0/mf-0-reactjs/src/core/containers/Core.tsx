@@ -1,5 +1,5 @@
-import WithStore from '@mf-0/hoc/WithStore';
-import WithRouter from '@mf-0/hoc/WithRouter';
+import WithStore from '@mf-0/core/store/WithStore';
+import WithRouter from '@mf-0/core/router/WithRouter';
 
 const Core = () => {
     return (

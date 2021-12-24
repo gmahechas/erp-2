@@ -2,8 +2,8 @@ import { FC } from 'react';
 import { History, MemoryHistory } from 'history';
 import { ISigninAuth } from '@gmahechas/erp-common';
 
-import WithStore from '@mf-1/hoc/WithStore';
-import WithRouter from '@mf-1/hoc/WithRouter';
+import WithStore from '@mf-1/core/store/WithStore';
+import WithRouter from '@mf-1/core/router/WithRouter';
 
 interface IProps {
     history: History | MemoryHistory;
