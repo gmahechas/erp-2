@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const HeaderCore: FC = () => {
     return (
         <nav>
-            <Link to='/'>Dashboard | </Link>
+            <Link to='/2/dashboard'>Dashboard | </Link>
             <Link to='/1/auth'>Auth | </Link>
             <Link to='/1/user'>User | </Link>
             <Link to='/3/country'>Country | </Link>
