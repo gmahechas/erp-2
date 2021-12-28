@@ -1,10 +1,8 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Layout from '@mf-0/core/components/Layout';
-const Mf1 = lazy(() => import('@mf-0/microfrontends/Mf1'));
-const Mf2 = lazy(() => import('@mf-0/microfrontends/Mf2'));
-const Mf3 = lazy(() => import('@mf-0/microfrontends/Mf3'));
+import { Mf1, Mf2, Mf3 } from '@mf-0/microfrontends';
 import NotFoundCore from '@mf-0/core/components/NotFoundCore';
 
 const WithRouterAuth = () => {
