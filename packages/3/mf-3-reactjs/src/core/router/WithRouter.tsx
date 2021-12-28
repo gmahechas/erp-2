@@ -35,13 +35,13 @@ const WithRouter: FC<IProps> = ({ history }) => {
     return (
         <Router history={history}>
             <Layout>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<div>Loading 3 ...</div>}>
                     <Switch>
                         <Route path='/3/address' component={Address} />
                         <Route path='/3/city' component={City} />
                         <Route path='/3/estate' component={Estate} />
                         <Route path='/3/country' component={Country} />
-                        <Route path='*' render={() => <span>Not found</span>} />
+                        <Route path='*' render={() => <span>Not found 3</span>} />
                     </Switch>
                 </Suspense>
             </Layout>
