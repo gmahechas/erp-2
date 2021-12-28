@@ -16,9 +16,9 @@ const WithRouter: FC<IProps> = ({ me, auth }) => {
     }, []);
     useLayoutEffect(() => {
         if (auth.auth.isLogged) {
-            history.push('/2/dashboard');
+            history.replace('/2/dashboard');
         } else {
-            history.push('/1/auth');
+            history.replace('/1/auth');
         }
     }, [auth.auth.isLogged]);
     return (
