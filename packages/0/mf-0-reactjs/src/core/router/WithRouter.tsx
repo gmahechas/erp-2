@@ -18,7 +18,8 @@ const WithRouter: FC<IProps> = ({ me, auth }) => {
     }, []);
     useLayoutEffect(() => {
         if (auth.auth.isLogged) {
-            history.replace('/2/dashboard');
+            const lastPath = localStorage.getItem('lastPath') || '/2/dashboard';
+            history.replace(lastPath);
         } else {
             history.replace('/1/auth');
         }
