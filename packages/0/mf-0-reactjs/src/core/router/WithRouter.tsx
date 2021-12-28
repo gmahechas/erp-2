@@ -5,7 +5,7 @@ import { createBrowserHistory } from 'history';
 import { PropsFromRedux, connector } from '@mf-0/auth/store/reducers';
 
 import WithRouterAuth from '../router/WithRouterAuth';
-const Mf1 = lazy(() => import('@mf-0/microfrontends/Mf1'));
+import { Mf1 } from '@mf-0/microfrontends';
 
 const history = createBrowserHistory();
 
