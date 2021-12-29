@@ -1,6 +1,7 @@
 import { FC, Suspense, useLayoutEffect } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import { ILocalStorage } from '@gmahechas/erp-common-mf-utils-js';
 
 import { PropsFromRedux, connector } from '@mf-0/auth/store/reducers';
 
@@ -18,7 +19,9 @@ const WithRouter: FC<IProps> = ({ me, auth }) => {
     }, []);
     useLayoutEffect(() => {
         if (auth.auth.isLogged) {
-            const lastPath = localStorage.getItem('lastPath') || '/2/dashboard';
+            const { lastPath } = JSON.parse(
+                localStorage.getItem('lserp') || '{}'
+            ) as ILocalStorage;
             history.replace(lastPath);
         } else {
             history.replace('/1/auth');
