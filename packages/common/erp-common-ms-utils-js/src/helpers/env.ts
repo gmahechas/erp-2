@@ -8,7 +8,7 @@ export let env: IConfig;
 
 export const initEnv = async (useDotEnv = true) => {
 	if (useDotEnv) {
-		dotenv.config();
+		await readEnvFile();
 	}
 	const environment = process.env.ENVIRONMENT;
 	if (!environment) {
@@ -25,3 +25,14 @@ export const initEnv = async (useDotEnv = true) => {
 	const { config } = await import(filePath);
 	env = config;
 }
+
+const readEnvFile = async () => {
+	return new Promise<void>((resolve, reject) => {
+		const env = dotenv.config()
+		if (env.error) {
+			reject(env.error)
+		}
+		console.log(env);
+		resolve();
+	});
+};
