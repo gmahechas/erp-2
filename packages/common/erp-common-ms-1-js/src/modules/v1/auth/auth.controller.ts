@@ -18,7 +18,7 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 		sendError(TypeErrorMessage.AUTH);
 	}
 
-	const privateKeyPath = env.ms?.one?.auth?.jwt?.privateKey!;
+	const privateKeyPath = env['ms-1']?.auth?.jwt?.privateKey!;
 	if (!checkExistsFile(privateKeyPath)) {
 		sendError(TypeErrorMessage.CONFIG);
 	}

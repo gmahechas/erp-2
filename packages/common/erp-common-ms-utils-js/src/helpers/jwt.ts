@@ -16,7 +16,7 @@ export const jwtVerify = (
 	options?: jwt.SignOptions | undefined) => jwt.verify(token, secretOrPrivateKey, options);
 
 export const jwtDecode = (token: string) => {
-	const publicKeyPath = env.ms?.one?.auth?.jwt?.publicKey!;
+	const publicKeyPath = env['ms-1']?.auth?.jwt?.publicKey!;
 	if (!checkExistsFile(publicKeyPath)) {
 		sendError(TypeErrorMessage.CONFIG);
 	}

@@ -1,28 +1,31 @@
 import { IConfig } from '@gmahechas/erp-common-ms-utils-js';
 
 export const config: IConfig = ({
-	environment: 'stage',
-	app: {
-		port: process.env.APP_PORT
+	environment: process.env.ENVIRONMENT,
+	'ms-0': {
+		app: {
+			name: process.env.APP_NAME,
+			port: process.env.APP_PORT,
+		},
+		session: {
+			redis: {
+				url: process.env.MS_ZERO_SESSION_REDIS_URL
+			}
+		}
 	},
-	ms: {
-		zero: {
-			session: {
-				redis: {
-					url: process.env.MS_ZERO_SESSION_REDIS_URL
-				}
-			}
+	'ms-1': {
+		app: {
+			endpoint: process.env.MS_ONE_ENDPOINT,
 		},
-		one: {
-			url: process.env.MS_ONE_URL,
-			auth: {
-				jwt: {
-					publicKey: process.env.MS_ONE_AUTH_JWT_PUBLIC_KEY
-				}
+		auth: {
+			jwt: {
+				publicKey: process.env.MS_ONE_AUTH_JWT_PUBLIC_KEY
 			}
-		},
-		three: {
-			url: process.env.MS_THREE_URL
+		}
+	},
+	'ms-3': {
+		app: {
+			endpoint: process.env.MS_THREE_ENDPOINT,
 		}
 	}
 });

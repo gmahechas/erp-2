@@ -2,10 +2,10 @@ import { sendError, TypeErrorMessage, connectToMongo, env } from '@gmahechas/erp
 import { registerMongoModels } from './register-mongo-models';
 
 export const connectDatabases = async () => {
-	const { ms } = env;
-	if (!ms?.one?.databases?.mongo?.uri) {
+	const { "ms-1": ms1 } = env;
+	if (!ms1?.databases?.mongo?.uri) {
 		sendError(TypeErrorMessage.DB_CONNECTION);
 	}
-	const { one: { databases: { mongo: { uri } } } } = ms;
+	const { databases: { mongo: { uri } } } = ms1;
 	await connectToMongo({ uri }, 'createConnection', registerMongoModels);
 }

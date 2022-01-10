@@ -1,44 +1,45 @@
+interface IAppConfig {
+	name?: string;
+	port?: string;
+	endpoint?: string;
+}
 export interface IConfig {
-	environment: string;
-	app?: {
-		port?: string;
-	};
-	ms?: {
-		zero?: {
-			session?: {
-				redis?: {
-					url?: string;
-				}
-			};
-		}
-		one?: {
-			url?: string;
-			auth?: {
-				jwt?: {
-					privateKey?: string;
-					publicKey?: string;
-				}
-			},
-			databases?: {
-				mongo?: {
-					uri?: string;
-				}
-			};
-		}
-		three?: {
-			url?: string;
-			databases?: {
-				mongo?: {
-					uri?: string;
-				}
-			};
+	environment?: string;
+	'ms-0'?: {
+		app?: IAppConfig;
+		session?: {
+			redis?: {
+				url?: string;
+			}
+		};
+	}
+	'ms-1'?: {
+		app?: IAppConfig;
+		auth?: {
+			jwt?: {
+				privateKey?: string;
+				publicKey?: string;
+			}
 		},
-		four?: {
-			url?: string;
-			databases?: {
-				mongo?: {
-					uri?: string;
-				}
+		databases?: {
+			mongo?: {
+				uri?: string;
+			}
+		};
+	}
+	'ms-3'?: {
+		app?: IAppConfig;
+		databases?: {
+			mongo?: {
+				uri?: string;
+			}
+		};
+	},
+	'ms-4'?: {
+		app?: IAppConfig;
+		databases?: {
+			mongo?: {
+				uri?: string;
 			}
 		}
 	}
