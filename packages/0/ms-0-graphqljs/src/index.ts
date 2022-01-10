@@ -14,7 +14,6 @@ const start = async () => {
 			console.log(`${name} is runnig on: http://localhost:${port}`);
 		});
 	} catch (error) {
-		console.log(error);
 		generalHandlerError(error)
 	}
 };

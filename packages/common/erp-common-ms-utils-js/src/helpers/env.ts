@@ -19,9 +19,10 @@ export const initEnv = async (useDotEnv = true) => {
 	if (!environment || !vaultUrl || !vaultRoleId || !vaultSecretId || !appName) {
 		sendError(TypeErrorMessage.CONFIG);
 	}
-/* 	const { auth: { client_token } } = await Vault.approleLogin(vaultRoleId!, vaultSecretId!);
+	const { auth: { client_token } } = await Vault.approleLogin(vaultRoleId!, vaultSecretId!);
 	const vaultClient = new Vault(vaultUrl!, client_token);
-	const myConfig = await vaultClient.read(`kv/data/erp/${appName}/${environment}`); */
+	const myConfig = await vaultClient.read(`kv/data/erp/${appName}/${environment}`);
+	console.log(myConfig);
 
 	const fileFolder = ((environment == 'development') ? 'src' : 'dist') + '/environments/';
 	const filePath = resolvePath(fileFolder + environment)
