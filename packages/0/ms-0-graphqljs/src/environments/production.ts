@@ -4,28 +4,28 @@ export const config: IConfig = ({
 	environment: process.env.ENVIRONMENT,
 	'ms-0': {
 		app: {
-			name: process.env.APP_NAME,
-			port: process.env.APP_PORT,
+			name: process.env.ZERO_APP_NAME,
+			port: process.env.ZERO_APP_PORT,
 		},
 		session: {
 			redis: {
-				url: process.env.MS_ZERO_SESSION_REDIS_URL
+				url: process.env.ZERO_SESSION_REDIS_URL
 			}
 		}
 	},
 	'ms-1': {
 		app: {
-			endpoint: process.env.MS_ONE_ENDPOINT,
+			endpoint: process.env.ONE_APP_ENDPOINT,
 		},
 		auth: {
 			jwt: {
-				publicKey: process.env.MS_ONE_AUTH_JWT_PUBLIC_KEY
+				publicKey: process.env.ONE_AUTH_JWT_PUBLIC_KEY
 			}
 		}
 	},
 	'ms-3': {
 		app: {
-			endpoint: process.env.MS_THREE_ENDPOINT,
+			endpoint: process.env.THREE_APP_ENDPOINT,
 		}
 	}
 });

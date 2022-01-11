@@ -4,12 +4,11 @@ export const config: IConfig = ({
 	environment: process.env.ENVIRONMENT,
 	'ms-3': {
 		app: {
-			name: process.env.APP_NAME,
-			port: process.env.APP_PORT,
+			name: process.env.THREE_APP_NAME,
 		},
 		databases: {
 			mongo: {
-				uri: process.env.MS_THREE_DATABASES_MONGO_URI
+				uri: process.env.THREE_DATABASES_MONGO_URI
 			}
 		}
 	}
