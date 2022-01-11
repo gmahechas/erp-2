@@ -4,7 +4,7 @@ export const config: IConfig = ({
 	environment: process.env.ENVIRONMENT,
 	'ms-0': {
 		app: {
-			name: process.env.ZERO_APP_NAME,
+			name: process.env.APP_NAME,
 			port: process.env.ZERO_APP_PORT,
 		},
 		session: {

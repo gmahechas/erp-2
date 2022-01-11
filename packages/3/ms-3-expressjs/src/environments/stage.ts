@@ -4,7 +4,7 @@ export const config: IConfig = ({
 	environment: process.env.ENVIRONMENT,
 	'ms-3': {
 		app: {
-			name: process.env.THREE_APP_NAME,
+			name: process.env.APP_NAME,
 			port: process.env.THREE_APP_PORT,
 		},
 		databases: {

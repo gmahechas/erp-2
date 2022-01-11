@@ -4,7 +4,7 @@ export const config: IConfig = ({
 	environment: process.env.ENVIRONMENT,
 	'ms-4': {
 		app: {
-			name: process.env.FOUR_APP_NAME,
+			name: process.env.APP_NAME,
 		},
 		databases: {
 			mongo: {

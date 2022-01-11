@@ -4,7 +4,7 @@ export const config: IConfig = ({
 	environment: process.env.ENVIRONMENT,
 	'ms-1': {
 		app: {
-			name: process.env.ONE_APP_NAME,
+			name: process.env.APP_NAME,
 			port: process.env.ONE_APP_PORT,
 		},
 		auth: {
