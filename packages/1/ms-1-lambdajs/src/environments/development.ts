@@ -13,7 +13,7 @@ export const config: IConfig = ({
 		},
 		databases: {
 			mongo: {
-				uri: process.env.ONE_DATABASES_MONGO_URI
+				uri: undefined 
 			}
 		}
 	}

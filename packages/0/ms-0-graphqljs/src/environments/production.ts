@@ -9,7 +9,7 @@ export const config: IConfig = ({
 		},
 		session: {
 			redis: {
-				url: process.env.ZERO_SESSION_REDIS_URL
+				url: undefined
 			}
 		}
 	},
