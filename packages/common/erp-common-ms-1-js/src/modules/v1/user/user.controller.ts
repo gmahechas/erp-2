@@ -3,7 +3,7 @@ import { sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 import { User } from './user.mongo';
 
 export const createOneUser = async (data: ICreateUser): Promise<IUser> => {
-	const result = await User.create(data);
+	let result = await User.create(data);
 	return result;
 };
 
