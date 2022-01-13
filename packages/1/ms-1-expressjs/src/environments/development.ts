@@ -9,7 +9,7 @@ export const config: IConfig = ({
 		},
 		auth: {
 			jwt: {
-				privateKey: process.env.ONE_AUTH_JWT_PRIVATE_KEY
+				privateKey: undefined
 			}
 		},
 		databases: {

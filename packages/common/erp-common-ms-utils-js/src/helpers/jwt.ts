@@ -16,10 +16,9 @@ export const jwtVerify = (
 	options?: jwt.SignOptions | undefined) => jwt.verify(token, secretOrPrivateKey, options);
 
 export const jwtDecode = (token: string) => {
-	const publicKeyPath = env['ms-1']?.auth?.jwt?.publicKey!;
-	if (!checkExistsFile(publicKeyPath)) {
+	const publicKey = env['ms-0']?.auth?.jwt?.publicKey!;
+	if (!publicKey) {
 		sendError(TypeErrorMessage.CONFIG);
 	}
-	const publicKey = readFileSync(publicKeyPath);
 	return jwtVerify(token, publicKey, { algorithm: 'RS256' }) as IAuth;
 };

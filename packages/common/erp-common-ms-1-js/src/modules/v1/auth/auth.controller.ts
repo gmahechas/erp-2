@@ -18,12 +18,10 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 		sendError(TypeErrorMessage.AUTH);
 	}
 
-	const privateKeyPath = env['ms-1']?.auth?.jwt?.privateKey!;
-	if (!checkExistsFile(privateKeyPath)) {
+	const privateKey = env['ms-1']?.auth?.jwt?.privateKey;
+	if (!privateKey) {
 		sendError(TypeErrorMessage.CONFIG);
 	}
-
-	const privateKey = readFileSync(privateKeyPath);
 
 	const token = jwtSign({
 		id,

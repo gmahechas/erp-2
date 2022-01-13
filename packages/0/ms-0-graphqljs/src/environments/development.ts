@@ -11,21 +11,21 @@ export const config: IConfig = ({
 			redis: {
 				url: undefined
 			}
+		},
+		auth: {
+			jwt: {
+				publicKey: undefined
+			}
 		}
 	},
 	'ms-1': {
 		app: {
 			endpoint: process.env.ONE_APP_ENDPOINT,
 		},
-		auth: {
-			jwt: {
-				publicKey: process.env.ONE_AUTH_JWT_PUBLIC_KEY
-			}
-		}
 	},
 	'ms-3': {
 		app: {
 			endpoint: process.env.THREE_APP_ENDPOINT,
-		}
+		},
 	}
 });

@@ -12,13 +12,17 @@ export interface IConfig {
 				url?: string;
 			}
 		};
+		auth?: {
+			jwt?: {
+				publicKey?: string;
+			}
+		},
 	}
 	'ms-1'?: {
 		app?: IAppConfig;
 		auth?: {
 			jwt?: {
 				privateKey?: string;
-				publicKey?: string;
 			}
 		},
 		databases?: {
