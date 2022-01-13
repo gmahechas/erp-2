@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "launch ms-1-lambdajs",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/node_modules/.bin/ts-node-dev",
+            "args": [
+                "${workspaceFolder}/src/run.ts",
+                "--respawn",
+                "--pretty",
+                "--transpileOnly"
+            ],
+            "env": {
+                "ENVIRONMENT": "development",
+                "APP_NAME": "ms-1",
+                "VAULT_URL": "http://10.1.0.229:8200",
+                "VAULT_ROLE_ID": "cd6e60e1-29c9-d89d-37f8-e41196143726",
+                "VAULT_SECRET_ID": "4551ddd5-d179-7f4d-5815-35d1eabaea63",
+            }
+        }
+    ]
+}

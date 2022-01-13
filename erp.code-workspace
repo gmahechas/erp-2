@@ -1,0 +1,50 @@
+{
+    "folders": [
+        {
+            "path": "./packages/0/mf-0-reactjs"
+        },
+        {
+            "path": "./packages/0/ms-0-graphqljs"
+        },
+        {
+            "path": "./packages/1/mf-1-reactjs"
+        },
+        {
+            "path": "./packages/1/ms-1-expressjs"
+        },
+        {
+            "path": "./packages/1/ms-1-lambdajs"
+        },
+        {
+            "path": "./packages/2/mf-2-reactjs"
+        },
+        {
+            "path": "./packages/3/mf-3-reactjs"
+        },
+        {
+            "path": "./packages/3/ms-3-expressjs"
+        },
+        {
+            "path": "./packages/3/ms-3-flaskpy"
+        },
+        {
+            "path": "./packages/3/ms-3-graphqljs"
+        },
+        {
+            "path": "./packages/3/ms-3-grpcjs"
+        },
+        {
+            "path": "./packages/3/ms-3-lambdajs"
+        },
+        {
+            "path": "./packages/4/ms-4-expressjs"
+        },
+        {
+            "path": "./packages/4/ms-4-lambdajs"
+        },
+        {
+            "path": "./packages/common"
+        }
+    ],
+    "settings": {}
+}
