@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, g
 from .routes import init_routes
 
 
