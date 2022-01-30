@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify
+from ...modules.v1.country.country_controller import CountryController
 
 country_blueprint = Blueprint('country', __name__, url_prefix='/country')
 
@@ -29,4 +30,6 @@ def search_one():
 
 @country_blueprint.route('/search/many', methods=['GET'])
 def search_many():
+    controller = CountryController()
+    controller.get_all_countries()
     return 'search/many'

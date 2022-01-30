@@ -3,16 +3,17 @@ import pymongo
 
 
 class MongoManager:
-    __instance__ = None
-
-    def __init__(self):
-        if self.__instance__ is None:
-            self.__instance = pymongo.MongoClient('mongodb://root:root@10.1.0.229:27017/erp_ms_3?authSource=admin')
-        else:
-            raise Exception("This class is a singleton!")
+    client = None
 
     @staticmethod
-    def get_instance():
-        if not MongoManager.__instance__:
-            MongoManager()
-        return MongoManager.__instance__
+    def init_db():
+        MongoManager.client = pymongo.MongoClient('mongodb://root:root@10.1.0.229:27017/erp_ms_3?authSource=admin')
+
+    @staticmethod
+    def insert():
+        print(MongoManager.client)
+        pass
+
+
+def init_db():
+    MongoManager.init_db()
