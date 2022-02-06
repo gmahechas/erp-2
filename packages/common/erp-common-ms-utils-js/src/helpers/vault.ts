@@ -1,10 +1,10 @@
 import vault from 'node-vault';
-import { axiosClient } from './axios';
+import { axiosClient, AxiosInstance } from './axios';
 
 export class Vault {
 
 	private _client: vault.client;
-	static axios = axiosClient('http://10.1.0.229:8200');
+	static axios: AxiosInstance;
 
 	get client() {
 		if (!this._client) {
@@ -19,6 +19,7 @@ export class Vault {
 	}
 
 	static approleLogin = async (roleId: string, secretId: string) => {
+		Vault.axios = axiosClient('http://10.1.0.229:8200');
 		const { data } = await Vault.axios.post<{ auth: { client_token: string }}>('/v1/auth/approle/login', { role_id: roleId, secret_id: secretId }); 
 		return data;
 	}
