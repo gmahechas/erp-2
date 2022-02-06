@@ -13,7 +13,7 @@ class Config:
 
     @staticmethod
     def enrich_env(environment):
-        app_name = Config.config["ms-3"]["app"]["name"]
+        app_name = os.environ["APP_NAME"]
         vault_url = os.environ["VAULT_URL"]
         vault_role_id = os.environ["VAULT_ROLE_ID"]
         vault_secret_id = os.environ["VAULT_SECRET_ID"]
