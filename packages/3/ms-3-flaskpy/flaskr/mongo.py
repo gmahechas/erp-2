@@ -1,13 +1,14 @@
-from flask import g, current_app
-import pymongo
+from pymongo import MongoClient
+from .env import Config
 
 
-class Mongo:
-    client = None
+class Mongo(Config):
+    mongo_client = None
 
     @staticmethod
     def init_db():
-        Mongo.client = pymongo.MongoClient('mongodb://root:root@10.1.0.229:27017/erp_ms_3?authSource=admin')
+        mongo_uri = Mongo.config["ms-3"]["databases"]["mongo"]["uri"]
+        Mongo.mongo_client = MongoClient(mongo_uri)
 
 
 def init_db():
