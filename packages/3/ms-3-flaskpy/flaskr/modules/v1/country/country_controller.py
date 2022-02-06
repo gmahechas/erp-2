@@ -1,7 +1,7 @@
-from ....mongo import MongoManager
+from ....mongo import Mongo
 
 
-class CountryController(MongoManager):
+class CountryController(Mongo):
 
     def __init__(self):
         pass
