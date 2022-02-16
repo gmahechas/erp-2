@@ -4,5 +4,8 @@
     "description": "ms-3-flaskpy",
     "author": "gmahechas",
     "private": true,
-    "license": "UNLICENSED"
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "flask run"
+    }
 }
