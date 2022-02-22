@@ -1,0 +1,2 @@
+class EstateMongo:
+    pass
