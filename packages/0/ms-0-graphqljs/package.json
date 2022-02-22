@@ -14,13 +14,9 @@
         "@gmahechas/erp-common": "^0.0.27",
         "@gmahechas/erp-common-graphqljs": "^0.0.27",
         "@gmahechas/erp-common-ms-0-js": "^0.0.27",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.27",
-        "connect-redis": "^6.1.1",
-        "express-session": "^1.17.2"
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.27"
     },
     "devDependencies": {
-        "@types/connect-redis": "^0.0.17",
-        "@types/express-session": "^1.17.4",
         "@types/node": "^16.9.1",
         "rimraf": "^3.0.2",
         "ts-node-dev": "^1.1.8",
