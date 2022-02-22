@@ -1,9 +1,9 @@
-import { RedisClientType } from 'redis/dist/lib/client';
+import { RedisClientType } from 'redis';
 
 export interface IRedisCreateClient {
-	(url: string): RedisClientType<{}, {}>
+	(url: string, legacyMode: boolean): RedisClientType<{}, {}>
 }
 
 export interface IConnectToRedis {
-	(url: string): Promise<RedisClientType<{}, {}>>
+	(url: string, legacyMode: boolean): Promise<RedisClientType<{}, {}>>
 }
