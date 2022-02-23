@@ -1,10 +1,24 @@
-from flaskr.mongo import Mongo
+from flaskr.mongo import MongoModel
 
 
-class CountryMongo(Mongo):
+class CountryMongo(MongoModel):
 
     collection = 'countries'
 
-    def find(self):
-        data = self.mongo_client.get_default_database()[self.collection].find()
-        return list(data)
+    def __init__(self):
+        super().__init__(self.collection)
+
+    def create_one(self, data):
+        return self.insert_one(data)
+
+    def update_one(self, data):
+        return self.find_one_update(data)
+
+    def delete_one(self, data):
+        return self.find_one_delete(data)
+
+    def search_one(self, data):
+        return self.find_one(data)
+
+    def search_many(self):
+        return self.find()
