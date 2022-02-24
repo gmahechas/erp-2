@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify
+from flaskr.middlewares.validator import validator_middleware
 from .country_controller import CountryController
 
 country_blueprint = Blueprint('country', __name__, url_prefix='/country')
@@ -29,6 +30,7 @@ def search_one():
 
 
 @country_blueprint.route('/search/many', methods=['POST'])
+@validator_middleware
 def search_many():
     country = CountryController()
     return jsonify(country.search_many_country())
