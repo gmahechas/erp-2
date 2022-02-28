@@ -30,17 +30,24 @@ class MongoModel(Mongo):
 
     def find_one_update(self, data):
         result = self.mongo_client.get_default_database()[self.collection].update_one({'id': data['id']}, {'$set': data})
-        print(result.raw_result)
-        return data
+        n, n_modified = result.raw_result['n'], result.raw_result['nModified']
+        if n > 0 and (n == n_modified):
+            return data
+        else:
+            return None
 
     def find_one_delete(self, data):
         result = self.mongo_client.get_default_database()[self.collection].delete_one(data)
-        return data
+        n = result.raw_result['n']
+        if n > 0:
+            return data
+        else:
+            return None
 
     def find_one(self, data):
         result = self.mongo_client.get_default_database()[self.collection].find_one(data)
         return result
 
-    def find(self):
-        result = self.mongo_client.get_default_database()[self.collection].find()
+    def find(self, data):
+        result = self.mongo_client.get_default_database()[self.collection].find({'$or': data})
         return list(result)

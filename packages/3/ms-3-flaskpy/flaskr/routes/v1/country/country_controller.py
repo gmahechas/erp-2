@@ -21,6 +21,6 @@ class CountryController:
         result = self.country_mongo.search_one(data)
         return result
 
-    def search_many_country(self):
-        result = self.country_mongo.search_many()
+    def search_many_country(self, data):
+        result = self.country_mongo.search_many(data)
         return result

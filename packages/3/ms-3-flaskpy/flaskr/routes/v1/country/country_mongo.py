@@ -20,5 +20,5 @@ class CountryMongo(MongoModel):
     def search_one(self, data):
         return self.find_one(data)
 
-    def search_many(self):
-        return self.find()
+    def search_many(self, data):
+        return self.find(data)
