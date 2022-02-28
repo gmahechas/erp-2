@@ -3,7 +3,8 @@ from .country_mongo import CountryMongo
 
 class CountryController:
 
-    country_mongo = CountryMongo()
+    def __init__(self):
+        self.country_mongo = CountryMongo()
 
     def create_one_country(self, data):
         result = self.country_mongo.create_one(data)

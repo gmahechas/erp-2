@@ -3,10 +3,8 @@ from flaskr.mongo import MongoModel
 
 class CountryMongo(MongoModel):
 
-    collection = 'countries'
-
     def __init__(self):
-        super().__init__(self.collection)
+        super().__init__('countries')
 
     def create_one(self, data):
         return self.insert_one(data)
