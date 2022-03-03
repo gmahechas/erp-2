@@ -1,6 +1,3 @@
-from .country_mongo import CountryMongo
-
-
 class Country:
     id = None
     country_name = None
