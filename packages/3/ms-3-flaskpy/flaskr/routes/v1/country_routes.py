@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, request
 from flaskr.modules.v1.country.country_controller import CountryController
 from flaskr.middlewares.validator import validator_middleware
 from flaskr.response import response
