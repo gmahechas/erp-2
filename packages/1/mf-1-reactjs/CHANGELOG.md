@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.28 (2022-03-08)</small>
+
+* chore: remove env test ([4ece6ac](https://github.com/gmahechas/erp/commit/4ece6ac))
+* chore: track config ([10f9d10](https://github.com/gmahechas/erp/commit/10f9d10))
+* refactor: add layout store ([b98ad18](https://github.com/gmahechas/erp/commit/b98ad18))
+* refactor: routers ([176a650](https://github.com/gmahechas/erp/commit/176a650))
+* feat: auth from frontend ([5c54923](https://github.com/gmahechas/erp/commit/5c54923))
+* feat: ERP-2 - sigin ([17b3aed](https://github.com/gmahechas/erp/commit/17b3aed))
+* feat: handle apollo errors ([19c6ca0](https://github.com/gmahechas/erp/commit/19c6ca0))
+* feat: init auth ([b57fa3e](https://github.com/gmahechas/erp/commit/b57fa3e))
+* feat: init helpers ([0eb1bda](https://github.com/gmahechas/erp/commit/0eb1bda))
+* feat: nested routes in mf ([23057ba](https://github.com/gmahechas/erp/commit/23057ba))
+* feat: routes auth - noauth ([b07457a](https://github.com/gmahechas/erp/commit/b07457a))
+* style: white space ([d5ee368](https://github.com/gmahechas/erp/commit/d5ee368))
+* perf: ERP-9 ([db1a350](https://github.com/gmahechas/erp/commit/db1a350))
+* fix: fix async env ([3836b49](https://github.com/gmahechas/erp/commit/3836b49))
+* ci: update build ([6e67b24](https://github.com/gmahechas/erp/commit/6e67b24))
+
+
+
+
+
 ## <small>0.0.27 (2021-12-10)</small>
 
 * feat: envs ([f3cdcfc](https://github.com/gmahechas/erp/commit/f3cdcfc))

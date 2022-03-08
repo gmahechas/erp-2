@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.28 (2022-03-08)</small>
+
+* chore: track config ([10f9d10](https://github.com/gmahechas/erp/commit/10f9d10))
+* refactor: auth ([d8b7d52](https://github.com/gmahechas/erp/commit/d8b7d52))
+
+
+
+
+
 ## <small>0.0.27 (2021-12-10)</small>
 
 **Note:** Version bump only for package ms-3-graphqljs

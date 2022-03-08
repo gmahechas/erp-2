@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.28 (2022-03-08)</small>
+
+* fix: mongoose error type ([1982824](https://github.com/gmahechas/erp/commit/1982824))
+* refactor: auth ([d8b7d52](https://github.com/gmahechas/erp/commit/d8b7d52))
+
+
+
+
+
 ## <small>0.0.27 (2021-12-10)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common-grpcjs

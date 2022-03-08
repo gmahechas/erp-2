@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.28 (2022-03-08)</small>
+
+* feat: auth from frontend ([5c54923](https://github.com/gmahechas/erp/commit/5c54923))
+* feat: auth key in vault ([8aa7290](https://github.com/gmahechas/erp/commit/8aa7290))
+* feat: check auth when page is reload ([6edc054](https://github.com/gmahechas/erp/commit/6edc054))
+* feat: express session to ms-utils ([55d5f45](https://github.com/gmahechas/erp/commit/55d5f45))
+* feat: fix token ([8d3b8e2](https://github.com/gmahechas/erp/commit/8d3b8e2))
+* feat: init auth ([b57fa3e](https://github.com/gmahechas/erp/commit/b57fa3e))
+* feat: init helpers ([0eb1bda](https://github.com/gmahechas/erp/commit/0eb1bda))
+* feat: me auth ([9de55a0](https://github.com/gmahechas/erp/commit/9de55a0))
+* feat: ms-4-expressjs ([376831a](https://github.com/gmahechas/erp/commit/376831a))
+* feat: redis session ([e3ebfe9](https://github.com/gmahechas/erp/commit/e3ebfe9))
+* feat: signout ([a02207d](https://github.com/gmahechas/erp/commit/a02207d))
+* feat: vault configured ([ad076a6](https://github.com/gmahechas/erp/commit/ad076a6))
+* chore: track config ([10f9d10](https://github.com/gmahechas/erp/commit/10f9d10))
+* refactor: auth ([d8b7d52](https://github.com/gmahechas/erp/commit/d8b7d52))
+* refactor: auth middleware ([72e3fb6](https://github.com/gmahechas/erp/commit/72e3fb6))
+* refactor: config by ms-x ([d272d45](https://github.com/gmahechas/erp/commit/d272d45))
+* refactor: databases secret moved to vault ([2389221](https://github.com/gmahechas/erp/commit/2389221))
+* refactor: format some stuff ([6c386f4](https://github.com/gmahechas/erp/commit/6c386f4))
+* refactor: go back APP_NAME env ([c3e956b](https://github.com/gmahechas/erp/commit/c3e956b))
+* refactor: if user is already signin ([07187c7](https://github.com/gmahechas/erp/commit/07187c7))
+* refactor: init companyId ([af6921f](https://github.com/gmahechas/erp/commit/af6921f))
+* refactor: rename env vars ([9dba34c](https://github.com/gmahechas/erp/commit/9dba34c))
+* style: white space ([4946c8b](https://github.com/gmahechas/erp/commit/4946c8b))
+* fix: ERP-10 ([76b1950](https://github.com/gmahechas/erp/commit/76b1950))
+
+
+
+
+
 ## <small>0.0.27 (2021-12-10)</small>
 
 **Note:** Version bump only for package ms-0-graphqljs

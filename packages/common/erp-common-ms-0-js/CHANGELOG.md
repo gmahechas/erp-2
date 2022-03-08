@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.28 (2022-03-08)</small>
+
+* refactor: config by ms-x ([d272d45](https://github.com/gmahechas/erp/commit/d272d45))
+* feat: ms-4-expressjs ([376831a](https://github.com/gmahechas/erp/commit/376831a))
+
+
+
+
+
 ## <small>0.0.27 (2021-12-10)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common-ms-0-js

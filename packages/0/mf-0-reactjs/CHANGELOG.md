@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.28 (2022-03-08)</small>
+
+* chore: remove env test ([4ece6ac](https://github.com/gmahechas/erp/commit/4ece6ac))
+* chore: track config ([10f9d10](https://github.com/gmahechas/erp/commit/10f9d10))
+* feat: auth from frontend ([5c54923](https://github.com/gmahechas/erp/commit/5c54923))
+* feat: check auth when page is reload ([6edc054](https://github.com/gmahechas/erp/commit/6edc054))
+* feat: ERP-2 - sigin ([17b3aed](https://github.com/gmahechas/erp/commit/17b3aed))
+* feat: init helpers ([0eb1bda](https://github.com/gmahechas/erp/commit/0eb1bda))
+* feat: localStorage interface ([0206d30](https://github.com/gmahechas/erp/commit/0206d30))
+* feat: nested routes in mf ([23057ba](https://github.com/gmahechas/erp/commit/23057ba))
+* feat: routes auth - noauth ([b07457a](https://github.com/gmahechas/erp/commit/b07457a))
+* feat: routes protected ([d881eba](https://github.com/gmahechas/erp/commit/d881eba))
+* feat: signout ([a02207d](https://github.com/gmahechas/erp/commit/a02207d))
+* feat: visited lasPath ([9e635be](https://github.com/gmahechas/erp/commit/9e635be))
+* refactor: add layout store ([b98ad18](https://github.com/gmahechas/erp/commit/b98ad18))
+* refactor: aith router auth ([c62cd4c](https://github.com/gmahechas/erp/commit/c62cd4c))
+* refactor: imp mf ([c748748](https://github.com/gmahechas/erp/commit/c748748))
+* refactor: mf index ([621893e](https://github.com/gmahechas/erp/commit/621893e))
+* refactor: remove push by replace ([80322d6](https://github.com/gmahechas/erp/commit/80322d6))
+* refactor: routers ([176a650](https://github.com/gmahechas/erp/commit/176a650))
+* fix: dashboard link ([701e72d](https://github.com/gmahechas/erp/commit/701e72d))
+* fix: fix async env ([3836b49](https://github.com/gmahechas/erp/commit/3836b49))
+* style: unnecesary import ([83c40d5](https://github.com/gmahechas/erp/commit/83c40d5))
+* ci: update build ([6e67b24](https://github.com/gmahechas/erp/commit/6e67b24))
+
+
+
+
+
 ## <small>0.0.27 (2021-12-10)</small>
 
 * feat: envs ([f3cdcfc](https://github.com/gmahechas/erp/commit/f3cdcfc))

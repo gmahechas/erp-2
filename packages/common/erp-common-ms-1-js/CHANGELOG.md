@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.28 (2022-03-08)</small>
+
+* feat: auth key in vault ([8aa7290](https://github.com/gmahechas/erp/commit/8aa7290))
+* refactor: auth ([d8b7d52](https://github.com/gmahechas/erp/commit/d8b7d52))
+* refactor: config by ms-x ([d272d45](https://github.com/gmahechas/erp/commit/d272d45))
+* refactor: guidelines ([a7812df](https://github.com/gmahechas/erp/commit/a7812df))
+* refactor: init companyId ([af6921f](https://github.com/gmahechas/erp/commit/af6921f))
+
+
+
+
+
 ## <small>0.0.27 (2021-12-10)</small>
 
 * feat: apollo for country ([d0cc318](https://github.com/gmahechas/erp/commit/d0cc318))

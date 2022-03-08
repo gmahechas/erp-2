@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.28 (2022-03-08)</small>
+
+* feat: auth key in vault ([8aa7290](https://github.com/gmahechas/erp/commit/8aa7290))
+* feat: express session to ms-utils ([55d5f45](https://github.com/gmahechas/erp/commit/55d5f45))
+* feat: fix token ([8d3b8e2](https://github.com/gmahechas/erp/commit/8d3b8e2))
+* feat: redis session ([e3ebfe9](https://github.com/gmahechas/erp/commit/e3ebfe9))
+* feat: vault configured ([ad076a6](https://github.com/gmahechas/erp/commit/ad076a6))
+* feat: vault in python ([b2fec53](https://github.com/gmahechas/erp/commit/b2fec53))
+* refactor: auth ([d8b7d52](https://github.com/gmahechas/erp/commit/d8b7d52))
+* refactor: axios in vault ([35b99a4](https://github.com/gmahechas/erp/commit/35b99a4))
+* refactor: config by ms-x ([d272d45](https://github.com/gmahechas/erp/commit/d272d45))
+* refactor: databases secret moved to vault ([2389221](https://github.com/gmahechas/erp/commit/2389221))
+* refactor: format some stuff ([6c386f4](https://github.com/gmahechas/erp/commit/6c386f4))
+* refactor: read env file sync ([9c4fef0](https://github.com/gmahechas/erp/commit/9c4fef0))
+
+
+
+
+
 ## <small>0.0.27 (2021-12-10)</small>
 
 **Note:** Version bump only for package @gmahechas/erp-common-ms-utils-js
