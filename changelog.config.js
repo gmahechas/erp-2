@@ -77,7 +77,7 @@ module.exports = {
 			value: "revert",
 		},
 		style: {
-			description: "Markup, white-space, formatting, missing semi-colons...",
+			description: "CSS, Markup, white-space, formatting, missing semi-colons...",
 			emoji: "💄",
 			value: "style",
 		},
