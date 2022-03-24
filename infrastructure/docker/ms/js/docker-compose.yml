@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  ms-3-expressjs:
+    container_name: ms-3-expressjs
+    image: gmahechas/ms-3-expressjs:0.0.28
+    ports:
+      - "50003:50003"
+    build:
+      context: ../../../../
+      dockerfile: infrastructure/docker/Dockerfile
+      args:
+        port: 50003
+        ppath: packages/3/ms-3-expressjs
+    networks:
+      - ms_3
+networks:
+  ms_3:
+    name: ms_3
+    driver: bridge
