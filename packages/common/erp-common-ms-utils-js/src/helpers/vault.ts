@@ -18,8 +18,8 @@ export class Vault {
 		this._client = vault(options);
 	}
 
-	static approleLogin = async (roleId: string, secretId: string) => {
-		Vault.axios = axiosClient('http://10.1.0.229:8200');
+	static approleLogin = async (url: string, roleId: string, secretId: string) => {
+		Vault.axios = axiosClient(url);
 		const { data } = await Vault.axios.post<{ auth: { client_token: string }}>('/v1/auth/approle/login', { role_id: roleId, secret_id: secretId }); 
 		return data;
 	}

@@ -40,7 +40,7 @@ const enrichEnv = async (env: any, environment: string) => {
 		sendError(TypeErrorMessage.CONFIG);
 	}
 
-	const { auth: { client_token } } = await Vault.approleLogin(vaultRoleId!, vaultSecretId!);
+	const { auth: { client_token } } = await Vault.approleLogin(vaultUrl!, vaultRoleId!, vaultSecretId!);
 	const vaultClient = new Vault(vaultUrl!, client_token);
 	const { data: { data: vaultSecrets }}: any = await vaultClient.read(`kv/data/erp/${appName}/${environment}`);
 	
