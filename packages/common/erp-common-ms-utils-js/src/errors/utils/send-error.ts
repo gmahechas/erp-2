@@ -8,6 +8,7 @@ import { ConfigError } from '../config.error';
 import { AuthError } from '../auth.error';
 import { AuthorizationError } from '../authorization.error';
 import { UnknownError } from '../unknown.error';
+import { VaultError } from '../vault.error';
 
 export const sendError = (type: TypeErrorMessage, errors?: IError[]) => {
 	switch (type) {
@@ -25,6 +26,8 @@ export const sendError = (type: TypeErrorMessage, errors?: IError[]) => {
 			throw new AuthorizationError();
 		case TypeErrorMessage.UNKNOWN:
 			throw new UnknownError();
+		case TypeErrorMessage.VAULT:
+			throw new VaultError();
 		default:
 			throw new Error('unknown error')
 	}

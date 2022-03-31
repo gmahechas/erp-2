@@ -30,36 +30,35 @@ export const initEnv = async (useDotEnv = true) => {
 }
 
 const enrichEnv = async (env: any, environment: string) => {
+	try {
+		const appName = process.env.APP_NAME;
+		const vaultUrl = process.env.VAULT_URL;
+		const vaultRoleId = process.env.VAULT_ROLE_ID;
+		const vaultSecretId = process.env.VAULT_SECRET_ID;
 
-	const appName = process.env.APP_NAME;
-	const vaultUrl = process.env.VAULT_URL;
-	const vaultRoleId = process.env.VAULT_ROLE_ID;
-	const vaultSecretId = process.env.VAULT_SECRET_ID;
+		const { auth: { client_token } } = await Vault.approleLogin(vaultUrl!, vaultRoleId!, vaultSecretId!);
+		const vaultClient = new Vault(vaultUrl!, client_token);
+		const { data: { data: vaultSecrets } }: any = await vaultClient.read(`kv/data/erp/${appName}/${environment}`);
 
-	if (!appName || !vaultUrl || !vaultRoleId || !vaultSecretId) {
-		sendError(TypeErrorMessage.CONFIG);
-	}
-
-	const { auth: { client_token } } = await Vault.approleLogin(vaultUrl!, vaultRoleId!, vaultSecretId!);
-	const vaultClient = new Vault(vaultUrl!, client_token);
-	const { data: { data: vaultSecrets }}: any = await vaultClient.read(`kv/data/erp/${appName}/${environment}`);
-	
-	const currentEnv = env[appName!];
-	switch (appName) {
-		case 'ms-0':
-			currentEnv.session.redis.url = currentEnv.session.redis.url ? currentEnv.session.redis.url : vaultSecrets.redis_url;
-			currentEnv.auth.jwt.publicKey = currentEnv.auth.jwt.publicKey ? currentEnv.auth.jwt.publicKey : vaultSecrets.publicKey;
-			break;
-		case 'ms-1':
-			currentEnv.databases.mongo.uri = currentEnv.databases.mongo.uri ? currentEnv.databases.mongo.uri : vaultSecrets.mongo_uri;
-			currentEnv.auth.jwt.privateKey = currentEnv.auth.jwt.privateKey ? currentEnv.auth.jwt.privateKey : vaultSecrets.privateKey;
-			break;
-		case 'ms-3':
-			currentEnv.databases.mongo.uri = currentEnv.databases.mongo.uri ? currentEnv.databases.mongo.uri : vaultSecrets.mongo_uri;
-			break;
-		case 'ms-4':
-			currentEnv.databases.mongo.uri = currentEnv.databases.mongo.uri ? currentEnv.databases.mongo.uri : vaultSecrets.mongo_uri;
-			break;
+		const currentEnv = env[appName!];
+		switch (appName) {
+			case 'ms-0':
+				currentEnv.session.redis.url = currentEnv.session.redis.url ? currentEnv.session.redis.url : vaultSecrets.redis_url;
+				currentEnv.auth.jwt.publicKey = currentEnv.auth.jwt.publicKey ? currentEnv.auth.jwt.publicKey : vaultSecrets.publicKey;
+				break;
+			case 'ms-1':
+				currentEnv.databases.mongo.uri = currentEnv.databases.mongo.uri ? currentEnv.databases.mongo.uri : vaultSecrets.mongo_uri;
+				currentEnv.auth.jwt.privateKey = currentEnv.auth.jwt.privateKey ? currentEnv.auth.jwt.privateKey : vaultSecrets.privateKey;
+				break;
+			case 'ms-3':
+				currentEnv.databases.mongo.uri = currentEnv.databases.mongo.uri ? currentEnv.databases.mongo.uri : vaultSecrets.mongo_uri;
+				break;
+			case 'ms-4':
+				currentEnv.databases.mongo.uri = currentEnv.databases.mongo.uri ? currentEnv.databases.mongo.uri : vaultSecrets.mongo_uri;
+				break;
+		}
+	} catch (error) {
+		sendError(TypeErrorMessage.VAULT);
 	}
 }
 

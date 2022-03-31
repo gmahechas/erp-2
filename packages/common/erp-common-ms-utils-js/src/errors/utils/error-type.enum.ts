@@ -6,4 +6,5 @@ export const enum TypeErrorMessage {
   AUTH = 'authentication',
   AUTHORIZATION = 'authorization',
   UNKNOWN = 'unknown',
+  VAULT = 'vault',
 };
