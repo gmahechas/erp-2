@@ -1,5 +1,4 @@
 import mongosee from 'mongoose';
-import { ConnectDbError, sendError, TypeErrorMessage } from '../../errors';
 import { IMongodbConnect } from './mongo.interface';
 
 export const mongodbConnect: IMongodbConnect = (uri, connectOptions) => {
@@ -11,7 +10,7 @@ export const mongodbConnect: IMongodbConnect = (uri, connectOptions) => {
 	mongooseConnection.on('disconnected', () => console.log(`mongodb disconnected`));
 	mongooseConnection.on('close', () => console.log(`mongodb connection closed`))
 	mongooseConnection.on('reconnected', () => console.log(`mongodb reconnected`));
-	mongooseConnection.on('error', () => sendError(TypeErrorMessage.DB_CONNECTION));
+	mongooseConnection.on('error', () => console.log(`mongodb error`));
 	mongooseConnection.on('fullsetup', () => console.log(`fullsetup`));
 	mongooseConnection.on('all', () => console.log(`all`));
 	mongooseConnection.on('reconnectFailed', () => console.log(`reconnectFailed`));
@@ -26,7 +25,7 @@ export const mongodbCreateConnection: IMongodbConnect = (uri, connectOptions) =>
 	mongooseConnection.on('disconnected', () => console.log(`mongodb disconnected`));
 	mongooseConnection.on('close', () => console.log(`mongodb mongooseConnection closed`));
 	mongooseConnection.on('reconnected', () => console.log(`mongodb reconnected`));
-	mongooseConnection.on('error', () => sendError(TypeErrorMessage.DB_CONNECTION));
+	mongooseConnection.on('error', () => console.log(`mongodb error`));
 	mongooseConnection.on('fullsetup', () => console.log(`fullsetup`));
 	mongooseConnection.on('all', () => console.log(`all`));
 	mongooseConnection.on('reconnectFailed', () => console.log(`reconnectFailed`));

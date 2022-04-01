@@ -15,5 +15,5 @@ export interface IConnectToMongo {
 		mongodbConnectArgs: IMongodbConnectArgs,
 		mode: mongodbConnectionMode,
 		registerModelFuncs?: Array<(connection: mongoose.Connection) => void>
-	): Promise<mongoose.Connection>;
+	): Promise<mongoose.Connection | undefined>;
 }

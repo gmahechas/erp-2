@@ -9,6 +9,7 @@ import { AuthError } from '../auth.error';
 import { AuthorizationError } from '../authorization.error';
 import { UnknownError } from '../unknown.error';
 import { VaultError } from '../vault.error';
+import { RedisError } from '../redis.error';
 
 export const sendError = (type: TypeErrorMessage, errors?: IError[]) => {
 	switch (type) {
@@ -28,6 +29,8 @@ export const sendError = (type: TypeErrorMessage, errors?: IError[]) => {
 			throw new UnknownError();
 		case TypeErrorMessage.VAULT:
 			throw new VaultError();
+		case TypeErrorMessage.REDIS:
+			throw new RedisError();
 		default:
 			throw new Error('unknown error')
 	}

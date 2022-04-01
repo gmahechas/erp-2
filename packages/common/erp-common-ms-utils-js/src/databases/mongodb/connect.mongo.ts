@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { ConnectDbError } from '../../errors';
+import { sendError, TypeErrorMessage } from '../../errors';
 import { mongodbConnect, mongodbCreateConnection } from './connections.mongo';
 import { IConnectToMongo } from './mongo.interface';
 
@@ -25,7 +25,7 @@ export const connectToMongo: IConnectToMongo = async (mongodbConnectArgs, mode, 
 			return connection.connection;
 		}
 	} catch (error) {
-		throw new ConnectDbError();
+		sendError(TypeErrorMessage.DB_CONNECTION);
 	}
 
 }

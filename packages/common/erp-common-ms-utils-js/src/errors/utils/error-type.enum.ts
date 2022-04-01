@@ -7,4 +7,5 @@ export const enum TypeErrorMessage {
   AUTHORIZATION = 'authorization',
   UNKNOWN = 'unknown',
   VAULT = 'vault',
+  REDIS = 'redis',
 };
