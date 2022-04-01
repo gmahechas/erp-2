@@ -25,7 +25,7 @@ export const connectToMongo: IConnectToMongo = async (mongodbConnectArgs, mode, 
 			return connection.connection;
 		}
 	} catch (error) {
-		sendError(TypeErrorMessage.DB_CONNECTION);
+		sendError(TypeErrorMessage.MONGO);
 	}
 
 }

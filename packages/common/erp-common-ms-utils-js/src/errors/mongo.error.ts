@@ -1,19 +1,19 @@
 import { CustomError } from './custom.error';
 import { TypeErrorMessage } from './utils/error-type.enum';
 
-export class ConnectDbError extends CustomError {
+export class MongoError extends CustomError {
 
 	statusCode = 500;
 	grpcStatusCode = 2;
 
 	constructor() {
 		super();
-		Object.setPrototypeOf(this, ConnectDbError.prototype);
+		Object.setPrototypeOf(this, MongoError.prototype);
 	}
 
 	serializeErrors() {
 		return {
-			type: TypeErrorMessage.DB_CONNECTION,
+			type: TypeErrorMessage.MONGO,
 		};
 	}
 
