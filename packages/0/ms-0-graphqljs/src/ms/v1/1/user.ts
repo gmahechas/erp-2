@@ -52,7 +52,7 @@ export const resolvers = {
 			const newData = Object.assign({}, data, { companyId: auth!.companyId, companyKey: auth!.companyKey });
 			const result = await deleteOneUser(newData);
 			return result;
-		}
+		},
 	},
 	Query: {
 		searchOneUser: async (_: object, { data }: { data: Partial<ISearchUser> }, { auth }: IContext): Promise<IUser | null> => {
@@ -65,6 +65,6 @@ export const resolvers = {
 			const newData = data.length === 0 ? [{ companyId, companyKey }] : data.map((item) => Object.assign({}, item, { companyId, companyKey })); 
 			const result = await searchManyUser(newData);
 			return result;
-		}
+		},
 	}
 };

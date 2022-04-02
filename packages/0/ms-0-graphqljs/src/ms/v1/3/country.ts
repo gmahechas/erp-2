@@ -52,7 +52,7 @@ export const resolvers = {
 		deleteOneCountry: async (_: any, { data }: { data: IDeleteCountry }, context: IContext): Promise<ICountry | null> => {
 			const result = await deleteOneCountry(data);
 			return result;
-		}
+		},
 	},
 	Query: {
 		searchOneCountry: async (_: object, { data }: { data: Partial<ISearchCountry> }, context: IContext): Promise<ICountry | null> => {
@@ -62,12 +62,12 @@ export const resolvers = {
 		searchManyCountry: async (_: object, { data }: { data: Partial<ISearchCountry>[] }, context: IContext): Promise<ICountry[]> => {
 			const result = await searchManyCountry(data);
 			return result;
-		}
+		},
 	},
 	Country: {
 		estates: async (parent: ICountry, _: object, context: IContext): Promise<IEstate[]> => {
 			const result = await searchManyEstate([{ countryId: parent.id }]);
 			return result;
-		}
+		},
 	},
 };

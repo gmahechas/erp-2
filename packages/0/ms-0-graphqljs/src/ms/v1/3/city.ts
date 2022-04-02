@@ -1,6 +1,6 @@
-import { ICreateCity, IDeleteCity, ICity, ISearchCity, IUpdateCity } from '@gmahechas/erp-common';
+import { ICreateCity, IDeleteCity, ICity, ISearchCity, IUpdateCity, IEstate } from '@gmahechas/erp-common';
 import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
-import { createOneCity, updateOneCity, deleteOneCity, searchOneCity, searchManyCity } from '@gmahechas/erp-common-ms-0-js';
+import { createOneCity, updateOneCity, deleteOneCity, searchOneCity, searchManyCity, searchOneEstate } from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
 	type City {
@@ -8,6 +8,7 @@ export const typeDefs = gql`
   	cityName: String
   	cityCode: String
   	estateId: String
+		estate: Estate
 	}
 
 	input CreateOneCity {
@@ -55,7 +56,7 @@ export const resolvers = {
 		deleteOneCity: async (_: any, { data }: { data: IDeleteCity }, context: IContext): Promise<ICity | null> => {
 			const result = await deleteOneCity(data);
 			return result;
-		}
+		},
 	},
 	Query: {
 		searchOneCity: async (_: object, { data }: { data: Partial<ISearchCity> }, context: IContext): Promise<ICity | null> => {
@@ -65,6 +66,12 @@ export const resolvers = {
 		searchManyCity: async (_: object, { data }: { data: Partial<ISearchCity>[] }, context: IContext): Promise<ICity[]> => {
 			const result = await searchManyCity(data);
 			return result;
-		}
+		},
 	},
+	City: {
+		estate: async (parent: ICity, _: object, context: IContext): Promise<IEstate | null> => {
+			const result = await searchOneEstate({ id: parent.estateId });
+			return result;
+		},
+	}
 };
