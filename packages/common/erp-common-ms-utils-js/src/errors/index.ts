@@ -1,5 +1,5 @@
 export * from './utils';
-export * from './auth.error';
+export * from './authentication.error';
 export * from './authorization.error';
 export * from './config.error';
 export * from './custom.error';

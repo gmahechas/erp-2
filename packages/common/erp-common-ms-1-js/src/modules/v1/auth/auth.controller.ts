@@ -8,14 +8,14 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 	const user = await searchOneUser({ userName, companyKey });
 
 	if (!user) {
-		sendError(TypeErrorMessage.AUTH);
+		sendError(TypeErrorMessage.AUTHENTICATION);
 	}
 
 	const { id, companyId } = user;
 	const passwordsMatch = await compareHash(userPassword, user.userPassword);
 
 	if (!passwordsMatch) {
-		sendError(TypeErrorMessage.AUTH);
+		sendError(TypeErrorMessage.AUTHENTICATION);
 	}
 
 	const privateKey = env['ms-1']?.auth?.jwt?.privateKey;

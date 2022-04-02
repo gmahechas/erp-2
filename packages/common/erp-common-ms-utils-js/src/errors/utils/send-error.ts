@@ -4,7 +4,7 @@ import { TypeErrorMessage } from './error-type.enum';
 import { ValidationError } from '../validation.error';
 import { NotFoundError } from '../not-found.error';
 import { ConfigError } from '../config.error';
-import { AuthError } from '../auth.error';
+import { AuthenticationError } from '../authentication.error';
 import { AuthorizationError } from '../authorization.error';
 import { UnknownError } from '../unknown.error';
 import { MongoError } from '../mongo.error';
@@ -19,8 +19,8 @@ export const sendError = (type: TypeErrorMessage, errors?: IError[]) => {
 			throw new NotFoundError();
 		case TypeErrorMessage.CONFIG:
 			throw new ConfigError();
-		case TypeErrorMessage.AUTH:
-			throw new AuthError();
+		case TypeErrorMessage.AUTHENTICATION:
+			throw new AuthenticationError();
 		case TypeErrorMessage.AUTHORIZATION:
 			throw new AuthorizationError();
 		case TypeErrorMessage.UNKNOWN:

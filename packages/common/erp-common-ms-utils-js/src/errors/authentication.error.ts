@@ -1,18 +1,18 @@
 import { CustomError } from './custom.error';
 import { TypeErrorMessage } from './utils/error-type.enum';
 
-export class AuthError extends CustomError {
+export class AuthenticationError extends CustomError {
 	statusCode = 401;
 	grpcStatusCode = 16;
 
 	constructor() {
 		super();
-		Object.setPrototypeOf(this, AuthError.prototype);
+		Object.setPrototypeOf(this, AuthenticationError.prototype);
 	}
 
 	serializeErrors() {
 		return {
-			type: TypeErrorMessage.AUTH,
+			type: TypeErrorMessage.AUTHENTICATION,
 		};
 	}
 }
