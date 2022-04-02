@@ -8,7 +8,7 @@ export const createOneEstateSchema: JSONSchemaType<ICreateEstate> = {
 		estateCode: { type: 'string', minLength: 2, maxLength: 4 },
 		countryId: { type: 'string' }
 	},
-	required: ['estateName', 'estateCode'],
+	required: ['estateName', 'estateCode', 'countryId'],
 	additionalProperties: false,
 };
 
