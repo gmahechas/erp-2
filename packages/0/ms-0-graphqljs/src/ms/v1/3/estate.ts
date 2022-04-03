@@ -46,36 +46,36 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Mutation: {
-		createOneEstate: async (_: object, { data }: { data: ICreateEstate }, context: IContext): Promise<IEstate> => {
-			const result = await createOneEstate(data);
+		createOneEstate: async (_: object, { data }: { data: ICreateEstate }, { token }: IContext): Promise<IEstate> => {
+			const result = await createOneEstate(token!, data);
 			return result;
 		},
-		updateOneEstate: async (_: any, { data }: { data: IUpdateEstate }, context: IContext): Promise<IEstate | null> => {
-			const result = await updateOneEstate(data);
+		updateOneEstate: async (_: any, { data }: { data: IUpdateEstate }, { token }: IContext): Promise<IEstate | null> => {
+			const result = await updateOneEstate(token!, data);
 			return result;
 		},
-		deleteOneEstate: async (_: any, { data }: { data: IDeleteEstate }, context: IContext): Promise<IEstate | null> => {
-			const result = await deleteOneEstate(data);
+		deleteOneEstate: async (_: any, { data }: { data: IDeleteEstate }, { token }: IContext): Promise<IEstate | null> => {
+			const result = await deleteOneEstate(token!, data);
 			return result;
 		},
 	},
 	Query: {
-		searchOneEstate: async (_: object, { data }: { data: Partial<ISearchEstate> }, context: IContext): Promise<IEstate | null> => {
-			const result = await searchOneEstate(data);
+		searchOneEstate: async (_: object, { data }: { data: Partial<ISearchEstate> }, { token }: IContext): Promise<IEstate | null> => {
+			const result = await searchOneEstate(token!, data);
 			return result;
 		},
-		searchManyEstate: async (_: object, { data }: { data: Partial<ISearchEstate>[] }, context: IContext): Promise<IEstate[]> => {
-			const result = await searchManyEstate(data);
+		searchManyEstate: async (_: object, { data }: { data: Partial<ISearchEstate>[] }, { token }: IContext): Promise<IEstate[]> => {
+			const result = await searchManyEstate(token!, data);
 			return result;
 		},
 	},
 	Estate: {
-		country: async (parent: IEstate, _: object, context: IContext): Promise<ICountry | null> => {
-			const result = await searchOneCountry({ id: parent.countryId });
+		country: async (parent: IEstate, _: object, { token }: IContext): Promise<ICountry | null> => {
+			const result = await searchOneCountry(token!, { id: parent.countryId });
 			return result;
 		},
-		cities: async (parent: IEstate, _: object, context: IContext): Promise<ICity[]> => {
-			const result = await searchManyCity([{ estateId: parent.id }]);
+		cities: async (parent: IEstate, _: object, { token }: IContext): Promise<ICity[]> => {
+			const result = await searchManyCity(token!, [{ estateId: parent.id }]);
 			return result;
 		}
 	}
