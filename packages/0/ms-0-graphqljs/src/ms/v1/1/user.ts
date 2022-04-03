@@ -38,32 +38,26 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Mutation: {
-		createOneUser: async (_: any, { data }: { data: ICreateUser }, { token, auth }: IContext): Promise<IUser> => {
-			const newData = Object.assign({}, data, { companyId: auth!.companyId, companyKey: auth!.companyKey });
-			const result = await createOneUser(newData, token!);
+		createOneUser: async (_: any, { data }: { data: ICreateUser }, { token }: IContext): Promise<IUser> => {
+			const result = await createOneUser(data, token!);
 			return result;
 		},
-		updateOneUser: async (_: any, { data }: { data: IUpdateUser }, { token, auth }: IContext): Promise<IUser | null> => {
-			const newData = Object.assign({}, data, { companyId: auth!.companyId, companyKey: auth!.companyKey });
-			const result = await updateOneUser(newData, token!);
+		updateOneUser: async (_: any, { data }: { data: IUpdateUser }, { token }: IContext): Promise<IUser | null> => {
+			const result = await updateOneUser(data, token!);
 			return result;
 		},
-		deleteOneUser: async (_: any, { data }: { data: IDeleteUser }, { token, auth }: IContext): Promise<IUser | null> => {
-			const newData = Object.assign({}, data, { companyId: auth!.companyId, companyKey: auth!.companyKey });
-			const result = await deleteOneUser(newData, token!);
+		deleteOneUser: async (_: any, { data }: { data: IDeleteUser }, { token }: IContext): Promise<IUser | null> => {
+			const result = await deleteOneUser(data, token!);
 			return result;
 		},
 	},
 	Query: {
-		searchOneUser: async (_: object, { data }: { data: Partial<ISearchUser> }, { token, auth }: IContext): Promise<IUser | null> => {
-			const newData = Object.assign({}, data, { companyId: auth!.companyId, companyKey: auth!.companyKey });
-			const result = await searchOneUser(newData, token!);
+		searchOneUser: async (_: object, { data }: { data: Partial<ISearchUser> }, { token }: IContext): Promise<IUser | null> => {
+			const result = await searchOneUser(data, token!);
 			return result;
 		},
-		searchManyUser: async (_: object, { data }: { data: Partial<ISearchUser>[] }, { token, auth }: IContext): Promise<IUser[]> => {
-			const { companyId, companyKey } = auth!;
-			const newData = data.length === 0 ? [{ companyId, companyKey }] : data.map((item) => Object.assign({}, item, { companyId, companyKey })); 
-			const result = await searchManyUser(newData, token!);
+		searchManyUser: async (_: object, { data }: { data: Partial<ISearchUser>[] }, { token }: IContext): Promise<IUser[]> => {
+			const result = await searchManyUser(data, token!);
 			return result;
 		},
 	}
