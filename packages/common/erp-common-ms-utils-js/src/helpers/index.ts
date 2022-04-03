@@ -1,5 +1,6 @@
 export * from './kafka';
 export * from './axios';
+export * from './context';
 export * from './env';
 export * from './express-session';
 export * from './hash';

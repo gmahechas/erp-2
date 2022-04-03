@@ -1,5 +1,5 @@
 import { ISigninAuth } from '@gmahechas/erp-common';
-import { sendError, TypeErrorMessage, compareHash, jwtSign, checkExistsFile, readFileSync, env } from '@gmahechas/erp-common-ms-utils-js';
+import { sendError, TypeErrorMessage, compareHash, jwtSign, env } from '@gmahechas/erp-common-ms-utils-js';
 import { searchOneUser } from '../user/user.controller';
 
 export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> => {
