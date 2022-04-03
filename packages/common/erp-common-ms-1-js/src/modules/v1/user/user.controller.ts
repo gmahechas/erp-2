@@ -50,3 +50,8 @@ export const searchManyUser = async (data: Partial<ISearchUser>[]): Promise<IUse
 	const result = await User.find({ $or: search });
 	return result;
 };
+
+export const searchOneUserToSignin = async (data: Partial<ISearchUser> | { companyKey: string }): Promise<IUser | null> => {
+	const result = await User.findOne(data);
+	return result;
+};

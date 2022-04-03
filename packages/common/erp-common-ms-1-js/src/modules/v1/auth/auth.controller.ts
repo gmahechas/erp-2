@@ -1,11 +1,11 @@
 import { ISigninAuth } from '@gmahechas/erp-common';
 import { sendError, TypeErrorMessage, compareHash, jwtSign, env } from '@gmahechas/erp-common-ms-utils-js';
-import { searchOneUser } from '../user/user.controller';
+import { searchOneUserToSignin } from '../user/user.controller';
 
 export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> => {
 	const { companyKey, userName, userPassword } = data;
 
-	const user = await searchOneUser({ userName, companyKey });
+	const user = await searchOneUserToSignin({ userName, companyKey });
 
 	if (!user) {
 		sendError(TypeErrorMessage.AUTHENTICATION);

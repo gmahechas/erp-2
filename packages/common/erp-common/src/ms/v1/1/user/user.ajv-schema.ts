@@ -6,10 +6,8 @@ export const createOneUserSchema: JSONSchemaType<ICreateUser> = {
 	properties: {
 		userName: { type: 'string' },
 		userPassword: { type: 'string' },
-		companyId: { type: 'string' },
-		companyKey: { type: 'string' },
 	},
-	required: ['userName', 'userPassword', 'companyId', 'companyKey'],
+	required: ['userName', 'userPassword'],
 	additionalProperties: false,
 };
 
@@ -19,10 +17,8 @@ export const updateOneUserSchema: JSONSchemaType<IUpdateUser> = {
 		id: { type: 'string' },
 		userName: { type: 'string' },
 		userPassword: { type: 'string' },
-		companyId: { type: 'string' },
-		companyKey: { type: 'string' },
 	},
-	required: ['id', 'companyId', 'companyKey'],
+	required: ['id'],
 	additionalProperties: false,
 };
 
@@ -30,10 +26,8 @@ export const deleteOneUserSchema: JSONSchemaType<IDeleteUser> = {
 	type: 'object',
 	properties: {
 		id: { type: 'string' },
-		companyId: { type: 'string' },
-		companyKey: { type: 'string' },
 	},
-	required: ['id', 'companyId', 'companyKey'],
+	required: ['id'],
 	additionalProperties: false,
 };
 
@@ -42,10 +36,8 @@ export const searchOneUserSchema: JSONSchemaType<ISearchUser> = {
 	properties: {
 		id: { type: 'string' },
 		userName: { type: 'string' },
-		companyId: { type: 'string' },
-		companyKey: { type: 'string' },
 	},
-	required: ['companyId', 'companyKey'],
+	required: [],
 	additionalProperties: false
 };
 
