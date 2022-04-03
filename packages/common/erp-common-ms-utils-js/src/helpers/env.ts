@@ -49,12 +49,15 @@ const enrichEnv = async (env: any, environment: string) => {
 			case 'ms-1':
 				currentEnv.databases.mongo.uri = currentEnv.databases.mongo.uri ? currentEnv.databases.mongo.uri : vaultSecrets.mongo_uri;
 				currentEnv.auth.jwt.privateKey = currentEnv.auth.jwt.privateKey ? currentEnv.auth.jwt.privateKey : vaultSecrets.privateKey;
+				currentEnv.auth.jwt.publicKey = currentEnv.auth.jwt.publicKey ? currentEnv.auth.jwt.publicKey : vaultSecrets.publicKey;
 				break;
 			case 'ms-3':
 				currentEnv.databases.mongo.uri = currentEnv.databases.mongo.uri ? currentEnv.databases.mongo.uri : vaultSecrets.mongo_uri;
+				currentEnv.auth.jwt.publicKey = currentEnv.auth.jwt.publicKey ? currentEnv.auth.jwt.publicKey : vaultSecrets.publicKey;
 				break;
 			case 'ms-4':
 				currentEnv.databases.mongo.uri = currentEnv.databases.mongo.uri ? currentEnv.databases.mongo.uri : vaultSecrets.mongo_uri;
+				currentEnv.auth.jwt.publicKey = currentEnv.auth.jwt.publicKey ? currentEnv.auth.jwt.publicKey : vaultSecrets.publicKey;
 				break;
 		}
 	} catch (error) {

@@ -11,6 +11,11 @@ export const config: IConfig = ({
 			mongo: {
 				uri: undefined
 			}
+		},
+		auth: {
+			jwt: {
+				publicKey: undefined
+			}
 		}
 	}
 });

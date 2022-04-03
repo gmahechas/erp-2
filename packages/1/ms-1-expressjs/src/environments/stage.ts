@@ -7,15 +7,16 @@ export const config: IConfig = ({
 			name: process.env.APP_NAME,
 			port: process.env.ONE_APP_PORT,
 		},
-		auth: {
-			jwt: {
-				privateKey: undefined
-			}
-		},
 		databases: {
 			mongo: {
 				uri: undefined
 			}
-		}
+		},
+		auth: {
+			jwt: {
+				privateKey: undefined,
+				publicKey: undefined,
+			}
+		},
 	}
 });

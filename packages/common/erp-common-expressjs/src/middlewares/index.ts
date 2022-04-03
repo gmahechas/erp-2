@@ -1,4 +1,5 @@
+export * from './async-handler.middleware';
+export * from './authentication.middleware';
 export * from './error.middleware';
 export * from './not-found.middleware';
 export * from './validator.middleware';
-export * from './async-handler.middleware';

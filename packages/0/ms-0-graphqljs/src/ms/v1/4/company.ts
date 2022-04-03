@@ -49,25 +49,25 @@ export const typeDefs = gql`
 export const resolvers = {
 	Mutation: {
 		createOneCompany: async (_: any, { data }: { data: ICreateCompany }, { token }: IContext): Promise<ICompany> => {
-			const result = await createOneCompany(token!, data);
+			const result = await createOneCompany(data, token!);
 			return result;
 		},
 		updateOneCompany: async (_: any, { data }: { data: IUpdateCompany }, { token }: IContext): Promise<ICompany | null> => {
-			const result = await updateOneCompany(token!, data);
+			const result = await updateOneCompany(data, token!);
 			return result;
 		},
 		deleteOneCompany: async (_: any, { data }: { data: IDeleteCompany }, { token }: IContext): Promise<ICompany | null> => {
-			const result = await deleteOneCompany(token!, data);
+			const result = await deleteOneCompany(data, token!);
 			return result;
 		}
 	},
 	Query: {
 		searchOneCompany: async (_: object, { data }: { data: Partial<ISearchCompany> }, { token }: IContext): Promise<ICompany | null> => {
-			const result = await searchOneCompany(token!, data);
+			const result = await searchOneCompany(data, token!);
 			return result;
 		},
 		searchManyCompany: async (_: object, { data }: { data: Partial<ISearchCompany>[] }, { token }: IContext): Promise<ICompany[]> => {
-			const result = await searchManyCompany(token!, data);
+			const result = await searchManyCompany(data, token!);
 			return result;
 		}
 	},

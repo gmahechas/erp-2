@@ -21,7 +21,7 @@ module.exports = {
 		"subject",
 		"body",
 		/* "breaking" */,
-		/* "issues", */
+		"issues",
 		"lerna"
 	],
 	scopes: [],
