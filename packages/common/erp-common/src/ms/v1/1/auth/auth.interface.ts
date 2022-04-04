@@ -4,4 +4,5 @@ export interface IAuth {
   companyId: string;
   companyKey: string;
   iat: number;
+  exp: number;
 }

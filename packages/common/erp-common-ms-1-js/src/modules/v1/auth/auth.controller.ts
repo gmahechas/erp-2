@@ -28,7 +28,7 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 		userName,
 		companyId,
 		companyKey,
-	}, privateKey, { algorithm: 'RS256' });
+	}, privateKey, { algorithm: 'RS256', expiresIn: (60 * 60 * 24) });
 
 	return { token };
 };
