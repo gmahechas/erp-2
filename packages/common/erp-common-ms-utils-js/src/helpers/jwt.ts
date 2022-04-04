@@ -24,5 +24,9 @@ export const jwtDecode = (token: string) => {
 	if (!publicKey) {
 		sendError(TypeErrorMessage.CONFIG);
 	}
-	return jwtVerify(token, publicKey, { algorithm: 'RS256' }) as IAuth;
+	try {
+		return jwt.verify(token, publicKey) as IAuth;
+	} catch(error) {
+		sendError(TypeErrorMessage.AUTHENTICATION);
+	}
 };
