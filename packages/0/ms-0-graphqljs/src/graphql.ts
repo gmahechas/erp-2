@@ -9,7 +9,7 @@ export const graphqlV1 = async () => {
 		debug: false,
 		context: async ({ req, res }) => {
 			const context = await authenticationMiddleware(req, res);
-			return await authorizationMiddleware(context);
+			return await authorizationMiddleware(context!);
 		},
 		formatError: (error) => errorMiddleware(error),
 	});
