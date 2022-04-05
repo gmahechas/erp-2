@@ -1,5 +1,4 @@
 import { express } from '@gmahechas/erp-common-graphqljs';
-import { env, session } from '@gmahechas/erp-common-ms-utils-js';
 import { initSession, notFoundMiddleware } from './middlewares';
 import { graphqlV1 } from './graphql';
 

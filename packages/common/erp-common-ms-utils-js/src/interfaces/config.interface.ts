@@ -13,7 +13,9 @@ export interface IConfig {
 		session?: {
 			redis?: {
 				url?: string;
-			}
+			},
+			cookie_name?: string;
+			cookie_secret?: string;
 		};
 		auth?: {
 			jwt?: {

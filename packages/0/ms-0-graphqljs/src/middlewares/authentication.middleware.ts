@@ -1,4 +1,4 @@
-import { jwtDecode, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
+import { AuthenticationError, jwtDecode, env } from '@gmahechas/erp-common-ms-utils-js';
 import { express, IContext } from '@gmahechas/erp-common-graphqljs';
 
 export const authenticationMiddleware = async (req: express.Request, res: express.Response): Promise<IContext | undefined> => {
@@ -11,10 +11,11 @@ export const authenticationMiddleware = async (req: express.Request, res: expres
 			return { req, res, token, auth };
 		} catch (error) {
 			if(req.session.token) {
+				const { cookie_name } = env['ms-0']!.session!;
 				req.session.destroy((error) => error);
-				res.clearCookie('cerp');
+				res.clearCookie(cookie_name!);
 			}
-			sendError(TypeErrorMessage.AUTHENTICATION);
+			throw new AuthenticationError();
 		}
 	}
 }

@@ -1,13 +1,19 @@
-import { env, session } from '@gmahechas/erp-common-ms-utils-js';
+import { env, sendError, session, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 
-export const initSession = () => session(env['ms-0']!.session!.redis!.url!, {
-	name: 'cerp',
-	secret: 'aslkdfjoiq12312',
-	resave: false,
-	saveUninitialized: false,
-	cookie: {
-		httpOnly: true,
-		secure: false,
-		maxAge: 1000 * 60 * 60 * 24 * 7,
+export const initSession = () => {
+	const { redis, cookie_name, cookie_secret } = env['ms-0']!.session!;
+	if(!redis || !cookie_name || !cookie_secret) {
+		sendError(TypeErrorMessage.CONFIG);
 	}
-})
+	return session(redis!.url!, {
+		name: cookie_name,
+		secret: cookie_secret,
+		resave: false,
+		saveUninitialized: false,
+		cookie: {
+			httpOnly: true,
+			secure: false,
+			maxAge: 1000 * 60 * 60 * 24,
+		}
+	});
+};

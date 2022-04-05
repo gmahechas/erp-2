@@ -43,8 +43,10 @@ const enrichEnv = async (env: any, environment: string) => {
 		const currentEnv = env[appName!];
 		switch (appName) {
 			case 'ms-0':
-				currentEnv.session.redis.url = currentEnv.session.redis.url ? currentEnv.session.redis.url : vaultSecrets.redis_url;
 				currentEnv.auth.jwt.publicKey = currentEnv.auth.jwt.publicKey ? currentEnv.auth.jwt.publicKey : vaultSecrets.publicKey;
+				currentEnv.session.redis.url = currentEnv.session.redis.url ? currentEnv.session.redis.url : vaultSecrets.redis_url;
+				currentEnv.session.cookie_name = currentEnv.session.cookie_name ? currentEnv.session.cookie_name : vaultSecrets.cookie_name;
+				currentEnv.session.cookie_secret = currentEnv.session.cookie_secret ? currentEnv.session.cookie_secret : vaultSecrets.cookie_secret;
 				break;
 			case 'ms-1':
 				currentEnv.databases.mongo.uri = currentEnv.databases.mongo.uri ? currentEnv.databases.mongo.uri : vaultSecrets.mongo_uri;
