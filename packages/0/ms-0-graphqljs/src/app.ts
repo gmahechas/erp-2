@@ -1,4 +1,4 @@
-import { helmet, cors } from '@gmahechas/erp-common-ms-utils-js';
+import { helmet } from '@gmahechas/erp-common-ms-utils-js';
 import { express } from '@gmahechas/erp-common-graphqljs';
 import { initSession, notFoundMiddleware } from './middlewares';
 import { graphqlV1 } from './graphql';
@@ -6,7 +6,6 @@ import { graphqlV1 } from './graphql';
 export const bootstrap = async () => {
 	const app = express();
 	app.use(helmet());
-	app.use(cors());
 	app.use(await initSession());
 	const serverV1 = await graphqlV1();
 	serverV1.applyMiddleware({
