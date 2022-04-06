@@ -1,5 +1,6 @@
 export * from './axios';
 export * from './bcrypt';
+export * from './cors';
 export * from './dotenv';
 export * from './helmet';
 export * from './jsonwebtoken';
