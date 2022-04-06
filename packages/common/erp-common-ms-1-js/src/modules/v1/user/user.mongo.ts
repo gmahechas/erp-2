@@ -41,7 +41,7 @@ const schema = new mongoose.Schema({
 schema.pre('save', async function (next) {
 	this.set('id', this.get('_id'));
 	if (this.isModified('userPassword')) {
-		const hashed = await toHash(this.get('userPassword'), 10);
+		const hashed = await toHash(this.get('userPassword'));
 		this.set('userPassword', hashed);
 	}
 	next();
