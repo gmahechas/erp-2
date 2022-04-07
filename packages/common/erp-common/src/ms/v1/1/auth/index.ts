@@ -1,3 +1,3 @@
-export * from './auth.ajv-schema';
+export * from './auth.ajv';
 export * from './auth.dto';
-export { IAuth } from './auth.interface';
+export * from './auth.interface';
