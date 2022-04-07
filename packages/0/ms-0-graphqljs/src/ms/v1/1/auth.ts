@@ -27,7 +27,8 @@ export const resolvers = {
 			let { req } = context;
 			const { token }  = await signinAuth(data);
 			req.session.token = token;
-			return jwtDecode(token) as IAuth;
+			const auth = jwtDecode(token) as IAuth;
+			return auth;
 		},
 		signoutAuth: async (_: any, __: any, { auth, req, res }: IContext): Promise<IAuth> => {
 			return new Promise((resolve, reject) => {
