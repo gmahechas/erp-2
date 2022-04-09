@@ -1,10 +1,8 @@
 import { CustomError, axios } from '@gmahechas/erp-common-ms-utils-js';
 import { GraphQLError } from '@gmahechas/erp-common-graphqljs';
 
-export const errorMiddleware = (error: any): any => {
-	if (error instanceof CustomError) { // local error like auth
-		return { ...error.serializeErrors() };
-	} else if (error instanceof GraphQLError) { // graphql itself like http request/grpc
+export const errorMiddleware = (error: GraphQLError | CustomError): any => {
+	if (error instanceof GraphQLError) { // graphql itself like http request/grpc
 		const { originalError } = error as any;
 		if (axios.isAxiosError(originalError)) { // axios
 			const { response } = originalError;
@@ -23,5 +21,7 @@ export const errorMiddleware = (error: any): any => {
 			}
 			return { type: originalError.details }
 		}
+	} else if (error instanceof CustomError) { // local error like auth
+		return { ...error.serializeErrors() };
 	}
 }
