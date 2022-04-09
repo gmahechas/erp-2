@@ -6,8 +6,8 @@ interface IProps {
     signin: (data: ISigninAuth) => void;
 }
 const Auth: FC<IProps> = ({ signin }) => {
-    const onLogin = (data: ISigninAuth) => signin(data);
-    return <Login onLogin={onLogin} />;
+    const onSignin = (data: ISigninAuth) => signin(data);
+    return <Login signin={onSignin} />;
 };
 
 export default Auth;

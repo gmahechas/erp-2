@@ -1,15 +1,18 @@
 import { FC } from 'react';
 import HeaderCore from './HeaderCore';
 
-const Layout: FC = ({ children }) => {
+import { PropsFromRedux, connector } from '@mf-0/auth/store/reducers';
+interface IProps extends PropsFromRedux {}
+const Layout: FC<IProps> = ({ children, signout  }) => {
+    const onSignout = () => signout();
     return (
         <>
             <header>
-                <HeaderCore />
+                <HeaderCore signout={onSignout} />
             </header>
             <main>{children}</main>
         </>
     );
 };
 
-export default Layout;
+export default connector(Layout);
