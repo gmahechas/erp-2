@@ -14,7 +14,7 @@ export const bootstrap = async () => {
 		cors: {
 			origin: 'http://localhost:8000',
 			credentials: true,
-		}
+		},
 	});
 	app.use(notFoundMiddleware);
 	return app;
