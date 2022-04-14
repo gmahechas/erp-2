@@ -5,7 +5,7 @@ export const createOneGroupSchema: JSONSchemaType<ICreateGroup> = {
 	type: 'object',
 	properties: {
 		groupName: { type: 'string' },
-		groupPolicies: { type: 'array', items: { type: 'string' } },
+		policies: { type: 'array', items: { type: 'string' } },
 	},
 	required: ['groupName'],
 	additionalProperties: false,
@@ -16,7 +16,7 @@ export const updateOneGroupSchema: JSONSchemaType<IUpdateGroup> = {
 	properties: {
 		id: { type: 'string' },
 		groupName: { type: 'string' },
-		groupPolicies: { type: 'array', items: { type: 'string' } },
+		policies: { type: 'array', items: { type: 'string' } },
 	},
 	required: ['id'],
 	additionalProperties: false,

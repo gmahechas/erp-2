@@ -1,22 +1,22 @@
-import { IGroup, ICreateGroup, IUpdateGroup, IDeleteGroup, ISearchGroup } from '@gmahechas/erp-common';
+import { IGroup, ICreateGroup, IUpdateGroup, IDeleteGroup, ISearchGroup, IPolicy } from '@gmahechas/erp-common';
 import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
-import { createOneGroup, updateOneGroup, deleteOneGroup, searchOneGroup, searchManyGroup } from '@gmahechas/erp-common-ms-0-js';
+import { createOneGroup, updateOneGroup, deleteOneGroup, searchOneGroup, searchManyGroup, searchManyPolicy } from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
 	type Group {
 		id: String
     groupName: String
-		groupPolicies: [String]
+		policies: [Policy]
 	}
 
 	input CreateOneGroup {
     groupName: String
-		groupPolicies: [String]
+		policies: [String]
 	}
 	input UpdateOneGroup {
 		id: String
     groupName: String
-		groupPolicies: [String]
+		policies: [String]
 	}
 	input DeleteOneGroup {
 		id: String
@@ -61,5 +61,12 @@ export const resolvers = {
 			const result = await searchManyGroup(data, token!);
 			return result;
 		},
+	},
+	Group: {
+		policies: async (parent: IGroup, _: any, { token }: IContext): Promise<IPolicy[]> => {
+			const ids = parent.policies.map(id => ({ id }));
+			const result = await searchManyPolicy(ids, token!);
+			return result;
+		}
 	}
 };
