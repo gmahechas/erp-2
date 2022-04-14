@@ -6,14 +6,17 @@ export const typeDefs = gql`
 	type Group {
 		id: String
     groupName: String
+		groupPolicies: [String]
 	}
 
 	input CreateOneGroup {
     groupName: String
+		groupPolicies: [String]
 	}
 	input UpdateOneGroup {
 		id: String
     groupName: String
+		groupPolicies: [String]
 	}
 	input DeleteOneGroup {
 		id: String

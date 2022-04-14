@@ -1,10 +1,12 @@
 export interface ICreateGroup {
 	groupName: string;
+	groupPolicies: Array<string>;
 }
 
 export interface IUpdateGroup {
 	id: string;
 	groupName: string;
+	groupPolicies: Array<string>;
 }
 
 export interface IDeleteGroup {
