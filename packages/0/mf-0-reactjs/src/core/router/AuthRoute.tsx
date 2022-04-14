@@ -7,9 +7,7 @@ interface IProps extends PropsFromRedux {}
 const AuthRoute: FC<IProps> = ({ children, auth }) => {
     const { pathname, search } = useLocation();
     if (pathname === '/') {
-        if (LocalStorage.get('lastPath') != '/2/dashboard') {
-          LocalStorage.set('lastPath', `/2/dashboard`);
-        }
+        LocalStorage.set('lastPath', '/2/dashboard');
     } else {
         LocalStorage.set('lastPath', `${pathname}${search}`);
     }
