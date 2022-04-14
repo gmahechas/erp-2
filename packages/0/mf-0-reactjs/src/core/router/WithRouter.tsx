@@ -13,7 +13,7 @@ import AuthRoute from './AuthRoute';
 const history = createBrowserHistory();
 
 interface IProps extends PropsFromRedux {}
-const WithRouter: FC<IProps> = ({ me, auth }) => {
+const WithRouter: FC<IProps> = ({ me }) => {
     useLayoutEffect(() => {
         me();
     }, []);
