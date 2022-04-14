@@ -17,6 +17,12 @@ const schema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
+	groups: {
+		type: [String],
+	},
+	policies: {
+		type: [String],
+	},
 	companyId: {
 		type: String,
 		required: true,

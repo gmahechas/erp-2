@@ -6,6 +6,8 @@ export const createOneUserSchema: JSONSchemaType<ICreateUser> = {
 	properties: {
 		userName: { type: 'string' },
 		userPassword: { type: 'string' },
+		groups: { type: 'array', items: { type: 'string' } },
+		policies: { type: 'array', items: { type: 'string' } },
 	},
 	required: ['userName', 'userPassword'],
 	additionalProperties: false,
@@ -17,6 +19,8 @@ export const updateOneUserSchema: JSONSchemaType<IUpdateUser> = {
 		id: { type: 'string' },
 		userName: { type: 'string' },
 		userPassword: { type: 'string' },
+		groups: { type: 'array', items: { type: 'string' } },
+		policies: { type: 'array', items: { type: 'string' } },
 	},
 	required: ['id'],
 	additionalProperties: false,
