@@ -17,13 +17,6 @@ const WithRouter: FC<IProps> = ({ me, auth }) => {
     useLayoutEffect(() => {
         me();
     }, []);
-    useLayoutEffect(() => {
-        if (auth.auth.isLogged) {
-            history.replace(LocalStorage.get('lastPath'));
-        } else {
-            history.replace('/1/auth');
-        }
-    }, [auth.auth.isLogged]);
     return (
         <Router history={history}>
             <Suspense fallback={<div>Loading 0 ...</div>}>

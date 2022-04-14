@@ -13,7 +13,7 @@ const AuthRoute: FC<IProps> = ({ children, auth }) => {
     } else {
         LocalStorage.set('lastPath', `${pathname}${search}`);
     }
-    return auth.auth.isLogged ? <>{children}</> : <Redirect to='/1/auth' />;
+    return auth.auth.isLogged ? <>{children}</> : <Redirect push to='/1/auth' />;
 };
 
 export default connector(AuthRoute);

@@ -5,7 +5,7 @@ import { PropsFromRedux, connector } from '@mf-0/auth/store/reducers';
 
 interface IProps extends PropsFromRedux {}
 const NoAuthRoute: FC<IProps> = ({ children, auth }) => {
-    return auth.auth.isLogged ? <Redirect to={LocalStorage.get('lastPath')} /> : <>{children}</>;
+    return auth.auth.isLogged ? <Redirect push to={LocalStorage.get('lastPath')} /> : <>{children}</>;
 };
 
 export default connector(NoAuthRoute);
