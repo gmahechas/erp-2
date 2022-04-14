@@ -71,11 +71,13 @@ export const resolvers = {
 	},
 	Estate: {
 		country: async (parent: IEstate, _: object, { token }: IContext): Promise<ICountry | null> => {
-			const result = await searchOneCountry({ id: parent.countryId }, token!);
+			const { countryId } = parent;
+			const result = await searchOneCountry({ id: countryId }, token!);
 			return result;
 		},
 		cities: async (parent: IEstate, _: object, { token }: IContext): Promise<ICity[]> => {
-			const result = await searchManyCity([{ estateId: parent.id }], token!);
+			const { id } = parent;
+			const result = await searchManyCity([{ estateId: id }], token!);
 			return result;
 		}
 	}

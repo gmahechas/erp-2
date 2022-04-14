@@ -66,7 +66,8 @@ export const resolvers = {
 	},
 	Country: {
 		estates: async (parent: ICountry, _: object, { token }: IContext): Promise<IEstate[]> => {
-			const result = await searchManyEstate([{ countryId: parent.id }], token!);
+			const { id } = parent;
+			const result = await searchManyEstate([{ countryId: id }], token!);
 			return result;
 		},
 	},

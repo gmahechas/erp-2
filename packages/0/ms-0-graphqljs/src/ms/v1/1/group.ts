@@ -64,7 +64,8 @@ export const resolvers = {
 	},
 	Group: {
 		policies: async (parent: IGroup, _: any, { token }: IContext): Promise<IPolicy[]> => {
-			const ids = parent.policies.map(id => ({ id }));
+			const { policies } = parent;
+			const ids = policies.length == 0 ? [{ id: '' }] : policies.map(id => ({ id }));
 			const result = await searchManyPolicy(ids, token!);
 			return result;
 		}

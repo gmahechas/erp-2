@@ -70,7 +70,8 @@ export const resolvers = {
 	},
 	City: {
 		estate: async (parent: ICity, _: object, { token }: IContext): Promise<IEstate | null> => {
-			const result = await searchOneEstate({ id: parent.estateId }, token!);
+			const { estateId } = parent;
+			const result = await searchOneEstate({ id: estateId }, token!);
 			return result;
 		},
 	}
