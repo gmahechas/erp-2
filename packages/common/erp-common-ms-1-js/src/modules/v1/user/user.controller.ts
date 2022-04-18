@@ -52,6 +52,11 @@ export const searchManyUser = async (data: Partial<ISearchUser>[]): Promise<IUse
 };
 
 export const searchOneUserToSignin = async (data: Partial<ISearchUser> | { companyKey: string }): Promise<IUser | null> => {
-	const result = await User.findOne(data);
-	return result;
+	const result = await User.aggregate([
+		{ $match: data },
+		{	$lookup: { from: 'groups', localField: 'groups', foreignField: 'id', as: 'groups' } },
+		{ $lookup: { from: 'policies', localField: 'groups.policies', foreignField: 'id', as: 'groups.policies' }},
+		{ $lookup: { from: 'policies', localField: 'policies', foreignField: 'id', as: 'policies' } },
+	]);
+	return result.length === 0 ? null : result[0];
 };
