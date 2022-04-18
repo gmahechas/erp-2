@@ -8,6 +8,7 @@ export const typeDefs = gql`
 		id: String
   	userName: String
 		companyKey: String
+		scope: String
 	}
 	input SigninAuth {
 		userName: String

@@ -1,16 +1,14 @@
-import { actionType, serviceType } from './policy.interface';
-
 export interface ICreatePolicy {
 	policyName: string;
-	services: Array<serviceType>;
-	actions: Array<actionType>;
+	service: string;
+	actions: string[];
 }
 
 export interface IUpdatePolicy {
 	id: string;
 	policyName: string;
-	services: Array<serviceType>;
-	actions: Array<actionType>;
+	service: string;
+	actions: string[];
 }
 
 export interface IDeletePolicy {
@@ -20,6 +18,6 @@ export interface IDeletePolicy {
 export interface ISearchPolicy {
 	id: string;
 	policyName: string;
-	services: Array<serviceType>;
-	actions: Array<actionType>;
+	service: string;
+	actions: string[];
 }

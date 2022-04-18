@@ -13,8 +13,8 @@ const schema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	services: {
-		type: [String],
+	service: {
+		type: String,
 		required: true
 	},
 	actions: {

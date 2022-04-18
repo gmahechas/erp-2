@@ -23,19 +23,19 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 		}
 		return acc;
 	}, [] as IPolicy[]);
+
 	const scope: { [key: string]: string[] } = {};
 	for (const policy of policies) {
-		for (const service of policy.services) {
+			const { service, actions } = policy;
 			if (!scope[service]) {
-				scope[service] = policy.actions;
+				scope[service] = actions;
 			} else {
-				for (const action of policy.actions) {
+				for (const action of actions) {
 					if (!scope[service].find(item => item === action)) {
 						scope[service].push(action);
 					}
 				}
 			}
-		}
 	}
 	
 	const privateKey = env['ms-1']?.auth?.jwt?.privateKey;
@@ -48,7 +48,7 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 		userName,
 		companyId,
 		companyKey,
-		scope,
+		scope: JSON.stringify(scope),
 	}, privateKey, { algorithm: 'RS256', expiresIn: (60 * 60 * 24) });
 
 	return { token };

@@ -6,19 +6,19 @@ export const typeDefs = gql`
 	type Policy {
 		id: String
     policyName: String
-		services: [String]
+		service: String
 		actions: [String]
 	}
 
 	input CreateOnePolicy {
     policyName: String
-		services: [String]
+		service: String
 		actions: [String]
 	}
 	input UpdateOnePolicy {
 		id: String
     policyName: String
-		services: [String]
+		service: String
 		actions: [String]
 	}
 	input DeleteOnePolicy {
@@ -27,7 +27,7 @@ export const typeDefs = gql`
 	input SearchOnePolicy {
 		id: String
     policyName: String
-		services: [String]
+		service: String
 		actions: [String]
 	}
 	
