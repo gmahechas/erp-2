@@ -3,7 +3,7 @@ export interface IAuth {
   userName: string;
   companyId: string;
   companyKey: string;
-  scope: { [key: string]: string[] };
+  scope: string;
   iat: number;
   exp: number;
 }
