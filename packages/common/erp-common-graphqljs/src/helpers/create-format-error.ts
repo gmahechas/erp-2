@@ -1,7 +1,7 @@
+import { GraphQLError } from 'graphql';
 import { CustomError, axios } from '@gmahechas/erp-common-ms-utils-js';
-import { GraphQLError } from '@gmahechas/erp-common-graphqljs';
 
-export const errorMiddleware = (error: GraphQLError | CustomError): any => {
+export const createFormatError = (error: GraphQLError | CustomError): any => {
 	if (error instanceof GraphQLError) { // graphql itself like http request/grpc
 		const { originalError } = error as any;
 		if (originalError instanceof CustomError) {
