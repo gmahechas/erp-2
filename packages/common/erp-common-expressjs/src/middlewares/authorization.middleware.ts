@@ -7,7 +7,6 @@ export const authorizationMiddleware = (scopes: string[]) => async (request: Req
 		sendError(TypeErrorMessage.AUTHORIZATION);
 	}
 	const scope = JSON.parse(auth.scope);
-	console.log(scope);
 	for (const capability of scopes) {
 		const [service, actions] = capability.split(':');
 		if (!scope[service]) {
