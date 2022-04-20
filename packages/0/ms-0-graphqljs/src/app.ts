@@ -1,6 +1,6 @@
 import { helmet } from '@gmahechas/erp-common-ms-utils-js';
-import { express } from '@gmahechas/erp-common-graphqljs';
-import { initSession, notFoundMiddleware } from './middlewares';
+import { express, notFoundMiddleware } from '@gmahechas/erp-common-graphqljs';
+import { initSession } from './middlewares';
 import { graphqlV1 } from './graphql';
 
 export const bootstrap = async () => {

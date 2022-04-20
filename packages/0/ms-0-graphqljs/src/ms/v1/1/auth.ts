@@ -17,8 +17,8 @@ export const typeDefs = gql`
 	}
   type Query {
   	signinAuth(data: SigninAuth): Auth
-		signoutAuth: Auth
-  	meAuth: Auth
+		signoutAuth: Auth @authentication
+  	meAuth: Auth @authentication
 	}
 `;
 

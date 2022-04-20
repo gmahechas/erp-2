@@ -4,7 +4,9 @@ import { GraphQLError } from '@gmahechas/erp-common-graphqljs';
 export const errorMiddleware = (error: GraphQLError | CustomError): any => {
 	if (error instanceof GraphQLError) { // graphql itself like http request/grpc
 		const { originalError } = error as any;
-		if (axios.isAxiosError(originalError)) { // axios
+		if (originalError instanceof CustomError) {
+			return { ...originalError.serializeErrors() };
+		} else if (axios.isAxiosError(originalError)) { // axios
 			const { response } = originalError;
 			if (response) {
 				const { data } = response;

@@ -29,13 +29,13 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOneCountry(data: CreateOneCountry): Country
-		updateOneCountry(data: UpdateOneCountry): Country
-		deleteOneCountry(data: DeleteOneCountry): Country
+  	createOneCountry(data: CreateOneCountry): Country @authentication
+		updateOneCountry(data: UpdateOneCountry): Country @authentication
+		deleteOneCountry(data: DeleteOneCountry): Country @authentication
 	}
   type Query {
-  	searchOneCountry(data: SearchOneCountry): Country
-		searchManyCountry(data: [SearchOneCountry]): [Country]
+  	searchOneCountry(data: SearchOneCountry): Country @authentication
+		searchManyCountry(data: [SearchOneCountry]): [Country] @authentication
 	}
 `;
 

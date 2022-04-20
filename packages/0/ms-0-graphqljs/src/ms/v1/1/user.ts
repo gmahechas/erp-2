@@ -32,13 +32,13 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOneUser(data: CreateOneUser): User
-		updateOneUser(data: UpdateOneUser): User
-		deleteOneUser(data: DeleteOneUser): User
+  	createOneUser(data: CreateOneUser): User @authentication
+		updateOneUser(data: UpdateOneUser): User @authentication
+		deleteOneUser(data: DeleteOneUser): User @authentication
 	}
   type Query {
-  	searchOneUser(data: SearchOneUser): User
-		searchManyUser(data: [SearchOneUser]): [User]
+  	searchOneUser(data: SearchOneUser): User @authentication
+		searchManyUser(data: [SearchOneUser]): [User] @authentication
 	}
 `;
 

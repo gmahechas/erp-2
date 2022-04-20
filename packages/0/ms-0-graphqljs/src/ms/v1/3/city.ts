@@ -33,13 +33,13 @@ export const typeDefs = gql`
 	}
 
 	type Mutation {
-  	createOneCity(data: CreateOneCity): City
-		updateOneCity(data: UpdateOneCity): City
-		deleteOneCity(data: DeleteOneCity): City
+  	createOneCity(data: CreateOneCity): City @authentication
+		updateOneCity(data: UpdateOneCity): City @authentication
+		deleteOneCity(data: DeleteOneCity): City @authentication
 	}
   type Query {
-  	searchOneCity(data: SearchOneCity): City
-		searchManyCity(data: [SearchOneCity]): [City]
+  	searchOneCity(data: SearchOneCity): City @authentication
+		searchManyCity(data: [SearchOneCity]): [City] @authentication
 	}
 `;
 

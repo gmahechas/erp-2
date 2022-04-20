@@ -36,13 +36,13 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOneCompany(data: CreateOneCompany): Company
-		updateOneCompany(data: UpdateOneCompany): Company
-		deleteOneCompany(data: DeleteOneCompany): Company
+  	createOneCompany(data: CreateOneCompany): Company @authentication
+		updateOneCompany(data: UpdateOneCompany): Company @authentication
+		deleteOneCompany(data: DeleteOneCompany): Company @authentication
 	}
   type Query {
-  	searchOneCompany(data: SearchOneCompany): Company
-		searchManyCompany(data: [SearchOneCompany]): [Company]
+  	searchOneCompany(data: SearchOneCompany): Company @authentication
+		searchManyCompany(data: [SearchOneCompany]): [Company] @authentication
 	}
 `;
 
