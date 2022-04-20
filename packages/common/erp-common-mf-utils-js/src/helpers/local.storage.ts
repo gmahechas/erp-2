@@ -21,7 +21,7 @@ export class LocalStorage {
 		LocalStorage.bindings[key] = value;
 	}
 
-	static get<K extends keyof ILocalStorage>(key: K): any {
+	static get<K extends keyof ILocalStorage>(key: K): typeof LocalStorage.bindings[K] {
 		return LocalStorage.bindings[key];
 	}
 }

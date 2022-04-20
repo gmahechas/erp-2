@@ -1,11 +1,13 @@
-export class Context {
-	static bindings = new Map();
+import { IContext } from '../interfaces/context.interface';
 
-	static set(key: string, value: any): void {
-		Context.bindings.set(key, value);
+export class Context {
+	static bindings: IContext = { token: null, auth: undefined };
+
+	static set<K extends keyof IContext>(key: K, value: IContext[K]): void {
+		Context.bindings[key] = value;
 	}
 
-	static get(key: string): any {
-		return Context.bindings.get(key);
+	static get<K extends keyof IContext>(key: K): typeof Context.bindings[K] {
+		return Context.bindings[key];
 	}
 }
