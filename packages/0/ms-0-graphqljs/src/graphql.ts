@@ -1,8 +1,9 @@
-import { ApolloServer, makeExecutableSchema, authenticationDirective, createContext, createFormatError } from '@gmahechas/erp-common-graphqljs';
+import { ApolloServer, makeExecutableSchema, authenticationDirective, authorizationDirective, createContext, createFormatError } from '@gmahechas/erp-common-graphqljs';
 import { v1TypeDefs, v1Resolvers } from './ms';
 
 export const graphqlV1 = async () => {
-	let schema = makeExecutableSchema({ typeDefs: v1TypeDefs, resolvers: v1Resolvers });
+	let schema = makeExecutableSchema({typeDefs: v1TypeDefs, resolvers: v1Resolvers });
+	schema = authorizationDirective(schema, 'authorization');
 	schema = authenticationDirective(schema, 'authentication');
 	const graphql = new ApolloServer({
 		schema,
