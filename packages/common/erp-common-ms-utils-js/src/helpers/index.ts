@@ -6,3 +6,4 @@ export * from './express-session';
 export * from './hash';
 export * from './jwt';
 export * from './node';
+export * from './vault';

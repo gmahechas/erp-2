@@ -27,7 +27,8 @@
         "mongoose": "^6.0.4",
         "node-vault": "^0.9.22",
         "redis": "^4.0.4",
-        "uuid": "^8.3.2"
+        "uuid": "^8.3.2",
+        "winston": "^3.7.2"
     },
     "devDependencies": {
         "@gmahechas/erp-common": "^0.0.28",

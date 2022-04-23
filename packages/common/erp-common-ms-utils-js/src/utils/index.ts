@@ -8,3 +8,4 @@ export * from './kafka';
 export * from './mongoose';
 export * from './redis';
 export * from './uuid';
+export * from './winston';
