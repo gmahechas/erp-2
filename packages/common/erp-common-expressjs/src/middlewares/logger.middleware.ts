@@ -16,7 +16,6 @@ const logger: Logger = createLogger({
 export const loggerMiddleware = async (request: Request, response: Response, next: NextFunction) => {
 	const auth = Context.get('auth');
 	const { body, originalUrl } = request;
-	console.log(request.sessionID);
 	logger.info(JSON.stringify(body), { auth, action: originalUrl });
 	next();
 };
