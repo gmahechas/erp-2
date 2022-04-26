@@ -21,7 +21,7 @@ export const loggerDirective = (schema: GraphQLSchema, directiveName: string) =>
 		if (loggerDirective) {
 			const { resolve = defaultFieldResolver } = fieldConfig;
 			fieldConfig.resolve = async (source, args, context: IContext, info) => {
-				const { req, auth } = context;
+				const { auth } = context;
 				const { fieldName } = info;
 				logger.info(JSON.stringify(args), { auth, action: fieldName });
 				return await resolve(source, args, context, info);
