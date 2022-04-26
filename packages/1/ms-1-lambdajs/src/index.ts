@@ -8,9 +8,9 @@ export const handler = async (event: APIGatewayProxyEvent, context: Context) => 
 	try {
 		await initEnv(false);
 		const { args, validation, action } = routerLambda(event, routes);
+		authenticationMiddleware(event);
 		const actionParams = actionArgs(args, event);
 		validatorLambda(validation, actionParams);
-		authenticationMiddleware(event);
 		context.callbackWaitsForEmptyEventLoop = false;
 		await connectDatabases();
 		const data = await action(actionParams);
