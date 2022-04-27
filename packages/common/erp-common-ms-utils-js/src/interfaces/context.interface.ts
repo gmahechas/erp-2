@@ -1,6 +1,6 @@
 import { IAuth } from '@gmahechas/erp-common';
 
 export interface IContext {
-	token?: string;
-	auth?: IAuth;
+	token: string;
+	auth: IAuth;
 }
