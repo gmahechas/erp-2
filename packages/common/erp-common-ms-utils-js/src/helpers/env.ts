@@ -3,7 +3,7 @@ import { TypeErrorMessage } from '../errors/utils/error-type.enum';
 import { sendError } from '../errors/utils/send-error';
 import { IConfig } from '../interfaces/config.interface';
 import { resolvePath, checkExistsFile } from './node';
-import { Vault } from './vault';
+import { initVault, Vault } from './vault';
 
 export let env: IConfig;
 
@@ -31,16 +31,10 @@ export const initEnv = async (useDotEnv = true) => {
 
 const enrichEnv = async (env: any, environment: string) => {
 	try {
-		const appName = process.env.APP_NAME;
-		const vaultUrl = process.env.VAULT_URL;
-		const vaultRoleId = process.env.VAULT_ROLE_ID;
-		const vaultSecretId = process.env.VAULT_SECRET_ID;
-
-		const { auth: { client_token } } = await Vault.approleLogin(vaultUrl!, vaultRoleId!, vaultSecretId!);
-		const vaultClient = new Vault(vaultUrl!, client_token);
-		const { data: { data: vaultSecrets } }: any = await vaultClient.read(`kv/data/erp/${appName}/${environment}`);
-
-		const currentEnv = env[appName!];
+		await initVault()
+		const appName = process.env.APP_NAME!;
+		const { data: { data: vaultSecrets } }: any = await Vault.read(`kv/data/erp/${appName}/${environment}`);
+		const currentEnv = env[appName];
 		switch (appName) {
 			case 'ms-0':
 				currentEnv.auth.jwt.publicKey = currentEnv.auth.jwt.publicKey ? currentEnv.auth.jwt.publicKey : vaultSecrets.publicKey;
