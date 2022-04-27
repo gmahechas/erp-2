@@ -16,6 +16,9 @@ export const updateOnePolicy = async (data: IUpdatePolicy): Promise<IPolicy | nu
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}
+	if (entity.companyId !== companyId) {
+		sendError(TypeErrorMessage.AUTHORIZATION);
+	}	
 	entity.set(data);
 	return await entity.save();
 };
@@ -27,6 +30,9 @@ export const deleteOnePolicy = async (data: IDeletePolicy): Promise<IPolicy | nu
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}
+	if (entity.companyId !== companyId) {
+		sendError(TypeErrorMessage.AUTHORIZATION);
+	}	
 	return await entity.remove();
 };
 

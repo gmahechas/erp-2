@@ -16,7 +16,7 @@ export const updateOneUser = async (data: IUpdateUser): Promise<IUser | null> =>
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}
-	if(entity.companyId !== companyId) {
+	if (entity.companyId !== companyId) {
 		sendError(TypeErrorMessage.AUTHORIZATION);
 	}	
 	entity.set(data);

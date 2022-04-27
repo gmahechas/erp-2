@@ -16,6 +16,9 @@ export const updateOneGroup = async (data: IUpdateGroup): Promise<IGroup | null>
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}
+	if (entity.companyId !== companyId) {
+		sendError(TypeErrorMessage.AUTHORIZATION);
+	}	
 	entity.set(data);
 	return await entity.save();
 };
@@ -27,6 +30,9 @@ export const deleteOneGroup = async (data: IDeleteGroup): Promise<IGroup | null>
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}
+	if (entity.companyId !== companyId) {
+		sendError(TypeErrorMessage.AUTHORIZATION);
+	}	
 	return await entity.remove();
 };
 
