@@ -2,17 +2,16 @@ import { APIGatewayProxyEvent } from 'aws-lambda';
 import { argsType } from '../interfaces/route.interface';
 
 export const actionArgs = (fields: argsType, event: APIGatewayProxyEvent) => {
-	let args = {};
+	let args = null;
+	console.log(args);
 	for (const field of fields) {
 		if (field == 'body') {
 			const body = (event.body) ? JSON.parse(event.body) : null;
 			if (body instanceof Array) {
-					args = body;
+				args = [...body];
 			} else {
-				args = { ...args, ...body };
+				args = { ...body };
 			}
-		} else {
-			args = { ...args, ...event[field] };
 		}
 	}
 	return args;
