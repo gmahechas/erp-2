@@ -7,3 +7,4 @@ export * from './hash';
 export * from './jwt';
 export * from './node';
 export * from './vault';
+export * from './winston';

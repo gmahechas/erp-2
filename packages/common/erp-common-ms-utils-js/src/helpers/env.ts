@@ -5,7 +5,7 @@ import { IConfig } from '../interfaces/config.interface';
 import { resolvePath, checkExistsFile } from './node';
 import { initVault, Vault } from './vault';
 
-export let env: IConfig;
+export let env: NonNullable<IConfig>;
 
 export const initEnv = async (useDotEnv = true) => {
 	if (useDotEnv) {

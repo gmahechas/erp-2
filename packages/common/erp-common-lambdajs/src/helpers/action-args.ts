@@ -6,7 +6,11 @@ export const actionArgs = (fields: argsType, event: APIGatewayProxyEvent) => {
 	for (const field of fields) {
 		if (field == 'body') {
 			const body = (event.body) ? JSON.parse(event.body) : null;
-			args = { ...args, ...body };
+			if (body instanceof Array) {
+					args = body;
+			} else {
+				args = { ...args, ...body };
+			}
 		} else {
 			args = { ...args, ...event[field] };
 		}

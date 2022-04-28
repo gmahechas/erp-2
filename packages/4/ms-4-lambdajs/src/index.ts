@@ -1,5 +1,5 @@
 import { iresponse } from '@gmahechas/erp-common';
-import { initEnv } from '@gmahechas/erp-common-ms-utils-js';
+import { env, initEnv, initWinston } from '@gmahechas/erp-common-ms-utils-js';
 import { APIGatewayProxyEvent, Context, routerLambda, actionArgs, validatorLambda, responseLambda, errorHandlerLambda, authenticationMiddleware } from '@gmahechas/erp-common-lambdajs';
 import { connectDatabases } from '@gmahechas/erp-common-ms-4-js';
 import { routes } from './routes';
@@ -7,6 +7,8 @@ import { routes } from './routes';
 export const handler = async (event: APIGatewayProxyEvent, context: Context) => {
 	try {
 		await initEnv(false);
+		const { name } = env['ms-4']!.app!;
+		await initWinston({ service: name! });
 		const { args, validation, action } = routerLambda(event, routes);
 		authenticationMiddleware(event);
 		const actionParams = actionArgs(args, event);
