@@ -1,7 +1,7 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { Context, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 
-export const authorizationMiddleware = async (scopes: string[], event: APIGatewayProxyEvent) => {
+export const authorizationMiddleware = async (scopes: string[]) => (event: APIGatewayProxyEvent) => {
 	const auth = Context.get('auth');
 	if (!auth) {
 		sendError(TypeErrorMessage.AUTHORIZATION);
