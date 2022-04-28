@@ -1,14 +1,8 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
+import { TLambdaMiddleware } from '../interfaces';
 
-export const executeMiddlewares = async (event: APIGatewayProxyEvent, middlewares: Array<(...rest: any) => Promise<any>>) => {
+export const executeMiddlewares = async (event: APIGatewayProxyEvent, middlewares: Array<TLambdaMiddleware>) => {
 	for (const middleware of middlewares) {
-		const exe = await executeMiddleware(middleware);
-		await exe(event);
+		await (await middleware)(event);
 	}
 }
-
-export const executeMiddleware = async (middleware: Function) => {
-	return (event: APIGatewayProxyEvent) => middleware(event); 
-}
-
-

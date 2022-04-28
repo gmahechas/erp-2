@@ -1,5 +1,5 @@
 import { validate, createOneCompanySchema, updateOneCompanySchema, deleteOneCompanySchema, searchOneCompanySchema, searchManyCompanySchema } from '@gmahechas/erp-common'
-import { httpMethods, IRouteLambda } from '@gmahechas/erp-common-lambdajs';
+import { httpMethods, IRouteLambda, authenticationMiddleware } from '@gmahechas/erp-common-lambdajs';
 import { createOneCompany, updateOneCompany, deleteOneCompany, searchOneCompany, searchManyCompany } from '@gmahechas/erp-common-ms-4-js';
 
 export const companyRoutes: IRouteLambda[] = [
@@ -8,34 +8,39 @@ export const companyRoutes: IRouteLambda[] = [
 		path: '/create/one',
 		args: ['body'],
 		validation: validate(createOneCompanySchema),
-		action: createOneCompany
+		action: createOneCompany,
+		middlewares: [authenticationMiddleware],
 	},
 	{
 		httpMethod: httpMethods.PUT,
 		path: '/update/one',
 		args: ['body'],
 		validation: validate(updateOneCompanySchema),
-		action: updateOneCompany
+		action: updateOneCompany,
+		middlewares: [authenticationMiddleware],
 	},
 	{
 		httpMethod: httpMethods.DELETE,
 		path: '/delete/one',
 		args: ['body'],
 		validation: validate(deleteOneCompanySchema),
-		action: deleteOneCompany
+		action: deleteOneCompany,
+		middlewares: [authenticationMiddleware],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/one',
 		args: ['body'],
 		validation: validate(searchOneCompanySchema),
-		action: searchOneCompany
+		action: searchOneCompany,
+		middlewares: [authenticationMiddleware],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/many',
 		args: ['body'],
 		validation: validate(searchManyCompanySchema),
-		action: searchManyCompany
+		action: searchManyCompany,
+		middlewares: [authenticationMiddleware],
 	}
 ];

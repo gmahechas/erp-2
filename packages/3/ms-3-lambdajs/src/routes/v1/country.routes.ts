@@ -1,5 +1,5 @@
 import { validate, createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema, searchManyCountrySchema } from '@gmahechas/erp-common'
-import { httpMethods, IRouteLambda } from '@gmahechas/erp-common-lambdajs';
+import { httpMethods, IRouteLambda, authenticationMiddleware } from '@gmahechas/erp-common-lambdajs';
 import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry, searchManyCountry } from '@gmahechas/erp-common-ms-3-js';
 
 export const countryRoutes: IRouteLambda[] = [
@@ -8,34 +8,39 @@ export const countryRoutes: IRouteLambda[] = [
 		path: '/create/one',
 		args: ['body'],
 		validation: validate(createOneCountrySchema),
-		action: createOneCountry
+		action: createOneCountry,
+		middlewares: [authenticationMiddleware],
 	},
 	{
 		httpMethod: httpMethods.PUT,
 		path: '/update/one',
 		args: ['body'],
 		validation: validate(updateOneCountrySchema),
-		action: updateOneCountry
+		action: updateOneCountry,
+		middlewares: [authenticationMiddleware],
 	},
 	{
 		httpMethod: httpMethods.DELETE,
 		path: '/delete/one',
 		args: ['body'],
 		validation: validate(deleteOneCountrySchema),
-		action: deleteOneCountry
+		action: deleteOneCountry,
+		middlewares: [authenticationMiddleware],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/one',
 		args: ['body'],
 		validation: validate(searchOneCountrySchema),
-		action: searchOneCountry
+		action: searchOneCountry,
+		middlewares: [authenticationMiddleware],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/many',
 		args: ['body'],
 		validation: validate(searchManyCountrySchema),
-		action: searchManyCountry
+		action: searchManyCountry,
+		middlewares: [authenticationMiddleware],
 	}
 ];

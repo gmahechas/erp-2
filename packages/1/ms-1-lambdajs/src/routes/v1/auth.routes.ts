@@ -8,6 +8,7 @@ export const authRoutes: IRouteLambda[] = [
 		path: '/signin',
 		args: ['body'],
 		validation: validate(signinAuthSchema),
-		action: signinAuth
+		action: signinAuth,
+		middlewares: [],
 	}
 ];
