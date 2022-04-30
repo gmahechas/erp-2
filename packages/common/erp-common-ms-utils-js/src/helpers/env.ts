@@ -31,7 +31,7 @@ export const initEnv = async (useDotEnv = true) => {
 
 const enrichEnv = async (env: any, environment: string) => {
 	try {
-		await initVault()
+		await initVault();
 		const appName = process.env.APP_NAME!;
 		const { data: { data: vaultSecrets } }: any = await Vault.read(`kv/data/erp/${appName}/${environment}`);
 		const currentEnv = env[appName];

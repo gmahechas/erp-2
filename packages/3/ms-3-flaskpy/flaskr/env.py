@@ -13,18 +13,13 @@ class Config:
 
     @staticmethod
     def enrich_env(environment):
+        init_vault()
         app_name = os.environ["APP_NAME"]
-        vault_url = os.environ["VAULT_URL"]
-        vault_role_id = os.environ["VAULT_ROLE_ID"]
-        vault_secret_id = os.environ["VAULT_SECRET_ID"]
-
-        init_vault(vault_url, vault_role_id, vault_secret_id)
-        vault_secrets = Vault.read(f"kv/data/erp/{app_name}/{environment}")
-
+        vault_secrets = Vault.read(f"erp/{app_name}/{environment}")
         current_env = Config.config[app_name]
-
         if app_name == "ms-3":
             current_env["databases"]["mongo"]["uri"] = current_env["databases"]["mongo"]["uri"] if current_env["databases"]["mongo"]["uri"] is not None else vault_secrets["mongo_uri"]
+            current_env["auth"]["jwt"]["publicKey"] = current_env["auth"]["jwt"]["publicKey"] if current_env["auth"]["jwt"]["publicKey"] is not None else vault_secrets["publicKey"]
 
 
 def init_env():
