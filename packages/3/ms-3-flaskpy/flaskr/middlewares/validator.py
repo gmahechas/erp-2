@@ -1,5 +1,5 @@
 from functools import wraps
-from flask import request, jsonify, make_response
+from flask import request, make_response
 from jsonschema import Draft7Validator
 
 from flaskr.response import response

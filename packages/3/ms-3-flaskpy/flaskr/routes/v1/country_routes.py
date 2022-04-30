@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flaskr.modules.v1.country.country_controller import CountryController
-from flaskr.middlewares.validator import validator_middleware
+from flaskr.middlewares import authentication_middleware, validator_middleware
 from flaskr.response import response
 from flaskr.modules.v1.country.country_schema import create_one_country_schema, update_one_country_schema, delete_one_country_schema, search_one_country_schema, search_many_country_schema
 
@@ -8,6 +8,7 @@ country_blueprint = Blueprint('country', __name__, url_prefix='/country')
 
 
 @country_blueprint.route('/create/one', methods=['POST'])
+@authentication_middleware
 @validator_middleware(create_one_country_schema)
 def create_one():
     country = CountryController()
@@ -17,6 +18,7 @@ def create_one():
 
 
 @country_blueprint.route('/update/one', methods=['PUT'])
+@authentication_middleware
 @validator_middleware(update_one_country_schema)
 def update_one():
     country = CountryController()
@@ -26,6 +28,7 @@ def update_one():
 
 
 @country_blueprint.route('/delete/one', methods=['DELETE'])
+@authentication_middleware
 @validator_middleware(delete_one_country_schema)
 def delete_one():
     country = CountryController()
@@ -35,6 +38,7 @@ def delete_one():
 
 
 @country_blueprint.route('/search/one', methods=['POST'])
+@authentication_middleware
 @validator_middleware(search_one_country_schema)
 def search_one():
     country = CountryController()
@@ -44,6 +48,7 @@ def search_one():
 
 
 @country_blueprint.route('/search/many', methods=['POST'])
+@authentication_middleware
 @validator_middleware(search_many_country_schema)
 def search_many():
     country = CountryController()
