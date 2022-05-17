@@ -32,13 +32,13 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOneUser(data: CreateOneUser): User @authentication @logger
-		updateOneUser(data: UpdateOneUser): User @authentication @logger
-		deleteOneUser(data: DeleteOneUser): User @authentication @logger
+  	createOneUser(data: CreateOneUser): User @authentication
+		updateOneUser(data: UpdateOneUser): User @authentication
+		deleteOneUser(data: DeleteOneUser): User @authentication
 	}
   type Query {
-  	searchOneUser(data: SearchOneUser): User @authentication @logger
-		searchManyUser(data: [SearchOneUser]): [User] @authentication @logger
+  	searchOneUser(data: SearchOneUser): User @authentication
+		searchManyUser(data: [SearchOneUser]): [User] @authentication
 	}
 `;
 

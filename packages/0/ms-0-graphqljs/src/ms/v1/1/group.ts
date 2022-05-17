@@ -27,13 +27,13 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOneGroup(data: CreateOneGroup): Group @authentication @logger
-		updateOneGroup(data: UpdateOneGroup): Group @authentication @logger
-		deleteOneGroup(data: DeleteOneGroup): Group @authentication @logger
+  	createOneGroup(data: CreateOneGroup): Group @authentication
+		updateOneGroup(data: UpdateOneGroup): Group @authentication
+		deleteOneGroup(data: DeleteOneGroup): Group @authentication
 	}
   type Query {
-  	searchOneGroup(data: SearchOneGroup): Group @authentication @logger
-		searchManyGroup(data: [SearchOneGroup]): [Group] @authentication @logger
+  	searchOneGroup(data: SearchOneGroup): Group @authentication
+		searchManyGroup(data: [SearchOneGroup]): [Group] @authentication
 	}
 `;
 
