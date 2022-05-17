@@ -9,12 +9,11 @@ export const handler = async (event: APIGatewayProxyEvent, context: Context) => 
 		await initEnv(false);
 		const { name } = env['ms-4']!.app!;
 		await initWinston({ service: name! });
-		const { args, validation, action, middlewares } = routerLambda(event, routes);
+		const { args, action, middlewares } = routerLambda(event, routes);
 		await executeMiddlewares(event, middlewares);
-		const actionParams = actionArgs(args, event);
-		validatorLambda(validation, actionParams);
 		context.callbackWaitsForEmptyEventLoop = false;
 		await connectDatabases();
+		const actionParams = actionArgs(args, event);
 		const data = await action(actionParams);
 		const response = iresponse(200, data);
 		return responseLambda(response);

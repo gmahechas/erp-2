@@ -1,5 +1,5 @@
-import { validate, createOneOfficeSchema, updateOneOfficeSchema, deleteOneOfficeSchema, searchOneOfficeSchema, searchManyOfficeSchema } from '@gmahechas/erp-common'
-import { httpMethods, IRouteLambda, authenticationMiddleware } from '@gmahechas/erp-common-lambdajs';
+import { createOneOfficeSchema, updateOneOfficeSchema, deleteOneOfficeSchema, searchOneOfficeSchema, searchManyOfficeSchema } from '@gmahechas/erp-common'
+import { httpMethods, IRouteLambda, authenticationMiddleware, validatorMiddleware } from '@gmahechas/erp-common-lambdajs';
 import { createOneOffice, updateOneOffice, deleteOneOffice, searchOneOffice, searchManyOffice } from '@gmahechas/erp-common-ms-4-js';
 
 export const officeRoutes: IRouteLambda[] = [
@@ -7,40 +7,35 @@ export const officeRoutes: IRouteLambda[] = [
 		httpMethod: httpMethods.POST,
 		path: '/create/one',
 		args: ['body'],
-		validation: validate(createOneOfficeSchema),
 		action: createOneOffice,
-		middlewares: [authenticationMiddleware],
+		middlewares: [authenticationMiddleware, validatorMiddleware(createOneOfficeSchema)],
 	},
 	{
 		httpMethod: httpMethods.PUT,
 		path: '/update/one',
 		args: ['body'],
-		validation: validate(updateOneOfficeSchema),
 		action: updateOneOffice,
-		middlewares: [authenticationMiddleware],
+		middlewares: [authenticationMiddleware, validatorMiddleware(updateOneOfficeSchema)],
 	},
 	{
 		httpMethod: httpMethods.DELETE,
 		path: '/delete/one',
 		args: ['body'],
-		validation: validate(deleteOneOfficeSchema),
 		action: deleteOneOffice,
-		middlewares: [authenticationMiddleware],
+		middlewares: [authenticationMiddleware, validatorMiddleware(deleteOneOfficeSchema)],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/one',
 		args: ['body'],
-		validation: validate(searchOneOfficeSchema),
 		action: searchOneOffice,
-		middlewares: [authenticationMiddleware],
+		middlewares: [authenticationMiddleware, validatorMiddleware(searchOneOfficeSchema)],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/many',
 		args: ['body'],
-		validation: validate(searchManyOfficeSchema),
 		action: searchManyOffice,
-		middlewares: [authenticationMiddleware],
+		middlewares: [authenticationMiddleware, validatorMiddleware(searchManyOfficeSchema)],
 	}
 ];

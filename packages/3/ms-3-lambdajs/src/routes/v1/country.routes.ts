@@ -1,5 +1,5 @@
-import { validate, createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema, searchManyCountrySchema } from '@gmahechas/erp-common'
-import { httpMethods, IRouteLambda, authenticationMiddleware } from '@gmahechas/erp-common-lambdajs';
+import { createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema, searchManyCountrySchema } from '@gmahechas/erp-common'
+import { httpMethods, IRouteLambda, authenticationMiddleware, validatorMiddleware } from '@gmahechas/erp-common-lambdajs';
 import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry, searchManyCountry } from '@gmahechas/erp-common-ms-3-js';
 
 export const countryRoutes: IRouteLambda[] = [
@@ -7,40 +7,35 @@ export const countryRoutes: IRouteLambda[] = [
 		httpMethod: httpMethods.POST,
 		path: '/create/one',
 		args: ['body'],
-		validation: validate(createOneCountrySchema),
 		action: createOneCountry,
-		middlewares: [authenticationMiddleware],
+		middlewares: [authenticationMiddleware, validatorMiddleware(createOneCountrySchema)],
 	},
 	{
 		httpMethod: httpMethods.PUT,
 		path: '/update/one',
 		args: ['body'],
-		validation: validate(updateOneCountrySchema),
 		action: updateOneCountry,
-		middlewares: [authenticationMiddleware],
+		middlewares: [authenticationMiddleware, validatorMiddleware(updateOneCountrySchema)],
 	},
 	{
 		httpMethod: httpMethods.DELETE,
 		path: '/delete/one',
 		args: ['body'],
-		validation: validate(deleteOneCountrySchema),
 		action: deleteOneCountry,
-		middlewares: [authenticationMiddleware],
+		middlewares: [authenticationMiddleware, validatorMiddleware(deleteOneCountrySchema)],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/one',
 		args: ['body'],
-		validation: validate(searchOneCountrySchema),
 		action: searchOneCountry,
-		middlewares: [authenticationMiddleware],
+		middlewares: [authenticationMiddleware, validatorMiddleware(searchOneCountrySchema)],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/many',
 		args: ['body'],
-		validation: validate(searchManyCountrySchema),
 		action: searchManyCountry,
-		middlewares: [authenticationMiddleware],
+		middlewares: [authenticationMiddleware, validatorMiddleware(searchManyCountrySchema)],
 	}
 ];

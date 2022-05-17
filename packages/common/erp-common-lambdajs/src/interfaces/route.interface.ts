@@ -17,8 +17,8 @@ export type TLambdaMiddleware = ILambdaMiddlewareOne | ILambdaMiddlewareTwo;
 export interface IRouteLambda {
 	httpMethod: httpMethods;
 	path: string;
-	args: argsType;
-	validation: any;
+ 	args: argsType;
+	/* validation: any; */
 	action: (data: any) => Promise<any>;
 	middlewares: Array<TLambdaMiddleware>;
 }
