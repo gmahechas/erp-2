@@ -1,6 +1,6 @@
 import { iresponse } from '@gmahechas/erp-common';
 import { env, initEnv, initWinston } from '@gmahechas/erp-common-ms-utils-js';
-import { APIGatewayProxyEvent, Context, routerLambda, actionArgs, validatorLambda, responseLambda, errorHandlerLambda, executeMiddlewares } from '@gmahechas/erp-common-lambdajs';
+import { APIGatewayProxyEvent, Context, routerLambda, actionArgs, responseLambda, errorHandlerLambda, executeMiddlewares } from '@gmahechas/erp-common-lambdajs';
 import { connectDatabases } from '@gmahechas/erp-common-ms-3-js';
 import { routes } from './routes';
 
