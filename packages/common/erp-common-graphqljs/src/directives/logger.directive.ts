@@ -11,7 +11,9 @@ export const loggerDirective = (schema: GraphQLSchema, directiveName: string) =>
 			fieldConfig.resolve = async (source, args, context: IContext, info) => {
 				const { auth } = context;
 				const { fieldName } = info;
-				Winston.logger.info(JSON.stringify(args), { auth, action: fieldName });
+				if(auth) {
+					Winston.logger.info(JSON.stringify({}), { auth, action: fieldName, payload: { args } });
+				}
 				return await resolve(source, args, context, info);
 			}
 			return fieldConfig;
