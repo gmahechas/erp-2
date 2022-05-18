@@ -1,2 +1,2 @@
 export * from './menu.dto';
-export { IMenu } from './menu.interface';
+export * from './menu.interface';

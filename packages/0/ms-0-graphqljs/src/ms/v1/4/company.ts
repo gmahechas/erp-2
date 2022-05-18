@@ -36,38 +36,38 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOneCompany(data: CreateOneCompany): Company
-		updateOneCompany(data: UpdateOneCompany): Company
-		deleteOneCompany(data: DeleteOneCompany): Company
+  	createOneCompany(data: CreateOneCompany): Company @authentication @logger
+		updateOneCompany(data: UpdateOneCompany): Company @authentication @logger
+		deleteOneCompany(data: DeleteOneCompany): Company @authentication @logger
 	}
   type Query {
-  	searchOneCompany(data: SearchOneCompany): Company
-		searchManyCompany(data: [SearchOneCompany]): [Company]
+  	searchOneCompany(data: SearchOneCompany): Company @authentication @logger
+		searchManyCompany(data: [SearchOneCompany]): [Company] @authentication @logger
 	}
 `;
 
 export const resolvers = {
 	Mutation: {
-		createOneCompany: async (_: any, { data }: { data: ICreateCompany }, context: IContext): Promise<ICompany> => {
-			const result = await createOneCompany(data);
+		createOneCompany: async (_: any, { data }: { data: ICreateCompany }, { token }: IContext): Promise<ICompany> => {
+			const result = await createOneCompany(data, token!);
 			return result;
 		},
-		updateOneCompany: async (_: any, { data }: { data: IUpdateCompany }, context: IContext): Promise<ICompany | null> => {
-			const result = await updateOneCompany(data);
+		updateOneCompany: async (_: any, { data }: { data: IUpdateCompany }, { token }: IContext): Promise<ICompany | null> => {
+			const result = await updateOneCompany(data, token!);
 			return result;
 		},
-		deleteOneCompany: async (_: any, { data }: { data: IDeleteCompany }, context: IContext): Promise<ICompany | null> => {
-			const result = await deleteOneCompany(data);
+		deleteOneCompany: async (_: any, { data }: { data: IDeleteCompany }, { token }: IContext): Promise<ICompany | null> => {
+			const result = await deleteOneCompany(data, token!);
 			return result;
 		}
 	},
 	Query: {
-		searchOneCompany: async (_: object, { data }: { data: Partial<ISearchCompany> }, context: IContext): Promise<ICompany | null> => {
-			const result = await searchOneCompany(data);
+		searchOneCompany: async (_: object, { data }: { data: Partial<ISearchCompany> }, { token }: IContext): Promise<ICompany | null> => {
+			const result = await searchOneCompany(data, token!);
 			return result;
 		},
-		searchManyCompany: async (_: object, { data }: { data: Partial<ISearchCompany>[] }, context: IContext): Promise<ICompany[]> => {
-			const result = await searchManyCompany(data);
+		searchManyCompany: async (_: object, { data }: { data: Partial<ISearchCompany>[] }, { token }: IContext): Promise<ICompany[]> => {
+			const result = await searchManyCompany(data, token!);
 			return result;
 		}
 	},

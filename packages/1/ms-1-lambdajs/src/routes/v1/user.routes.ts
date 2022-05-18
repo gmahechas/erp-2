@@ -1,5 +1,5 @@
-import { validate, createOneUserSchema, updateOneUserSchema, deleteOneUserSchema, searchOneUserSchema, searchManyUserSchema } from '@gmahechas/erp-common'
-import { httpMethods, IRouteLambda } from '@gmahechas/erp-common-lambdajs';
+import { createOneUserSchema, updateOneUserSchema, deleteOneUserSchema, searchOneUserSchema, searchManyUserSchema } from '@gmahechas/erp-common'
+import { httpMethods, IRouteLambda, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-lambdajs';
 import { createOneUser, updateOneUser, deleteOneUser, searchOneUser, searchManyUser } from '@gmahechas/erp-common-ms-1-js';
 
 export const userRoutes: IRouteLambda[] = [
@@ -7,35 +7,35 @@ export const userRoutes: IRouteLambda[] = [
 		httpMethod: httpMethods.POST,
 		path: '/create/one',
 		args: ['body'],
-		validation: validate(createOneUserSchema),
-		action: createOneUser
+		action: createOneUser,
+		middlewares: [authenticationMiddleware, validatorMiddleware(createOneUserSchema), loggerMiddleware],
 	},
 	{
 		httpMethod: httpMethods.PUT,
 		path: '/update/one',
 		args: ['body'],
-		validation: validate(updateOneUserSchema),
-		action: updateOneUser
+		action: updateOneUser,
+		middlewares: [authenticationMiddleware, validatorMiddleware(updateOneUserSchema), loggerMiddleware],
 	},
 	{
 		httpMethod: httpMethods.DELETE,
 		path: '/delete/one',
 		args: ['body'],
-		validation: validate(deleteOneUserSchema),
-		action: deleteOneUser
+		action: deleteOneUser,
+		middlewares: [authenticationMiddleware, validatorMiddleware(deleteOneUserSchema), loggerMiddleware],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/one',
 		args: ['body'],
-		validation: validate(searchOneUserSchema),
-		action: searchOneUser
+		action: searchOneUser,
+		middlewares: [authenticationMiddleware, validatorMiddleware(searchOneUserSchema), loggerMiddleware],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/many',
 		args: ['body'],
-		validation: validate(searchManyUserSchema),
-		action: searchManyUser
+		action: searchManyUser,
+		middlewares: [authenticationMiddleware, validatorMiddleware(searchManyUserSchema), loggerMiddleware],
 	}
 ];

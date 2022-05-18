@@ -11,6 +11,11 @@ config = {
             "mongo": {
                 "uri": None
             }
+        },
+        "auth": {
+            "jwt": {
+                "publicKey": None
+            }
         }
     }
 }

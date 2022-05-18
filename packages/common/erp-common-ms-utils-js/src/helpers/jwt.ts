@@ -3,7 +3,7 @@ import { IAuth } from '@gmahechas/erp-common';
 import { env } from './env';
 import { sendError } from '../errors/utils/send-error';
 import { TypeErrorMessage } from '../errors/utils/error-type.enum';
-import { checkExistsFile, readFileSync } from './node';
+import { envKeysType } from '../interfaces';
 
 export const jwtSign = (
 	payload: string | object | SourceBufferEventMap,
@@ -12,13 +12,21 @@ export const jwtSign = (
 
 export const jwtVerify = (
 	token: string,
-	secretOrPrivateKey: jwt.Secret,
-	options?: jwt.SignOptions | undefined) => jwt.verify(token, secretOrPrivateKey, options);
+	secretOrPublicKey: jwt.Secret,
+	options?: jwt.SignOptions | undefined) => jwt.verify(token, secretOrPublicKey, options);
 
 export const jwtDecode = (token: string) => {
-	const publicKey = env['ms-0']?.auth?.jwt?.publicKey!;
+	const appName = process.env.APP_NAME as envKeysType;
+	if(!appName) {
+		sendError(TypeErrorMessage.CONFIG);
+	}
+	const publicKey = env[appName]!.auth!.jwt!.publicKey!;
 	if (!publicKey) {
 		sendError(TypeErrorMessage.CONFIG);
 	}
-	return jwtVerify(token, publicKey, { algorithm: 'RS256' }) as IAuth;
+	try {
+		return jwt.verify(token, publicKey) as IAuth;
+	} catch(error) {
+		sendError(TypeErrorMessage.AUTHENTICATION);
+	}
 };

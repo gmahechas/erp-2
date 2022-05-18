@@ -7,15 +7,15 @@ const start = async () => {
 	try {
 		await initEnv();
 		await connectDatabases();
-		const appPort = env?.app?.port;
-		if (!appPort) {
+		const { name, port } = env['ms-3']!.app!;
+		if (!name || !port) {
 			sendError(TypeErrorMessage.CONFIG);
 		}
-		app.bindAsync(`0.0.0.0:${appPort}`, grpc.ServerCredentials.createInsecure(), (error, port) => {
+		app.bindAsync(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure(), (error, port) => {
 			if (!error) {
 				app.start();
 				console.log(`environment: ${env.environment}`);
-				console.log(`runnig on port: ${port}`);
+				console.log(`${name} is runnig on: http://localhost:${port}`);
 			}
 		})
 	} catch (error) {

@@ -1,4 +1,4 @@
-import { generalHandlerError, initEnv, env, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
+import { generalHandlerError, initEnv, initWinston, env, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 import { connectDatabases } from '@gmahechas/erp-common-ms-4-js';
 import { app } from './app';
 
@@ -7,6 +7,7 @@ const start = async () => {
 		await initEnv();
 		await connectDatabases();
 		const { name, port } = env['ms-4']!.app!;
+		await initWinston({ service: name! });
 		if (!name || !port) {
 			sendError(TypeErrorMessage.CONFIG);
 		}

@@ -1,3 +1,3 @@
-export * from './company.ajv-schema';
+export * from './company.ajv';
 export * from './company.dto';
-export { ICompany } from './company.interface';
+export * from './company.interface';

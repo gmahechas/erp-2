@@ -4,11 +4,11 @@ import { ISigninAuth } from '@gmahechas/erp-common';
 import { WcInput, WcButton } from '@gmahechas/common-webcomponents-react';
 
 interface IProps {
-    onLogin: (data: ISigninAuth) => void;
+    signin: (data: ISigninAuth) => void;
 }
-const Login: FC<IProps> = ({ onLogin }) => {
-    const { control, handleSubmit, formState } = useForm<ISigninAuth>();
-    const onSubmit = handleSubmit((data) => onLogin(data));
+const Login: FC<IProps> = ({ signin }) => {
+    const { control, handleSubmit } = useForm<ISigninAuth>();
+    const onSubmit = handleSubmit((data) => signin(data));
 
     return (
         <form onSubmit={onSubmit}>

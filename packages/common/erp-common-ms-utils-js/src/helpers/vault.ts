@@ -1,31 +1,37 @@
 import vault from 'node-vault';
+import { sendError, TypeErrorMessage } from '../errors';
 import { axiosClient, AxiosInstance } from './axios';
 
 export class Vault {
 
-	private _client: vault.client;
+	private static _client: vault.client;
 	static axios: AxiosInstance;
 
-	get client() {
-		if (!this._client) {
-			throw new Error('Cannot access client before initializate');
+	static get client() {
+		if (!Vault._client) {
+			throw new Error('Can not get client. Please call Vault.init() first.');
 		}
-		return this._client;
+		return Vault._client;
 	}
 
-	constructor(endpoint: string, token: string) {
-		const options: vault.VaultOptions = { apiVersion: 'v1', endpoint, token };
-		this._client = vault(options);
+	static init = async (url: string, roleId: string, secretId: string) => {
+		Vault.axios = axiosClient(url);
+		const { data: { auth: { client_token } } } = await Vault.axios.post<{ auth: { client_token: string } }>('/v1/auth/approle/login', { role_id: roleId, secret_id: secretId });
+		Vault._client = vault({ apiVersion: 'v1', endpoint: url, token: client_token });
 	}
 
-	static approleLogin = async (roleId: string, secretId: string) => {
-		Vault.axios = axiosClient('http://10.1.0.229:8200');
-		const { data } = await Vault.axios.post<{ auth: { client_token: string }}>('/v1/auth/approle/login', { role_id: roleId, secret_id: secretId }); 
-		return data;
+	static read = async (path: string): Promise<{ data: { data: any } }> => {
+		return await Vault.client.read(path);
 	}
 
-	read = async (path: string) : Promise<{ data: { data: any }}> => {
-		return await this.client.read(path);
-	}
+}
 
+export const initVault = async () => {
+	const vaultUrl = process.env.VAULT_URL!;
+	const vaultRoleId = process.env.VAULT_ROLE_ID!;
+	const vaultSecretId = process.env.VAULT_SECRET_ID!;
+	if (!vaultUrl || !vaultRoleId || !vaultSecretId) {
+		sendError(TypeErrorMessage.VAULT)
+	}
+	await Vault.init(vaultUrl, vaultRoleId, vaultSecretId);
 }

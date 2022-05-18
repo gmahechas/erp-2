@@ -1,20 +1,13 @@
-import { express } from '@gmahechas/erp-common-graphqljs';
-import { env, session } from '@gmahechas/erp-common-ms-utils-js';
+import { helmet } from '@gmahechas/erp-common-ms-utils-js';
+import { express, notFoundMiddleware } from '@gmahechas/erp-common-graphqljs';
+import { initSession } from '@gmahechas/erp-common-ms-0-js';
 import { graphqlV1 } from './graphql';
 
 export const bootstrap = async () => {
 	const app = express();
-	app.use(await session(env['ms-0']!.session!.redis!.url!, {
-		name: 'cerp',
-		secret: 'aslkdfjoiq12312',
-		resave: false,
-		saveUninitialized: false,
-		cookie: {
-			httpOnly: true,
-			secure: false,
-			maxAge: 1000 * 60 * 60 * 24 * 7,
-		}
-	}));
+	app.disable('x-powered-by');
+	app.use(helmet());
+	app.use(await initSession());
 	const serverV1 = await graphqlV1();
 	serverV1.applyMiddleware({
 		app,
@@ -22,7 +15,8 @@ export const bootstrap = async () => {
 		cors: {
 			origin: 'http://localhost:8000',
 			credentials: true,
-		}
+		},
 	});
+	app.use(notFoundMiddleware);
 	return app;
 };

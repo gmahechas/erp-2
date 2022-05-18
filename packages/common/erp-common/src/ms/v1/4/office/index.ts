@@ -1,3 +1,3 @@
-export * from './office.ajv-schema';
+export * from './office.ajv';
 export * from './office.dto';
-export { IOffice } from './office.interface';
+export * from './office.interface';

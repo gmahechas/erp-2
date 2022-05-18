@@ -1,11 +1,15 @@
 import { Request, Response, NextFunction } from 'express';
 import { validate, parseErrors} from '@gmahechas/erp-common';
-import { sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
+import { Context, sendError, TypeErrorMessage, Winston } from '@gmahechas/erp-common-ms-utils-js';
 
 export const validatorMiddleware = (schema: object) => (request: Request, response: Response, next: NextFunction) => {
+	const auth = Context.get('auth');
+	const { body, originalUrl, method, params, query } = request;
 	const valid = validate(schema);
-	if (!valid(request.body)) {
+	const data = body ? body : {};
+	if (!valid(data)) {
 		const errors = parseErrors(valid.errors);
+		Winston.logger.error(JSON.stringify({ type: TypeErrorMessage.VALIDATION, errors }), { auth, action: originalUrl, method, payload: { body, params, query } });
 		sendError(TypeErrorMessage.VALIDATION, errors)
 	}
 	next();

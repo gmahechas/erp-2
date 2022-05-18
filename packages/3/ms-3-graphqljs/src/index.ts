@@ -6,14 +6,14 @@ const start = async () => {
 	try {
 		await initEnv();
 		await connectDatabases();
-		const appPort = env?.app?.port;
-		if (!appPort) {
+		const { name, port } = env['ms-0']!.app!;
+		if (!name || !port) {
 			sendError(TypeErrorMessage.CONFIG);
 		}
 		const app = await bootstrap();
-		app.listen(appPort, () => {
+		app.listen(port, () => {
 			console.log(`environment: ${env.environment}`);
-			console.log(`runnig on port: ${appPort}`);
+			console.log(`${name} is runnig on: http://localhost:${port}`);
 		});
 	} catch (error) {
 		generalHandlerError(error)

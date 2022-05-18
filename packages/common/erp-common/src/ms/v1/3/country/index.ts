@@ -1,3 +1,3 @@
-export * from './country.ajv-schema';
+export * from './country.ajv';
 export * from './country.dto';
-export { ICountry } from './country.interface';
+export * from './country.interface';

@@ -3,6 +3,9 @@ interface IAppConfig {
 	port?: string;
 	endpoint?: string;
 }
+
+export type envKeysType = 'ms-0' | 'ms-1' | 'ms-3' | 'ms-4';
+
 export interface IConfig {
 	environment?: string;
 	'ms-0'?: {
@@ -10,7 +13,9 @@ export interface IConfig {
 		session?: {
 			redis?: {
 				url?: string;
-			}
+			},
+			cookie_name?: string;
+			cookie_secret?: string;
 		};
 		auth?: {
 			jwt?: {
@@ -20,16 +25,17 @@ export interface IConfig {
 	}
 	'ms-1'?: {
 		app?: IAppConfig;
-		auth?: {
-			jwt?: {
-				privateKey?: string;
-			}
-		},
 		databases?: {
 			mongo?: {
 				uri?: string;
 			}
 		};
+		auth?: {
+			jwt?: {
+				privateKey?: string;
+				publicKey?: string;
+			}
+		},
 	}
 	'ms-3'?: {
 		app?: IAppConfig;
@@ -38,6 +44,11 @@ export interface IConfig {
 				uri?: string;
 			}
 		};
+		auth?: {
+			jwt?: {
+				publicKey?: string;
+			}
+		},
 	},
 	'ms-4'?: {
 		app?: IAppConfig;
@@ -45,6 +56,11 @@ export interface IConfig {
 			mongo?: {
 				uri?: string;
 			}
-		}
+		};
+		auth?: {
+			jwt?: {
+				publicKey?: string;
+			}
+		},
 	}
 }

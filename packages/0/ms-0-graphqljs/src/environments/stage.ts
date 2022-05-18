@@ -10,7 +10,9 @@ export const config: IConfig = ({
 		session: {
 			redis: {
 				url: undefined
-			}
+			},
+			cookie_name: undefined,
+			cookie_secret: undefined,
 		},
 		auth: {
 			jwt: {

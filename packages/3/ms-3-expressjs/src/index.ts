@@ -1,13 +1,13 @@
-import { generalHandlerError, initEnv, env, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
-import { connectDatabases, initKafkaProducers } from '@gmahechas/erp-common-ms-3-js';
+import { generalHandlerError, initEnv, initWinston, env, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
+import { connectDatabases } from '@gmahechas/erp-common-ms-3-js';
 import { app } from './app';
 
 const start = async () => {
 	try {
 		await initEnv();
 		await connectDatabases();
-		//await initKafkaProducers();
 		const { name, port } = env['ms-3']!.app!;
+		await initWinston({ service: name! });
 		if (!name || !port) {
 			sendError(TypeErrorMessage.CONFIG);
 		}

@@ -1,5 +1,5 @@
-import { validate, createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema, searchManyEstateSchema } from '@gmahechas/erp-common'
-import { httpMethods, IRouteLambda } from '@gmahechas/erp-common-lambdajs';
+import { createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema, searchManyEstateSchema } from '@gmahechas/erp-common'
+import { httpMethods, IRouteLambda, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-lambdajs';
 import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate, searchManyEstate } from '@gmahechas/erp-common-ms-3-js';
 
 export const estateRoutes: IRouteLambda[] = [
@@ -7,35 +7,35 @@ export const estateRoutes: IRouteLambda[] = [
 		httpMethod: httpMethods.POST,
 		path: '/create/one',
 		args: ['body'],
-		validation: validate(createOneEstateSchema),
-		action: createOneEstate
+		action: createOneEstate,
+		middlewares: [authenticationMiddleware, validatorMiddleware(createOneEstateSchema), loggerMiddleware],
 	},
 	{
 		httpMethod: httpMethods.PUT,
 		path: '/update/one',
 		args: ['body'],
-		validation: validate(updateOneEstateSchema),
-		action: updateOneEstate
+		action: updateOneEstate,
+		middlewares: [authenticationMiddleware, validatorMiddleware(updateOneEstateSchema), loggerMiddleware],
 	},
 	{
 		httpMethod: httpMethods.DELETE,
 		path: '/delete/one',
 		args: ['body'],
-		validation: validate(deleteOneEstateSchema),
-		action: deleteOneEstate
+		action: deleteOneEstate,
+		middlewares: [authenticationMiddleware, validatorMiddleware(deleteOneEstateSchema), loggerMiddleware],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/one',
 		args: ['body'],
-		validation: validate(searchOneEstateSchema),
-		action: searchOneEstate
+		action: searchOneEstate,
+		middlewares: [authenticationMiddleware, validatorMiddleware(searchOneEstateSchema), loggerMiddleware],
 	},
 	{
 		httpMethod: httpMethods.POST,
 		path: '/search/many',
 		args: ['body'],
-		validation: validate(searchManyEstateSchema),
-		action: searchManyEstate
+		action: searchManyEstate,
+		middlewares: [authenticationMiddleware, validatorMiddleware(searchManyEstateSchema), loggerMiddleware],
 	}
 ];
