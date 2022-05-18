@@ -34,13 +34,13 @@ export const typeDefs = gql`
 	}
 
 	type Mutation {
-  	createOneEstate(data: CreateOneEstate): Estate @authentication
-		updateOneEstate(data: UpdateOneEstate): Estate @authentication
-		deleteOneEstate(data: DeleteOneEstate): Estate @authentication
+  	createOneEstate(data: CreateOneEstate): Estate @authentication @logger
+		updateOneEstate(data: UpdateOneEstate): Estate @authentication @logger
+		deleteOneEstate(data: DeleteOneEstate): Estate @authentication @logger
 	}
   type Query {
-  	searchOneEstate(data: SearchOneEstate): Estate @authentication
-		searchManyEstate(data: [SearchOneEstate]): [Estate] @authentication
+  	searchOneEstate(data: SearchOneEstate): Estate @authentication @logger
+		searchManyEstate(data: [SearchOneEstate]): [Estate] @authentication @logger
 	}
 `;
 

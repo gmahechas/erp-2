@@ -32,13 +32,13 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOnePolicy(data: CreateOnePolicy): Policy @authentication
-		updateOnePolicy(data: UpdateOnePolicy): Policy @authentication
-		deleteOnePolicy(data: DeleteOnePolicy): Policy @authentication
+  	createOnePolicy(data: CreateOnePolicy): Policy @authentication @logger
+		updateOnePolicy(data: UpdateOnePolicy): Policy @authentication @logger
+		deleteOnePolicy(data: DeleteOnePolicy): Policy @authentication @logger
 	}
   type Query {
-  	searchOnePolicy(data: SearchOnePolicy): Policy @authentication
-		searchManyPolicy(data: [SearchOnePolicy]): [Policy] @authentication
+  	searchOnePolicy(data: SearchOnePolicy): Policy @authentication @logger
+		searchManyPolicy(data: [SearchOnePolicy]): [Policy] @authentication @logger
 	}
 `;
 
