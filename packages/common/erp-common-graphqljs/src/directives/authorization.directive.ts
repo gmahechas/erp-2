@@ -20,12 +20,12 @@ export const authorizationDirective = (schema: GraphQLSchema, directiveName: str
 				for (const capability of scopes) {
 					const [service, actions] = capability.split(':');
 					if (!scope[service]) {
-						Winston.logger.error(JSON.stringify({ type: TypeErrorMessage.AUTHORIZATION }), { auth, action: fieldName, payload: { args } });
+						Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth, action: fieldName, payload: { args } });
 						sendError(TypeErrorMessage.AUTHORIZATION);
 					}
 					for (const action of actions.split(',')) {
 						if (!scope[service].includes(action)) {
-							Winston.logger.error(JSON.stringify({ type: TypeErrorMessage.AUTHORIZATION }), { auth, action: fieldName, payload: { args } });
+							Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth, action: fieldName, payload: { args } });
 							sendError(TypeErrorMessage.AUTHORIZATION);
 						}
 					}
