@@ -9,7 +9,7 @@ export const validatorMiddleware = async (schema: object) => (event: APIGatewayP
 	const data = event.body ? JSON.parse(event.body) : {};
 	if (!valid(data)) {
 		const errors = parseErrors(valid.errors);
-		Winston.logger.error(JSON.stringify({ type: TypeErrorMessage.VALIDATION, errors }), { auth, action: path, method: httpMethod, payload: { body, params: pathParameters, query: queryStringParameters } });
+		Winston.logger.error(TypeErrorMessage.VALIDATION, { auth, action: path, method: httpMethod, payload: { body, params: pathParameters, query: queryStringParameters }, errors });
 		sendError(TypeErrorMessage.VALIDATION, errors)
 	}
 };

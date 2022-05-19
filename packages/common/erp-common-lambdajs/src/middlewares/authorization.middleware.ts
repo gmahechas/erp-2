@@ -5,19 +5,19 @@ export const authorizationMiddleware = async (scopes: string[]) => (event: APIGa
 	const auth = Context.get('auth');
 	const { body, path, httpMethod, pathParameters, queryStringParameters } = event;
 	if (!auth) {
-		Winston.logger.error(JSON.stringify({ type: TypeErrorMessage.AUTHORIZATION }), { auth, action: path, method: httpMethod, payload: { body, params: pathParameters, query: queryStringParameters } });
+		Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth, action: path, method: httpMethod, payload: { body, params: pathParameters, query: queryStringParameters } });
 		sendError(TypeErrorMessage.AUTHORIZATION);
 	}
 	const scope = JSON.parse(auth.scope);
 	for (const capability of scopes) {
 		const [service, actions] = capability.split(':');
 		if (!scope[service]) {
-			Winston.logger.error(JSON.stringify({ type: TypeErrorMessage.AUTHORIZATION }), { auth, action: path, method: httpMethod, payload: { body, params: pathParameters, query: queryStringParameters } });
+			Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth, action: path, method: httpMethod, payload: { body, params: pathParameters, query: queryStringParameters } });
 			sendError(TypeErrorMessage.AUTHORIZATION);
 		}
 		for (const action of actions.split(',')) {
 			if (!scope[service].includes(action)) {
-				Winston.logger.error(JSON.stringify({ type: TypeErrorMessage.AUTHORIZATION }), { auth, action: path, method: httpMethod, payload: { body, params: pathParameters, query: queryStringParameters } });
+				Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth, action: path, method: httpMethod, payload: { body, params: pathParameters, query: queryStringParameters } });
 				sendError(TypeErrorMessage.AUTHORIZATION);
 			}
 		}

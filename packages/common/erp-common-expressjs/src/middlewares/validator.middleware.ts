@@ -9,7 +9,7 @@ export const validatorMiddleware = (schema: object) => (request: Request, respon
 	const data = body ? body : {};
 	if (!valid(data)) {
 		const errors = parseErrors(valid.errors);
-		Winston.logger.error(JSON.stringify({ type: TypeErrorMessage.VALIDATION, errors }), { auth, action: originalUrl, method, payload: { body, params, query } });
+		Winston.logger.error(TypeErrorMessage.VALIDATION, { auth, action: originalUrl, method, payload: { body, params, query }, errors });
 		sendError(TypeErrorMessage.VALIDATION, errors)
 	}
 	next();

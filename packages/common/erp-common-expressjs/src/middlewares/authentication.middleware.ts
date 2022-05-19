@@ -6,7 +6,7 @@ export const authenticationMiddleware = async (request: Request, response: Respo
 	const { authorization: token } = request.headers;
 	const { body, originalUrl, params, query } = request;
 	if (!token) {
-		Winston.logger.error(JSON.stringify({ type: TypeErrorMessage.AUTHENTICATION }), { action: originalUrl, payload: { body, params, query } });
+		Winston.logger.error(TypeErrorMessage.AUTHENTICATION, { action: originalUrl, payload: { body, params, query } });
 		sendError(TypeErrorMessage.AUTHENTICATION);
 	}
 	const auth = jwtDecode(token) as IAuth;
