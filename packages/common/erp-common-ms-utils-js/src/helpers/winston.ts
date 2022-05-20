@@ -20,7 +20,6 @@ export class Winston {
 			level: 'info',
 			format: format.combine(
 				format.timestamp(),
-				format.logstash(),
 			),
 			transports: [
 				new transports.File({ filename: 'logs/app.log' }),
