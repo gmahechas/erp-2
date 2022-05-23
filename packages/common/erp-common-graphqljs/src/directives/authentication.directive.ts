@@ -12,7 +12,7 @@ export const authenticationDirective = (schema: GraphQLSchema, directiveName: st
 				const { req, res, auth } = context;
 				const { fieldName } = info;
 				if (!auth) {
-					Winston.logger.error(TypeErrorMessage.AUTHENTICATION, { auth: null, action: fieldName, method: req.method, payload: { args } });
+					Winston.logger.error(TypeErrorMessage.AUTHENTICATION, { auth: JSON.stringify(null), action: fieldName, method: req.method, payload: JSON.stringify({ args }) });
 					const { cookie_name } = env['ms-0']!.session!;
 					req.session.destroy((error) => error);
 					res.clearCookie(cookie_name!);

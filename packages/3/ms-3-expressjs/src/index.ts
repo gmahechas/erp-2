@@ -7,7 +7,7 @@ const start = async () => {
 		await initEnv();
 		await connectDatabases();
 		const { name, port } = env['ms-3']!.app!;
-		await initWinston({ service: name! });
+		await initWinston({ serviceName: name!, transports: ['dailyRotateFile'] });
 		if (!name || !port) {
 			sendError(TypeErrorMessage.CONFIG);
 		}

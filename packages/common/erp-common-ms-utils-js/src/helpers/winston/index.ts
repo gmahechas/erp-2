@@ -1,8 +1,9 @@
-import { Logger, createLogger, transports } from 'winston';
-import ecsFormat from '@elastic/ecs-winston-format';
+import { Logger, createLogger } from 'winston';
+import { initWinstonTransports, TAvailableTransports } from './transports';
 
 interface IWinston {
-	service: string
+	serviceName: string,
+	transports: TAvailableTransports
 }
 
 export class Winston {
@@ -16,14 +17,11 @@ export class Winston {
 		return Winston._logger;
 	}
 
-	static init = async ({ service }: IWinston) => {
+	static init = async ({ serviceName, transports }: IWinston) => {
 		Winston._logger = createLogger({
 			level: 'info',
-			format: ecsFormat(),
-			transports: [
-				new transports.File({ filename: 'logs/app.log' }),
-			],
-			defaultMeta: { "ms": service },
+			transports: initWinstonTransports(serviceName, transports),
+			defaultMeta: { serviceName },
 			exitOnError: false,
 		});
 	}

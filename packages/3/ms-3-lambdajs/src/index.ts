@@ -8,7 +8,7 @@ export const handler = async (event: APIGatewayProxyEvent, context: Context) => 
 	try {
 		await initEnv(false);
 		const { name } = env['ms-3']!.app!;
-		await initWinston({ service: name! });
+		await initWinston({ serviceName: name!, transports: ['console'] });
 		const { args, action, middlewares } = routerLambda(event, routes);
 		await executeMiddlewares(event, middlewares);
 		context.callbackWaitsForEmptyEventLoop = false;
