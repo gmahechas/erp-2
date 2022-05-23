@@ -9,7 +9,7 @@ const dailyRotateFileTransport = (serviceName: string) => new DailyRotateFile({
 	datePattern: 'YYYY-MM-DD',
 	zippedArchive: true,
 	maxSize: '20m',
-	maxFiles: '7d'
+	maxFiles: '7d',
 });
 
 export const initWinstonTransports = (serviceName: string, transports: TAvailableTransports) => {
