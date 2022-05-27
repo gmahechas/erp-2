@@ -1,4 +1,4 @@
-import { transports } from 'winston';
+import { transports, format } from 'winston';
 import DailyRotateFile from 'winston-daily-rotate-file';
 
 export type TAvailableTransports = Array<'dailyRotateFile' | 'console'>;
@@ -10,6 +10,10 @@ const dailyRotateFileTransport = (serviceName: string) => new DailyRotateFile({
 	zippedArchive: true,
 	maxSize: '20m',
 	maxFiles: '7d',
+	format: format.combine(
+		format.timestamp(),
+		format.json(),
+	),
 });
 
 export const initWinstonTransports = (serviceName: string, transports: TAvailableTransports) => {
