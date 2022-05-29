@@ -9,10 +9,10 @@ export const loggerDirective = (schema: GraphQLSchema, directiveName: string) =>
 		if (loggerDirective) {
 			const { resolve = defaultFieldResolver } = fieldConfig;
 			fieldConfig.resolve = async (source, args, context: IContext, info) => {
-				const { auth, req: { method } } = context;
+				const { auth, req: { method, ip } } = context;
 				const { fieldName } = info;
 				if(auth) {
-					Winston.logger.info('logger', { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }) });
+					Winston.logger.info('logger', { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }), sourceIp: ip });
 				}
 				return await resolve(source, args, context, info);
 			}

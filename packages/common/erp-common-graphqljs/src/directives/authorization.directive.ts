@@ -9,10 +9,10 @@ export const authorizationDirective = (schema: GraphQLSchema, directiveName: str
 		if (authorizationDirective) {
 			const { resolve = defaultFieldResolver } = fieldConfig;
 			fieldConfig.resolve = async (source, args, context: IContext, info) => {
-				const { auth, req: { method } } = context;
+				const { auth, req: { method, ip } } = context;
 				const { fieldName } = info;
 				if (!auth) {
-					Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }) });
+					Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }), sourceIp: ip });
 					sendError(TypeErrorMessage.AUTHORIZATION);
 				}
 				const scope = JSON.parse(auth.scope);
@@ -20,12 +20,12 @@ export const authorizationDirective = (schema: GraphQLSchema, directiveName: str
 				for (const capability of scopes) {
 					const [service, actions] = capability.split(':');
 					if (!scope[service]) {
-						Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }) });
+						Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }), sourceIp: ip });
 						sendError(TypeErrorMessage.AUTHORIZATION);
 					}
 					for (const action of actions.split(',')) {
 						if (!scope[service].includes(action)) {
-							Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }) });
+							Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }), sourceIp: ip });
 							sendError(TypeErrorMessage.AUTHORIZATION);
 						}
 					}
