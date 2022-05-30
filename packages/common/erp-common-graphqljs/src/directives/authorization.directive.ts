@@ -12,10 +12,7 @@ export const authorizationDirective = (schema: GraphQLSchema, directiveName: str
 				const auth = Context.get('auth');
 				const { req: { method, ip } } = context;
 				const { fieldName } = info;
-				if (!auth) {
-					Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }), sourceIp: ip });
-					sendError(TypeErrorMessage.AUTHORIZATION);
-				}
+				
 				const scope = JSON.parse(auth.scope);
 				const scopes = authorizationDirective['scopes'];
 				for (const capability of scopes) {

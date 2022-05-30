@@ -12,9 +12,8 @@ export const loggerDirective = (schema: GraphQLSchema, directiveName: string) =>
 				const auth = Context.get('auth');
 				const { req: { method, ip } } = context;
 				const { fieldName } = info;
-				if(auth) {
-					Winston.logger.info('logger', { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }), sourceIp: ip });
-				}
+				
+				Winston.logger.info('logger', { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }), sourceIp: ip });
 				return await resolve(source, args, context, info);
 			}
 			return fieldConfig;

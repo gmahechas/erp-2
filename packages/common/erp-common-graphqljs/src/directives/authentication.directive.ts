@@ -12,6 +12,7 @@ export const authenticationDirective = (schema: GraphQLSchema, directiveName: st
 				const { req, res } = context;
 				const { fieldName } = info;
 				const token = req.session.token;
+				
 				if (!token) {
 					Winston.logger.error(TypeErrorMessage.AUTHENTICATION, { auth: JSON.stringify(null), action: fieldName, method: req.method, payload: JSON.stringify({ args }), sourceIp: req.ip });
 					const { cookie_name } = env['ms-0']!.session!;

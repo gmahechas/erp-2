@@ -8,8 +8,8 @@ export * from './authorization.directive';
 export * from './logger.directive';
 
 export const applyDirectives = (schema: GraphQLSchema) => {
-	schema = authenticationDirective(schema, 'authentication');
-	schema = authorizationDirective(schema, 'authorization');
 	schema = loggerDirective(schema, 'logger');
+	schema = authorizationDirective(schema, 'authorization');
+	schema = authenticationDirective(schema, 'authentication');
 	return schema;
 };
