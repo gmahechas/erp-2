@@ -44,40 +44,40 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Mutation: {
-		createOneUser: async (_: any, { data }: { data: ICreateUser }, { token }: IContext): Promise<IUser> => {
-			const result = await createOneUser(data, token!);
+		createOneUser: async (_: any, { data }: { data: ICreateUser }, context: IContext): Promise<IUser> => {
+			const result = await createOneUser(data);
 			return result;
 		},
-		updateOneUser: async (_: any, { data }: { data: IUpdateUser }, { token }: IContext): Promise<IUser | null> => {
-			const result = await updateOneUser(data, token!);
+		updateOneUser: async (_: any, { data }: { data: IUpdateUser }, context: IContext): Promise<IUser | null> => {
+			const result = await updateOneUser(data);
 			return result;
 		},
-		deleteOneUser: async (_: any, { data }: { data: IDeleteUser }, { token }: IContext): Promise<IUser | null> => {
-			const result = await deleteOneUser(data, token!);
+		deleteOneUser: async (_: any, { data }: { data: IDeleteUser }, context: IContext): Promise<IUser | null> => {
+			const result = await deleteOneUser(data);
 			return result;
 		},
 	},
 	Query: {
-		searchOneUser: async (_: object, { data }: { data: Partial<ISearchUser> }, { token }: IContext): Promise<IUser | null> => {
-			const result = await searchOneUser(data, token!);
+		searchOneUser: async (_: object, { data }: { data: Partial<ISearchUser> }, context: IContext): Promise<IUser | null> => {
+			const result = await searchOneUser(data);
 			return result;
 		},
-		searchManyUser: async (_: object, { data }: { data: Partial<ISearchUser>[] }, { token }: IContext): Promise<IUser[]> => {
-			const result = await searchManyUser(data, token!);
+		searchManyUser: async (_: object, { data }: { data: Partial<ISearchUser>[] }, context: IContext): Promise<IUser[]> => {
+			const result = await searchManyUser(data);
 			return result;
 		},
 	},
 	User: {
-		groups: async (parent: IUser, _: any, { token }: IContext): Promise<IGroup[]> => {
+		groups: async (parent: IUser, _: any, context: IContext): Promise<IGroup[]> => {
 			const { groups } = parent;
 			const ids = groups.length == 0 ? [{ id: '' }] : groups.map(id => ({ id }));
-			const result = await searchManyGroup(ids, token!);
+			const result = await searchManyGroup(ids);
 			return result;
 		},
-		policies: async (parent: IUser, _: any, { token }: IContext): Promise<IPolicy[]> => {
+		policies: async (parent: IUser, _: any, context: IContext): Promise<IPolicy[]> => {
 			const { policies } = parent;
 			const ids = policies.length == 0 ? [{ id: '' }] : policies.map(id => ({ id }));
-			const result = await searchManyPolicy(ids, token!);
+			const result = await searchManyPolicy(ids);
 			return result;
 		}
 	}

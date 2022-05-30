@@ -39,34 +39,34 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Mutation: {
-		createOneGroup: async (_: any, { data }: { data: ICreateGroup }, { token }: IContext): Promise<IGroup> => {
-			const result = await createOneGroup(data, token!);
+		createOneGroup: async (_: any, { data }: { data: ICreateGroup }, context: IContext): Promise<IGroup> => {
+			const result = await createOneGroup(data);
 			return result;
 		},
-		updateOneGroup: async (_: any, { data }: { data: IUpdateGroup }, { token }: IContext): Promise<IGroup | null> => {
-			const result = await updateOneGroup(data, token!);
+		updateOneGroup: async (_: any, { data }: { data: IUpdateGroup }, context: IContext): Promise<IGroup | null> => {
+			const result = await updateOneGroup(data);
 			return result;
 		},
-		deleteOneGroup: async (_: any, { data }: { data: IDeleteGroup }, { token }: IContext): Promise<IGroup | null> => {
-			const result = await deleteOneGroup(data, token!);
+		deleteOneGroup: async (_: any, { data }: { data: IDeleteGroup }, context: IContext): Promise<IGroup | null> => {
+			const result = await deleteOneGroup(data);
 			return result;
 		},
 	},
 	Query: {
-		searchOneGroup: async (_: object, { data }: { data: Partial<ISearchGroup> }, { token }: IContext): Promise<IGroup | null> => {
-			const result = await searchOneGroup(data, token!);
+		searchOneGroup: async (_: object, { data }: { data: Partial<ISearchGroup> }, context: IContext): Promise<IGroup | null> => {
+			const result = await searchOneGroup(data);
 			return result;
 		},
-		searchManyGroup: async (_: object, { data }: { data: Partial<ISearchGroup>[] }, { token }: IContext): Promise<IGroup[]> => {
-			const result = await searchManyGroup(data, token!);
+		searchManyGroup: async (_: object, { data }: { data: Partial<ISearchGroup>[] }, context: IContext): Promise<IGroup[]> => {
+			const result = await searchManyGroup(data);
 			return result;
 		},
 	},
 	Group: {
-		policies: async (parent: IGroup, _: any, { token }: IContext): Promise<IPolicy[]> => {
+		policies: async (parent: IGroup, _: any, context: IContext): Promise<IPolicy[]> => {
 			const { policies } = parent;
 			const ids = policies.length == 0 ? [{ id: '' }] : policies.map(id => ({ id }));
-			const result = await searchManyPolicy(ids, token!);
+			const result = await searchManyPolicy(ids);
 			return result;
 		}
 	}

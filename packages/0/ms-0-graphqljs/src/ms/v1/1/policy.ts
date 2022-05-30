@@ -44,26 +44,26 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Mutation: {
-		createOnePolicy: async (_: any, { data }: { data: ICreatePolicy }, { token }: IContext): Promise<IPolicy> => {
-			const result = await createOnePolicy(data, token!);
+		createOnePolicy: async (_: any, { data }: { data: ICreatePolicy }, context: IContext): Promise<IPolicy> => {
+			const result = await createOnePolicy(data);
 			return result;
 		},
-		updateOnePolicy: async (_: any, { data }: { data: IUpdatePolicy }, { token }: IContext): Promise<IPolicy | null> => {
-			const result = await updateOnePolicy(data, token!);
+		updateOnePolicy: async (_: any, { data }: { data: IUpdatePolicy }, context: IContext): Promise<IPolicy | null> => {
+			const result = await updateOnePolicy(data);
 			return result;
 		},
-		deleteOnePolicy: async (_: any, { data }: { data: IDeletePolicy }, { token }: IContext): Promise<IPolicy | null> => {
-			const result = await deleteOnePolicy(data, token!);
+		deleteOnePolicy: async (_: any, { data }: { data: IDeletePolicy }, context: IContext): Promise<IPolicy | null> => {
+			const result = await deleteOnePolicy(data);
 			return result;
 		},
 	},
 	Query: {
-		searchOnePolicy: async (_: object, { data }: { data: Partial<ISearchPolicy> }, { token }: IContext): Promise<IPolicy | null> => {
-			const result = await searchOnePolicy(data, token!);
+		searchOnePolicy: async (_: object, { data }: { data: Partial<ISearchPolicy> }, context: IContext): Promise<IPolicy | null> => {
+			const result = await searchOnePolicy(data);
 			return result;
 		},
-		searchManyPolicy: async (_: object, { data }: { data: Partial<ISearchPolicy>[] }, { token }: IContext): Promise<IPolicy[]> => {
-			const result = await searchManyPolicy(data, token!);
+		searchManyPolicy: async (_: object, { data }: { data: Partial<ISearchPolicy>[] }, context: IContext): Promise<IPolicy[]> => {
+			const result = await searchManyPolicy(data);
 			return result;
 		},
 	}

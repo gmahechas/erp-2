@@ -48,26 +48,26 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Mutation: {
-		createOneCompany: async (_: any, { data }: { data: ICreateCompany }, { token }: IContext): Promise<ICompany> => {
-			const result = await createOneCompany(data, token!);
+		createOneCompany: async (_: any, { data }: { data: ICreateCompany }, context: IContext): Promise<ICompany> => {
+			const result = await createOneCompany(data);
 			return result;
 		},
-		updateOneCompany: async (_: any, { data }: { data: IUpdateCompany }, { token }: IContext): Promise<ICompany | null> => {
-			const result = await updateOneCompany(data, token!);
+		updateOneCompany: async (_: any, { data }: { data: IUpdateCompany }, context: IContext): Promise<ICompany | null> => {
+			const result = await updateOneCompany(data);
 			return result;
 		},
-		deleteOneCompany: async (_: any, { data }: { data: IDeleteCompany }, { token }: IContext): Promise<ICompany | null> => {
-			const result = await deleteOneCompany(data, token!);
+		deleteOneCompany: async (_: any, { data }: { data: IDeleteCompany }, context: IContext): Promise<ICompany | null> => {
+			const result = await deleteOneCompany(data);
 			return result;
 		}
 	},
 	Query: {
-		searchOneCompany: async (_: object, { data }: { data: Partial<ISearchCompany> }, { token }: IContext): Promise<ICompany | null> => {
-			const result = await searchOneCompany(data, token!);
+		searchOneCompany: async (_: object, { data }: { data: Partial<ISearchCompany> }, context: IContext): Promise<ICompany | null> => {
+			const result = await searchOneCompany(data);
 			return result;
 		},
-		searchManyCompany: async (_: object, { data }: { data: Partial<ISearchCompany>[] }, { token }: IContext): Promise<ICompany[]> => {
-			const result = await searchManyCompany(data, token!);
+		searchManyCompany: async (_: object, { data }: { data: Partial<ISearchCompany>[] }, context: IContext): Promise<ICompany[]> => {
+			const result = await searchManyCompany(data);
 			return result;
 		}
 	},
