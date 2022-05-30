@@ -1,5 +1,5 @@
 import { ICompany, ICreateCompany, IUpdateCompany, IDeleteCompany, ISearchCompany } from '@gmahechas/erp-common';
-import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
+import { gql } from '@gmahechas/erp-common-graphqljs';
 import { createOneCompany, updateOneCompany, deleteOneCompany, searchOneCompany, searchManyCompany } from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
@@ -48,25 +48,25 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Mutation: {
-		createOneCompany: async (_: any, { data }: { data: ICreateCompany }, context: IContext): Promise<ICompany> => {
+		createOneCompany: async (_: any, { data }: { data: ICreateCompany }): Promise<ICompany> => {
 			const result = await createOneCompany(data);
 			return result;
 		},
-		updateOneCompany: async (_: any, { data }: { data: IUpdateCompany }, context: IContext): Promise<ICompany | null> => {
+		updateOneCompany: async (_: any, { data }: { data: IUpdateCompany }): Promise<ICompany | null> => {
 			const result = await updateOneCompany(data);
 			return result;
 		},
-		deleteOneCompany: async (_: any, { data }: { data: IDeleteCompany }, context: IContext): Promise<ICompany | null> => {
+		deleteOneCompany: async (_: any, { data }: { data: IDeleteCompany }): Promise<ICompany | null> => {
 			const result = await deleteOneCompany(data);
 			return result;
 		}
 	},
 	Query: {
-		searchOneCompany: async (_: object, { data }: { data: Partial<ISearchCompany> }, context: IContext): Promise<ICompany | null> => {
+		searchOneCompany: async (_: object, { data }: { data: Partial<ISearchCompany> }): Promise<ICompany | null> => {
 			const result = await searchOneCompany(data);
 			return result;
 		},
-		searchManyCompany: async (_: object, { data }: { data: Partial<ISearchCompany>[] }, context: IContext): Promise<ICompany[]> => {
+		searchManyCompany: async (_: object, { data }: { data: Partial<ISearchCompany>[] }): Promise<ICompany[]> => {
 			const result = await searchManyCompany(data);
 			return result;
 		}

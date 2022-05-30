@@ -1,5 +1,5 @@
 import { ICountry, ICreateCountry, IUpdateCountry, IDeleteCountry, IEstate, ISearchCountry } from '@gmahechas/erp-common';
-import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
+import { gql } from '@gmahechas/erp-common-graphqljs';
 import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry, searchManyCountry, searchManyEstate } from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
@@ -41,31 +41,31 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Mutation: {
-		createOneCountry: async (_: any, { data }: { data: ICreateCountry }, context: IContext): Promise<ICountry> => {
+		createOneCountry: async (_: any, { data }: { data: ICreateCountry }): Promise<ICountry> => {
 			const result = await createOneCountry(data);
 			return result;
 		},
-		updateOneCountry: async (_: any, { data }: { data: IUpdateCountry }, context: IContext): Promise<ICountry | null> => {
+		updateOneCountry: async (_: any, { data }: { data: IUpdateCountry }): Promise<ICountry | null> => {
 			const result = await updateOneCountry(data);
 			return result;
 		},
-		deleteOneCountry: async (_: any, { data }: { data: IDeleteCountry }, context: IContext): Promise<ICountry | null> => {
+		deleteOneCountry: async (_: any, { data }: { data: IDeleteCountry }): Promise<ICountry | null> => {
 			const result = await deleteOneCountry(data);
 			return result;
 		},
 	},
 	Query: {
-		searchOneCountry: async (_: object, { data }: { data: Partial<ISearchCountry> }, context: IContext): Promise<ICountry | null> => {
+		searchOneCountry: async (_: object, { data }: { data: Partial<ISearchCountry> }): Promise<ICountry | null> => {
 			const result = await searchOneCountry(data);
 			return result;
 		},
-		searchManyCountry: async (_: object, { data }: { data: Partial<ISearchCountry>[] }, context: IContext): Promise<ICountry[]> => {
+		searchManyCountry: async (_: object, { data }: { data: Partial<ISearchCountry>[] }): Promise<ICountry[]> => {
 			const result = await searchManyCountry(data);
 			return result;
 		},
 	},
 	Country: {
-		estates: async (parent: ICountry, _: object, context: IContext): Promise<IEstate[]> => {
+		estates: async (parent: ICountry, _: object): Promise<IEstate[]> => {
 			const { id } = parent;
 			const result = await searchManyEstate([{ countryId: id }]);
 			return result;
