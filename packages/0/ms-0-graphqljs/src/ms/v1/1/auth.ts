@@ -1,5 +1,5 @@
 import { IAuth, ISigninAuth } from '@gmahechas/erp-common';
-import { jwtDecode, env } from '@gmahechas/erp-common-ms-utils-js';
+import { Context, jwtDecode, env } from '@gmahechas/erp-common-ms-utils-js';
 import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
 import { signinAuth } from '@gmahechas/erp-common-ms-0-js';
 
@@ -24,21 +24,21 @@ export const typeDefs = gql`
 
 export const resolvers = {
 	Query: {
-		signinAuth: async (_: any, { data }: { data: ISigninAuth }, context: IContext): Promise<IAuth> => {
-			let { req } = context;
+		signinAuth: async (_: any, { data }: { data: ISigninAuth }, { req }: IContext): Promise<IAuth> => {
 			const { token }  = await signinAuth(data);
 			req.session.token = token;
 			const auth = jwtDecode(token) as IAuth;
 			return auth;
 		},
-		signoutAuth: async (_: any, __: any, { auth, req, res }: IContext): Promise<IAuth> => {
+		signoutAuth: async (_: any, __: any, { req, res }: IContext): Promise<IAuth> => {
 			return new Promise((resolve, reject) => {
+				const auth = Context.get('auth');
 				const { cookie_name } = env['ms-0']!.session!;
-				req.session.destroy((error) => error && reject(error));
+				req.session.destroy((error: any) => error && reject(error));
 				res.clearCookie(cookie_name!);
 				resolve(auth!);
 			});
 		},
-		meAuth: async (_: any, __: any, { auth }: IContext): Promise<IAuth> => auth!
+		meAuth: async (_: any, __: any, context: IContext): Promise<IAuth> => Context.get('auth')
 	}
 };

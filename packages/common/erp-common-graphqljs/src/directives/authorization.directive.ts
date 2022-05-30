@@ -1,6 +1,6 @@
 import { defaultFieldResolver, GraphQLSchema } from 'graphql';
 import { getDirective, MapperKind, mapSchema } from '@graphql-tools/utils';
-import { sendError, TypeErrorMessage, Winston } from '@gmahechas/erp-common-ms-utils-js';
+import { Context, sendError, TypeErrorMessage, Winston } from '@gmahechas/erp-common-ms-utils-js';
 import { IContext } from '../interfaces';
 
 export const authorizationDirective = (schema: GraphQLSchema, directiveName: string) => mapSchema(schema, {
@@ -9,7 +9,8 @@ export const authorizationDirective = (schema: GraphQLSchema, directiveName: str
 		if (authorizationDirective) {
 			const { resolve = defaultFieldResolver } = fieldConfig;
 			fieldConfig.resolve = async (source, args, context: IContext, info) => {
-				const { auth, req: { method, ip } } = context;
+				const auth = Context.get('auth');
+				const { req: { method, ip } } = context;
 				const { fieldName } = info;
 				if (!auth) {
 					Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }), sourceIp: ip });
