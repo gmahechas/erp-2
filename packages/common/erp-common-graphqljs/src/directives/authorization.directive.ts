@@ -18,12 +18,12 @@ export const authorizationDirective = (schema: GraphQLSchema, directiveName: str
 				for (const capability of scopes) {
 					const [service, actions] = capability.split(':');
 					if (!scope[service]) {
-						Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { requestId: Context.get('requestId'), auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }), sourceIp: ip });
+						Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { requestId: Context.get('requestId'), auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify(args), sourceIp: ip });
 						sendError(TypeErrorMessage.AUTHORIZATION);
 					}
 					for (const action of actions.split(',')) {
 						if (!scope[service].includes(action)) {
-							Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { requestId: Context.get('requestId'), auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify({ args }), sourceIp: ip });
+							Winston.logger.error(TypeErrorMessage.AUTHORIZATION, { requestId: Context.get('requestId'), auth: JSON.stringify(auth), action: fieldName, method, payload: JSON.stringify(args), sourceIp: ip });
 							sendError(TypeErrorMessage.AUTHORIZATION);
 						}
 					}
