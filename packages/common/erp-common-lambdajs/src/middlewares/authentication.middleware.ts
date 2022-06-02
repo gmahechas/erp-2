@@ -7,6 +7,7 @@ export const authenticationMiddleware = async (event: APIGatewayProxyEvent) => {
 	const { body, path, httpMethod, pathParameters, queryStringParameters } = event;
 	if (!token) {
 		Winston.logger.error(TypeErrorMessage.AUTHENTICATION, { auth: JSON.stringify(null), action: path, method: httpMethod, payload: JSON.stringify({ body, params: pathParameters, query: queryStringParameters }) });
+		Context.clear();
 		sendError(TypeErrorMessage.AUTHENTICATION);
 	}
 	const auth = jwtDecode(token) as IAuth;

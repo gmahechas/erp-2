@@ -18,6 +18,7 @@ export const authenticationDirective = (schema: GraphQLSchema, directiveName: st
 					const { cookie_name } = env['ms-0']!.session!;
 					req.session.destroy((error) => error);
 					res.clearCookie(cookie_name!);
+					Context.clear();
 					sendError(TypeErrorMessage.AUTHENTICATION);
 				}
 				const auth = jwtDecode(token);
