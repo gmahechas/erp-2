@@ -8,8 +8,8 @@ const dailyRotateFileTransport = (serviceName: string) => new DailyRotateFile({
 	filename: `logs/${serviceName}-%DATE%.log`,
 	datePattern: 'YYYY-MM-DD',
 	zippedArchive: true,
-	maxSize: '20m',
-	maxFiles: '7d',
+	maxSize: '64mb',
+	maxFiles: '30d',
 	format: format.combine(
 		format.timestamp(),
 		format.json(),
