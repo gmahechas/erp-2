@@ -1,7 +1,0 @@
-pip install flask
-pip install pymongo
-pip install python-dotenv
-pip install hvac
-pip install jsonschema
-pip install pyjwt
-pip install pyjwt[crypto]
