@@ -1,0 +1,10 @@
+{
+    "name": "erp-common-ms-utils-py",
+    "version": "0.0.29",
+    "description": "erp-common-ms-utils-py",
+    "author": "gmahechas",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+    }
+}

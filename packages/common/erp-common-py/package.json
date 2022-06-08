@@ -1,0 +1,10 @@
+{
+    "name": "erp-common-py",
+    "version": "0.0.29",
+    "description": "erp-common-py",
+    "author": "gmahechas",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+    }
+}
