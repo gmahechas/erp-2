@@ -1,4 +1,4 @@
-import { ICompany, ICreateCompany, IUpdateCompany, IDeleteCompany, ISearchCompany } from '@gmahechas/erp-common';
+import { ICompany, ICreateCompany, IUpdateCompany, IDeleteCompany, ISearchCompany } from '@gmahechas/erp-common-js';
 import { Company } from './company.mongo';
 
 export const createOneCompany = async (data: ICreateCompany): Promise<ICompany> => {

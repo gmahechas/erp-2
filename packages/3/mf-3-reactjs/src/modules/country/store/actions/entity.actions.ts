@@ -1,4 +1,4 @@
-import { ICountry, ISearchCountry } from '@gmahechas/erp-common';
+import { ICountry, ISearchCountry } from '@gmahechas/erp-common-js';
 
 export enum EntityTypes {
 	SEARCH_MANY = '[Country] Search Many',

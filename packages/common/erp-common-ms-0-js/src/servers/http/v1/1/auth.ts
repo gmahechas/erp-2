@@ -1,4 +1,4 @@
-import { ISigninAuth } from '@gmahechas/erp-common';
+import { ISigninAuth } from '@gmahechas/erp-common-js';
 import { axiosClient, env, Context } from '@gmahechas/erp-common-ms-utils-js';
 
 export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> => {

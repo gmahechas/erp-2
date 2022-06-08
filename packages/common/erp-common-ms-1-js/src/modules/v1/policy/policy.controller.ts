@@ -1,4 +1,4 @@
-import { IPolicy, ICreatePolicy, IUpdatePolicy, IDeletePolicy, ISearchPolicy } from '@gmahechas/erp-common';
+import { IPolicy, ICreatePolicy, IUpdatePolicy, IDeletePolicy, ISearchPolicy } from '@gmahechas/erp-common-js';
 import { Context, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 import { Policy } from './policy.mongo';
 

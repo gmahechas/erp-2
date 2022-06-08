@@ -1,4 +1,4 @@
-import { iresponse, signinAuthSchema } from '@gmahechas/erp-common';
+import { iresponse, signinAuthSchema } from '@gmahechas/erp-common-js';
 import { express, validatorMiddleware } from '@gmahechas/erp-common-expressjs';
 import { signinAuth } from '@gmahechas/erp-common-ms-1-js';
 

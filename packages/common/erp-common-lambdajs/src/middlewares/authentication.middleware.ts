@@ -1,5 +1,5 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
-import { IAuth } from '@gmahechas/erp-common';
+import { IAuth } from '@gmahechas/erp-common-js';
 import { Context, jwtDecode, sendError, TypeErrorMessage, Winston, uuidv4 } from '@gmahechas/erp-common-ms-utils-js';
 
 export const authenticationMiddleware = async (event: APIGatewayProxyEvent) => {

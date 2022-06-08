@@ -1,4 +1,4 @@
-import { IGroup, ICreateGroup, IUpdateGroup, IDeleteGroup, ISearchGroup } from '@gmahechas/erp-common';
+import { IGroup, ICreateGroup, IUpdateGroup, IDeleteGroup, ISearchGroup } from '@gmahechas/erp-common-js';
 import { Context, axiosClient, env } from '@gmahechas/erp-common-ms-utils-js';
 
 export const createOneGroup = async (data: ICreateGroup): Promise<IGroup> => {

@@ -11,7 +11,7 @@
         "build": "rimraf dist && tsc"
     },
     "dependencies": {
-        "@gmahechas/erp-common": "^0.0.28",
+        "@gmahechas/erp-common-js": "^0.0.28",
         "@gmahechas/erp-common-lambdajs": "^0.0.28",
         "@gmahechas/erp-common-ms-3-js": "^0.0.28",
         "@gmahechas/erp-common-ms-utils-js": "^0.0.28"

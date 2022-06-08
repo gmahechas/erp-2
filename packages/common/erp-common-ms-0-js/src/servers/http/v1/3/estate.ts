@@ -1,4 +1,4 @@
-import { IEstate, ICreateEstate, IUpdateEstate, IDeleteEstate, ISearchEstate } from '@gmahechas/erp-common';
+import { IEstate, ICreateEstate, IUpdateEstate, IDeleteEstate, ISearchEstate } from '@gmahechas/erp-common-js';
 import { Context, axiosClient, env } from '@gmahechas/erp-common-ms-utils-js';
 
 export const createOneEstate = async (data: ICreateEstate): Promise<IEstate> => {

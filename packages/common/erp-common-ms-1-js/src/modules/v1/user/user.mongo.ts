@@ -1,4 +1,4 @@
-import { IUser } from '@gmahechas/erp-common';
+import { IUser } from '@gmahechas/erp-common-js';
 import { mongoose, uuidv4, toHash } from '@gmahechas/erp-common-ms-utils-js';
 
 const schema = new mongoose.Schema({

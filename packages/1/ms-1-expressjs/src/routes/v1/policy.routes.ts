@@ -1,4 +1,4 @@
-import { iresponse, createOnePolicySchema, updateOnePolicySchema, deleteOnePolicySchema, searchOnePolicySchema, searchManyPolicySchema } from '@gmahechas/erp-common';
+import { iresponse, createOnePolicySchema, updateOnePolicySchema, deleteOnePolicySchema, searchOnePolicySchema, searchManyPolicySchema } from '@gmahechas/erp-common-js';
 import { express, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-expressjs';
 import { createOnePolicy, updateOnePolicy, deleteOnePolicy, searchOnePolicy, searchManyPolicy } from '@gmahechas/erp-common-ms-1-js';
 

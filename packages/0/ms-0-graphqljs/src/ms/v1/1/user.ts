@@ -1,4 +1,4 @@
-import { IUser, ICreateUser, IUpdateUser, IDeleteUser, ISearchUser, IGroup, IPolicy } from '@gmahechas/erp-common';
+import { IUser, ICreateUser, IUpdateUser, IDeleteUser, ISearchUser, IGroup, IPolicy } from '@gmahechas/erp-common-js';
 import { gql } from '@gmahechas/erp-common-graphqljs';
 import { createOneUser, updateOneUser, deleteOneUser, searchOneUser, searchManyUser, searchManyGroup, searchManyPolicy } from '@gmahechas/erp-common-ms-0-js';
 

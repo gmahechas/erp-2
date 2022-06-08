@@ -1,4 +1,4 @@
-import { ICountry, ICreateCountry, IUpdateCountry, IDeleteCountry, ISearchCountry } from '@gmahechas/erp-common';
+import { ICountry, ICreateCountry, IUpdateCountry, IDeleteCountry, ISearchCountry } from '@gmahechas/erp-common-js';
 import { Country } from './country.mongo';
 
 export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> => {

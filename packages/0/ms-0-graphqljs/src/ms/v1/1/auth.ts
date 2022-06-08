@@ -1,4 +1,4 @@
-import { IAuth, ISigninAuth } from '@gmahechas/erp-common';
+import { IAuth, ISigninAuth } from '@gmahechas/erp-common-js';
 import { Context, jwtDecode, env, Winston, uuidv4 } from '@gmahechas/erp-common-ms-utils-js';
 import { gql, express } from '@gmahechas/erp-common-graphqljs';
 import { signinAuth } from '@gmahechas/erp-common-ms-0-js';

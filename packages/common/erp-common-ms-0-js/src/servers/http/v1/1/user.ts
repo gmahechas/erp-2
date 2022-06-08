@@ -1,4 +1,4 @@
-import { IUser, ICreateUser, IUpdateUser, IDeleteUser, ISearchUser } from '@gmahechas/erp-common';
+import { IUser, ICreateUser, IUpdateUser, IDeleteUser, ISearchUser } from '@gmahechas/erp-common-js';
 import { Context, axiosClient, env } from '@gmahechas/erp-common-ms-utils-js';
 
 export const createOneUser = async (data: ICreateUser): Promise<IUser> => {

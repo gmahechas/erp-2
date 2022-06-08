@@ -19,7 +19,7 @@
         "@grpc/proto-loader": "^0.6.4"
     },
     "devDependencies": {
-        "@gmahechas/erp-common": "^0.0.28",
+        "@gmahechas/erp-common-js": "^0.0.28",
         "@gmahechas/erp-common-ms-utils-js": "^0.0.28",
         "@types/node": "^16.9.1",
         "rimraf": "^3.0.2",

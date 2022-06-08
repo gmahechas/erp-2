@@ -1,4 +1,4 @@
-import { IError } from '@gmahechas/erp-common';
+import { IError } from '@gmahechas/erp-common-js';
 import { TypeErrorMessage } from './utils/error-type.enum';
 
 export abstract class CustomError extends Error {

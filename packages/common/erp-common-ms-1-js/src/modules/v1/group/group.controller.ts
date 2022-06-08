@@ -1,4 +1,4 @@
-import { IGroup, ICreateGroup, IUpdateGroup, IDeleteGroup, ISearchGroup } from '@gmahechas/erp-common';
+import { IGroup, ICreateGroup, IUpdateGroup, IDeleteGroup, ISearchGroup } from '@gmahechas/erp-common-js';
 import { Context, IContext, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 import { Group } from './group.mongo';
 

@@ -1,4 +1,4 @@
-import { createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema } from '@gmahechas/erp-common';
+import { createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema } from '@gmahechas/erp-common-js';
 import { countryGrpcService, validatorGrpc, asyncHandlerUnaryGrpc } from '@gmahechas/erp-common-grpcjs';
 import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry } from '@gmahechas/erp-common-ms-3-js'
 

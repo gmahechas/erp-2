@@ -1,4 +1,4 @@
-import { createOneOfficeSchema, updateOneOfficeSchema, deleteOneOfficeSchema, searchOneOfficeSchema, searchManyOfficeSchema } from '@gmahechas/erp-common'
+import { createOneOfficeSchema, updateOneOfficeSchema, deleteOneOfficeSchema, searchOneOfficeSchema, searchManyOfficeSchema } from '@gmahechas/erp-common-js'
 import { httpMethods, IRouteLambda, authenticationMiddleware, validatorMiddleware } from '@gmahechas/erp-common-lambdajs';
 import { createOneOffice, updateOneOffice, deleteOneOffice, searchOneOffice, searchManyOffice } from '@gmahechas/erp-common-ms-4-js';
 

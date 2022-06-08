@@ -1,4 +1,4 @@
-import { ICreateCity, IDeleteCity, ICity, ISearchCity, IUpdateCity, IEstate } from '@gmahechas/erp-common';
+import { ICreateCity, IDeleteCity, ICity, ISearchCity, IUpdateCity, IEstate } from '@gmahechas/erp-common-js';
 import { gql } from '@gmahechas/erp-common-graphqljs';
 import { createOneCity, updateOneCity, deleteOneCity, searchOneCity, searchManyCity, searchOneEstate } from '@gmahechas/erp-common-ms-0-js';
 

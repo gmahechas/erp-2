@@ -1,4 +1,4 @@
-import { IAuth } from '@gmahechas/erp-common';
+import { IAuth } from '@gmahechas/erp-common-js';
 import { AuthTypes, AuthActionTypes } from '../actions';
 
 export interface State {

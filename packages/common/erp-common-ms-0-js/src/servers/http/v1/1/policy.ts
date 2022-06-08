@@ -1,4 +1,4 @@
-import { IPolicy, ICreatePolicy, IUpdatePolicy, IDeletePolicy, ISearchPolicy } from '@gmahechas/erp-common';
+import { IPolicy, ICreatePolicy, IUpdatePolicy, IDeletePolicy, ISearchPolicy } from '@gmahechas/erp-common-js';
 import { Context, axiosClient, env } from '@gmahechas/erp-common-ms-utils-js';
 
 export const createOnePolicy = async (data: ICreatePolicy): Promise<IPolicy> => {

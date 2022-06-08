@@ -1,4 +1,4 @@
-import { ICity, ICreateCity, IUpdateCity, IDeleteCity, ISearchCity } from '@gmahechas/erp-common';
+import { ICity, ICreateCity, IUpdateCity, IDeleteCity, ISearchCity } from '@gmahechas/erp-common-js';
 import { City } from './city.mongo';
 
 export const createOneCity = async (data: ICreateCity): Promise<ICity> => {

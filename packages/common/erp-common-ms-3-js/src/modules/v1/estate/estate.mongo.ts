@@ -1,4 +1,4 @@
-import { IEstate } from '@gmahechas/erp-common'
+import { IEstate } from '@gmahechas/erp-common-js'
 import { mongoose, uuidv4 } from '@gmahechas/erp-common-ms-utils-js';
 
 const schema = new mongoose.Schema({

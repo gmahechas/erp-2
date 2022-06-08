@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { ISigninAuth } from '@gmahechas/erp-common';
+import { ISigninAuth } from '@gmahechas/erp-common-js';
 import { WcInput, WcButton } from '@gmahechas/common-webcomponents-react';
 
 interface IProps {

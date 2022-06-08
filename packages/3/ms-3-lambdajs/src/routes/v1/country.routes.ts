@@ -1,4 +1,4 @@
-import { createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema, searchManyCountrySchema } from '@gmahechas/erp-common'
+import { createOneCountrySchema, updateOneCountrySchema, deleteOneCountrySchema, searchOneCountrySchema, searchManyCountrySchema } from '@gmahechas/erp-common-js'
 import { httpMethods, IRouteLambda, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-lambdajs';
 import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry, searchManyCountry } from '@gmahechas/erp-common-ms-3-js';
 

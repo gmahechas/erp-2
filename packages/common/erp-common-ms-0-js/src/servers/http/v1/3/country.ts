@@ -1,4 +1,4 @@
-import { ICountry, ICreateCountry, IUpdateCountry, IDeleteCountry, ISearchCountry } from '@gmahechas/erp-common';
+import { ICountry, ICreateCountry, IUpdateCountry, IDeleteCountry, ISearchCountry } from '@gmahechas/erp-common-js';
 import { Context, axiosClient, env } from '@gmahechas/erp-common-ms-utils-js';
 
 export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> => {

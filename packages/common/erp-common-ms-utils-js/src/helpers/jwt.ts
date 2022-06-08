@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { IAuth } from '@gmahechas/erp-common';
+import { IAuth } from '@gmahechas/erp-common-js';
 import { env } from './env';
 import { sendError } from '../errors/utils/send-error';
 import { TypeErrorMessage } from '../errors/utils/error-type.enum';

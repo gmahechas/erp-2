@@ -1,4 +1,4 @@
-import { iresponse } from '@gmahechas/erp-common';
+import { iresponse } from '@gmahechas/erp-common-js';
 import { env, initEnv, initWinston } from '@gmahechas/erp-common-ms-utils-js';
 import { APIGatewayProxyEvent, Context, routerLambda, actionArgs, responseLambda, errorHandlerLambda, executeMiddlewares } from '@gmahechas/erp-common-lambdajs';
 import { connectDatabases } from '@gmahechas/erp-common-ms-4-js';

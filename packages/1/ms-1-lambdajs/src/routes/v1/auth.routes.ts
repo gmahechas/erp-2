@@ -1,4 +1,4 @@
-import { signinAuthSchema } from '@gmahechas/erp-common'
+import { signinAuthSchema } from '@gmahechas/erp-common-js'
 import { httpMethods, IRouteLambda, validatorMiddleware } from '@gmahechas/erp-common-lambdajs';
 import { signinAuth } from '@gmahechas/erp-common-ms-1-js';
 

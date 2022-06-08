@@ -1,5 +1,5 @@
 import { APIGatewayProxyEvent } from 'aws-lambda';
-import { validate, parseErrors } from '@gmahechas/erp-common';
+import { validate, parseErrors } from '@gmahechas/erp-common-js';
 import { Context, sendError, TypeErrorMessage, Winston } from '@gmahechas/erp-common-ms-utils-js';
 
 export const validatorMiddleware = async (schema: object) => (event: APIGatewayProxyEvent) => {

@@ -1,4 +1,4 @@
-import { ICountry, ICreateEstate, IEstate, ISearchEstate } from '@gmahechas/erp-common';
+import { ICountry, ICreateEstate, IEstate, ISearchEstate } from '@gmahechas/erp-common-js';
 import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
 
 export const typeDefs = gql`

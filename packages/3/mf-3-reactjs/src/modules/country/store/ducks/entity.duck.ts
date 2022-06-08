@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 import { ApolloError } from '@apollo/client';
-import { ISearchCountry } from '@gmahechas/erp-common';
+import { ISearchCountry } from '@gmahechas/erp-common-js';
 
 import { graphqlClientV1 } from '@mf-3/helpers/graphql';
 import { searchManyCountry } from '@mf-3/modules/country/graphql/queries';

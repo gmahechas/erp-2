@@ -1,4 +1,4 @@
-import { iresponse, createOneGroupSchema, updateOneGroupSchema, deleteOneGroupSchema, searchOneGroupSchema, searchManyGroupSchema } from '@gmahechas/erp-common';
+import { iresponse, createOneGroupSchema, updateOneGroupSchema, deleteOneGroupSchema, searchOneGroupSchema, searchManyGroupSchema } from '@gmahechas/erp-common-js';
 import { express, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-expressjs';
 import { createOneGroup, updateOneGroup, deleteOneGroup, searchOneGroup, searchManyGroup } from '@gmahechas/erp-common-ms-1-js';
 

@@ -1,4 +1,4 @@
-import { iresponse, createOneCitySchema, updateOneCitySchema, deleteOneCitySchema, searchOneCitySchema, searchManyCitySchema } from '@gmahechas/erp-common';
+import { iresponse, createOneCitySchema, updateOneCitySchema, deleteOneCitySchema, searchOneCitySchema, searchManyCitySchema } from '@gmahechas/erp-common-js';
 import { express, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-expressjs';
 import { createOneCity, updateOneCity, deleteOneCity, searchOneCity, searchManyCity } from '@gmahechas/erp-common-ms-3-js';
 

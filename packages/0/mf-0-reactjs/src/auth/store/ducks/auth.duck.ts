@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 import { ApolloError } from '@apollo/client';
-import { ISigninAuth } from '@gmahechas/erp-common';
+import { ISigninAuth } from '@gmahechas/erp-common-js';
 
 import { graphqlClientV1 } from '@mf-0/helpers/graphql';
 import { signinAuth, signoutAuth, meAuth } from '@mf-0/auth/graphql/queries';

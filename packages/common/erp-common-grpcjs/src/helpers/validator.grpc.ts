@@ -1,4 +1,4 @@
-import { validate, parseErrors } from '@gmahechas/erp-common';
+import { validate, parseErrors } from '@gmahechas/erp-common-js';
 import { sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 
 export const validatorGrpc: any = (schema: object, body: object) => {

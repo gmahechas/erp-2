@@ -1,4 +1,4 @@
-import { createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema } from '@gmahechas/erp-common';
+import { createOneEstateSchema, updateOneEstateSchema, deleteOneEstateSchema, searchOneEstateSchema } from '@gmahechas/erp-common-js';
 import { estateGrpcService, validatorGrpc, asyncHandlerUnaryGrpc } from '@gmahechas/erp-common-grpcjs';
 import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate } from '@gmahechas/erp-common-ms-3-js'
 

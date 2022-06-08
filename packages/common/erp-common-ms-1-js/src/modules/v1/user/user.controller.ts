@@ -1,4 +1,4 @@
-import { IUser, ICreateUser, IUpdateUser, IDeleteUser, ISearchUser } from '@gmahechas/erp-common';
+import { IUser, ICreateUser, IUpdateUser, IDeleteUser, ISearchUser } from '@gmahechas/erp-common-js';
 import { Context, sendError, TypeErrorMessage } from '@gmahechas/erp-common-ms-utils-js';
 import { User } from './user.mongo';
 

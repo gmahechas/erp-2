@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { IAuth } from '@gmahechas/erp-common';
+import { IAuth } from '@gmahechas/erp-common-js';
 import { Context, jwtDecode, sendError, TypeErrorMessage, uuidv4, Winston } from '@gmahechas/erp-common-ms-utils-js';
 
 export const authenticationMiddleware = async (request: Request, response: Response, next: NextFunction) => {

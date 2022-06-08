@@ -1,4 +1,4 @@
-import { IResponse, iresponse } from '@gmahechas/erp-common';
+import { IResponse, iresponse } from '@gmahechas/erp-common-js';
 import { CustomError, mongoose } from '@gmahechas/erp-common-ms-utils-js';
 import { responseLambda } from './response.lambda';
 

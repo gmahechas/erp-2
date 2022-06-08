@@ -1,7 +1,7 @@
 import { FC, lazy, Suspense } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import { History, MemoryHistory } from 'history';
-import { ISigninAuth } from '@gmahechas/erp-common';
+import { ISigninAuth } from '@gmahechas/erp-common-js';
 
 import Layout from '@mf-1/core/components/Layout';
 const Auth = lazy(() => import('@mf-1/modules/auth/containers/Auth'));

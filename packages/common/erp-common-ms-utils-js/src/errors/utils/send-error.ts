@@ -1,4 +1,4 @@
-import { IError } from '@gmahechas/erp-common';
+import { IError } from '@gmahechas/erp-common-js';
 
 import { TypeErrorMessage } from './error-type.enum';
 import { ValidationError } from '../validation.error';

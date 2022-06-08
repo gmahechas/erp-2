@@ -1,4 +1,4 @@
-import { IResponse } from '@gmahechas/erp-common';
+import { IResponse } from '@gmahechas/erp-common-js';
 
 export const responseLambda = (response: IResponse) => {
 	const { statusCode, body } = response;

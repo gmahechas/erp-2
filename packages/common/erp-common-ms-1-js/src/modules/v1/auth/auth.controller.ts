@@ -1,4 +1,4 @@
-import { IPolicy, ISigninAuth, IUser } from '@gmahechas/erp-common';
+import { IPolicy, ISigninAuth, IUser } from '@gmahechas/erp-common-js';
 import { sendError, TypeErrorMessage, compareHash, jwtSign, env } from '@gmahechas/erp-common-ms-utils-js';
 import { searchOneUserToSignin } from '../user/user.controller';
 

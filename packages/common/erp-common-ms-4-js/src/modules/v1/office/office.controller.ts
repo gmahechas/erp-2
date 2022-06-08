@@ -1,4 +1,4 @@
-import { IOffice, ICreateOffice, IUpdateOffice, IDeleteOffice, ISearchOffice } from '@gmahechas/erp-common';
+import { IOffice, ICreateOffice, IUpdateOffice, IDeleteOffice, ISearchOffice } from '@gmahechas/erp-common-js';
 import { Office } from './office.mongo';
 
 export const createOneOffice = async (data: ICreateOffice): Promise<IOffice> => {
