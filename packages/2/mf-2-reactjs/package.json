@@ -1,6 +1,6 @@
 {
     "name": "mf-2-reactjs",
-    "version": "0.0.28",
+    "version": "0.0.29",
     "description": "ms-2-reactjs",
     "author": "gmahechas",
     "private": true,
@@ -14,10 +14,10 @@
     },
     "dependencies": {
         "@apollo/client": "^3.5.6",
-        "@gmahechas/common-webcomponents": "^0.0.28",
-        "@gmahechas/common-webcomponents-react": "^0.0.28",
-        "@gmahechas/erp-common-js": "^0.0.28",
-        "@gmahechas/erp-common-mf-utils-js": "^0.0.28",
+        "@gmahechas/common-webcomponents": "^0.0.29",
+        "@gmahechas/common-webcomponents-react": "^0.0.29",
+        "@gmahechas/erp-common-js": "^0.0.29",
+        "@gmahechas/erp-common-mf-utils-js": "^0.0.29",
         "graphql": "^16.1.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",

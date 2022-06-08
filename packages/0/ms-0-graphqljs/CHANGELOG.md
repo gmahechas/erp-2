@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.29 (2022-06-08)</small>
+
+* refactor: assert context in authorization miidlewae ([5dacebe](https://github.com/gmahechas/erp/commit/5dacebe))
+* refactor: auth directive ([b0eaf28](https://github.com/gmahechas/erp/commit/b0eaf28))
+* refactor: auth middleware ([f158305](https://github.com/gmahechas/erp/commit/f158305))
+* refactor: change auth by authentication error ([bcf5a01](https://github.com/gmahechas/erp/commit/bcf5a01))
+* refactor: comma ([094dba5](https://github.com/gmahechas/erp/commit/094dba5))
+* refactor: debug auth ([abd2747](https://github.com/gmahechas/erp/commit/abd2747))
+* refactor: directoves exec order ([c069562](https://github.com/gmahechas/erp/commit/c069562))
+* refactor: error middleware ms.0 ([dbad2fe](https://github.com/gmahechas/erp/commit/dbad2fe))
+* refactor: group policies ([36ec48d](https://github.com/gmahechas/erp/commit/36ec48d))
+* refactor: lambdas ([aae94e0](https://github.com/gmahechas/erp/commit/aae94e0))
+* refactor: move directives to common-graphqljs ([b339cfa](https://github.com/gmahechas/erp/commit/b339cfa))
+* refactor: move graphql middleware to folder ([580a16c](https://github.com/gmahechas/erp/commit/580a16c))
+* refactor: parent ([dfd2ea6](https://github.com/gmahechas/erp/commit/dfd2ea6))
+* refactor: policy only with one service ([a2239e8](https://github.com/gmahechas/erp/commit/a2239e8))
+* refactor: remove 'x-powered-by' in headers ([9c28745](https://github.com/gmahechas/erp/commit/9c28745))
+* refactor: remove authorization middleware ([8c49c10](https://github.com/gmahechas/erp/commit/8c49c10))
+* refactor: remove console.logs ([36d81c4](https://github.com/gmahechas/erp/commit/36d81c4))
+* refactor: remove cors from graphql ([53c7e3c](https://github.com/gmahechas/erp/commit/53c7e3c))
+* refactor: remove graphql context ([7b61b11](https://github.com/gmahechas/erp/commit/7b61b11))
+* refactor: remove graphql context ([898bf86](https://github.com/gmahechas/erp/commit/898bf86))
+* refactor: renam auth by authentication ([fb59108](https://github.com/gmahechas/erp/commit/fb59108))
+* refactor: rename erp-common ([1376c8a](https://github.com/gmahechas/erp/commit/1376c8a))
+* refactor: send token to ms and verify it ([82e5d37](https://github.com/gmahechas/erp/commit/82e5d37))
+* refactor: token from context in http ([f0e151e](https://github.com/gmahechas/erp/commit/f0e151e))
+* refactor: use context in user controller ([23c9988](https://github.com/gmahechas/erp/commit/23c9988))
+* fix: auth middleware ([ed88ab3](https://github.com/gmahechas/erp/commit/ed88ab3))
+* fix: requestId in ms-0 ([daaaa43](https://github.com/gmahechas/erp/commit/daaaa43))
+* revert: remove requestIdMiddleware ([7246e01](https://github.com/gmahechas/erp/commit/7246e01))
+* feat: authentication directive ([b266369](https://github.com/gmahechas/erp/commit/b266369))
+* feat: authorization ([557270e](https://github.com/gmahechas/erp/commit/557270e))
+* feat: authorization middleware ([6ff0c7f](https://github.com/gmahechas/erp/commit/6ff0c7f))
+* feat: city module ([67de160](https://github.com/gmahechas/erp/commit/67de160))
+* feat: cookie setting to vault ([813b067](https://github.com/gmahechas/erp/commit/813b067))
+* feat: group in ms-1 ([db39563](https://github.com/gmahechas/erp/commit/db39563))
+* feat: groupPolicies ([56d3b49](https://github.com/gmahechas/erp/commit/56d3b49))
+* feat: helmet installed and configured ([7e17f38](https://github.com/gmahechas/erp/commit/7e17f38))
+* feat: install cors ([21e822c](https://github.com/gmahechas/erp/commit/21e822c))
+* feat: logger directive for graphql ([90adb84](https://github.com/gmahechas/erp/commit/90adb84))
+* feat: logger in all ms ([a12c84e](https://github.com/gmahechas/erp/commit/a12c84e))
+* feat: ms-3 graphql ([264f8cf](https://github.com/gmahechas/erp/commit/264f8cf))
+* feat: policy module ([c5543ae](https://github.com/gmahechas/erp/commit/c5543ae))
+* feat: requestId middleware ([f674e47](https://github.com/gmahechas/erp/commit/f674e47))
+* feat: send token to ms ([05015b3](https://github.com/gmahechas/erp/commit/05015b3))
+* feat: setup daily rotate ([7185788](https://github.com/gmahechas/erp/commit/7185788))
+* feat: user: groups and policies ([bebb9d0](https://github.com/gmahechas/erp/commit/bebb9d0))
+
+
+
+
+
 ## <small>0.0.28 (2022-03-08)</small>
 
 * feat: auth from frontend ([5c54923](https://github.com/gmahechas/erp/commit/5c54923))

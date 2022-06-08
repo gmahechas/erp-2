@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.29 (2022-06-08)</small>
+
+* refactor: lambdas ([aae94e0](https://github.com/gmahechas/erp/commit/aae94e0))
+* refactor: remove 'x-powered-by' in headers ([9c28745](https://github.com/gmahechas/erp/commit/9c28745))
+* refactor: rename erp-common ([1376c8a](https://github.com/gmahechas/erp/commit/1376c8a))
+* refactor: send token to ms and verify it ([82e5d37](https://github.com/gmahechas/erp/commit/82e5d37))
+* feat: city module ([67de160](https://github.com/gmahechas/erp/commit/67de160))
+* feat: helmet installed and configured ([7e17f38](https://github.com/gmahechas/erp/commit/7e17f38))
+* feat: install cors ([21e822c](https://github.com/gmahechas/erp/commit/21e822c))
+* feat: logger in all ms ([a12c84e](https://github.com/gmahechas/erp/commit/a12c84e))
+* feat: setup daily rotate ([7185788](https://github.com/gmahechas/erp/commit/7185788))
+
+
+
+
+
 ## <small>0.0.28 (2022-03-08)</small>
 
 * chore: track config ([10f9d10](https://github.com/gmahechas/erp/commit/10f9d10))

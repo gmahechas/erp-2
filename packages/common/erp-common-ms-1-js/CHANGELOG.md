@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.29 (2022-06-08)</small>
+
+* refactor: change auth by authentication error ([bcf5a01](https://github.com/gmahechas/erp/commit/bcf5a01))
+* refactor: change DB_CONNECTION by MONGO ([4c23672](https://github.com/gmahechas/erp/commit/4c23672))
+* refactor: group policies ([36ec48d](https://github.com/gmahechas/erp/commit/36ec48d))
+* refactor: hast genSalt ([1d15ebc](https://github.com/gmahechas/erp/commit/1d15ebc))
+* refactor: policy only with one service ([a2239e8](https://github.com/gmahechas/erp/commit/a2239e8))
+* refactor: rename erp-common ([1376c8a](https://github.com/gmahechas/erp/commit/1376c8a))
+* refactor: send authorization error ([e0c4809](https://github.com/gmahechas/erp/commit/e0c4809))
+* refactor: use context in user controller ([23c9988](https://github.com/gmahechas/erp/commit/23c9988))
+* refactor: user ([1fad1fe](https://github.com/gmahechas/erp/commit/1fad1fe))
+* feat: authorization scope ([4e5cf56](https://github.com/gmahechas/erp/commit/4e5cf56))
+* feat: context for ms ([46f0cf0](https://github.com/gmahechas/erp/commit/46f0cf0))
+* feat: fix context ([965d56a](https://github.com/gmahechas/erp/commit/965d56a))
+* feat: group in ms-1 ([db39563](https://github.com/gmahechas/erp/commit/db39563))
+* feat: groupPolicies ([56d3b49](https://github.com/gmahechas/erp/commit/56d3b49))
+* feat: jwt expiredIn ([70d4ada](https://github.com/gmahechas/erp/commit/70d4ada))
+* feat: policy module ([c5543ae](https://github.com/gmahechas/erp/commit/c5543ae))
+* feat: user: groups and policies ([bebb9d0](https://github.com/gmahechas/erp/commit/bebb9d0))
+* fix: context ([e83b66b](https://github.com/gmahechas/erp/commit/e83b66b))
+
+
+
+
+
 ## <small>0.0.28 (2022-03-08)</small>
 
 * feat: auth key in vault ([8aa7290](https://github.com/gmahechas/erp/commit/8aa7290))

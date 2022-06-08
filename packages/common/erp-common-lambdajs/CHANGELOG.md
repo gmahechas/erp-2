@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.29 (2022-06-08)</small>
+
+* refactor: filebeat ([2ebe4f7](https://github.com/gmahechas/erp/commit/2ebe4f7))
+* refactor: lambda actionArgs ([789886d](https://github.com/gmahechas/erp/commit/789886d))
+* refactor: lambda error ([045ad1f](https://github.com/gmahechas/erp/commit/045ad1f))
+* refactor: lambdas ([aae94e0](https://github.com/gmahechas/erp/commit/aae94e0))
+* refactor: logger ([ab4de2c](https://github.com/gmahechas/erp/commit/ab4de2c))
+* refactor: remove unnecesary funcs ([28f338f](https://github.com/gmahechas/erp/commit/28f338f))
+* refactor: rename erp-common ([1376c8a](https://github.com/gmahechas/erp/commit/1376c8a))
+* refactor: validator middleware lambda ([b4cbfbd](https://github.com/gmahechas/erp/commit/b4cbfbd))
+* feat: auth middleware in lambdas ([3f8bc7d](https://github.com/gmahechas/erp/commit/3f8bc7d))
+* feat: authorization middleware in lambda ([7755f05](https://github.com/gmahechas/erp/commit/7755f05))
+* feat: clear context ([1071822](https://github.com/gmahechas/erp/commit/1071822))
+* feat: init middlewares lambdas ([8e71a6a](https://github.com/gmahechas/erp/commit/8e71a6a))
+* feat: lambda middlewares ([b0af9a5](https://github.com/gmahechas/erp/commit/b0af9a5))
+* feat: logger for all ([0861326](https://github.com/gmahechas/erp/commit/0861326))
+* feat: requestId in lambdas ([e0eb1fb](https://github.com/gmahechas/erp/commit/e0eb1fb))
+* feat: setup daily rotate ([7185788](https://github.com/gmahechas/erp/commit/7185788))
+* fix: authenticaion middleware ([da3a290](https://github.com/gmahechas/erp/commit/da3a290))
+* fix: catch mongo errpr ([c84e46e](https://github.com/gmahechas/erp/commit/c84e46e))
+
+
+
+
+
 ## <small>0.0.28 (2022-03-08)</small>
 
 * fix: mongoose error type ([1982824](https://github.com/gmahechas/erp/commit/1982824))

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.29 (2022-06-08)</small>
+
+* refactor: auth directive ([b0eaf28](https://github.com/gmahechas/erp/commit/b0eaf28))
+* refactor: lambdas ([aae94e0](https://github.com/gmahechas/erp/commit/aae94e0))
+* refactor: rename erp-common ([1376c8a](https://github.com/gmahechas/erp/commit/1376c8a))
+* refactor: send token to ms and verify it ([82e5d37](https://github.com/gmahechas/erp/commit/82e5d37))
+* refactor: token from context in http ([f0e151e](https://github.com/gmahechas/erp/commit/f0e151e))
+* feat: city module ([67de160](https://github.com/gmahechas/erp/commit/67de160))
+* feat: group in ms-1 ([db39563](https://github.com/gmahechas/erp/commit/db39563))
+* feat: ms-0 logger ([8953a4b](https://github.com/gmahechas/erp/commit/8953a4b))
+* feat: policy module ([c5543ae](https://github.com/gmahechas/erp/commit/c5543ae))
+* feat: send requestId to ms ([f43a5b0](https://github.com/gmahechas/erp/commit/f43a5b0))
+* feat: send token to ms ([05015b3](https://github.com/gmahechas/erp/commit/05015b3))
+
+
+
+
+
 ## <small>0.0.28 (2022-03-08)</small>
 
 * refactor: config by ms-x ([d272d45](https://github.com/gmahechas/erp/commit/d272d45))

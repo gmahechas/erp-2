@@ -1,6 +1,6 @@
 {
     "name": "@gmahechas/erp-common-ms-0-js",
-    "version": "0.0.28",
+    "version": "0.0.29",
     "description": "erp-common-ms-0-js",
     "author": "gmahechas",
     "private": false,
@@ -14,8 +14,8 @@
         "build": "rimraf dist && tsc"
     },
     "devDependencies": {
-        "@gmahechas/erp-common-js": "^0.0.28",
-        "@gmahechas/erp-common-ms-utils-js": "^0.0.28",
+        "@gmahechas/erp-common-js": "^0.0.29",
+        "@gmahechas/erp-common-ms-utils-js": "^0.0.29",
         "@types/node": "^16.9.1",
         "rimraf": "^3.0.2",
         "typescript": "^4.3.5"
