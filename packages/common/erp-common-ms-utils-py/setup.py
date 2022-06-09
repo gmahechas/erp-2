@@ -7,5 +7,5 @@ setup(
     long_description="erp-common-ms-utils-py",
     license="UNLICENSED",
     packages=find_packages(),
-    install_requires=["python-dotenv==0.20.0", "pymongo==4.1.1", "hvac==0.11.2"],
+    install_requires=["python-dotenv==0.20.0", "pymongo==4.1.1", "hvac==0.11.2", "uuid==1.30"],
 )
