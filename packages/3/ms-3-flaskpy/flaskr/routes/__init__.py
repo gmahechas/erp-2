@@ -1,4 +1,4 @@
-from erp_common_flaskpy import current_app, Blueprint
+from gmahechas_erp_common_flaskpy import current_app, Blueprint
 from .v1 import v1_blueprint, init_routes_v1
 
 main_blueprint = Blueprint('rest', __name__, url_prefix='/rest')

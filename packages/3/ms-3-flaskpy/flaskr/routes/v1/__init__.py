@@ -1,4 +1,4 @@
-from erp_common_flaskpy import Blueprint
+from gmahechas_erp_common_flaskpy import Blueprint
 from .country_routes import country_blueprint
 from .estate_routes import estate_blueprint
 

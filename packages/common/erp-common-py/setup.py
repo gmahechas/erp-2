@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="erp-common-py",
+    name="gmahechas-erp-common-py",
     version="0.0.29",
     description="erp-common-py",
     long_description="erp-common-py",

@@ -1,4 +1,4 @@
-from erp_common_flaskpy import Blueprint
+from gmahechas_erp_common_flaskpy import Blueprint
 
 country_blueprint = Blueprint('country', __name__, url_prefix='/country')
 
