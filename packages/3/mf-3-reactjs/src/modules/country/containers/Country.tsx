@@ -8,7 +8,7 @@ const Country: FC<IProps> = ({ country, searchMany }) => {
             <ul>
                 {country.entity.data &&
                     country.entity.data.map((country: any) => {
-                        return <li key={country.id}>{country.countryName}</li>;
+                        return <li key={country.countryId}>{country.countryName}</li>;
                     })}
             </ul>
         );
