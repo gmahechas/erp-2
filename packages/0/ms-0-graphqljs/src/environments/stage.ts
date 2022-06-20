@@ -29,5 +29,10 @@ export const config: IConfig = ({
 		app: {
 			endpoint: process.env.THREE_APP_ENDPOINT,
 		},
-	}
+	},
+	'ms-4': {
+		app: {
+			endpoint: process.env.FOUR_APP_ENDPOINT,
+		},
+	},
 });
