@@ -4,7 +4,7 @@ import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry,
 
 export const typeDefs = gql`
 	type Country {
-		id: String
+		countryId: String
   	countryName: String
   	countryCode: String
 		estates: [Estate]
@@ -15,15 +15,15 @@ export const typeDefs = gql`
   	countryCode: String
 	}
 	input UpdateOneCountry {
-		id: String
+		countryId: String
   	countryName: String
   	countryCode: String
 	}
 	input DeleteOneCountry {
-		id: String
+		countryId: String
 	}
 	input SearchOneCountry {
-		id: String
+		countryId: String
 		countryName: String
   	countryCode: String
 	}
@@ -66,8 +66,8 @@ export const resolvers = {
 	},
 	Country: {
 		estates: async (parent: ICountry, _: object): Promise<IEstate[]> => {
-			const { id } = parent;
-			const result = await searchManyEstate([{ countryId: id }]);
+			const { countryId } = parent;
+			const result = await searchManyEstate([{ countryId }]);
 			return result;
 		},
 	},

@@ -6,7 +6,7 @@ export interface ICreateAddress {
 }
 
 export interface IUpdateAddress {
-  id: string;
+  addressId: string;
   addressLine1: string;
   addressLine2: string;
   addressZipCode: string;
@@ -14,11 +14,11 @@ export interface IUpdateAddress {
 }
 
 export interface IDeleteAddress {
-  id: string;
+  addressId: string;
 }
 
 export interface ISearchAddress {
-  id: string;
+  addressId: string;
   addressLine1: string;
   addressLine2: string;
   addressZipCode: string;

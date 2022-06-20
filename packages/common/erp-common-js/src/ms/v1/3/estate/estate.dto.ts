@@ -5,18 +5,18 @@ export interface ICreateEstate {
 }
 
 export interface IUpdateEstate {
-  id: string;
+  estateId: string;
   estateName: string;
   estateCode: string;
   countryId: string;
 }
 
 export interface IDeleteEstate {
-  id: string;
+  estateId: string;
 }
 
 export interface ISearchEstate {
-  id: string;
+  estateId: string;
   estateName: string;
   estateCode: string;
   countryId: string;

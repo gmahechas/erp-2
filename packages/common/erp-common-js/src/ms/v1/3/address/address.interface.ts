@@ -1,5 +1,5 @@
 export interface IAddress {
-  id: string;
+  addressId: string;
   addressLine1: string;
   addressLine2: string;
   addressZipCode: string;

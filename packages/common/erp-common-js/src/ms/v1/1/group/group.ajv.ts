@@ -14,27 +14,27 @@ export const createOneGroupSchema: JSONSchemaType<ICreateGroup> = {
 export const updateOneGroupSchema: JSONSchemaType<IUpdateGroup> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		groupId: { type: 'string' },
 		groupName: { type: 'string' },
 		policies: { type: 'array', items: { type: 'string' } },
 	},
-	required: ['id'],
+	required: ['groupId'],
 	additionalProperties: false,
 };
 
 export const deleteOneGroupSchema: JSONSchemaType<IDeleteGroup> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		groupId: { type: 'string' },
 	},
-	required: ['id'],
+	required: ['groupId'],
 	additionalProperties: false,
 };
 
 export const searchOneGroupSchema: JSONSchemaType<ISearchGroup> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		groupId: { type: 'string' },
 		groupName: { type: 'string' },
 	},
 	required: [],

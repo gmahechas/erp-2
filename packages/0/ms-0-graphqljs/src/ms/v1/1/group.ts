@@ -4,7 +4,7 @@ import { createOneGroup, updateOneGroup, deleteOneGroup, searchOneGroup, searchM
 
 export const typeDefs = gql`
 	type Group {
-		id: String
+		groupId: String
     groupName: String
 		policies: [Policy]
 	}
@@ -14,15 +14,15 @@ export const typeDefs = gql`
 		policies: [String]
 	}
 	input UpdateOneGroup {
-		id: String
+		groupId: String
     groupName: String
 		policies: [String]
 	}
 	input DeleteOneGroup {
-		id: String
+		groupId: String
 	}
 	input SearchOneGroup {
-		id: String
+		groupId: String
     groupName: String
 	}
 	
@@ -65,7 +65,7 @@ export const resolvers = {
 	Group: {
 		policies: async (parent: IGroup, _: any): Promise<IPolicy[]> => {
 			const { policies } = parent;
-			const ids = policies.length == 0 ? [{ id: '' }] : policies.map(id => ({ id }));
+			const ids = policies.length == 0 ? [{ policyId: '' }] : policies.map(policyId => ({ policyId }));
 			const result = await searchManyPolicy(ids);
 			return result;
 		}

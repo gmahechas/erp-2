@@ -4,7 +4,7 @@ import { createOnePolicy, updateOnePolicy, deleteOnePolicy, searchOnePolicy, sea
 
 export const typeDefs = gql`
 	type Policy {
-		id: String
+		policyId: String
     policyName: String
 		service: String
 		actions: [String]
@@ -16,16 +16,16 @@ export const typeDefs = gql`
 		actions: [String]
 	}
 	input UpdateOnePolicy {
-		id: String
+		policyId: String
     policyName: String
 		service: String
 		actions: [String]
 	}
 	input DeleteOnePolicy {
-		id: String
+		policyId: String
 	}
 	input SearchOnePolicy {
-		id: String
+		policyId: String
     policyName: String
 		service: String
 		actions: [String]

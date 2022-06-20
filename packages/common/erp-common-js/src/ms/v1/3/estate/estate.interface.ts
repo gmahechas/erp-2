@@ -1,5 +1,5 @@
 export interface IEstate {
-  id: string;
+  estateId: string;
   estateName: string;
   estateCode: string;
   countryId: string;

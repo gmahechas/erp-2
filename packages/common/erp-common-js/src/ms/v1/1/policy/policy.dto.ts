@@ -5,18 +5,18 @@ export interface ICreatePolicy {
 }
 
 export interface IUpdatePolicy {
-	id: string;
+	policyId: string;
 	policyName: string;
 	service: string;
 	actions: string[];
 }
 
 export interface IDeletePolicy {
-	id: string;
+	policyId: string;
 }
 
 export interface ISearchPolicy {
-	id: string;
+	policyId: string;
 	policyName: string;
 	service: string;
 	actions: string[];

@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
 		type: String,
 		default: uuidv4,
 	},
-	id: {
+	groupId: {
 		type: String,
 	},
 	groupName: {
@@ -34,7 +34,7 @@ const schema = new mongoose.Schema({
 });
 
 schema.pre('save', async function (next) {
-	this.set('id', this.get('_id'));
+	this.set('groupId', this.get('_id'));
 	next();
 });
 

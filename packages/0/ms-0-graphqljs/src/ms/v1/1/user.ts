@@ -4,7 +4,7 @@ import { createOneUser, updateOneUser, deleteOneUser, searchOneUser, searchManyU
 
 export const typeDefs = gql`
 	type User {
-		id: String
+		userId: String
     userName: String
 		groups: [Group]
 		policies: [Policy]
@@ -17,17 +17,17 @@ export const typeDefs = gql`
 		policies: [String]
 	}
 	input UpdateOneUser {
-		id: String
+		userId: String
     userName: String
     userPassword: String
 		groups: [String]
 		policies: [String]
 	}
 	input DeleteOneUser {
-		id: String
+		userId: String
 	}
 	input SearchOneUser {
-		id: String
+		userId: String
     userName: String
 	}
 	
@@ -70,13 +70,13 @@ export const resolvers = {
 	User: {
 		groups: async (parent: IUser, _: any): Promise<IGroup[]> => {
 			const { groups } = parent;
-			const ids = groups.length == 0 ? [{ id: '' }] : groups.map(id => ({ id }));
+			const ids = groups.length == 0 ? [{ groupId: '' }] : groups.map(groupId => ({ groupId }));
 			const result = await searchManyGroup(ids);
 			return result;
 		},
 		policies: async (parent: IUser, _: any): Promise<IPolicy[]> => {
 			const { policies } = parent;
-			const ids = policies.length == 0 ? [{ id: '' }] : policies.map(id => ({ id }));
+			const ids = policies.length == 0 ? [{ policyId: '' }] : policies.map(policyId => ({ policyId }));
 			const result = await searchManyPolicy(ids);
 			return result;
 		}

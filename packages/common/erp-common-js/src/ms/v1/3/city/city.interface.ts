@@ -1,5 +1,5 @@
 export interface ICity {
-  id: string;
+  cityId: string;
   cityName: string;
   cityCode: string;
   estateId: string;

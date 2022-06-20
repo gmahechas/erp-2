@@ -4,17 +4,17 @@ export interface ICreateTypePerson {
 }
 
 export interface IUpdateTypePerson {
-  id: string;
+  typePersonId: string;
   typePersonDescription: string;
   typePersonCode: string;
 }
 
 export interface IDeleteTypePerson {
-  id: string;
+  typePersonId: string;
 }
 
 export interface ISearchTypePerson {
-  id: string;
+  typePersonId: string;
   typePersonDescription: string;
   typePersonCode: string;
 }

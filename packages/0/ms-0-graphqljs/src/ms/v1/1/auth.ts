@@ -5,7 +5,7 @@ import { signinAuth } from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
 	type Auth {
-		id: String
+		userId: String
   	userName: String
 		companyKey: String
 		scope: String

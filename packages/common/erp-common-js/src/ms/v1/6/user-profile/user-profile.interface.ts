@@ -1,5 +1,5 @@
 export interface IUserProfile {
-  id: string;
+  userProfileId: string;
   userProfileStatus: boolean;
   userId: string;
   profileId: string;

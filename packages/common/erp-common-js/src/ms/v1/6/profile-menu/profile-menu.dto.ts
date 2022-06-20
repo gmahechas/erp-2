@@ -5,18 +5,18 @@ export interface ICreateProfileMenu {
 }
 
 export interface IUpdateProfileMenu {
-  id: string;
+  profileMenuId: string;
   profileMenuStatus: boolean;
   menuId: string;
   profileId: string;
 }
 
 export interface IDeleteProfileMenu {
-  id: string;
+  profileMenuId: string;
 }
 
 export interface ISearchProfileMenu {
-  id: string;
+  profileMenuId: string;
   profileMenuStatus: boolean;
   menuId: string;
   profileId: string;

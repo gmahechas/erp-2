@@ -15,28 +15,28 @@ export const createOneEstateSchema: JSONSchemaType<ICreateEstate> = {
 export const updateOneEstateSchema: JSONSchemaType<IUpdateEstate> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		estateId: { type: 'string' },
 		estateName: { type: 'string' },
 		estateCode: { type: 'string', minLength: 2, maxLength: 4 },
 		countryId: { type: 'string' }
 	},
-	required: ['id'],
+	required: ['estateId'],
 	additionalProperties: false
 };
 
 export const deleteOneEstateSchema: JSONSchemaType<IDeleteEstate> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' }
+		estateId: { type: 'string' }
 	},
-	required: ['id'],
+	required: ['estateId'],
 	additionalProperties: false
 };
 
 export const searchOneEstateSchema: JSONSchemaType<ISearchEstate> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		estateId: { type: 'string' },
 		estateName: { type: 'string' },
 		estateCode: { type: 'string', minLength: 2, maxLength: 4 },
 		countryId: { type: 'string' }

@@ -7,8 +7,8 @@ export const createOneCountry = async (data: ICreateCountry): Promise<ICountry> 
 };
 
 export const updateOneCountry = async (data: IUpdateCountry): Promise<ICountry | null> => {
-	let result = await Country.findOneAndUpdate({ id: data.id }, data);
-	result = Object.assign(result, data);
+	let result = await Country.findOneAndUpdate({ countryId: data.countryId }, data);
+	// result = Object.assign(result, data);
 	return result;
 };
 

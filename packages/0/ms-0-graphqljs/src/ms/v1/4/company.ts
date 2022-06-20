@@ -4,7 +4,7 @@ import { createOneCompany, updateOneCompany, deleteOneCompany, searchOneCompany,
 
 export const typeDefs = gql`
 	type Company {
-		id: String
+		companyId: String
   	companyName: String
   	companyIdentification: String
   	companyKey: String
@@ -18,17 +18,17 @@ export const typeDefs = gql`
   	cityId: String
 	}
 	input UpdateOneCompany {
-		id: String
+		companyId: String
   	companyName: String
   	companyIdentification: String
   	companyKey: String
   	cityId: String
 	}
 	input DeleteOneCompany {
-		id: String
+		companyId: String
 	}
 	input SearchOneCompany {
-		id: String
+		companyId: String
   	companyName: String
   	companyIdentification: String
   	companyKey: String

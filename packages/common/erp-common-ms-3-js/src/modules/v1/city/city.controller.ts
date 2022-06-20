@@ -7,8 +7,8 @@ export const createOneCity = async (data: ICreateCity): Promise<ICity> => {
 };
 
 export const updateOneCity = async (data: IUpdateCity): Promise<ICity | null> => {
-	let result = await City.findOneAndUpdate({ id: data.id }, data);
-	result = Object.assign(result, data);
+	let result = await City.findOneAndUpdate({ cityId: data.cityId }, data);
+	// result = Object.assign(result, data);
 	return result;
 };
 

@@ -4,17 +4,17 @@ export interface ICreateProfile {
 }
 
 export interface IUpdateProfile {
-  id: string;
+  profileId: string;
   profileName: string;
   profileDescription: string;
 }
 
 export interface IDeleteProfile {
-  id: string;
+  profileId: string;
 }
 
 export interface ISearchProfile {
-  id: string;
+  profileId: string;
   profileName: string;
   profileDescription: string;
 }

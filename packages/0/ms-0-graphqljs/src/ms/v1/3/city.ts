@@ -4,7 +4,7 @@ import { createOneCity, updateOneCity, deleteOneCity, searchOneCity, searchManyC
 
 export const typeDefs = gql`
 	type City {
-		id: String
+		cityId: String
   	cityName: String
   	cityCode: String
   	estateId: String
@@ -17,16 +17,16 @@ export const typeDefs = gql`
   	estateId: String
 	}
 	input UpdateOneCity {
-		id: String
+		cityId: String
   	cityName: String
   	cityCode: String
   	estateId: String
 	}
 	input DeleteOneCity {
-		id: String
+		cityId: String
 	}
 	input SearchOneCity {
-		id: String
+		cityId: String
   	cityName: String
   	cityCode: String
   	estateId: String
@@ -71,7 +71,7 @@ export const resolvers = {
 	City: {
 		estate: async (parent: ICity, _: object): Promise<IEstate | null> => {
 			const { estateId } = parent;
-			const result = await searchOneEstate({ id: estateId });
+			const result = await searchOneEstate({ estateId });
 			return result;
 		},
 	}

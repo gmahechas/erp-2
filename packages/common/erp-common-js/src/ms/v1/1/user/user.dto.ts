@@ -6,7 +6,7 @@ export interface ICreateUser {
 }
 
 export interface IUpdateUser {
-  id: string;
+  userId: string;
   userName: string;
   userPassword: string;
   groups: string[];
@@ -14,10 +14,10 @@ export interface IUpdateUser {
 }
 
 export interface IDeleteUser {
-  id: string;
+  userId: string;
 }
 
 export interface ISearchUser {
-  id: string;
+  userId: string;
   userName: string;
 }

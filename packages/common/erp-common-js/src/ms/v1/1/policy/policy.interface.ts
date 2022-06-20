@@ -1,5 +1,5 @@
 export interface IPolicy {
-	id: string;
+	policyId: string;
 	policyName: string;
 	service: string;
 	actions: string[];

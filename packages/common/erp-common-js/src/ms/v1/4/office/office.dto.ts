@@ -4,17 +4,17 @@ export interface ICreateOffice {
 }
 
 export interface IUpdateOffice {
-  id: string;
+  officeId: string;
   officeName: string;
   companyId: string;
 }
 
 export interface IDeleteOffice {
-  id: string;
+  officeId: string;
 }
 
 export interface ISearchOffice {
-  id: string;
+  officeId: string;
   officeName: string;
   companyId: string;
 }

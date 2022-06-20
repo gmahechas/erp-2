@@ -5,18 +5,18 @@ export interface ICreateCity {
 }
 
 export interface IUpdateCity {
-  id: string;
+  cityId: string;
   cityName: string;
   cityCode: string;
   estateId: string;
 }
 
 export interface IDeleteCity {
-  id: string;
+  cityId: string;
 }
 
 export interface ISearchCity {
-  id: string;
+  cityId: string;
   cityName: string;
   cityCode: string;
   estateId: string;

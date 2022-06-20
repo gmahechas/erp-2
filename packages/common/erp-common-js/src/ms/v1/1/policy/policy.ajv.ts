@@ -18,7 +18,7 @@ export const createOnePolicySchema: JSONSchemaType<ICreatePolicy> = {
 export const updateOnePolicySchema: JSONSchemaType<IUpdatePolicy> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		policyId: { type: 'string' },
 		policyName: { type: 'string' },
 		service: { type: 'string' },
 		actions: {
@@ -26,23 +26,23 @@ export const updateOnePolicySchema: JSONSchemaType<IUpdatePolicy> = {
 			items: { type: 'string' }
 		},
 	},
-	required: ['id'],
+	required: ['policyId'],
 	additionalProperties: false,
 };
 
 export const deleteOnePolicySchema: JSONSchemaType<IDeletePolicy> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		policyId: { type: 'string' },
 	},
-	required: ['id'],
+	required: ['policyId'],
 	additionalProperties: false,
 };
 
 export const searchOnePolicySchema: JSONSchemaType<ISearchPolicy> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		policyId: { type: 'string' },
 		policyName: { type: 'string' },
 		service: { type: 'string' },
 		actions: {

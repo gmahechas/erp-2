@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
 		type: String,
 		default: uuidv4,
 	},
-	id: {
+	officeId: {
 		type: String,
 	},
 	officeName: {
@@ -31,7 +31,7 @@ const schema = new mongoose.Schema({
 });
 
 schema.pre('save', async function (next) {
-	this.set('id', this.get('_id'));
+	this.set('officeId', this.get('_id'));
 	next();
 });
 

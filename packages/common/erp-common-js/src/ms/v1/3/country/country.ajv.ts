@@ -14,27 +14,27 @@ export const createOneCountrySchema: JSONSchemaType<ICreateCountry> = {
 export const updateOneCountrySchema: JSONSchemaType<IUpdateCountry> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		countryId: { type: 'string' },
 		countryName: { type: 'string' },
 		countryCode: { type: 'string', minLength: 2, maxLength: 4 }
 	},
-	required: ['id'],
+	required: ['countryId'],
 	additionalProperties: false
 };
 
 export const deleteOneCountrySchema: JSONSchemaType<IDeleteCountry> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' }
+		countryId: { type: 'string' }
 	},
-	required: ['id'],
+	required: ['countryId'],
 	additionalProperties: false
 };
 
 export const searchOneCountrySchema: JSONSchemaType<ISearchCountry> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		countryId: { type: 'string' },
 		countryName: { type: 'string' },
 		countryCode: { type: 'string', minLength: 2, maxLength: 4 }
 	},

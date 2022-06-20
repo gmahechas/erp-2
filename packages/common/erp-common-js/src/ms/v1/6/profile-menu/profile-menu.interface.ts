@@ -1,5 +1,5 @@
 export interface IProfileMenu {
-  id: string;
+  profileMenuId: string;
   profileMenuStatus: boolean;
   menuId: string;
   profileId: string;

@@ -1,5 +1,5 @@
 export interface IMenu {
-  id: string;
+  menuId: string;
   menuName: string;
   menuDescription: string;
   menuUri: string;

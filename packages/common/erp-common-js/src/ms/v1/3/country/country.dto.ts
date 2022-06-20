@@ -4,17 +4,17 @@ export interface ICreateCountry {
 }
 
 export interface IUpdateCountry {
-  id: string;
+  countryId: string;
   countryName: string;
   countryCode: string;
 }
 
 export interface IDeleteCountry {
-  id: string;
+  countryId: string;
 }
 
 export interface ISearchCountry {
-  id: string;
+  countryId: string;
   countryName: string;
   countryCode: string;
 }

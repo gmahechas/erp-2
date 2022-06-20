@@ -10,7 +10,7 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 		sendError(TypeErrorMessage.AUTHENTICATION);
 	}
 	
-	const { id, companyId } = user;
+	const { userId, companyId } = user;
 	const passwordsMatch = await compareHash(userPassword, user.userPassword);
 	
 	if (!passwordsMatch) {
@@ -18,7 +18,7 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 	}
 	
 	const policies = user.groups.policies.concat(user.policies).reduce((acc, policy) => { 
-		if (!acc.find(item => item.id === policy.id)) {
+		if (!acc.find(item => item.policyId === policy.policyId)) {
 			acc.push(policy);
 		}
 		return acc;
@@ -44,7 +44,7 @@ export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> 
 	}
 
 	const token = jwtSign({
-		id,
+		userId,
 		userName,
 		companyId,
 		companyKey,

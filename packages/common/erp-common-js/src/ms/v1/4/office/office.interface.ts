@@ -1,5 +1,5 @@
 export interface IOffice{
-  id: string;
+  officeId: string;
   officeName: string;
   companyId: string;
 }

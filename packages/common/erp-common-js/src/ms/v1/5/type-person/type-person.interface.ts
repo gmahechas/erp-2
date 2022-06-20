@@ -1,5 +1,5 @@
 export interface ITypePerson {
-  id: string;
+  typePersonId: string;
   typePersonDescription: string;
   typePersonCode: string;
 }

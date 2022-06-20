@@ -7,8 +7,8 @@ export const createOneCompany = async (data: ICreateCompany): Promise<ICompany> 
 };
 
 export const updateOneCompany = async (data: IUpdateCompany): Promise<ICompany | null> => {
-	let result = await Company.findOneAndUpdate({ id: data.id }, data);
-	result = Object.assign(result, data);
+	let result = await Company.findOneAndUpdate({ companyId: data.companyId }, data);
+	// result = Object.assign(result, data);
 	return result;
 };
 

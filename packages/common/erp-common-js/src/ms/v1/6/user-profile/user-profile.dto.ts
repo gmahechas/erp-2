@@ -5,18 +5,18 @@ export interface ICreateUserProfile {
 }
 
 export interface IUpdateUserProfile {
-  id: string;
+  userProfileId: string;
   userProfileStatus: boolean;
   userId: string;
   profileId: string;
 }
 
 export interface IDeleteUserProfile {
-  id: string;
+  userProfileId: string;
 }
 
 export interface ISearchUserProfile {
-  id: string;
+  userProfileId: string;
   userProfileStatus: boolean;
   userId: string;
   profileId: string;

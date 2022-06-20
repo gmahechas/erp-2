@@ -4,7 +4,7 @@ import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate, sea
 
 export const typeDefs = gql`
 	type Estate {
-		id: String
+		estateId: String
   	estateName: String
   	estateCode: String
   	countryId: String
@@ -18,16 +18,16 @@ export const typeDefs = gql`
   	countryId: String
 	}
 	input UpdateOneEstate {
-		id: String
+		estateId: String
   	estateName: String
   	estateCode: String
   	countryId: String
 	}
 	input DeleteOneEstate {
-		id: String
+		estateId: String
 	}
 	input SearchOneEstate {
-		id: String
+		estateId: String
   	estateName: String
   	estateCode: String
   	countryId: String
@@ -72,12 +72,12 @@ export const resolvers = {
 	Estate: {
 		country: async (parent: IEstate, _: object): Promise<ICountry | null> => {
 			const { countryId } = parent;
-			const result = await searchOneCountry({ id: countryId });
+			const result = await searchOneCountry({ countryId });
 			return result;
 		},
 		cities: async (parent: IEstate, _: object): Promise<ICity[]> => {
-			const { id } = parent;
-			const result = await searchManyCity([{ estateId: id }]);
+			const { estateId } = parent;
+			const result = await searchManyCity([{ estateId }]);
 			return result;
 		}
 	}

@@ -11,8 +11,8 @@ export const createOneGroup = async (data: ICreateGroup): Promise<IGroup> => {
 
 export const updateOneGroup = async (data: IUpdateGroup): Promise<IGroup | null> => {
 	const { companyId } = Context.get('auth');
-	const { id } = data;
-	let entity = await Group.findOne({ id, companyId });
+	const { groupId } = data;
+	let entity = await Group.findOne({ groupId, companyId });
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}
@@ -25,8 +25,8 @@ export const updateOneGroup = async (data: IUpdateGroup): Promise<IGroup | null>
 
 export const deleteOneGroup = async (data: IDeleteGroup): Promise<IGroup | null> => {
 	const { companyId } = Context.get('auth');
-	const { id } = data;
-	let entity = await Group.findOne({ id, companyId });
+	const { groupId } = data;
+	let entity = await Group.findOne({ groupId, companyId });
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}

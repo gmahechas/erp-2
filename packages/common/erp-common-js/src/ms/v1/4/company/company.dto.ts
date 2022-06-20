@@ -6,18 +6,18 @@ export interface ICreateCompany {
 }
 
 export interface IUpdateCompany {
-  id: string;
+  companyId: string;
   companyName: string;
   companyIdentification: string;
   cityId: string;
 }
 
 export interface IDeleteCompany {
-  id: string;
+  companyId: string;
 }
 
 export interface ISearchCompany {
-  id: string;
+  companyId: string;
   companyName: string;
   companyIdentification: string;
   companyKey: string;

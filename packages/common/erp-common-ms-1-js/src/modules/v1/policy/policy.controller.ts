@@ -11,8 +11,8 @@ export const createOnePolicy = async (data: ICreatePolicy): Promise<IPolicy> => 
 
 export const updateOnePolicy = async (data: IUpdatePolicy): Promise<IPolicy | null> => {
 	const { companyId } = Context.get('auth');
-	const { id } = data;
-	let entity = await Policy.findOne({ id, companyId });
+	const { policyId } = data;
+	let entity = await Policy.findOne({ policyId, companyId });
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}
@@ -25,8 +25,8 @@ export const updateOnePolicy = async (data: IUpdatePolicy): Promise<IPolicy | nu
 
 export const deleteOnePolicy = async (data: IDeletePolicy): Promise<IPolicy | null> => {
 	const { companyId } = Context.get('auth');
-	const { id } = data;
-	let entity = await Policy.findOne({ id, companyId });
+	const { policyId } = data;
+	let entity = await Policy.findOne({ policyId, companyId });
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}

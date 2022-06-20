@@ -1,5 +1,5 @@
 export interface IProfile {
-  id: string;
+  profileId: string;
   profileName: string;
   profileDescription: string;
 }

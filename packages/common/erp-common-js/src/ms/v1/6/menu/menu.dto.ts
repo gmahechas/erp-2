@@ -7,7 +7,7 @@ export interface ICreateMenu {
 }
 
 export interface IUpdateMenu {
-  id: string;
+  menuId: string;
   menuName: string;
   menuDescription: string;
   menuUri: string;
@@ -16,11 +16,11 @@ export interface IUpdateMenu {
 }
 
 export interface IDeleteMenu {
-  id: string;
+  menuId: string;
 }
 
 export interface ISearchMenu {
-  id: string;
+  menuId: string;
   menuName: string;
   menuDescription: string;
   menuUri: string;

@@ -1,5 +1,5 @@
 export interface IAuth {
-  id: string;
+  userId: string;
   userName: string;
   companyId: string;
   companyKey: string;

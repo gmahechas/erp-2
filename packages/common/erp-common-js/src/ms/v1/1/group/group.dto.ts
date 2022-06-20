@@ -4,16 +4,16 @@ export interface ICreateGroup {
 }
 
 export interface IUpdateGroup {
-	id: string;
+	groupId: string;
 	groupName: string;
 	policies: string[];
 }
 
 export interface IDeleteGroup {
-	id: string;
+	groupId: string;
 }
 
 export interface ISearchGroup {
-	id: string;
+	groupId: string;
 	groupName: string;
 }

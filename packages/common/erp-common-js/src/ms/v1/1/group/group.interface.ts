@@ -1,5 +1,5 @@
 export interface IGroup {
-	id: string;
+	groupId: string;
 	groupName: string;
 	policies: string[];
 	companyId: string;

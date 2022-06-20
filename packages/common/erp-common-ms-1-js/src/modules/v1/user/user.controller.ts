@@ -11,8 +11,8 @@ export const createOneUser = async (data: ICreateUser): Promise<IUser> => {
 
 export const updateOneUser = async (data: IUpdateUser): Promise<IUser | null> => {
 	const { companyId } = Context.get('auth');
-	const { id } = data;
-	let entity = await User.findOne({ id });
+	const { userId } = data;
+	let entity = await User.findOne({ userId });
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}
@@ -25,8 +25,8 @@ export const updateOneUser = async (data: IUpdateUser): Promise<IUser | null> =>
 
 export const deleteOneUser = async (data: IDeleteUser): Promise<IUser | null> => {
 	const { companyId } = Context.get('auth');
-	const { id } = data;
-	let entity = await User.findOne({ id });
+	const { userId } = data;
+	let entity = await User.findOne({ userId });
 	if (!entity) {
 		sendError(TypeErrorMessage.NOT_FOUND);
 	}

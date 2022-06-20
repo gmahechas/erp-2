@@ -11,7 +11,7 @@ export interface ICreatePerson {
 }
 
 export interface IUpdatePerson {
-  id: string;
+  personId: string;
   personIdentification: string;
   personFirstName: string;
   personSecondName: string;
@@ -23,11 +23,11 @@ export interface IUpdatePerson {
 }
 
 export interface IDeletePerson {
-  id: string;
+  personId: string;
 }
 
 export interface ISearchPerson {
-  id: string;
+  personId: string;
   personIdentification: string;
   personFirstName: string;
   personSecondName: string;

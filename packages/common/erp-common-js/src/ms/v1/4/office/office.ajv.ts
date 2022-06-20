@@ -14,27 +14,27 @@ export const createOneOfficeSchema: JSONSchemaType<ICreateOffice> = {
 export const updateOneOfficeSchema: JSONSchemaType<IUpdateOffice> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		officeId: { type: 'string' },
 		officeName: { type: 'string' },
 		companyId: { type: 'string' },
 	},
-	required: ['id'],
+	required: ['officeId'],
 	additionalProperties: false
 };
 
 export const deleteOneOfficeSchema: JSONSchemaType<IDeleteOffice> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' }
+		officeId: { type: 'string' }
 	},
-	required: ['id'],
+	required: ['officeId'],
 	additionalProperties: false
 };
 
 export const searchOneOfficeSchema: JSONSchemaType<ISearchOffice> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		officeId: { type: 'string' },
 		officeName: { type: 'string' },
 		companyId: { type: 'string' },
 	},

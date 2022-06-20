@@ -7,8 +7,8 @@ export const createOneOffice = async (data: ICreateOffice): Promise<IOffice> => 
 };
 
 export const updateOneOffice = async (data: IUpdateOffice): Promise<IOffice | null> => {
-	let result = await Office.findOneAndUpdate({ id: data.id }, data);
-	result = Object.assign(result, data);
+	let result = await Office.findOneAndUpdate({ officeId: data.officeId }, data);
+	// result = Object.assign(result, data);
 	return result;
 };
 

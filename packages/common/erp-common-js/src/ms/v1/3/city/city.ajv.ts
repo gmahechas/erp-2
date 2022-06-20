@@ -15,28 +15,28 @@ export const createOneCitySchema: JSONSchemaType<ICreateCity> = {
 export const updateOneCitySchema: JSONSchemaType<IUpdateCity> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		cityId: { type: 'string' },
 		cityName: { type: 'string' },
 		cityCode: { type: 'string', minLength: 2, maxLength: 4 },
 		estateId: { type: 'string' }
 	},
-	required: ['id'],
+	required: ['cityId'],
 	additionalProperties: false
 };
 
 export const deleteOneCitySchema: JSONSchemaType<IDeleteCity> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' }
+		cityId: { type: 'string' }
 	},
-	required: ['id'],
+	required: ['cityId'],
 	additionalProperties: false
 };
 
 export const searchOneCitySchema: JSONSchemaType<ISearchCity> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		cityId: { type: 'string' },
 		cityName: { type: 'string' },
 		cityCode: { type: 'string', minLength: 2, maxLength: 4 },
 		estateId: { type: 'string' }

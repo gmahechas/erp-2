@@ -1,5 +1,5 @@
 export interface ITypeIdentification {
-  id: string;
+  typeIdentificationId: string;
   typeIdentificationDescription: string;
   typeIdentificationCode: string;
 }

@@ -1,5 +1,5 @@
 export interface ICompany {
-  id: string;
+  companyId: string;
   companyName: string;
   companyIdentification: string;
   companyKey: string;

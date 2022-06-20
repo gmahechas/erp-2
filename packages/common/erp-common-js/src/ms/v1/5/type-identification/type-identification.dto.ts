@@ -4,17 +4,17 @@ export interface ICreateTypeIdentification {
 }
 
 export interface IUpdateTypeIdentification {
-  id: string;
+  typeIdentificationId: string;
   typeIdentificationDescription: string;
   typeIdentificationCode: string;
 }
 
 export interface IDeleteTypeIdentification {
-  id: string;
+  typeIdentificationId: string;
 }
 
 export interface ISearchTypeIdentification {
-  id: string;
+  typeIdentificationId: string;
   typeIdentificationDescription: string;
   typeIdentificationCode: string;
 }

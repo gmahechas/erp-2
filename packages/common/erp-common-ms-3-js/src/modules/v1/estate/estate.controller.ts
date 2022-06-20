@@ -7,8 +7,8 @@ export const createOneEstate = async (data: ICreateEstate): Promise<IEstate> => 
 };
 
 export const updateOneEstate = async (data: IUpdateEstate): Promise<IEstate | null> => {
-	let result = await Estate.findOneAndUpdate({ id: data.id }, data);
-	result = Object.assign(result, data);
+	let result = await Estate.findOneAndUpdate({ estateId: data.estateId }, data);
+	// result = Object.assign(result, data);
 	return result;
 };
 

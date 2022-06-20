@@ -16,28 +16,28 @@ export const createOneCompanySchema: JSONSchemaType<ICreateCompany> = {
 export const updateOneCompanySchema: JSONSchemaType<IUpdateCompany> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		companyId: { type: 'string' },
 		companyName: { type: 'string' },
 		companyIdentification: { type: 'string' },
 		cityId: { type: 'string' },
 	},
-	required: ['id'],
+	required: ['companyId'],
 	additionalProperties: false
 };
 
 export const deleteOneCompanySchema: JSONSchemaType<IDeleteCompany> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' }
+		companyId: { type: 'string' }
 	},
-	required: ['id'],
+	required: ['companyId'],
 	additionalProperties: false
 };
 
 export const searchOneCompanySchema: JSONSchemaType<ISearchCompany> = {
 	type: 'object',
 	properties: {
-		id: { type: 'string' },
+		companyId: { type: 'string' },
 		companyName: { type: 'string' },
 		companyIdentification: { type: 'string' },
 		companyKey: { type: 'string' },
