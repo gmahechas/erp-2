@@ -8,6 +8,7 @@ setup(
     license="UNLICENSED",
     packages=find_packages(),
     install_requires=[
+        "gmahechas-erp-common-py==0.0.29",
         "gmahechas-erp-common-ms-utils-py==0.0.29",
     ],
 )

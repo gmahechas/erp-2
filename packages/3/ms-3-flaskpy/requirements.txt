@@ -1,0 +1,6 @@
+gmahechas_erp_common_py==0.0.29
+gmahechas_erp_common_ms_utils_py==0.0.29
+gmahechas_erp_common_flaskpy==0.0.29
+gmahechas_erp_common_ms_3_py==0.0.29
+
+
