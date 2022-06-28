@@ -42,6 +42,8 @@ export const resolvers = {
 				resolve(auth!);
 			});
 		},
-		meAuth: async (_: any, __: any): Promise<IAuth> => Context.get('auth')
+		meAuth: async (_: any, __: any): Promise<IAuth> => {
+			return Context.get('auth')
+		} 
 	}
 };

@@ -4,19 +4,13 @@ from requests import post
 
 
 class Vault:
-    __instance = None
+    _instance = None
 
     def __init__(self, url, token):
-        if Vault.__instance is not None:
+        if Vault._instance is not None:
             raise Exception("Config already initialized")
         else:
-            Vault.__instance = Client(url=url, token=token)
-
-    @staticmethod
-    def get_instance():
-        if Vault.__instance is None:
-            raise Exception("Vault not initialized")
-        return Vault.__instance
+            Vault._instance = Client(url=url, token=token)
 
     @staticmethod
     def auth(url, role_id, secret_id):
@@ -25,7 +19,7 @@ class Vault:
 
     @staticmethod
     def read(path):
-        vault_secrets = Vault.__instance.secrets.kv.v2.read_secret_version(mount_point='kv', path=path)['data'][
+        vault_secrets = Vault._instance.secrets.kv.v2.read_secret_version(mount_point='kv', path=path)['data'][
             'data']
         return vault_secrets
 

@@ -3,14 +3,14 @@ from pymongo import MongoClient
 
 
 class Mongo:
-    __instance = None
+    _instance = None
 
     def __init__(self, uri):
-        Mongo.__instance = MongoClient(uri)
+        Mongo._instance = MongoClient(uri)
 
-    @staticmethod
-    def get():
-        return Mongo.__instance
+    @classmethod
+    def instance(cls):
+        return cls._instance
 
 
 class MongoModel:
@@ -22,11 +22,11 @@ class MongoModel:
     def insert_one(self, data):
         uuid = str(uuid4())
         doc = {'_id': uuid, **data, 'id': uuid, '__v': 0}
-        result = Mongo.get().get_default_database()[self.collection].insert_one(doc)
+        result = Mongo.instance().get_default_database()[self.collection].insert_one(doc)
         return doc
 
     def find_one_update(self, data):
-        result = Mongo.get().get_default_database()[self.collection].update_one({'id': data['id']}, {'$set': data})
+        result = Mongo.instance().get_default_database()[self.collection].update_one({'id': data['id']}, {'$set': data})
         n, n_modified = result.raw_result['n'], result.raw_result['nModified']
         if n > 0 and (n == n_modified):
             return data
@@ -34,7 +34,7 @@ class MongoModel:
             return None
 
     def find_one_delete(self, data):
-        result = Mongo.get().get_default_database()[self.collection].delete_one(data)
+        result = Mongo.instance().get_default_database()[self.collection].delete_one(data)
         n = result.raw_result['n']
         if n > 0:
             return data
@@ -42,9 +42,10 @@ class MongoModel:
             return None
 
     def find_one(self, data):
-        result = Mongo.get().get_default_database()[self.collection].find_one(data)
+        result = Mongo.instance().get_default_database()[self.collection].find_one(data)
         return result
 
     def find(self, data):
-        result = Mongo.get().get_default_database()[self.collection].find({'$or': data})
+        search = [{}] if len(data) == 0 else data
+        result = Mongo.instance().get_default_database()[self.collection].find({'$or': search})
         return list(result)

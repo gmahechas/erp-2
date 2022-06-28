@@ -4,26 +4,26 @@ from .vault import Vault, init_vault
 
 
 class Env:
-    __instance = None
+    _instance = None
 
     def __init__(self, config):
-        if Env.__instance is not None:
+        if Env._instance is not None:
             raise Exception("Env already initialized")
         else:
-            Env.__instance = config
+            Env._instance = config
 
     def enrich(self, app_name, vault_secrets):
-        current_env = self.__instance[app_name]
+        current_env = self._instance[app_name]
         if app_name == "ms-3":
             current_env["databases"]["mongo"]["uri"] = current_env["databases"]["mongo"]["uri"] if current_env["databases"]["mongo"]["uri"] is not None else vault_secrets["mongo_uri"]
             current_env["auth"]["jwt"]["publicKey"] = current_env["auth"]["jwt"]["publicKey"] if current_env["auth"]["jwt"]["publicKey"] is not None else vault_secrets["publicKey"]
 
     @staticmethod
     def get():
-        if Env.__instance is None:
+        if Env._instance is None:
             raise Exception("Env not initialized")
         else:
-            return Env.__instance
+            return Env._instance
 
 
 def init_env():
