@@ -2,16 +2,14 @@ package main
 
 import (
 	"fmt"
-	"ms_3_golang/src/routes/v1"
+	"ms-3-golang/routes"
 	"net/http"
 )
 
 func main() {
-	mux := http.NewServeMux()
-	mux.Handle("/rest/v1/3/", http.StripPrefix("/rest/v1/3", routes.InitRoutesV1()))
 	server := &http.Server{
 		Addr:    ":50003",
-		Handler: mux,
+		Handler: routes.InitRoutes(),
 	}
 	fmt.Println(`ms-3 is runnig on: http://localhost:50003`)
 	server.ListenAndServe()
