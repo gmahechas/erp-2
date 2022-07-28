@@ -27,6 +27,9 @@
         {
             "path": "./packages/3/ms-3-flaskpy"
         },
+                {
+            "path": "./packages/3/ms-3-golang"
+        },
         {
             "path": "./packages/3/ms-3-graphqljs"
         },

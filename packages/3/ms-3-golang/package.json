@@ -1,0 +1,11 @@
+{
+    "name": "ms-3-golang",
+    "version": "0.0.29",
+    "description": "ms-3-golang",
+    "author": "gmahechas",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "go run main.go"
+    }
+}
