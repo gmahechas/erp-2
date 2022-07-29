@@ -1,4 +1,4 @@
-module ms-3-golang
+module ms-3-gingo
 
 go 1.18
 
