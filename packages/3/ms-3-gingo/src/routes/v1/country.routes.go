@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"ms-3-gingo/middlewares"
+	"ms-3-gingo/src/middlewares"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

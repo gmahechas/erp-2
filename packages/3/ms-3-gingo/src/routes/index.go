@@ -1,7 +1,7 @@
 package routes
 
 import (
-	v1 "ms-3-gingo/routes/v1"
+	v1 "ms-3-gingo/src/routes/v1"
 
 	"github.com/gin-gonic/gin"
 )

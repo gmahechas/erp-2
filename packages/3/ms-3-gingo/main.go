@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"ms-3-gingo/routes"
+	"ms-3-gingo/src/routes"
 
 	"github.com/gin-gonic/gin"
 )
