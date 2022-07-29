@@ -8,10 +8,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var config = map[string]interface{}{
-	"environment": "development",
-}
-
 func main() {
 	app := gin.New()
 	environments.InitEnv()
