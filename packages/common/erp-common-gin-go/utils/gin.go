@@ -2,6 +2,6 @@ package utils
 
 import "fmt"
 
-func InitEnv() {
+func GinGo() {
 	fmt.Println("gin packages from utils")
 }

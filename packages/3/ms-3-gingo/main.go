@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Print("ms-3-gingo")
+	fmt.Println("ms-3-gingo")
 }
