@@ -2,6 +2,6 @@ package helpers
 
 import "fmt"
 
-func Databases() {
+func ConnectDatabases() {
 	fmt.Println("Databases from Packages changes")
 }
