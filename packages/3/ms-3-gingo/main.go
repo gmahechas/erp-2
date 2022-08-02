@@ -1,9 +1,10 @@
 package main
 
 import (
-	"fmt"
+	ginGo "github.com/gmahechas/erp-common-gin-go/utils"
 )
 
 func main() {
-	fmt.Println("ms-3-gingo")
+	server := ginGo.NewGinServer()
+	server.Run(":50003")
 }
