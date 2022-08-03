@@ -10,8 +10,7 @@ type GinServer struct {
 }
 
 func NewGinServer() *GinServer {
-	server := &GinServer{Router: gin.New()}
-	return server
+	return &GinServer{Router: gin.New()}
 }
 
 func (server *GinServer) Run(address string) error {
@@ -31,3 +30,6 @@ func GinHandleFunc(handler func(*GinContext)) func(context *gin.Context) {
 }
 
 /* ************ RouterGroup ************ */
+type GinRouterGroup struct {
+	*gin.RouterGroup
+}
