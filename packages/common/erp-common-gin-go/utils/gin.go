@@ -22,14 +22,23 @@ type GinContext struct {
 	*gin.Context
 }
 
-func GinHandleFunc(handler func(*GinContext)) func(context *gin.Context) {
-	return func(context *gin.Context) {
-		customContext := GinContext{context}
-		handler(&customContext)
-	}
+func NewGinContext(context *gin.Context) GinContext {
+	return GinContext{context}
 }
 
 /* ************ RouterGroup ************ */
 type GinRouterGroup struct {
 	*gin.RouterGroup
+}
+
+func NewGinRouterGroup(routes *gin.RouterGroup) *GinRouterGroup {
+	return &GinRouterGroup{RouterGroup: routes}
+}
+
+/* ************ HandlerFunc ************ */
+func GinHandlerFunc(handler func(*GinContext)) func(context *gin.Context) {
+	return func(context *gin.Context) {
+		customContext := NewGinContext(context)
+		handler(&customContext)
+	}
 }

@@ -7,11 +7,11 @@ import (
 func InitEstateRoutes(router *ginGo.GinRouterGroup) {
 	routes := router.Group("/estate")
 	{
-		routes.GET("/create/one", ginGo.GinHandleFunc(createOneEstate))
-		routes.GET("/update/one", ginGo.GinHandleFunc(createOneEstate))
-		routes.GET("/delete/one", ginGo.GinHandleFunc(deleteOneEstate))
-		routes.GET("/search/one", ginGo.GinHandleFunc(searchOneEstate))
-		routes.GET("/search/many", ginGo.GinHandleFunc(searchManyEstate))
+		routes.GET("/create/one", ginGo.GinHandlerFunc(createOneEstate))
+		routes.GET("/update/one", ginGo.GinHandlerFunc(createOneEstate))
+		routes.GET("/delete/one", ginGo.GinHandlerFunc(deleteOneEstate))
+		routes.GET("/search/one", ginGo.GinHandlerFunc(searchOneEstate))
+		routes.GET("/search/many", ginGo.GinHandlerFunc(searchManyEstate))
 	}
 }
 

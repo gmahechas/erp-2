@@ -27,7 +27,7 @@
         {
             "path": "./packages/3/ms-3-flaskpy"
         },
-                {
+        {
             "path": "./packages/3/ms-3-gingo"
         },
         {
@@ -46,7 +46,64 @@
             "path": "./packages/4/ms-4-lambdajs"
         },
         {
-            "path": "./packages/common"
+            "path": "./packages/common/common-webcomponents"
+        },
+        {
+            "path": "./packages/common/common-webcomponents-react"
+        },
+        {
+            "path": "./packages/common/erp-common-expressjs"
+        },
+        {
+            "path": "./packages/common/erp-common-flaskpy"
+        },
+        {
+            "path": "./packages/common/erp-common-gin-go"
+        },
+        {
+            "path": "./packages/common/erp-common-graphqljs"
+        },
+        {
+            "path": "./packages/common/erp-common-grpcjs"
+        },
+        {
+            "path": "./packages/common/erp-common-js"
+        },
+        {
+            "path": "./packages/common/erp-common-lambdajs"
+        },
+        {
+            "path": "./packages/common/erp-common-mf-utils-js"
+        },
+        {
+            "path": "./packages/common/erp-common-ms-0-js"
+        },
+        {
+            "path": "./packages/common/erp-common-ms-1-js"
+        },
+        {
+            "path": "./packages/common/erp-common-ms-3-go"
+        },
+        {
+            "path": "./packages/common/erp-common-ms-3-js"
+        },
+        {
+            "path": "./packages/common/erp-common-ms-3-py"
+        },
+        {
+            "path": "./packages/common/erp-common-ms-4-js"
+        },
+        {
+            "path": "./packages/common/erp-common-ms-utils-go"
+        },
+        {
+            "path": "./packages/common/erp-common-ms-utils-js"
+        },
+        {
+            "path": "./packages/common/erp-common-ms-utils-py"
+        },
+        {
+            "path": "./packages/common/erp-common-py"
         }
     ],
     "settings": {}

@@ -9,6 +9,6 @@ import (
 func InitRoutes(server *ginGo.GinServer) {
 	routes := server.Router.Group("/rest")
 	{
-		v1.InitV1Routes(&ginGo.GinRouterGroup{RouterGroup: routes})
+		v1.InitV1Routes(ginGo.NewGinRouterGroup(routes))
 	}
 }

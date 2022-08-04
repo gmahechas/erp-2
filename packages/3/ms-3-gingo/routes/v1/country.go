@@ -7,11 +7,11 @@ import (
 func InitCountryRoutes(router *ginGo.GinRouterGroup) {
 	routes := router.Group("/country")
 	{
-		routes.GET("/create/one", ginGo.GinHandleFunc(createOneCountry))
-		routes.GET("/update/one", ginGo.GinHandleFunc(updateOneCountry))
-		routes.GET("/delete/one", ginGo.GinHandleFunc(deleteOneCountry))
-		routes.GET("/search/one", ginGo.GinHandleFunc(searchOneCountry))
-		routes.GET("/search/many", ginGo.GinHandleFunc(searchManyCountry))
+		routes.GET("/create/one", ginGo.GinHandlerFunc(createOneCountry))
+		routes.GET("/update/one", ginGo.GinHandlerFunc(updateOneCountry))
+		routes.GET("/delete/one", ginGo.GinHandlerFunc(deleteOneCountry))
+		routes.GET("/search/one", ginGo.GinHandlerFunc(searchOneCountry))
+		routes.GET("/search/many", ginGo.GinHandlerFunc(searchManyCountry))
 	}
 }
 
