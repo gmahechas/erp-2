@@ -1,13 +1,13 @@
 package routes
 
 import (
-	ginGo "github.com/gmahechas/erp-common-gin-go/utils"
+	ginGoUtils "github.com/gmahechas/erp-common-gin-go/utils"
 )
 
-func InitV1Routes(router *ginGo.GinRouterGroup) {
+func InitV1Routes(router *ginGoUtils.GinRouterGroup) {
 	routes := router.Group("/v1/3")
 	{
-		InitCountryRoutes(ginGo.NewGinRouterGroup(routes))
-		InitEstateRoutes(ginGo.NewGinRouterGroup(routes))
+		InitCountryRoutes(ginGoUtils.NewGinRouterGroup(routes))
+		InitEstateRoutes(ginGoUtils.NewGinRouterGroup(routes))
 	}
 }

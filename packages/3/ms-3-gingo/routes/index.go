@@ -3,12 +3,12 @@ package routes
 import (
 	v1 "ms-3-gingo/routes/v1"
 
-	ginGo "github.com/gmahechas/erp-common-gin-go/utils"
+	ginGoUtils "github.com/gmahechas/erp-common-gin-go/utils"
 )
 
-func InitRoutes(server *ginGo.GinServer) {
+func InitRoutes(server *ginGoUtils.GinServer) {
 	routes := server.Router.Group("/rest")
 	{
-		v1.InitV1Routes(ginGo.NewGinRouterGroup(routes))
+		v1.InitV1Routes(ginGoUtils.NewGinRouterGroup(routes))
 	}
 }
