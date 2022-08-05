@@ -1,6 +1,6 @@
 import { ICreateEstate, IDeleteEstate, IEstate, ISearchEstate, IUpdateEstate, ICountry, ICity } from '@gmahechas/erp-common-js';
 import { gql } from '@gmahechas/erp-common-graphqljs';
-import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate, searchManyEstate, searchOneCountry, searchManyCity } from '@gmahechas/erp-common-ms-0-js';
+import { createOneEstateV1, updateOneEstateV1, deleteOneEstateV1, searchOneEstateV1, searchManyEstateV1, searchOneCountryV1, searchManyCityV1 } from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
 	type Estate {
@@ -47,37 +47,37 @@ export const typeDefs = gql`
 export const resolvers = {
 	Mutation: {
 		createOneEstateV1: async (_: object, { data }: { data: ICreateEstate }): Promise<IEstate> => {
-			const result = await createOneEstate(data);
+			const result = await createOneEstateV1(data);
 			return result;
 		},
 		updateOneEstateV1: async (_: any, { data }: { data: IUpdateEstate }): Promise<IEstate | null> => {
-			const result = await updateOneEstate(data);
+			const result = await updateOneEstateV1(data);
 			return result;
 		},
 		deleteOneEstateV1: async (_: any, { data }: { data: IDeleteEstate }): Promise<IEstate | null> => {
-			const result = await deleteOneEstate(data);
+			const result = await deleteOneEstateV1(data);
 			return result;
 		},
 	},
 	Query: {
 		searchOneEstateV1: async (_: object, { data }: { data: Partial<ISearchEstate> }): Promise<IEstate | null> => {
-			const result = await searchOneEstate(data);
+			const result = await searchOneEstateV1(data);
 			return result;
 		},
 		searchManyEstateV1: async (_: object, { data }: { data: Partial<ISearchEstate>[] }): Promise<IEstate[]> => {
-			const result = await searchManyEstate(data);
+			const result = await searchManyEstateV1(data);
 			return result;
 		},
 	},
 	Estate: {
 		country: async (parent: IEstate, _: object): Promise<ICountry | null> => {
 			const { countryId } = parent;
-			const result = await searchOneCountry({ countryId });
+			const result = await searchOneCountryV1({ countryId });
 			return result;
 		},
 		cities: async (parent: IEstate, _: object): Promise<ICity[]> => {
 			const { estateId } = parent;
-			const result = await searchManyCity([{ estateId }]);
+			const result = await searchManyCityV1([{ estateId }]);
 			return result;
 		}
 	}

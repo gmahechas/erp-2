@@ -1,6 +1,6 @@
 import { IUser, ICreateUser, IUpdateUser, IDeleteUser, ISearchUser, IGroup, IPolicy } from '@gmahechas/erp-common-js';
 import { gql } from '@gmahechas/erp-common-graphqljs';
-import { createOneUser, updateOneUser, deleteOneUser, searchOneUser, searchManyUser, searchManyGroup, searchManyPolicy } from '@gmahechas/erp-common-ms-0-js';
+import { createOneUserV1, updateOneUserV1, deleteOneUserV1, searchOneUserV1, searchManyUserV1, searchManyGroupV1, searchManyPolicyV1 } from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
 	type User {
@@ -45,25 +45,25 @@ export const typeDefs = gql`
 export const resolvers = {
 	Mutation: {
 		createOneUserV1: async (_: any, { data }: { data: ICreateUser }): Promise<IUser> => {
-			const result = await createOneUser(data);
+			const result = await createOneUserV1(data);
 			return result;
 		},
 		updateOneUserV1: async (_: any, { data }: { data: IUpdateUser }): Promise<IUser | null> => {
-			const result = await updateOneUser(data);
+			const result = await updateOneUserV1(data);
 			return result;
 		},
 		deleteOneUserV1: async (_: any, { data }: { data: IDeleteUser }): Promise<IUser | null> => {
-			const result = await deleteOneUser(data);
+			const result = await deleteOneUserV1(data);
 			return result;
 		},
 	},
 	Query: {
 		searchOneUserV1: async (_: object, { data }: { data: Partial<ISearchUser> }): Promise<IUser | null> => {
-			const result = await searchOneUser(data);
+			const result = await searchOneUserV1(data);
 			return result;
 		},
 		searchManyUserV1: async (_: object, { data }: { data: Partial<ISearchUser>[] }): Promise<IUser[]> => {
-			const result = await searchManyUser(data);
+			const result = await searchManyUserV1(data);
 			return result;
 		},
 	},
@@ -71,13 +71,13 @@ export const resolvers = {
 		groups: async (parent: IUser, _: any): Promise<IGroup[]> => {
 			const { groups } = parent;
 			const ids = groups.length == 0 ? [{ groupId: '' }] : groups.map(groupId => ({ groupId }));
-			const result = await searchManyGroup(ids);
+			const result = await searchManyGroupV1(ids);
 			return result;
 		},
 		policies: async (parent: IUser, _: any): Promise<IPolicy[]> => {
 			const { policies } = parent;
 			const ids = policies.length == 0 ? [{ policyId: '' }] : policies.map(policyId => ({ policyId }));
-			const result = await searchManyPolicy(ids);
+			const result = await searchManyPolicyV1(ids);
 			return result;
 		}
 	}

@@ -1,7 +1,7 @@
 import { IAuth, ISigninAuth } from '@gmahechas/erp-common-js';
 import { Context, jwtDecode, env, Winston, uuidv4 } from '@gmahechas/erp-common-ms-utils-js';
 import { gql, express } from '@gmahechas/erp-common-graphqljs';
-import { signinAuth } from '@gmahechas/erp-common-ms-0-js';
+import { signinAuthV1 } from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
 	type Auth {
@@ -27,7 +27,7 @@ export const resolvers = {
 		signinAuthV1: async (_: any, { data }: { data: ISigninAuth }, { req }: { req: express.Request }): Promise<IAuth> => {
 			Context.set('requestId', uuidv4());
 			Winston.logger.info('logger', { requestId: Context.get('requestId'), auth: JSON.stringify(null), action: 'signinAuth', method: req.method, payload: JSON.stringify({ data }), sourceIp: req.ip });
-			const { token } = await signinAuth(data);
+			const { token } = await signinAuthV1(data);
 			req.session.token = token;
 			const auth = jwtDecode(token) as IAuth;
 			return auth;

@@ -1,6 +1,6 @@
 import { ICountry, ICreateCountry, IUpdateCountry, IDeleteCountry, IEstate, ISearchCountry } from '@gmahechas/erp-common-js';
 import { gql } from '@gmahechas/erp-common-graphqljs';
-import { createOneCountry, updateOneCountry, deleteOneCountry, searchOneCountry, searchManyCountry, searchManyEstate } from '@gmahechas/erp-common-ms-0-js';
+import { createOneCountryV1, updateOneCountryV1, deleteOneCountryV1, searchOneCountryV1, searchManyCountryV1, searchManyEstateV1 } from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
 	type Country {
@@ -42,32 +42,32 @@ export const typeDefs = gql`
 export const resolvers = {
 	Mutation: {
 		createOneCountryV1: async (_: any, { data }: { data: ICreateCountry }): Promise<ICountry> => {
-			const result = await createOneCountry(data);
+			const result = await createOneCountryV1(data);
 			return result;
 		},
 		updateOneCountryV1: async (_: any, { data }: { data: IUpdateCountry }): Promise<ICountry | null> => {
-			const result = await updateOneCountry(data);
+			const result = await updateOneCountryV1(data);
 			return result;
 		},
 		deleteOneCountryV1: async (_: any, { data }: { data: IDeleteCountry }): Promise<ICountry | null> => {
-			const result = await deleteOneCountry(data);
+			const result = await deleteOneCountryV1(data);
 			return result;
 		},
 	},
 	Query: {
 		searchOneCountryV1: async (_: object, { data }: { data: Partial<ISearchCountry> }): Promise<ICountry | null> => {
-			const result = await searchOneCountry(data);
+			const result = await searchOneCountryV1(data);
 			return result;
 		},
 		searchManyCountryV1: async (_: object, { data }: { data: Partial<ISearchCountry>[] }): Promise<ICountry[]> => {
-			const result = await searchManyCountry(data);
+			const result = await searchManyCountryV1(data);
 			return result;
 		},
 	},
 	Country: {
 		estates: async (parent: ICountry, _: object): Promise<IEstate[]> => {
 			const { countryId } = parent;
-			const result = await searchManyEstate([{ countryId }]);
+			const result = await searchManyEstateV1([{ countryId }]);
 			return result;
 		},
 	},

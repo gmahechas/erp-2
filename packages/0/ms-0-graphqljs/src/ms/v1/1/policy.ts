@@ -1,6 +1,6 @@
 import { IPolicy, ICreatePolicy, IUpdatePolicy, IDeletePolicy, ISearchPolicy } from '@gmahechas/erp-common-js';
 import { gql } from '@gmahechas/erp-common-graphqljs';
-import { createOnePolicy, updateOnePolicy, deleteOnePolicy, searchOnePolicy, searchManyPolicy } from '@gmahechas/erp-common-ms-0-js';
+import { createOnePolicyV1, updateOnePolicyV1, deleteOnePolicyV1, searchOnePolicyV1, searchManyPolicyV1 } from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
 	type Policy {
@@ -45,25 +45,25 @@ export const typeDefs = gql`
 export const resolvers = {
 	Mutation: {
 		createOnePolicyV1: async (_: any, { data }: { data: ICreatePolicy }): Promise<IPolicy> => {
-			const result = await createOnePolicy(data);
+			const result = await createOnePolicyV1(data);
 			return result;
 		},
 		updateOnePolicyV1: async (_: any, { data }: { data: IUpdatePolicy }): Promise<IPolicy | null> => {
-			const result = await updateOnePolicy(data);
+			const result = await updateOnePolicyV1(data);
 			return result;
 		},
 		deleteOnePolicyV1: async (_: any, { data }: { data: IDeletePolicy }): Promise<IPolicy | null> => {
-			const result = await deleteOnePolicy(data);
+			const result = await deleteOnePolicyV1(data);
 			return result;
 		},
 	},
 	Query: {
 		searchOnePolicyV1: async (_: object, { data }: { data: Partial<ISearchPolicy> }): Promise<IPolicy | null> => {
-			const result = await searchOnePolicy(data);
+			const result = await searchOnePolicyV1(data);
 			return result;
 		},
 		searchManyPolicyV1: async (_: object, { data }: { data: Partial<ISearchPolicy>[] }): Promise<IPolicy[]> => {
-			const result = await searchManyPolicy(data);
+			const result = await searchManyPolicyV1(data);
 			return result;
 		},
 	}
