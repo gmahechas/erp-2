@@ -32,37 +32,37 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOnePolicy(data: CreateOnePolicy): Policy @authentication @logger
-		updateOnePolicy(data: UpdateOnePolicy): Policy @authentication @logger
-		deleteOnePolicy(data: DeleteOnePolicy): Policy @authentication @logger
+  	createOnePolicyV1(data: CreateOnePolicy): Policy @authentication @logger
+		updateOnePolicyV1(data: UpdateOnePolicy): Policy @authentication @logger
+		deleteOnePolicyV1(data: DeleteOnePolicy): Policy @authentication @logger
 	}
   type Query {
-  	searchOnePolicy(data: SearchOnePolicy): Policy @authentication @logger
-		searchManyPolicy(data: [SearchOnePolicy]): [Policy] @authentication @logger
+  	searchOnePolicyV1(data: SearchOnePolicy): Policy @authentication @logger
+		searchManyPolicyV1(data: [SearchOnePolicy]): [Policy] @authentication @logger
 	}
 `;
 
 export const resolvers = {
 	Mutation: {
-		createOnePolicy: async (_: any, { data }: { data: ICreatePolicy }): Promise<IPolicy> => {
+		createOnePolicyV1: async (_: any, { data }: { data: ICreatePolicy }): Promise<IPolicy> => {
 			const result = await createOnePolicy(data);
 			return result;
 		},
-		updateOnePolicy: async (_: any, { data }: { data: IUpdatePolicy }): Promise<IPolicy | null> => {
+		updateOnePolicyV1: async (_: any, { data }: { data: IUpdatePolicy }): Promise<IPolicy | null> => {
 			const result = await updateOnePolicy(data);
 			return result;
 		},
-		deleteOnePolicy: async (_: any, { data }: { data: IDeletePolicy }): Promise<IPolicy | null> => {
+		deleteOnePolicyV1: async (_: any, { data }: { data: IDeletePolicy }): Promise<IPolicy | null> => {
 			const result = await deleteOnePolicy(data);
 			return result;
 		},
 	},
 	Query: {
-		searchOnePolicy: async (_: object, { data }: { data: Partial<ISearchPolicy> }): Promise<IPolicy | null> => {
+		searchOnePolicyV1: async (_: object, { data }: { data: Partial<ISearchPolicy> }): Promise<IPolicy | null> => {
 			const result = await searchOnePolicy(data);
 			return result;
 		},
-		searchManyPolicy: async (_: object, { data }: { data: Partial<ISearchPolicy>[] }): Promise<IPolicy[]> => {
+		searchManyPolicyV1: async (_: object, { data }: { data: Partial<ISearchPolicy>[] }): Promise<IPolicy[]> => {
 			const result = await searchManyPolicy(data);
 			return result;
 		},

@@ -16,15 +16,15 @@ export const typeDefs = gql`
 		companyKey: String
 	}
   type Query {
-  	signinAuth(data: SigninAuth): Auth
-		signoutAuth: Auth @authentication @logger
-  	meAuth: Auth @authentication @logger
+  	signinAuthV1(data: SigninAuth): Auth
+		signoutAuthV1: Auth @authentication @logger
+  	meAuthV1: Auth @authentication @logger
 	}
 `;
 
 export const resolvers = {
 	Query: {
-		signinAuth: async (_: any, { data }: { data: ISigninAuth }, { req }: { req: express.Request }): Promise<IAuth> => {
+		signinAuthV1: async (_: any, { data }: { data: ISigninAuth }, { req }: { req: express.Request }): Promise<IAuth> => {
 			Context.set('requestId', uuidv4());
 			Winston.logger.info('logger', { requestId: Context.get('requestId'), auth: JSON.stringify(null), action: 'signinAuth', method: req.method, payload: JSON.stringify({ data }), sourceIp: req.ip });
 			const { token } = await signinAuth(data);
@@ -32,7 +32,7 @@ export const resolvers = {
 			const auth = jwtDecode(token) as IAuth;
 			return auth;
 		},
-		signoutAuth: async (_: any, __: any, { req, res }: { req: express.Request, res: express.Response }): Promise<IAuth> => {
+		signoutAuthV1: async (_: any, __: any, { req, res }: { req: express.Request, res: express.Response }): Promise<IAuth> => {
 			return new Promise((resolve, reject) => {
 				const auth = Context.get('auth');
 				const { cookie_name } = env['ms-0']!.session!;
@@ -42,7 +42,7 @@ export const resolvers = {
 				resolve(auth!);
 			});
 		},
-		meAuth: async (_: any, __: any): Promise<IAuth> => {
+		meAuthV1: async (_: any, __: any): Promise<IAuth> => {
 			return Context.get('auth')
 		} 
 	}

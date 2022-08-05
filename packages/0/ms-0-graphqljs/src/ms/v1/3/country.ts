@@ -29,37 +29,37 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOneCountry(data: CreateOneCountry): Country @authentication @logger
-		updateOneCountry(data: UpdateOneCountry): Country @authentication @logger
-		deleteOneCountry(data: DeleteOneCountry): Country @authentication @logger
+  	createOneCountryV1(data: CreateOneCountry): Country @authentication @logger
+		updateOneCountryV1(data: UpdateOneCountry): Country @authentication @logger
+		deleteOneCountryV1(data: DeleteOneCountry): Country @authentication @logger
 	}
   type Query {
-  	searchOneCountry(data: SearchOneCountry): Country @authentication @logger
-		searchManyCountry(data: [SearchOneCountry]): [Country] @authentication @logger
+  	searchOneCountryV1(data: SearchOneCountry): Country @authentication @logger
+		searchManyCountryV1(data: [SearchOneCountry]): [Country] @authentication @logger
 	}
 `;
 
 export const resolvers = {
 	Mutation: {
-		createOneCountry: async (_: any, { data }: { data: ICreateCountry }): Promise<ICountry> => {
+		createOneCountryV1: async (_: any, { data }: { data: ICreateCountry }): Promise<ICountry> => {
 			const result = await createOneCountry(data);
 			return result;
 		},
-		updateOneCountry: async (_: any, { data }: { data: IUpdateCountry }): Promise<ICountry | null> => {
+		updateOneCountryV1: async (_: any, { data }: { data: IUpdateCountry }): Promise<ICountry | null> => {
 			const result = await updateOneCountry(data);
 			return result;
 		},
-		deleteOneCountry: async (_: any, { data }: { data: IDeleteCountry }): Promise<ICountry | null> => {
+		deleteOneCountryV1: async (_: any, { data }: { data: IDeleteCountry }): Promise<ICountry | null> => {
 			const result = await deleteOneCountry(data);
 			return result;
 		},
 	},
 	Query: {
-		searchOneCountry: async (_: object, { data }: { data: Partial<ISearchCountry> }): Promise<ICountry | null> => {
+		searchOneCountryV1: async (_: object, { data }: { data: Partial<ISearchCountry> }): Promise<ICountry | null> => {
 			const result = await searchOneCountry(data);
 			return result;
 		},
-		searchManyCountry: async (_: object, { data }: { data: Partial<ISearchCountry>[] }): Promise<ICountry[]> => {
+		searchManyCountryV1: async (_: object, { data }: { data: Partial<ISearchCountry>[] }): Promise<ICountry[]> => {
 			const result = await searchManyCountry(data);
 			return result;
 		},

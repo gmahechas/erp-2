@@ -5,7 +5,7 @@ import (
 )
 
 func InitV1Routes(router *ginGo.GinRouterGroup) {
-	routes := router.Group("/v1")
+	routes := router.Group("/v1/3")
 	{
 		InitCountryRoutes(ginGo.NewGinRouterGroup(routes))
 		InitEstateRoutes(ginGo.NewGinRouterGroup(routes))

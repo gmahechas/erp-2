@@ -36,37 +36,37 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOneCompany(data: CreateOneCompany): Company @authentication @logger
-		updateOneCompany(data: UpdateOneCompany): Company @authentication @logger
-		deleteOneCompany(data: DeleteOneCompany): Company @authentication @logger
+  	createOneCompanyV1(data: CreateOneCompany): Company @authentication @logger
+		updateOneCompanyV1(data: UpdateOneCompany): Company @authentication @logger
+		deleteOneCompanyV1(data: DeleteOneCompany): Company @authentication @logger
 	}
   type Query {
-  	searchOneCompany(data: SearchOneCompany): Company @authentication @logger
-		searchManyCompany(data: [SearchOneCompany]): [Company] @authentication @logger
+  	searchOneCompanyV1(data: SearchOneCompany): Company @authentication @logger
+		searchManyCompanyV1(data: [SearchOneCompany]): [Company] @authentication @logger
 	}
 `;
 
 export const resolvers = {
 	Mutation: {
-		createOneCompany: async (_: any, { data }: { data: ICreateCompany }): Promise<ICompany> => {
+		createOneCompanyV1: async (_: any, { data }: { data: ICreateCompany }): Promise<ICompany> => {
 			const result = await createOneCompany(data);
 			return result;
 		},
-		updateOneCompany: async (_: any, { data }: { data: IUpdateCompany }): Promise<ICompany | null> => {
+		updateOneCompanyV1: async (_: any, { data }: { data: IUpdateCompany }): Promise<ICompany | null> => {
 			const result = await updateOneCompany(data);
 			return result;
 		},
-		deleteOneCompany: async (_: any, { data }: { data: IDeleteCompany }): Promise<ICompany | null> => {
+		deleteOneCompanyV1: async (_: any, { data }: { data: IDeleteCompany }): Promise<ICompany | null> => {
 			const result = await deleteOneCompany(data);
 			return result;
 		}
 	},
 	Query: {
-		searchOneCompany: async (_: object, { data }: { data: Partial<ISearchCompany> }): Promise<ICompany | null> => {
+		searchOneCompanyV1: async (_: object, { data }: { data: Partial<ISearchCompany> }): Promise<ICompany | null> => {
 			const result = await searchOneCompany(data);
 			return result;
 		},
-		searchManyCompany: async (_: object, { data }: { data: Partial<ISearchCompany>[] }): Promise<ICompany[]> => {
+		searchManyCompanyV1: async (_: object, { data }: { data: Partial<ISearchCompany>[] }): Promise<ICompany[]> => {
 			const result = await searchManyCompany(data);
 			return result;
 		}

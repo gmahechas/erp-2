@@ -5,6 +5,6 @@ import { officeRouter } from './office.routes';
 const router = express.Router();
 
 export const v1Routes = [
-	router.use('/rest/v1/4/company', companyRouter),
-	router.use('/rest/v1/4/office', officeRouter),
+	router.use('/v1/4/company', companyRouter),
+	router.use('/v1/4/office', officeRouter),
 ];

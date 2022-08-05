@@ -34,37 +34,37 @@ export const typeDefs = gql`
 	}
 
 	type Mutation {
-  	createOneEstate(data: CreateOneEstate): Estate @authentication @logger
-		updateOneEstate(data: UpdateOneEstate): Estate @authentication @logger
-		deleteOneEstate(data: DeleteOneEstate): Estate @authentication @logger
+  	createOneEstateV1(data: CreateOneEstate): Estate @authentication @logger
+		updateOneEstateV1(data: UpdateOneEstate): Estate @authentication @logger
+		deleteOneEstateV1(data: DeleteOneEstate): Estate @authentication @logger
 	}
   type Query {
-  	searchOneEstate(data: SearchOneEstate): Estate @authentication @logger
-		searchManyEstate(data: [SearchOneEstate]): [Estate] @authentication @logger
+  	searchOneEstateV1(data: SearchOneEstate): Estate @authentication @logger
+		searchManyEstateV1(data: [SearchOneEstate]): [Estate] @authentication @logger
 	}
 `;
 
 export const resolvers = {
 	Mutation: {
-		createOneEstate: async (_: object, { data }: { data: ICreateEstate }): Promise<IEstate> => {
+		createOneEstateV1: async (_: object, { data }: { data: ICreateEstate }): Promise<IEstate> => {
 			const result = await createOneEstate(data);
 			return result;
 		},
-		updateOneEstate: async (_: any, { data }: { data: IUpdateEstate }): Promise<IEstate | null> => {
+		updateOneEstateV1: async (_: any, { data }: { data: IUpdateEstate }): Promise<IEstate | null> => {
 			const result = await updateOneEstate(data);
 			return result;
 		},
-		deleteOneEstate: async (_: any, { data }: { data: IDeleteEstate }): Promise<IEstate | null> => {
+		deleteOneEstateV1: async (_: any, { data }: { data: IDeleteEstate }): Promise<IEstate | null> => {
 			const result = await deleteOneEstate(data);
 			return result;
 		},
 	},
 	Query: {
-		searchOneEstate: async (_: object, { data }: { data: Partial<ISearchEstate> }): Promise<IEstate | null> => {
+		searchOneEstateV1: async (_: object, { data }: { data: Partial<ISearchEstate> }): Promise<IEstate | null> => {
 			const result = await searchOneEstate(data);
 			return result;
 		},
-		searchManyEstate: async (_: object, { data }: { data: Partial<ISearchEstate>[] }): Promise<IEstate[]> => {
+		searchManyEstateV1: async (_: object, { data }: { data: Partial<ISearchEstate>[] }): Promise<IEstate[]> => {
 			const result = await searchManyEstate(data);
 			return result;
 		},

@@ -32,37 +32,37 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOneUser(data: CreateOneUser): User @authentication @logger
-		updateOneUser(data: UpdateOneUser): User @authentication @logger
-		deleteOneUser(data: DeleteOneUser): User @authentication @logger
+  	createOneUserV1(data: CreateOneUser): User @authentication @logger
+		updateOneUserV1(data: UpdateOneUser): User @authentication @logger
+		deleteOneUserV1(data: DeleteOneUser): User @authentication @logger
 	}
   type Query {
-  	searchOneUser(data: SearchOneUser): User @authentication @logger
-		searchManyUser(data: [SearchOneUser]): [User] @authentication @logger
+  	searchOneUserV1(data: SearchOneUser): User @authentication @logger
+		searchManyUserV1(data: [SearchOneUser]): [User] @authentication @logger
 	}
 `;
 
 export const resolvers = {
 	Mutation: {
-		createOneUser: async (_: any, { data }: { data: ICreateUser }): Promise<IUser> => {
+		createOneUserV1: async (_: any, { data }: { data: ICreateUser }): Promise<IUser> => {
 			const result = await createOneUser(data);
 			return result;
 		},
-		updateOneUser: async (_: any, { data }: { data: IUpdateUser }): Promise<IUser | null> => {
+		updateOneUserV1: async (_: any, { data }: { data: IUpdateUser }): Promise<IUser | null> => {
 			const result = await updateOneUser(data);
 			return result;
 		},
-		deleteOneUser: async (_: any, { data }: { data: IDeleteUser }): Promise<IUser | null> => {
+		deleteOneUserV1: async (_: any, { data }: { data: IDeleteUser }): Promise<IUser | null> => {
 			const result = await deleteOneUser(data);
 			return result;
 		},
 	},
 	Query: {
-		searchOneUser: async (_: object, { data }: { data: Partial<ISearchUser> }): Promise<IUser | null> => {
+		searchOneUserV1: async (_: object, { data }: { data: Partial<ISearchUser> }): Promise<IUser | null> => {
 			const result = await searchOneUser(data);
 			return result;
 		},
-		searchManyUser: async (_: object, { data }: { data: Partial<ISearchUser>[] }): Promise<IUser[]> => {
+		searchManyUserV1: async (_: object, { data }: { data: Partial<ISearchUser>[] }): Promise<IUser[]> => {
 			const result = await searchManyUser(data);
 			return result;
 		},

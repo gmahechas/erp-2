@@ -27,37 +27,37 @@ export const typeDefs = gql`
 	}
 	
 	type Mutation {
-  	createOneGroup(data: CreateOneGroup): Group @authentication @logger
-		updateOneGroup(data: UpdateOneGroup): Group @authentication @logger
-		deleteOneGroup(data: DeleteOneGroup): Group @authentication @logger
+  	createOneGroupV1(data: CreateOneGroup): Group @authentication @logger
+		updateOneGroupV1(data: UpdateOneGroup): Group @authentication @logger
+		deleteOneGroupV1(data: DeleteOneGroup): Group @authentication @logger
 	}
   type Query {
-  	searchOneGroup(data: SearchOneGroup): Group @authentication @logger
-		searchManyGroup(data: [SearchOneGroup]): [Group] @authentication @logger
+  	searchOneGroupV1(data: SearchOneGroup): Group @authentication @logger
+		searchManyGroupV1(data: [SearchOneGroup]): [Group] @authentication @logger
 	}
 `;
 
 export const resolvers = {
 	Mutation: {
-		createOneGroup: async (_: any, { data }: { data: ICreateGroup }): Promise<IGroup> => {
+		createOneGroupV1: async (_: any, { data }: { data: ICreateGroup }): Promise<IGroup> => {
 			const result = await createOneGroup(data);
 			return result;
 		},
-		updateOneGroup: async (_: any, { data }: { data: IUpdateGroup }): Promise<IGroup | null> => {
+		updateOneGroupV1: async (_: any, { data }: { data: IUpdateGroup }): Promise<IGroup | null> => {
 			const result = await updateOneGroup(data);
 			return result;
 		},
-		deleteOneGroup: async (_: any, { data }: { data: IDeleteGroup }): Promise<IGroup | null> => {
+		deleteOneGroupV1: async (_: any, { data }: { data: IDeleteGroup }): Promise<IGroup | null> => {
 			const result = await deleteOneGroup(data);
 			return result;
 		},
 	},
 	Query: {
-		searchOneGroup: async (_: object, { data }: { data: Partial<ISearchGroup> }): Promise<IGroup | null> => {
+		searchOneGroupV1: async (_: object, { data }: { data: Partial<ISearchGroup> }): Promise<IGroup | null> => {
 			const result = await searchOneGroup(data);
 			return result;
 		},
-		searchManyGroup: async (_: object, { data }: { data: Partial<ISearchGroup>[] }): Promise<IGroup[]> => {
+		searchManyGroupV1: async (_: object, { data }: { data: Partial<ISearchGroup>[] }): Promise<IGroup[]> => {
 			const result = await searchManyGroup(data);
 			return result;
 		},
