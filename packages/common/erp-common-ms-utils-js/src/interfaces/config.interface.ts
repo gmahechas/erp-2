@@ -4,6 +4,15 @@ interface IAppConfig {
 	endpoint?: string;
 }
 
+interface IMongoConfig {
+	uri?: string;
+}
+
+interface IJwtConfig {
+	privateKey?: string;
+	publicKey?: string;
+}
+
 export type envKeysType = 'ms-0' | 'ms-1' | 'ms-3' | 'ms-4';
 
 export interface IConfig {
@@ -18,49 +27,34 @@ export interface IConfig {
 			cookie_secret?: string;
 		};
 		auth?: {
-			jwt?: {
-				publicKey?: string;
-			}
+			jwt?: IJwtConfig
 		},
 	}
 	'ms-1'?: {
 		app?: IAppConfig;
 		databases?: {
-			mongo?: {
-				uri?: string;
-			}
+			mongo?: IMongoConfig
 		};
 		auth?: {
-			jwt?: {
-				privateKey?: string;
-				publicKey?: string;
-			}
+			jwt?: IJwtConfig
 		},
 	}
 	'ms-3'?: {
 		app?: IAppConfig;
 		databases?: {
-			mongo?: {
-				uri?: string;
-			}
+			mongo?: IMongoConfig
 		};
 		auth?: {
-			jwt?: {
-				publicKey?: string;
-			}
+			jwt?: IJwtConfig
 		},
 	},
 	'ms-4'?: {
 		app?: IAppConfig;
 		databases?: {
-			mongo?: {
-				uri?: string;
-			}
+			mongo?: IMongoConfig
 		};
 		auth?: {
-			jwt?: {
-				publicKey?: string;
-			}
+			jwt?: IJwtConfig
 		},
 	}
 }

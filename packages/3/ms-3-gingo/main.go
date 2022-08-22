@@ -4,12 +4,12 @@ import (
 	"ms-3-gingo/routes"
 
 	ginGoUtils "github.com/gmahechas/erp-common-gin-go/utils"
-	msUtilsGoUtils "github.com/gmahechas/erp-common-ms-utils-go/utils"
+	msUtilsGoHelpers "github.com/gmahechas/erp-common-ms-utils-go/helpers"
 )
 
 func main() {
 	server := ginGoUtils.NewGinServer()
-	msUtilsGoUtils.InitEnv()
+	msUtilsGoHelpers.InitEnv()
 	routes.InitRoutes(server)
 	server.Run(":50003")
 }
