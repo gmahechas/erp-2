@@ -5,6 +5,7 @@ import { graphqlV1 } from './graphql';
 
 export const bootstrap = async () => {
 	const app = express();
+	app.set('trust proxy', true);
 	app.disable('x-powered-by');
 	app.use(helmet());
 	app.use(await initSession());
