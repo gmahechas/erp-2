@@ -6,8 +6,9 @@ export const authRoutes: IRouteLambda[] = [
 	{
 		httpMethod: httpMethods.POST,
 		path: '/signin',
+		middlewares: [validatorMiddleware(signinAuthSchema)],
 		args: ['body'],
 		action: signinAuth,
-		middlewares: [validatorMiddleware(signinAuthSchema)],
+		statusCode: 200,
 	}
 ];
