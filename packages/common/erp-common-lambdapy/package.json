@@ -1,0 +1,10 @@
+{
+    "name": "@gmahechas/erp-common-lambdapy",
+    "version": "0.0.29",
+    "description": "erp-common-lambdapy",
+    "author": "gmahechas",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+    }
+}
