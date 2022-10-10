@@ -7,11 +7,7 @@ const router = express.Router();
 router.post(
   '/signin',
   validatorMiddleware(signinAuthSchema),
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await signinAuth(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);

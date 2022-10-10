@@ -44,6 +44,5 @@ schema.pre('save', async function (next) {
 type GroupDocument = IGroup & mongoose.Document;
 let Group: mongoose.Model<GroupDocument>;
 Group = mongoose.model<GroupDocument>('Group', schema, 'groups');
-export const registerGroupModel = (connection: mongoose.Connection) =>
-  (Group = connection.model('Group', schema, 'groups'));
+export const registerGroupModel = (connection: mongoose.Connection) => (Group = connection.model('Group', schema, 'groups'));
 export { Group };

@@ -12,9 +12,7 @@ export class KafkaWrapperConsumer {
     const kafka = new Kafka(config);
     this._consumer = kafka.consumer({ groupId });
     await this.consumer.connect();
-    this.consumer.on('consumer.connect', () =>
-      console.log(`kafka consumer.connect`),
-    );
+    this.consumer.on('consumer.connect', () => console.log(`kafka consumer.connect`));
     await this.consumer.subscribe({ topic, fromBeginning: true });
   }
 }

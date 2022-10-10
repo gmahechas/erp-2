@@ -6,12 +6,7 @@ import {
   searchOneEstateSchema,
   searchManyEstateSchema,
 } from '@gmahechas/erp-common-js';
-import {
-  express,
-  authenticationMiddleware,
-  validatorMiddleware,
-  loggerMiddleware,
-} from '@gmahechas/erp-common-expressjs';
+import { express, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-expressjs';
 import {
   createOneEstate,
   updateOneEstate,
@@ -27,11 +22,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(createOneEstateSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await createOneEstate(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -43,11 +34,7 @@ router.put(
   authenticationMiddleware,
   validatorMiddleware(updateOneEstateSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await updateOneEstate(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -59,11 +46,7 @@ router.delete(
   authenticationMiddleware,
   validatorMiddleware(deleteOneEstateSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await deleteOneEstate(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -75,11 +58,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(searchOneEstateSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await searchOneEstate(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -91,11 +70,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(searchManyEstateSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await searchManyEstate(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);

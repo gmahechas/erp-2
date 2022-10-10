@@ -6,12 +6,7 @@ import {
   searchOneGroupSchema,
   searchManyGroupSchema,
 } from '@gmahechas/erp-common-js';
-import {
-  express,
-  authenticationMiddleware,
-  validatorMiddleware,
-  loggerMiddleware,
-} from '@gmahechas/erp-common-expressjs';
+import { express, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-expressjs';
 import {
   createOneGroup,
   updateOneGroup,
@@ -27,11 +22,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(createOneGroupSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await createOneGroup(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -43,11 +34,7 @@ router.put(
   authenticationMiddleware,
   validatorMiddleware(updateOneGroupSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await updateOneGroup(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -59,11 +46,7 @@ router.delete(
   authenticationMiddleware,
   validatorMiddleware(deleteOneGroupSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await deleteOneGroup(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -75,11 +58,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(searchOneGroupSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await searchOneGroup(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -91,11 +70,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(searchManyGroupSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await searchManyGroup(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);

@@ -1,10 +1,7 @@
 import { sendUnaryData } from '@grpc/grpc-js';
 import { CustomError, mongoose } from '@gmahechas/erp-common-ms-utils-js';
 
-export const errorHandlerGrpc = (
-  error: any | Error,
-  callback: sendUnaryData<any>,
-) => {
+export const errorHandlerGrpc = (error: any | Error, callback: sendUnaryData<any>) => {
   if (error instanceof CustomError) {
     callback({
       code: error.grpcStatusCode,

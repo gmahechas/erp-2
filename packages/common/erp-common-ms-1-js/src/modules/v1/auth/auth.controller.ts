@@ -1,16 +1,8 @@
 import { IPolicy, ISigninAuth, IUser } from '@gmahechas/erp-common-js';
-import {
-  sendError,
-  TypeErrorMessage,
-  compareHash,
-  jwtSign,
-  env,
-} from '@gmahechas/erp-common-ms-utils-js';
+import { sendError, TypeErrorMessage, compareHash, jwtSign, env } from '@gmahechas/erp-common-ms-utils-js';
 import { searchOneUserToSignin } from '../user/user.controller';
 
-export const signinAuth = async (
-  data: ISigninAuth,
-): Promise<{ token: string }> => {
+export const signinAuth = async (data: ISigninAuth): Promise<{ token: string }> => {
   const { companyKey, userName, userPassword } = data;
 
   const user = (await searchOneUserToSignin({ userName, companyKey })) as
@@ -30,14 +22,12 @@ export const signinAuth = async (
     sendError(TypeErrorMessage.AUTHENTICATION);
   }
 
-  const policies = user.groups.policies
-    .concat(user.policies)
-    .reduce((acc, policy) => {
-      if (!acc.find((item) => item.policyId === policy.policyId)) {
-        acc.push(policy);
-      }
-      return acc;
-    }, [] as IPolicy[]);
+  const policies = user.groups.policies.concat(user.policies).reduce((acc, policy) => {
+    if (!acc.find((item) => item.policyId === policy.policyId)) {
+      acc.push(policy);
+    }
+    return acc;
+  }, [] as IPolicy[]);
 
   const scope: { [key: string]: string[] } = {};
   for (const policy of policies) {

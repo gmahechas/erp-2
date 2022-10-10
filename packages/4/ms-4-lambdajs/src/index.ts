@@ -12,10 +12,7 @@ import {
 import { connectDatabases } from '@gmahechas/erp-common-ms-4-js';
 import { routes } from './routes';
 
-export const handler = async (
-  event: APIGatewayProxyEvent,
-  context: Context,
-) => {
+export const handler = async (event: APIGatewayProxyEvent, context: Context) => {
   try {
     await initEnv(false);
     const { name } = env['ms-4']!.app!;

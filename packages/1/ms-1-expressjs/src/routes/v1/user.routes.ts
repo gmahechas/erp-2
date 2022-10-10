@@ -6,19 +6,8 @@ import {
   searchOneUserSchema,
   searchManyUserSchema,
 } from '@gmahechas/erp-common-js';
-import {
-  express,
-  authenticationMiddleware,
-  validatorMiddleware,
-  loggerMiddleware,
-} from '@gmahechas/erp-common-expressjs';
-import {
-  createOneUser,
-  updateOneUser,
-  deleteOneUser,
-  searchOneUser,
-  searchManyUser,
-} from '@gmahechas/erp-common-ms-1-js';
+import { express, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-expressjs';
+import { createOneUser, updateOneUser, deleteOneUser, searchOneUser, searchManyUser } from '@gmahechas/erp-common-ms-1-js';
 
 const router = express.Router();
 
@@ -27,11 +16,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(createOneUserSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await createOneUser(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -43,11 +28,7 @@ router.put(
   authenticationMiddleware,
   validatorMiddleware(updateOneUserSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await updateOneUser(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -59,11 +40,7 @@ router.delete(
   authenticationMiddleware,
   validatorMiddleware(deleteOneUserSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await deleteOneUser(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -75,11 +52,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(searchOneUserSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await searchOneUser(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -91,11 +64,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(searchManyUserSchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await searchManyUser(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);

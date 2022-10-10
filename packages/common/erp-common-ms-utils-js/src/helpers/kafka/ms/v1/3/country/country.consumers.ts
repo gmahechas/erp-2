@@ -1,11 +1,7 @@
 import { Consumer, KafkaMessage } from 'kafkajs';
 import { BaseConsumer } from '../../../../bases/base.consumer';
 import { CountryTopics } from './country.topics';
-import {
-  CountryCreatedEvent,
-  CountryUpdatedEvent,
-  CountryDeletedEvent,
-} from './country.events';
+import { CountryCreatedEvent, CountryUpdatedEvent, CountryDeletedEvent } from './country.events';
 
 export class CountryCreatedConsumer extends BaseConsumer<CountryCreatedEvent> {
   readonly topic = CountryTopics.COUNTRY_CREATE;

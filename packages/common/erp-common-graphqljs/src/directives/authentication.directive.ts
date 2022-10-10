@@ -1,35 +1,15 @@
 import { Request, Response } from 'express';
 import { defaultFieldResolver, GraphQLSchema } from 'graphql';
 import { getDirective, MapperKind, mapSchema } from '@graphql-tools/utils';
-import {
-  Context,
-  jwtDecode,
-  env,
-  sendError,
-  TypeErrorMessage,
-  Winston,
-  uuidv4,
-} from '@gmahechas/erp-common-ms-utils-js';
+import { Context, jwtDecode, env, sendError, TypeErrorMessage, Winston, uuidv4 } from '@gmahechas/erp-common-ms-utils-js';
 
-export const authenticationDirective = (
-  schema: GraphQLSchema,
-  directiveName: string,
-) =>
+export const authenticationDirective = (schema: GraphQLSchema, directiveName: string) =>
   mapSchema(schema, {
     [MapperKind.OBJECT_FIELD]: (fieldConfig) => {
-      const authenticationDirective = getDirective(
-        schema,
-        fieldConfig,
-        directiveName,
-      )?.[0];
+      const authenticationDirective = getDirective(schema, fieldConfig, directiveName)?.[0];
       if (authenticationDirective) {
         const { resolve = defaultFieldResolver } = fieldConfig;
-        fieldConfig.resolve = async (
-          source,
-          args,
-          context: { req: Request; res: Response },
-          info,
-        ) => {
+        fieldConfig.resolve = async (source, args, context: { req: Request; res: Response }, info) => {
           Context.set('requestId', uuidv4());
           const { req, res } = context;
           const { fieldName } = info;

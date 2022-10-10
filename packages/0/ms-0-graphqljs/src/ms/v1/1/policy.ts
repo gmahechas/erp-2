@@ -1,10 +1,4 @@
-import {
-  IPolicy,
-  ICreatePolicy,
-  IUpdatePolicy,
-  IDeletePolicy,
-  ISearchPolicy,
-} from '@gmahechas/erp-common-js';
+import { IPolicy, ICreatePolicy, IUpdatePolicy, IDeletePolicy, ISearchPolicy } from '@gmahechas/erp-common-js';
 import { gql } from '@gmahechas/erp-common-graphqljs';
 import {
   createOnePolicyV1,
@@ -50,48 +44,31 @@ export const typeDefs = gql`
   }
   type Query {
     searchOnePolicyV1(data: SearchOnePolicy): Policy @authentication @logger
-    searchManyPolicyV1(data: [SearchOnePolicy]): [Policy]
-      @authentication
-      @logger
+    searchManyPolicyV1(data: [SearchOnePolicy]): [Policy] @authentication @logger
   }
 `;
 
 export const resolvers = {
   Mutation: {
-    createOnePolicyV1: async (
-      _: any,
-      { data }: { data: ICreatePolicy },
-    ): Promise<IPolicy> => {
+    createOnePolicyV1: async (_: any, { data }: { data: ICreatePolicy }): Promise<IPolicy> => {
       const result = await createOnePolicyV1(data);
       return result;
     },
-    updateOnePolicyV1: async (
-      _: any,
-      { data }: { data: IUpdatePolicy },
-    ): Promise<IPolicy | null> => {
+    updateOnePolicyV1: async (_: any, { data }: { data: IUpdatePolicy }): Promise<IPolicy | null> => {
       const result = await updateOnePolicyV1(data);
       return result;
     },
-    deleteOnePolicyV1: async (
-      _: any,
-      { data }: { data: IDeletePolicy },
-    ): Promise<IPolicy | null> => {
+    deleteOnePolicyV1: async (_: any, { data }: { data: IDeletePolicy }): Promise<IPolicy | null> => {
       const result = await deleteOnePolicyV1(data);
       return result;
     },
   },
   Query: {
-    searchOnePolicyV1: async (
-      _: object,
-      { data }: { data: Partial<ISearchPolicy> },
-    ): Promise<IPolicy | null> => {
+    searchOnePolicyV1: async (_: object, { data }: { data: Partial<ISearchPolicy> }): Promise<IPolicy | null> => {
       const result = await searchOnePolicyV1(data);
       return result;
     },
-    searchManyPolicyV1: async (
-      _: object,
-      { data }: { data: Partial<ISearchPolicy>[] },
-    ): Promise<IPolicy[]> => {
+    searchManyPolicyV1: async (_: object, { data }: { data: Partial<ISearchPolicy>[] }): Promise<IPolicy[]> => {
       const result = await searchManyPolicyV1(data);
       return result;
     },

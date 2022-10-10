@@ -5,11 +5,7 @@ import { IConnectToMongo } from './mongo.interface';
 
 let connections: { uri: string; connection: mongoose.Connection }[] = [];
 
-export const connectToMongo: IConnectToMongo = async (
-  mongodbConnectArgs,
-  mode,
-  registerModelFuncs = [],
-) => {
+export const connectToMongo: IConnectToMongo = async (mongodbConnectArgs, mode, registerModelFuncs = []) => {
   try {
     const { uri, connectOptions } = mongodbConnectArgs;
     const connection = connections.find((connection) => connection.uri === uri);

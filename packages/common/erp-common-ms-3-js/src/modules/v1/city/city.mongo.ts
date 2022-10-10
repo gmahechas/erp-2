@@ -45,6 +45,5 @@ schema.pre('save', async function (next) {
 type CityDocument = ICity & mongoose.Document;
 let City: mongoose.Model<CityDocument>;
 City = mongoose.model<CityDocument>('City', schema, 'cities');
-export const registerCityModel = (connection: mongoose.Connection) =>
-  (City = connection.model('City', schema, 'cities'));
+export const registerCityModel = (connection: mongoose.Connection) => (City = connection.model('City', schema, 'cities'));
 export { City };

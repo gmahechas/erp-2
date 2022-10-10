@@ -32,358 +32,221 @@ export interface TypeIdentificationServiceClient extends grpc.Client {
     argument: _type_identification_Create,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   CreateOne(
     argument: _type_identification_Create,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   CreateOne(
     argument: _type_identification_Create,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   CreateOne(
     argument: _type_identification_Create,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   createOne(
     argument: _type_identification_Create,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   createOne(
     argument: _type_identification_Create,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   createOne(
     argument: _type_identification_Create,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   createOne(
     argument: _type_identification_Create,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
 
   DeleteOne(
     argument: _type_identification_Delete,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   DeleteOne(
     argument: _type_identification_Delete,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   DeleteOne(
     argument: _type_identification_Delete,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   DeleteOne(
     argument: _type_identification_Delete,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   deleteOne(
     argument: _type_identification_Delete,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   deleteOne(
     argument: _type_identification_Delete,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   deleteOne(
     argument: _type_identification_Delete,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   deleteOne(
     argument: _type_identification_Delete,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
 
   SearchMany(
     argument: _type_identification_Many,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   SearchMany(
     argument: _type_identification_Many,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   SearchMany(
     argument: _type_identification_Many,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   SearchMany(
     argument: _type_identification_Many,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   searchMany(
     argument: _type_identification_Many,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   searchMany(
     argument: _type_identification_Many,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   searchMany(
     argument: _type_identification_Many,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   searchMany(
     argument: _type_identification_Many,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_Many__Output) => void,
   ): grpc.ClientUnaryCall;
 
   SearchOne(
     argument: _type_identification_Search,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   SearchOne(
     argument: _type_identification_Search,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   SearchOne(
     argument: _type_identification_Search,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   SearchOne(
     argument: _type_identification_Search,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   searchOne(
     argument: _type_identification_Search,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   searchOne(
     argument: _type_identification_Search,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   searchOne(
     argument: _type_identification_Search,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   searchOne(
     argument: _type_identification_Search,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
 
   UpdateOne(
     argument: _type_identification_Update,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   UpdateOne(
     argument: _type_identification_Update,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   UpdateOne(
     argument: _type_identification_Update,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   UpdateOne(
     argument: _type_identification_Update,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   updateOne(
     argument: _type_identification_Update,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   updateOne(
     argument: _type_identification_Update,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   updateOne(
     argument: _type_identification_Update,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
   updateOne(
     argument: _type_identification_Update,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _type_identification_One__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _type_identification_One__Output) => void,
   ): grpc.ClientUnaryCall;
 }
 
-export interface TypeIdentificationServiceHandlers
-  extends grpc.UntypedServiceImplementation {
-  CreateOne: grpc.handleUnaryCall<
-    _type_identification_Create__Output,
-    _type_identification_One
-  >;
+export interface TypeIdentificationServiceHandlers extends grpc.UntypedServiceImplementation {
+  CreateOne: grpc.handleUnaryCall<_type_identification_Create__Output, _type_identification_One>;
 
-  DeleteOne: grpc.handleUnaryCall<
-    _type_identification_Delete__Output,
-    _type_identification_One
-  >;
+  DeleteOne: grpc.handleUnaryCall<_type_identification_Delete__Output, _type_identification_One>;
 
-  SearchMany: grpc.handleUnaryCall<
-    _type_identification_Many__Output,
-    _type_identification_Many
-  >;
+  SearchMany: grpc.handleUnaryCall<_type_identification_Many__Output, _type_identification_Many>;
 
-  SearchOne: grpc.handleUnaryCall<
-    _type_identification_Search__Output,
-    _type_identification_One
-  >;
+  SearchOne: grpc.handleUnaryCall<_type_identification_Search__Output, _type_identification_One>;
 
-  UpdateOne: grpc.handleUnaryCall<
-    _type_identification_Update__Output,
-    _type_identification_One
-  >;
+  UpdateOne: grpc.handleUnaryCall<_type_identification_Update__Output, _type_identification_One>;
 }
 
-export interface TypeIdentificationServiceDefinition
-  extends grpc.ServiceDefinition {
+export interface TypeIdentificationServiceDefinition extends grpc.ServiceDefinition {
   CreateOne: MethodDefinition<
     _type_identification_Create,
     _type_identification_One,

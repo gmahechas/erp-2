@@ -6,12 +6,7 @@ import {
   searchOnePolicySchema,
   searchManyPolicySchema,
 } from '@gmahechas/erp-common-js';
-import {
-  express,
-  authenticationMiddleware,
-  validatorMiddleware,
-  loggerMiddleware,
-} from '@gmahechas/erp-common-expressjs';
+import { express, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-expressjs';
 import {
   createOnePolicy,
   updateOnePolicy,
@@ -27,11 +22,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(createOnePolicySchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await createOnePolicy(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -43,11 +34,7 @@ router.put(
   authenticationMiddleware,
   validatorMiddleware(updateOnePolicySchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await updateOnePolicy(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -59,11 +46,7 @@ router.delete(
   authenticationMiddleware,
   validatorMiddleware(deleteOnePolicySchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await deleteOnePolicy(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -75,11 +58,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(searchOnePolicySchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await searchOnePolicy(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -91,11 +70,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(searchManyPolicySchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await searchManyPolicy(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);

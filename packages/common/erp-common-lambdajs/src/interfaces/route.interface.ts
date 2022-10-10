@@ -7,9 +7,7 @@ export enum httpMethods {
   DELETE = 'DELETE',
 }
 
-export type argsType = Array<
-  'body' | 'pathParameters' | 'queryStringParameters'
->;
+export type argsType = Array<'body' | 'pathParameters' | 'queryStringParameters'>;
 
 type ILambdaMiddlewareOne = (event: APIGatewayProxyEvent) => Promise<void>;
 type ILambdaMiddlewareTwo = Promise<(event: APIGatewayProxyEvent) => void>;

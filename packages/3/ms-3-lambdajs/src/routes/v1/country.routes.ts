@@ -24,11 +24,7 @@ export const countryRoutes: IRouteLambda[] = [
   {
     httpMethod: httpMethods.POST,
     path: '/create/one',
-    middlewares: [
-      authenticationMiddleware,
-      validatorMiddleware(createOneCountrySchema),
-      loggerMiddleware,
-    ],
+    middlewares: [authenticationMiddleware, validatorMiddleware(createOneCountrySchema), loggerMiddleware],
     args: ['body'],
     action: createOneCountry,
     statusCode: 200,
@@ -36,11 +32,7 @@ export const countryRoutes: IRouteLambda[] = [
   {
     httpMethod: httpMethods.PUT,
     path: '/update/one',
-    middlewares: [
-      authenticationMiddleware,
-      validatorMiddleware(updateOneCountrySchema),
-      loggerMiddleware,
-    ],
+    middlewares: [authenticationMiddleware, validatorMiddleware(updateOneCountrySchema), loggerMiddleware],
     args: ['body'],
     action: updateOneCountry,
     statusCode: 200,
@@ -50,11 +42,7 @@ export const countryRoutes: IRouteLambda[] = [
     path: '/delete/one',
     action: deleteOneCountry,
     args: ['body'],
-    middlewares: [
-      authenticationMiddleware,
-      validatorMiddleware(deleteOneCountrySchema),
-      loggerMiddleware,
-    ],
+    middlewares: [authenticationMiddleware, validatorMiddleware(deleteOneCountrySchema), loggerMiddleware],
     statusCode: 200,
   },
   {
@@ -62,11 +50,7 @@ export const countryRoutes: IRouteLambda[] = [
     path: '/search/one',
     action: searchOneCountry,
     args: ['body'],
-    middlewares: [
-      authenticationMiddleware,
-      validatorMiddleware(searchOneCountrySchema),
-      loggerMiddleware,
-    ],
+    middlewares: [authenticationMiddleware, validatorMiddleware(searchOneCountrySchema), loggerMiddleware],
     statusCode: 200,
   },
   {
@@ -74,11 +58,7 @@ export const countryRoutes: IRouteLambda[] = [
     path: '/search/many',
     action: searchManyCountry,
     args: ['body'],
-    middlewares: [
-      authenticationMiddleware,
-      validatorMiddleware(searchManyCountrySchema),
-      loggerMiddleware,
-    ],
+    middlewares: [authenticationMiddleware, validatorMiddleware(searchManyCountrySchema), loggerMiddleware],
     statusCode: 200,
   },
 ];

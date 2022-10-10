@@ -1,9 +1,4 @@
-import {
-  ApolloServer,
-  makeExecutableSchema,
-  applyDirectives,
-  createFormatError,
-} from '@gmahechas/erp-common-graphqljs';
+import { ApolloServer, makeExecutableSchema, applyDirectives, createFormatError } from '@gmahechas/erp-common-graphqljs';
 import { v1TypeDefs, v1Resolvers } from './ms';
 
 export const graphqlV1 = async () => {

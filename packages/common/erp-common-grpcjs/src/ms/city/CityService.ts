@@ -2,30 +2,12 @@
 
 import type * as grpc from '@grpc/grpc-js';
 import type { MethodDefinition } from '@grpc/proto-loader';
-import type {
-  Create as _city_Create,
-  Create__Output as _city_Create__Output,
-} from '../city/Create';
-import type {
-  Delete as _city_Delete,
-  Delete__Output as _city_Delete__Output,
-} from '../city/Delete';
-import type {
-  Many as _city_Many,
-  Many__Output as _city_Many__Output,
-} from '../city/Many';
-import type {
-  One as _city_One,
-  One__Output as _city_One__Output,
-} from '../city/One';
-import type {
-  Search as _city_Search,
-  Search__Output as _city_Search__Output,
-} from '../city/Search';
-import type {
-  Update as _city_Update,
-  Update__Output as _city_Update__Output,
-} from '../city/Update';
+import type { Create as _city_Create, Create__Output as _city_Create__Output } from '../city/Create';
+import type { Delete as _city_Delete, Delete__Output as _city_Delete__Output } from '../city/Delete';
+import type { Many as _city_Many, Many__Output as _city_Many__Output } from '../city/Many';
+import type { One as _city_One, One__Output as _city_One__Output } from '../city/One';
+import type { Search as _city_Search, Search__Output as _city_Search__Output } from '../city/Search';
+import type { Update as _city_Update, Update__Output as _city_Update__Output } from '../city/Update';
 
 export interface CityServiceClient extends grpc.Client {
   CreateOne(
@@ -247,34 +229,9 @@ export interface CityServiceHandlers extends grpc.UntypedServiceImplementation {
 }
 
 export interface CityServiceDefinition extends grpc.ServiceDefinition {
-  CreateOne: MethodDefinition<
-    _city_Create,
-    _city_One,
-    _city_Create__Output,
-    _city_One__Output
-  >;
-  DeleteOne: MethodDefinition<
-    _city_Delete,
-    _city_One,
-    _city_Delete__Output,
-    _city_One__Output
-  >;
-  SearchMany: MethodDefinition<
-    _city_Many,
-    _city_Many,
-    _city_Many__Output,
-    _city_Many__Output
-  >;
-  SearchOne: MethodDefinition<
-    _city_Search,
-    _city_One,
-    _city_Search__Output,
-    _city_One__Output
-  >;
-  UpdateOne: MethodDefinition<
-    _city_Update,
-    _city_One,
-    _city_Update__Output,
-    _city_One__Output
-  >;
+  CreateOne: MethodDefinition<_city_Create, _city_One, _city_Create__Output, _city_One__Output>;
+  DeleteOne: MethodDefinition<_city_Delete, _city_One, _city_Delete__Output, _city_One__Output>;
+  SearchMany: MethodDefinition<_city_Many, _city_Many, _city_Many__Output, _city_Many__Output>;
+  SearchOne: MethodDefinition<_city_Search, _city_One, _city_Search__Output, _city_One__Output>;
+  UpdateOne: MethodDefinition<_city_Update, _city_One, _city_Update__Output, _city_One__Output>;
 }

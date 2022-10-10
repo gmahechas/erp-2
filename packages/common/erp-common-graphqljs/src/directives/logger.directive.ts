@@ -6,19 +6,10 @@ import { Context, Winston } from '@gmahechas/erp-common-ms-utils-js';
 export const loggerDirective = (schema: GraphQLSchema, directiveName: string) =>
   mapSchema(schema, {
     [MapperKind.OBJECT_FIELD]: (fieldConfig) => {
-      const loggerDirective = getDirective(
-        schema,
-        fieldConfig,
-        directiveName,
-      )?.[0];
+      const loggerDirective = getDirective(schema, fieldConfig, directiveName)?.[0];
       if (loggerDirective) {
         const { resolve = defaultFieldResolver } = fieldConfig;
-        fieldConfig.resolve = async (
-          source,
-          args,
-          context: { req: Request; res: Response },
-          info,
-        ) => {
+        fieldConfig.resolve = async (source, args, context: { req: Request; res: Response }, info) => {
           const auth = Context.get('auth');
           const {
             req: { method, ip },

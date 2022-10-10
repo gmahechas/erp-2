@@ -14,10 +14,7 @@ const dailyRotateFileTransport = (serviceName: string) =>
     format: format.combine(format.timestamp(), format.json()),
   });
 
-export const initWinstonTransports = (
-  serviceName: string,
-  transports: TAvailableTransports,
-) => {
+export const initWinstonTransports = (serviceName: string, transports: TAvailableTransports) => {
   return transports.map((transport) => {
     switch (transport) {
       case 'console':

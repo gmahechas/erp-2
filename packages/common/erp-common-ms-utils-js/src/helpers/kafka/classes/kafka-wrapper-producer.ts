@@ -11,9 +11,7 @@ class KafkaWrapperProducer {
   async connect(config: KafkaConfig) {
     const kafka = new Kafka(config);
     this._producer = kafka.producer({ idempotent: true });
-    this.producer.on('producer.connect', () =>
-      console.log(`kafka producer.connect`),
-    );
+    this.producer.on('producer.connect', () => console.log(`kafka producer.connect`));
     await this.producer.connect();
   }
 }

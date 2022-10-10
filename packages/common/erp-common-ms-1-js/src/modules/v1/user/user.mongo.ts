@@ -59,6 +59,5 @@ schema.pre('save', async function (next) {
 type UserDocument = IUser & mongoose.Document;
 let User: mongoose.Model<UserDocument>;
 User = mongoose.model<UserDocument>('User', schema, 'users');
-export const registerUserModel = (connection: mongoose.Connection) =>
-  (User = connection.model('User', schema, 'users'));
+export const registerUserModel = (connection: mongoose.Connection) => (User = connection.model('User', schema, 'users'));
 export { User };

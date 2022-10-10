@@ -19,10 +19,10 @@ export class Vault {
       data: {
         auth: { client_token },
       },
-    } = await Vault.axios.post<{ auth: { client_token: string } }>(
-      '/v1/auth/approle/login',
-      { role_id: roleId, secret_id: secretId },
-    );
+    } = await Vault.axios.post<{ auth: { client_token: string } }>('/v1/auth/approle/login', {
+      role_id: roleId,
+      secret_id: secretId,
+    });
     Vault._client = vault({
       apiVersion: 'v1',
       endpoint: url,

@@ -11,9 +11,7 @@ export class Context {
     Context.bindings[key] = value;
   }
 
-  static get<K extends keyof IContext>(
-    key: K,
-  ): NonNullable<typeof Context.bindings[K]> {
+  static get<K extends keyof IContext>(key: K): NonNullable<typeof Context.bindings[K]> {
     return Context.bindings[key] as NonNullable<typeof Context.bindings[K]>;
   }
 

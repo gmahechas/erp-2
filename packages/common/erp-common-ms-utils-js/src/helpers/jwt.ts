@@ -11,11 +11,8 @@ export const jwtSign = (
   options?: jwt.SignOptions | undefined,
 ) => jwt.sign(payload, secretOrPrivateKey, options);
 
-export const jwtVerify = (
-  token: string,
-  secretOrPublicKey: jwt.Secret,
-  options?: jwt.SignOptions | undefined,
-) => jwt.verify(token, secretOrPublicKey, options);
+export const jwtVerify = (token: string, secretOrPublicKey: jwt.Secret, options?: jwt.SignOptions | undefined) =>
+  jwt.verify(token, secretOrPublicKey, options);
 
 export const jwtDecode = (token: string) => {
   const appName = process.env.APP_NAME as envKeysType;

@@ -7,10 +7,7 @@ interface IMongodbConnectArgs {
 }
 
 export interface IMongodbConnect {
-  (
-    uri: string,
-    connectOptions?: mongoose.ConnectOptions,
-  ): Promise<mongoose.Connection>;
+  (uri: string, connectOptions?: mongoose.ConnectOptions): Promise<mongoose.Connection>;
 }
 
 export interface IConnectToMongo {

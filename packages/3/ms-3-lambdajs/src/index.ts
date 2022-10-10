@@ -12,18 +12,12 @@ import {
 import { connectDatabases } from '@gmahechas/erp-common-ms-3-js';
 import { routes } from './routes';
 
-export const handler = async (
-  event: APIGatewayProxyEvent,
-  context: Context,
-) => {
+export const handler = async (event: APIGatewayProxyEvent, context: Context) => {
   try {
     await initEnv(false);
     const { name } = env['ms-3']!.app!;
     await initWinston({ serviceName: name!, transports: ['console'] });
-    const { args, middlewares, action, statusCode } = routerLambda(
-      event,
-      routes,
-    );
+    const { args, middlewares, action, statusCode } = routerLambda(event, routes);
     await executeMiddlewares(event, middlewares);
     context.callbackWaitsForEmptyEventLoop = false;
     await connectDatabases();

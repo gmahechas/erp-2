@@ -1,11 +1,5 @@
 import { IAuth, ISigninAuth } from '@gmahechas/erp-common-js';
-import {
-  Context,
-  jwtDecode,
-  env,
-  Winston,
-  uuidv4,
-} from '@gmahechas/erp-common-ms-utils-js';
+import { Context, jwtDecode, env, Winston, uuidv4 } from '@gmahechas/erp-common-ms-utils-js';
 import { gql, express } from '@gmahechas/erp-common-graphqljs';
 import { signinAuthV1 } from '@gmahechas/erp-common-ms-0-js';
 
@@ -30,11 +24,7 @@ export const typeDefs = gql`
 
 export const resolvers = {
   Query: {
-    signinAuthV1: async (
-      _: any,
-      { data }: { data: ISigninAuth },
-      { req }: { req: express.Request },
-    ): Promise<IAuth> => {
+    signinAuthV1: async (_: any, { data }: { data: ISigninAuth }, { req }: { req: express.Request }): Promise<IAuth> => {
       Context.set('requestId', uuidv4());
       Winston.logger.info('logger', {
         requestId: Context.get('requestId'),

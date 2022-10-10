@@ -2,30 +2,12 @@
 
 import type * as grpc from '@grpc/grpc-js';
 import type { MethodDefinition } from '@grpc/proto-loader';
-import type {
-  Create as _user_Create,
-  Create__Output as _user_Create__Output,
-} from '../user/Create';
-import type {
-  Delete as _user_Delete,
-  Delete__Output as _user_Delete__Output,
-} from '../user/Delete';
-import type {
-  Many as _user_Many,
-  Many__Output as _user_Many__Output,
-} from '../user/Many';
-import type {
-  One as _user_One,
-  One__Output as _user_One__Output,
-} from '../user/One';
-import type {
-  Search as _user_Search,
-  Search__Output as _user_Search__Output,
-} from '../user/Search';
-import type {
-  Update as _user_Update,
-  Update__Output as _user_Update__Output,
-} from '../user/Update';
+import type { Create as _user_Create, Create__Output as _user_Create__Output } from '../user/Create';
+import type { Delete as _user_Delete, Delete__Output as _user_Delete__Output } from '../user/Delete';
+import type { Many as _user_Many, Many__Output as _user_Many__Output } from '../user/Many';
+import type { One as _user_One, One__Output as _user_One__Output } from '../user/One';
+import type { Search as _user_Search, Search__Output as _user_Search__Output } from '../user/Search';
+import type { Update as _user_Update, Update__Output as _user_Update__Output } from '../user/Update';
 
 export interface UserServiceClient extends grpc.Client {
   CreateOne(
@@ -247,34 +229,9 @@ export interface UserServiceHandlers extends grpc.UntypedServiceImplementation {
 }
 
 export interface UserServiceDefinition extends grpc.ServiceDefinition {
-  CreateOne: MethodDefinition<
-    _user_Create,
-    _user_One,
-    _user_Create__Output,
-    _user_One__Output
-  >;
-  DeleteOne: MethodDefinition<
-    _user_Delete,
-    _user_One,
-    _user_Delete__Output,
-    _user_One__Output
-  >;
-  SearchMany: MethodDefinition<
-    _user_Many,
-    _user_Many,
-    _user_Many__Output,
-    _user_Many__Output
-  >;
-  SearchOne: MethodDefinition<
-    _user_Search,
-    _user_One,
-    _user_Search__Output,
-    _user_One__Output
-  >;
-  UpdateOne: MethodDefinition<
-    _user_Update,
-    _user_One,
-    _user_Update__Output,
-    _user_One__Output
-  >;
+  CreateOne: MethodDefinition<_user_Create, _user_One, _user_Create__Output, _user_One__Output>;
+  DeleteOne: MethodDefinition<_user_Delete, _user_One, _user_Delete__Output, _user_One__Output>;
+  SearchMany: MethodDefinition<_user_Many, _user_Many, _user_Many__Output, _user_Many__Output>;
+  SearchOne: MethodDefinition<_user_Search, _user_One, _user_Search__Output, _user_One__Output>;
+  UpdateOne: MethodDefinition<_user_Update, _user_One, _user_Update__Output, _user_One__Output>;
 }

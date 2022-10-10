@@ -1,11 +1,4 @@
-import {
-  ICreateCity,
-  IDeleteCity,
-  ICity,
-  ISearchCity,
-  IUpdateCity,
-  IEstate,
-} from '@gmahechas/erp-common-js';
+import { ICreateCity, IDeleteCity, ICity, ISearchCity, IUpdateCity, IEstate } from '@gmahechas/erp-common-js';
 import { gql } from '@gmahechas/erp-common-graphqljs';
 import {
   createOneCityV1,
@@ -59,40 +52,25 @@ export const typeDefs = gql`
 
 export const resolvers = {
   Mutation: {
-    createOneCityV1: async (
-      _: object,
-      { data }: { data: ICreateCity },
-    ): Promise<ICity> => {
+    createOneCityV1: async (_: object, { data }: { data: ICreateCity }): Promise<ICity> => {
       const result = await createOneCityV1(data);
       return result;
     },
-    updateOneCityV1: async (
-      _: any,
-      { data }: { data: IUpdateCity },
-    ): Promise<ICity | null> => {
+    updateOneCityV1: async (_: any, { data }: { data: IUpdateCity }): Promise<ICity | null> => {
       const result = await updateOneCityV1(data);
       return result;
     },
-    deleteOneCityV1: async (
-      _: any,
-      { data }: { data: IDeleteCity },
-    ): Promise<ICity | null> => {
+    deleteOneCityV1: async (_: any, { data }: { data: IDeleteCity }): Promise<ICity | null> => {
       const result = await deleteOneCityV1(data);
       return result;
     },
   },
   Query: {
-    searchOneCityV1: async (
-      _: object,
-      { data }: { data: Partial<ISearchCity> },
-    ): Promise<ICity | null> => {
+    searchOneCityV1: async (_: object, { data }: { data: Partial<ISearchCity> }): Promise<ICity | null> => {
       const result = await searchOneCityV1(data);
       return result;
     },
-    searchManyCityV1: async (
-      _: object,
-      { data }: { data: Partial<ISearchCity>[] },
-    ): Promise<ICity[]> => {
+    searchManyCityV1: async (_: object, { data }: { data: Partial<ISearchCity>[] }): Promise<ICity[]> => {
       const result = await searchManyCityV1(data);
       return result;
     },

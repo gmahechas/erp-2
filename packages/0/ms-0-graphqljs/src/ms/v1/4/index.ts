@@ -1,7 +1,4 @@
-import {
-  typeDefs as companyTypedefs,
-  resolvers as companyResolvers,
-} from './company';
+import { typeDefs as companyTypedefs, resolvers as companyResolvers } from './company';
 
 export const typeDefs = [companyTypedefs];
 

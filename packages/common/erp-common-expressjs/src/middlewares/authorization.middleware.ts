@@ -1,14 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import {
-  Context,
-  sendError,
-  TypeErrorMessage,
-  Winston,
-} from '@gmahechas/erp-common-ms-utils-js';
+import { Context, sendError, TypeErrorMessage, Winston } from '@gmahechas/erp-common-ms-utils-js';
 
 export const authorizationMiddleware =
-  (scopes: string[]) =>
-  async (request: Request, response: Response, next: NextFunction) => {
+  (scopes: string[]) => async (request: Request, response: Response, next: NextFunction) => {
     const auth = Context.get('auth');
     const { body, originalUrl, method, params, query } = request;
     const scope = JSON.parse(auth.scope);

@@ -1,12 +1,4 @@
-import {
-  IUser,
-  ICreateUser,
-  IUpdateUser,
-  IDeleteUser,
-  ISearchUser,
-  IGroup,
-  IPolicy,
-} from '@gmahechas/erp-common-js';
+import { IUser, ICreateUser, IUpdateUser, IDeleteUser, ISearchUser, IGroup, IPolicy } from '@gmahechas/erp-common-js';
 import { gql } from '@gmahechas/erp-common-graphqljs';
 import {
   createOneUserV1,
@@ -60,40 +52,25 @@ export const typeDefs = gql`
 
 export const resolvers = {
   Mutation: {
-    createOneUserV1: async (
-      _: any,
-      { data }: { data: ICreateUser },
-    ): Promise<IUser> => {
+    createOneUserV1: async (_: any, { data }: { data: ICreateUser }): Promise<IUser> => {
       const result = await createOneUserV1(data);
       return result;
     },
-    updateOneUserV1: async (
-      _: any,
-      { data }: { data: IUpdateUser },
-    ): Promise<IUser | null> => {
+    updateOneUserV1: async (_: any, { data }: { data: IUpdateUser }): Promise<IUser | null> => {
       const result = await updateOneUserV1(data);
       return result;
     },
-    deleteOneUserV1: async (
-      _: any,
-      { data }: { data: IDeleteUser },
-    ): Promise<IUser | null> => {
+    deleteOneUserV1: async (_: any, { data }: { data: IDeleteUser }): Promise<IUser | null> => {
       const result = await deleteOneUserV1(data);
       return result;
     },
   },
   Query: {
-    searchOneUserV1: async (
-      _: object,
-      { data }: { data: Partial<ISearchUser> },
-    ): Promise<IUser | null> => {
+    searchOneUserV1: async (_: object, { data }: { data: Partial<ISearchUser> }): Promise<IUser | null> => {
       const result = await searchOneUserV1(data);
       return result;
     },
-    searchManyUserV1: async (
-      _: object,
-      { data }: { data: Partial<ISearchUser>[] },
-    ): Promise<IUser[]> => {
+    searchManyUserV1: async (_: object, { data }: { data: Partial<ISearchUser>[] }): Promise<IUser[]> => {
       const result = await searchManyUserV1(data);
       return result;
     },
@@ -101,19 +78,13 @@ export const resolvers = {
   User: {
     groups: async (parent: IUser, _: any): Promise<IGroup[]> => {
       const { groups } = parent;
-      const ids =
-        groups.length == 0
-          ? [{ groupId: '' }]
-          : groups.map((groupId) => ({ groupId }));
+      const ids = groups.length == 0 ? [{ groupId: '' }] : groups.map((groupId) => ({ groupId }));
       const result = await searchManyGroupV1(ids);
       return result;
     },
     policies: async (parent: IUser, _: any): Promise<IPolicy[]> => {
       const { policies } = parent;
-      const ids =
-        policies.length == 0
-          ? [{ policyId: '' }]
-          : policies.map((policyId) => ({ policyId }));
+      const ids = policies.length == 0 ? [{ policyId: '' }] : policies.map((policyId) => ({ policyId }));
       const result = await searchManyPolicyV1(ids);
       return result;
     },

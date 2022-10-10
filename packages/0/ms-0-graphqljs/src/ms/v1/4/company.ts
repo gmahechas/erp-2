@@ -1,10 +1,4 @@
-import {
-  ICompany,
-  ICreateCompany,
-  IUpdateCompany,
-  IDeleteCompany,
-  ISearchCompany,
-} from '@gmahechas/erp-common-js';
+import { ICompany, ICreateCompany, IUpdateCompany, IDeleteCompany, ISearchCompany } from '@gmahechas/erp-common-js';
 import { gql } from '@gmahechas/erp-common-graphqljs';
 import {
   createOneCompanyV1,
@@ -54,48 +48,31 @@ export const typeDefs = gql`
   }
   type Query {
     searchOneCompanyV1(data: SearchOneCompany): Company @authentication @logger
-    searchManyCompanyV1(data: [SearchOneCompany]): [Company]
-      @authentication
-      @logger
+    searchManyCompanyV1(data: [SearchOneCompany]): [Company] @authentication @logger
   }
 `;
 
 export const resolvers = {
   Mutation: {
-    createOneCompanyV1: async (
-      _: any,
-      { data }: { data: ICreateCompany },
-    ): Promise<ICompany> => {
+    createOneCompanyV1: async (_: any, { data }: { data: ICreateCompany }): Promise<ICompany> => {
       const result = await createOneCompanyV1(data);
       return result;
     },
-    updateOneCompanyV1: async (
-      _: any,
-      { data }: { data: IUpdateCompany },
-    ): Promise<ICompany | null> => {
+    updateOneCompanyV1: async (_: any, { data }: { data: IUpdateCompany }): Promise<ICompany | null> => {
       const result = await updateOneCompanyV1(data);
       return result;
     },
-    deleteOneCompanyV1: async (
-      _: any,
-      { data }: { data: IDeleteCompany },
-    ): Promise<ICompany | null> => {
+    deleteOneCompanyV1: async (_: any, { data }: { data: IDeleteCompany }): Promise<ICompany | null> => {
       const result = await deleteOneCompanyV1(data);
       return result;
     },
   },
   Query: {
-    searchOneCompanyV1: async (
-      _: object,
-      { data }: { data: Partial<ISearchCompany> },
-    ): Promise<ICompany | null> => {
+    searchOneCompanyV1: async (_: object, { data }: { data: Partial<ISearchCompany> }): Promise<ICompany | null> => {
       const result = await searchOneCompanyV1(data);
       return result;
     },
-    searchManyCompanyV1: async (
-      _: object,
-      { data }: { data: Partial<ISearchCompany>[] },
-    ): Promise<ICompany[]> => {
+    searchManyCompanyV1: async (_: object, { data }: { data: Partial<ISearchCompany>[] }): Promise<ICompany[]> => {
       const result = await searchManyCompanyV1(data);
       return result;
     },

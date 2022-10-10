@@ -16,73 +16,46 @@ export interface AuthServiceClient extends grpc.Client {
     argument: _auth_SingInRequest,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _auth_SingInResponse__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _auth_SingInResponse__Output) => void,
   ): grpc.ClientUnaryCall;
   Signin(
     argument: _auth_SingInRequest,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _auth_SingInResponse__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _auth_SingInResponse__Output) => void,
   ): grpc.ClientUnaryCall;
   Signin(
     argument: _auth_SingInRequest,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _auth_SingInResponse__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _auth_SingInResponse__Output) => void,
   ): grpc.ClientUnaryCall;
   Signin(
     argument: _auth_SingInRequest,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _auth_SingInResponse__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _auth_SingInResponse__Output) => void,
   ): grpc.ClientUnaryCall;
   signin(
     argument: _auth_SingInRequest,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _auth_SingInResponse__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _auth_SingInResponse__Output) => void,
   ): grpc.ClientUnaryCall;
   signin(
     argument: _auth_SingInRequest,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _auth_SingInResponse__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _auth_SingInResponse__Output) => void,
   ): grpc.ClientUnaryCall;
   signin(
     argument: _auth_SingInRequest,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _auth_SingInResponse__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _auth_SingInResponse__Output) => void,
   ): grpc.ClientUnaryCall;
   signin(
     argument: _auth_SingInRequest,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _auth_SingInResponse__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _auth_SingInResponse__Output) => void,
   ): grpc.ClientUnaryCall;
 }
 
 export interface AuthServiceHandlers extends grpc.UntypedServiceImplementation {
-  Signin: grpc.handleUnaryCall<
-    _auth_SingInRequest__Output,
-    _auth_SingInResponse
-  >;
+  Signin: grpc.handleUnaryCall<_auth_SingInRequest__Output, _auth_SingInResponse>;
 }
 
 export interface AuthServiceDefinition extends grpc.ServiceDefinition {

@@ -2,30 +2,12 @@
 
 import type * as grpc from '@grpc/grpc-js';
 import type { MethodDefinition } from '@grpc/proto-loader';
-import type {
-  Create as _person_Create,
-  Create__Output as _person_Create__Output,
-} from '../person/Create';
-import type {
-  Delete as _person_Delete,
-  Delete__Output as _person_Delete__Output,
-} from '../person/Delete';
-import type {
-  Many as _person_Many,
-  Many__Output as _person_Many__Output,
-} from '../person/Many';
-import type {
-  One as _person_One,
-  One__Output as _person_One__Output,
-} from '../person/One';
-import type {
-  Search as _person_Search,
-  Search__Output as _person_Search__Output,
-} from '../person/Search';
-import type {
-  Update as _person_Update,
-  Update__Output as _person_Update__Output,
-} from '../person/Update';
+import type { Create as _person_Create, Create__Output as _person_Create__Output } from '../person/Create';
+import type { Delete as _person_Delete, Delete__Output as _person_Delete__Output } from '../person/Delete';
+import type { Many as _person_Many, Many__Output as _person_Many__Output } from '../person/Many';
+import type { One as _person_One, One__Output as _person_One__Output } from '../person/One';
+import type { Search as _person_Search, Search__Output as _person_Search__Output } from '../person/Search';
+import type { Update as _person_Update, Update__Output as _person_Update__Output } from '../person/Update';
 
 export interface PersonServiceClient extends grpc.Client {
   CreateOne(
@@ -114,65 +96,41 @@ export interface PersonServiceClient extends grpc.Client {
     argument: _person_Many,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _person_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _person_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   SearchMany(
     argument: _person_Many,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _person_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _person_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   SearchMany(
     argument: _person_Many,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _person_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _person_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   SearchMany(
     argument: _person_Many,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _person_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _person_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   searchMany(
     argument: _person_Many,
     metadata: grpc.Metadata,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _person_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _person_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   searchMany(
     argument: _person_Many,
     metadata: grpc.Metadata,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _person_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _person_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   searchMany(
     argument: _person_Many,
     options: grpc.CallOptions,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _person_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _person_Many__Output) => void,
   ): grpc.ClientUnaryCall;
   searchMany(
     argument: _person_Many,
-    callback: (
-      error?: grpc.ServiceError,
-      result?: _person_Many__Output,
-    ) => void,
+    callback: (error?: grpc.ServiceError, result?: _person_Many__Output) => void,
   ): grpc.ClientUnaryCall;
 
   SearchOne(
@@ -258,8 +216,7 @@ export interface PersonServiceClient extends grpc.Client {
   ): grpc.ClientUnaryCall;
 }
 
-export interface PersonServiceHandlers
-  extends grpc.UntypedServiceImplementation {
+export interface PersonServiceHandlers extends grpc.UntypedServiceImplementation {
   CreateOne: grpc.handleUnaryCall<_person_Create__Output, _person_One>;
 
   DeleteOne: grpc.handleUnaryCall<_person_Delete__Output, _person_One>;
@@ -272,34 +229,9 @@ export interface PersonServiceHandlers
 }
 
 export interface PersonServiceDefinition extends grpc.ServiceDefinition {
-  CreateOne: MethodDefinition<
-    _person_Create,
-    _person_One,
-    _person_Create__Output,
-    _person_One__Output
-  >;
-  DeleteOne: MethodDefinition<
-    _person_Delete,
-    _person_One,
-    _person_Delete__Output,
-    _person_One__Output
-  >;
-  SearchMany: MethodDefinition<
-    _person_Many,
-    _person_Many,
-    _person_Many__Output,
-    _person_Many__Output
-  >;
-  SearchOne: MethodDefinition<
-    _person_Search,
-    _person_One,
-    _person_Search__Output,
-    _person_One__Output
-  >;
-  UpdateOne: MethodDefinition<
-    _person_Update,
-    _person_One,
-    _person_Update__Output,
-    _person_One__Output
-  >;
+  CreateOne: MethodDefinition<_person_Create, _person_One, _person_Create__Output, _person_One__Output>;
+  DeleteOne: MethodDefinition<_person_Delete, _person_One, _person_Delete__Output, _person_One__Output>;
+  SearchMany: MethodDefinition<_person_Many, _person_Many, _person_Many__Output, _person_Many__Output>;
+  SearchOne: MethodDefinition<_person_Search, _person_One, _person_Search__Output, _person_One__Output>;
+  UpdateOne: MethodDefinition<_person_Update, _person_One, _person_Update__Output, _person_One__Output>;
 }

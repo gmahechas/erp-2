@@ -5,10 +5,7 @@ import { IConnectToRedis } from './redis.interface';
 
 let connections: { url: string; client: RedisClientType<{}, {}> }[] = [];
 
-export const connectToRedis: IConnectToRedis = async (
-  url: string,
-  legacyMode = false,
-) => {
+export const connectToRedis: IConnectToRedis = async (url: string, legacyMode = false) => {
   try {
     const connection = connections.find((connection) => connection.url === url);
     if (connection == undefined) {

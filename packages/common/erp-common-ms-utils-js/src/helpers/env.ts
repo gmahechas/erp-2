@@ -16,8 +16,7 @@ export const initEnv = async (useDotEnv = true) => {
     sendError(TypeErrorMessage.CONFIG);
   }
 
-  const fileFolder =
-    (environment == 'development' ? 'src' : 'dist') + '/environments/';
+  const fileFolder = (environment == 'development' ? 'src' : 'dist') + '/environments/';
   const filePath = resolvePath(fileFolder + environment);
   const extension = environment == 'development' ? '.ts' : '.js';
   const fullFilePath = filePath + extension;
@@ -43,9 +42,7 @@ const enrichEnv = async (env: any, environment: string) => {
         currentEnv.auth.jwt.publicKey = currentEnv.auth.jwt.publicKey
           ? currentEnv.auth.jwt.publicKey
           : vaultSecrets.publicKey;
-        currentEnv.session.redis.url = currentEnv.session.redis.url
-          ? currentEnv.session.redis.url
-          : vaultSecrets.redis_url;
+        currentEnv.session.redis.url = currentEnv.session.redis.url ? currentEnv.session.redis.url : vaultSecrets.redis_url;
         currentEnv.session.cookie_name = currentEnv.session.cookie_name
           ? currentEnv.session.cookie_name
           : vaultSecrets.cookie_name;

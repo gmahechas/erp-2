@@ -2,30 +2,12 @@
 
 import type * as grpc from '@grpc/grpc-js';
 import type { MethodDefinition } from '@grpc/proto-loader';
-import type {
-  Create as _menu_Create,
-  Create__Output as _menu_Create__Output,
-} from '../menu/Create';
-import type {
-  Delete as _menu_Delete,
-  Delete__Output as _menu_Delete__Output,
-} from '../menu/Delete';
-import type {
-  Many as _menu_Many,
-  Many__Output as _menu_Many__Output,
-} from '../menu/Many';
-import type {
-  One as _menu_One,
-  One__Output as _menu_One__Output,
-} from '../menu/One';
-import type {
-  Search as _menu_Search,
-  Search__Output as _menu_Search__Output,
-} from '../menu/Search';
-import type {
-  Update as _menu_Update,
-  Update__Output as _menu_Update__Output,
-} from '../menu/Update';
+import type { Create as _menu_Create, Create__Output as _menu_Create__Output } from '../menu/Create';
+import type { Delete as _menu_Delete, Delete__Output as _menu_Delete__Output } from '../menu/Delete';
+import type { Many as _menu_Many, Many__Output as _menu_Many__Output } from '../menu/Many';
+import type { One as _menu_One, One__Output as _menu_One__Output } from '../menu/One';
+import type { Search as _menu_Search, Search__Output as _menu_Search__Output } from '../menu/Search';
+import type { Update as _menu_Update, Update__Output as _menu_Update__Output } from '../menu/Update';
 
 export interface MenuServiceClient extends grpc.Client {
   CreateOne(
@@ -247,34 +229,9 @@ export interface MenuServiceHandlers extends grpc.UntypedServiceImplementation {
 }
 
 export interface MenuServiceDefinition extends grpc.ServiceDefinition {
-  CreateOne: MethodDefinition<
-    _menu_Create,
-    _menu_One,
-    _menu_Create__Output,
-    _menu_One__Output
-  >;
-  DeleteOne: MethodDefinition<
-    _menu_Delete,
-    _menu_One,
-    _menu_Delete__Output,
-    _menu_One__Output
-  >;
-  SearchMany: MethodDefinition<
-    _menu_Many,
-    _menu_Many,
-    _menu_Many__Output,
-    _menu_Many__Output
-  >;
-  SearchOne: MethodDefinition<
-    _menu_Search,
-    _menu_One,
-    _menu_Search__Output,
-    _menu_One__Output
-  >;
-  UpdateOne: MethodDefinition<
-    _menu_Update,
-    _menu_One,
-    _menu_Update__Output,
-    _menu_One__Output
-  >;
+  CreateOne: MethodDefinition<_menu_Create, _menu_One, _menu_Create__Output, _menu_One__Output>;
+  DeleteOne: MethodDefinition<_menu_Delete, _menu_One, _menu_Delete__Output, _menu_One__Output>;
+  SearchMany: MethodDefinition<_menu_Many, _menu_Many, _menu_Many__Output, _menu_Many__Output>;
+  SearchOne: MethodDefinition<_menu_Search, _menu_One, _menu_Search__Output, _menu_One__Output>;
+  UpdateOne: MethodDefinition<_menu_Update, _menu_One, _menu_Update__Output, _menu_One__Output>;
 }

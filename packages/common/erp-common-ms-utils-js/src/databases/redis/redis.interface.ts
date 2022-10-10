@@ -5,7 +5,5 @@ export interface IRedisCreateClient {
 }
 
 export interface IConnectToRedis {
-  (url: string, legacyMode: boolean): Promise<
-    RedisClientType<any, any, any> | undefined
-  >;
+  (url: string, legacyMode: boolean): Promise<RedisClientType<any, any, any> | undefined>;
 }

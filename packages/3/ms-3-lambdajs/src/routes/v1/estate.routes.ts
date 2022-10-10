@@ -24,11 +24,7 @@ export const estateRoutes: IRouteLambda[] = [
   {
     httpMethod: httpMethods.POST,
     path: '/create/one',
-    middlewares: [
-      authenticationMiddleware,
-      validatorMiddleware(createOneEstateSchema),
-      loggerMiddleware,
-    ],
+    middlewares: [authenticationMiddleware, validatorMiddleware(createOneEstateSchema), loggerMiddleware],
     args: ['body'],
     action: createOneEstate,
     statusCode: 200,
@@ -36,11 +32,7 @@ export const estateRoutes: IRouteLambda[] = [
   {
     httpMethod: httpMethods.PUT,
     path: '/update/one',
-    middlewares: [
-      authenticationMiddleware,
-      validatorMiddleware(updateOneEstateSchema),
-      loggerMiddleware,
-    ],
+    middlewares: [authenticationMiddleware, validatorMiddleware(updateOneEstateSchema), loggerMiddleware],
     args: ['body'],
     action: updateOneEstate,
     statusCode: 200,
@@ -48,11 +40,7 @@ export const estateRoutes: IRouteLambda[] = [
   {
     httpMethod: httpMethods.DELETE,
     path: '/delete/one',
-    middlewares: [
-      authenticationMiddleware,
-      validatorMiddleware(deleteOneEstateSchema),
-      loggerMiddleware,
-    ],
+    middlewares: [authenticationMiddleware, validatorMiddleware(deleteOneEstateSchema), loggerMiddleware],
     args: ['body'],
     action: deleteOneEstate,
     statusCode: 200,
@@ -60,11 +48,7 @@ export const estateRoutes: IRouteLambda[] = [
   {
     httpMethod: httpMethods.POST,
     path: '/search/one',
-    middlewares: [
-      authenticationMiddleware,
-      validatorMiddleware(searchOneEstateSchema),
-      loggerMiddleware,
-    ],
+    middlewares: [authenticationMiddleware, validatorMiddleware(searchOneEstateSchema), loggerMiddleware],
     args: ['body'],
     action: searchOneEstate,
     statusCode: 200,
@@ -72,11 +56,7 @@ export const estateRoutes: IRouteLambda[] = [
   {
     httpMethod: httpMethods.POST,
     path: '/search/many',
-    middlewares: [
-      authenticationMiddleware,
-      validatorMiddleware(searchManyEstateSchema),
-      loggerMiddleware,
-    ],
+    middlewares: [authenticationMiddleware, validatorMiddleware(searchManyEstateSchema), loggerMiddleware],
     args: ['body'],
     action: searchManyEstate,
     statusCode: 200,

@@ -6,12 +6,7 @@ import {
   searchOneCountrySchema,
   searchManyCountrySchema,
 } from '@gmahechas/erp-common-js';
-import {
-  express,
-  authenticationMiddleware,
-  validatorMiddleware,
-  loggerMiddleware,
-} from '@gmahechas/erp-common-expressjs';
+import { express, authenticationMiddleware, validatorMiddleware, loggerMiddleware } from '@gmahechas/erp-common-expressjs';
 import {
   createOneCountry,
   updateOneCountry,
@@ -27,11 +22,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(createOneCountrySchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await createOneCountry(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -43,11 +34,7 @@ router.put(
   authenticationMiddleware,
   validatorMiddleware(updateOneCountrySchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await updateOneCountry(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -59,11 +46,7 @@ router.delete(
   authenticationMiddleware,
   validatorMiddleware(deleteOneCountrySchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await deleteOneCountry(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -75,11 +58,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(searchOneCountrySchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await searchOneCountry(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);
@@ -91,11 +70,7 @@ router.post(
   authenticationMiddleware,
   validatorMiddleware(searchManyCountrySchema),
   loggerMiddleware,
-  async (
-    request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const data = await searchManyCountry(request.body);
     const { statusCode, body } = iresponse(200, data);
     response.status(statusCode).send(body);

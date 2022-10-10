@@ -8,10 +8,7 @@ declare module 'express-session' {
   }
 }
 
-export const session = async (
-  url: string,
-  sessionOptions: expressSession.SessionOptions,
-) => {
+export const session = async (url: string, sessionOptions: expressSession.SessionOptions) => {
   const RedisStore = connectRedis(expressSession);
   const client = await connectToRedis(url, true);
   return expressSession({

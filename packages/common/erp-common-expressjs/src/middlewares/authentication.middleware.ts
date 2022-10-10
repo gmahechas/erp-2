@@ -1,19 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import { IAuth } from '@gmahechas/erp-common-js';
-import {
-  Context,
-  jwtDecode,
-  sendError,
-  TypeErrorMessage,
-  uuidv4,
-  Winston,
-} from '@gmahechas/erp-common-ms-utils-js';
+import { Context, jwtDecode, sendError, TypeErrorMessage, uuidv4, Winston } from '@gmahechas/erp-common-ms-utils-js';
 
-export const authenticationMiddleware = async (
-  request: Request,
-  response: Response,
-  next: NextFunction,
-) => {
+export const authenticationMiddleware = async (request: Request, response: Response, next: NextFunction) => {
   const requestId = (request.headers['x-request-id'] as string) || uuidv4();
   Context.set('requestId', requestId);
   const { authorization: token } = request.headers;

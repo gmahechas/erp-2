@@ -62,20 +62,16 @@ import type {
   UserProfileServiceDefinition as _user_profile_UserProfileServiceDefinition,
 } from './user_profile/UserProfileService';
 
-type SubtypeConstructor<
-  Constructor extends new (...args: any) => any,
-  Subtype,
-> = {
+type SubtypeConstructor<Constructor extends new (...args: any) => any, Subtype> = {
   new (...args: ConstructorParameters<Constructor>): Subtype;
 };
 
 export interface ProtoGrpcType {
   address: {
     Address: MessageTypeDefinition;
-    AddressService: SubtypeConstructor<
-      typeof grpc.Client,
-      _address_AddressServiceClient
-    > & { service: _address_AddressServiceDefinition };
+    AddressService: SubtypeConstructor<typeof grpc.Client, _address_AddressServiceClient> & {
+      service: _address_AddressServiceDefinition;
+    };
     Create: MessageTypeDefinition;
     Delete: MessageTypeDefinition;
     Many: MessageTypeDefinition;
@@ -84,19 +80,13 @@ export interface ProtoGrpcType {
     Update: MessageTypeDefinition;
   };
   auth: {
-    AuthService: SubtypeConstructor<
-      typeof grpc.Client,
-      _auth_AuthServiceClient
-    > & { service: _auth_AuthServiceDefinition };
+    AuthService: SubtypeConstructor<typeof grpc.Client, _auth_AuthServiceClient> & { service: _auth_AuthServiceDefinition };
     SingInRequest: MessageTypeDefinition;
     SingInResponse: MessageTypeDefinition;
   };
   city: {
     City: MessageTypeDefinition;
-    CityService: SubtypeConstructor<
-      typeof grpc.Client,
-      _city_CityServiceClient
-    > & { service: _city_CityServiceDefinition };
+    CityService: SubtypeConstructor<typeof grpc.Client, _city_CityServiceClient> & { service: _city_CityServiceDefinition };
     Create: MessageTypeDefinition;
     Delete: MessageTypeDefinition;
     Many: MessageTypeDefinition;
@@ -106,10 +96,9 @@ export interface ProtoGrpcType {
   };
   company: {
     Company: MessageTypeDefinition;
-    CompanyService: SubtypeConstructor<
-      typeof grpc.Client,
-      _company_CompanyServiceClient
-    > & { service: _company_CompanyServiceDefinition };
+    CompanyService: SubtypeConstructor<typeof grpc.Client, _company_CompanyServiceClient> & {
+      service: _company_CompanyServiceDefinition;
+    };
     Create: MessageTypeDefinition;
     Delete: MessageTypeDefinition;
     Many: MessageTypeDefinition;
@@ -119,10 +108,9 @@ export interface ProtoGrpcType {
   };
   country: {
     Country: MessageTypeDefinition;
-    CountryService: SubtypeConstructor<
-      typeof grpc.Client,
-      _country_CountryServiceClient
-    > & { service: _country_CountryServiceDefinition };
+    CountryService: SubtypeConstructor<typeof grpc.Client, _country_CountryServiceClient> & {
+      service: _country_CountryServiceDefinition;
+    };
     Create: MessageTypeDefinition;
     Delete: MessageTypeDefinition;
     Many: MessageTypeDefinition;
@@ -134,10 +122,9 @@ export interface ProtoGrpcType {
     Create: MessageTypeDefinition;
     Delete: MessageTypeDefinition;
     Estate: MessageTypeDefinition;
-    EstateService: SubtypeConstructor<
-      typeof grpc.Client,
-      _estate_EstateServiceClient
-    > & { service: _estate_EstateServiceDefinition };
+    EstateService: SubtypeConstructor<typeof grpc.Client, _estate_EstateServiceClient> & {
+      service: _estate_EstateServiceDefinition;
+    };
     Many: MessageTypeDefinition;
     One: MessageTypeDefinition;
     Search: MessageTypeDefinition;
@@ -148,10 +135,7 @@ export interface ProtoGrpcType {
     Delete: MessageTypeDefinition;
     Many: MessageTypeDefinition;
     Menu: MessageTypeDefinition;
-    MenuService: SubtypeConstructor<
-      typeof grpc.Client,
-      _menu_MenuServiceClient
-    > & { service: _menu_MenuServiceDefinition };
+    MenuService: SubtypeConstructor<typeof grpc.Client, _menu_MenuServiceClient> & { service: _menu_MenuServiceDefinition };
     One: MessageTypeDefinition;
     Search: MessageTypeDefinition;
     Update: MessageTypeDefinition;
@@ -161,10 +145,9 @@ export interface ProtoGrpcType {
     Delete: MessageTypeDefinition;
     Many: MessageTypeDefinition;
     Office: MessageTypeDefinition;
-    OfficeService: SubtypeConstructor<
-      typeof grpc.Client,
-      _office_OfficeServiceClient
-    > & { service: _office_OfficeServiceDefinition };
+    OfficeService: SubtypeConstructor<typeof grpc.Client, _office_OfficeServiceClient> & {
+      service: _office_OfficeServiceDefinition;
+    };
     One: MessageTypeDefinition;
     Search: MessageTypeDefinition;
     Update: MessageTypeDefinition;
@@ -175,10 +158,9 @@ export interface ProtoGrpcType {
     Many: MessageTypeDefinition;
     One: MessageTypeDefinition;
     Person: MessageTypeDefinition;
-    PersonService: SubtypeConstructor<
-      typeof grpc.Client,
-      _person_PersonServiceClient
-    > & { service: _person_PersonServiceDefinition };
+    PersonService: SubtypeConstructor<typeof grpc.Client, _person_PersonServiceClient> & {
+      service: _person_PersonServiceDefinition;
+    };
     Search: MessageTypeDefinition;
     Update: MessageTypeDefinition;
   };
@@ -188,10 +170,9 @@ export interface ProtoGrpcType {
     Many: MessageTypeDefinition;
     One: MessageTypeDefinition;
     Profile: MessageTypeDefinition;
-    ProfileService: SubtypeConstructor<
-      typeof grpc.Client,
-      _profile_ProfileServiceClient
-    > & { service: _profile_ProfileServiceDefinition };
+    ProfileService: SubtypeConstructor<typeof grpc.Client, _profile_ProfileServiceClient> & {
+      service: _profile_ProfileServiceDefinition;
+    };
     Search: MessageTypeDefinition;
     Update: MessageTypeDefinition;
   };
@@ -201,10 +182,9 @@ export interface ProtoGrpcType {
     Many: MessageTypeDefinition;
     One: MessageTypeDefinition;
     ProfileMenu: MessageTypeDefinition;
-    ProfileMenuService: SubtypeConstructor<
-      typeof grpc.Client,
-      _profile_menu_ProfileMenuServiceClient
-    > & { service: _profile_menu_ProfileMenuServiceDefinition };
+    ProfileMenuService: SubtypeConstructor<typeof grpc.Client, _profile_menu_ProfileMenuServiceClient> & {
+      service: _profile_menu_ProfileMenuServiceDefinition;
+    };
     Search: MessageTypeDefinition;
     Update: MessageTypeDefinition;
   };
@@ -228,10 +208,9 @@ export interface ProtoGrpcType {
     One: MessageTypeDefinition;
     Search: MessageTypeDefinition;
     TypePerson: MessageTypeDefinition;
-    TypePersonService: SubtypeConstructor<
-      typeof grpc.Client,
-      _type_person_TypePersonServiceClient
-    > & { service: _type_person_TypePersonServiceDefinition };
+    TypePersonService: SubtypeConstructor<typeof grpc.Client, _type_person_TypePersonServiceClient> & {
+      service: _type_person_TypePersonServiceDefinition;
+    };
     Update: MessageTypeDefinition;
   };
   user: {
@@ -242,10 +221,7 @@ export interface ProtoGrpcType {
     Search: MessageTypeDefinition;
     Update: MessageTypeDefinition;
     User: MessageTypeDefinition;
-    UserService: SubtypeConstructor<
-      typeof grpc.Client,
-      _user_UserServiceClient
-    > & { service: _user_UserServiceDefinition };
+    UserService: SubtypeConstructor<typeof grpc.Client, _user_UserServiceClient> & { service: _user_UserServiceDefinition };
   };
   user_profile: {
     Create: MessageTypeDefinition;
@@ -255,9 +231,8 @@ export interface ProtoGrpcType {
     Search: MessageTypeDefinition;
     Update: MessageTypeDefinition;
     UserProfile: MessageTypeDefinition;
-    UserProfileService: SubtypeConstructor<
-      typeof grpc.Client,
-      _user_profile_UserProfileServiceClient
-    > & { service: _user_profile_UserProfileServiceDefinition };
+    UserProfileService: SubtypeConstructor<typeof grpc.Client, _user_profile_UserProfileServiceClient> & {
+      service: _user_profile_UserProfileServiceDefinition;
+    };
   };
 }
