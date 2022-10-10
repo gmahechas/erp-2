@@ -1,5 +1,10 @@
 import { helmet, cors } from '@gmahechas/erp-common-ms-utils-js';
-import { express, json, notFoundMiddleware, errorMiddleware } from '@gmahechas/erp-common-expressjs';
+import {
+  express,
+  json,
+  notFoundMiddleware,
+  errorMiddleware,
+} from '@gmahechas/erp-common-expressjs';
 import { routes } from './routes';
 
 const app = express();
