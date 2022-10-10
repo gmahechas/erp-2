@@ -2,10 +2,7 @@ import { ApolloServer, makeExecutableSchema, applyDirectives, createFormatError 
 import { v1TypeDefs, v1Resolvers } from './ms';
 
 export const graphqlV1 = async () => {
-  let schema = makeExecutableSchema({
-    typeDefs: v1TypeDefs,
-    resolvers: v1Resolvers,
-  });
+  let schema = makeExecutableSchema({ typeDefs: v1TypeDefs, resolvers: v1Resolvers });
   schema = applyDirectives(schema);
   const graphql = new ApolloServer({
     schema,
