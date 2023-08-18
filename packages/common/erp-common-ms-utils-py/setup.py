@@ -6,6 +6,7 @@ setup(
     description="erp-common-ms-utils-py",
     long_description="erp-common-ms-utils-py",
     license="UNLICENSED",
+    python_requires=">=3.11.3",
     packages=find_packages(),
     install_requires=[
         "gmahechas-erp-common-py==0.0.29",
