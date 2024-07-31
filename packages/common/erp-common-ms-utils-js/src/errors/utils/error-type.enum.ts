@@ -8,4 +8,4 @@ export const enum TypeErrorMessage {
   MONGO = 'mongo',
   VAULT = 'vault',
   REDIS = 'redis',
-};
+}

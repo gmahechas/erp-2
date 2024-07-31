@@ -1,9 +1,9 @@
 import { gql } from '@apollo/client';
 
 export const signinAuth = gql`
-	query signinAuth($data: SigninAuth) {
+	query signinAuthV1($data: SigninAuth) {
     signinAuth(data: $data) {
-      id
+      userId
       userName
       companyKey
     }
@@ -11,9 +11,9 @@ export const signinAuth = gql`
 `;
 
 export const signoutAuth = gql`
-  query signoutAuth {
+  query signoutAuthV1 {
     signoutAuth {
-      id
+      userId
       userName
       companyKey
     }
@@ -21,9 +21,9 @@ export const signoutAuth = gql`
 `;
 
 export const meAuth = gql`
-  query meAuth {
+  query meAuthV1 {
     meAuth {
-      id
+      userId
       userName
       companyKey
     }

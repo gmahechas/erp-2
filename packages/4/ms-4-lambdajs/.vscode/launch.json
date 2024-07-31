@@ -22,7 +22,8 @@
                 "VAULT_URL": "http://10.1.0.229:8200",
                 "VAULT_ROLE_ID": "3e01cf7f-bc93-7e24-f1d7-d496947c2d8b",
                 "VAULT_SECRET_ID": "d464f427-6096-d624-8eeb-d2fa4a999b20",
-            }
+            },
+            "outputCapture": "std",
         }
     ]
 }

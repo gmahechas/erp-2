@@ -1,73 +1,80 @@
-import { IGroup, ICreateGroup, IUpdateGroup, IDeleteGroup, ISearchGroup, IPolicy } from '@gmahechas/erp-common';
-import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
-import { createOneGroup, updateOneGroup, deleteOneGroup, searchOneGroup, searchManyGroup, searchManyPolicy } from '@gmahechas/erp-common-ms-0-js';
+import { IGroup, ICreateGroup, IUpdateGroup, IDeleteGroup, ISearchGroup, IPolicy } from '@gmahechas/erp-common-js';
+import { gql } from '@gmahechas/erp-common-graphqljs';
+import {
+  createOneGroupV1,
+  updateOneGroupV1,
+  deleteOneGroupV1,
+  searchOneGroupV1,
+  searchManyGroupV1,
+  searchManyPolicyV1,
+} from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
-	type Group {
-		id: String
+  type Group {
+    groupId: String
     groupName: String
-		policies: [Policy]
-	}
+    policies: [Policy]
+  }
 
-	input CreateOneGroup {
+  input CreateOneGroup {
     groupName: String
-		policies: [String]
-	}
-	input UpdateOneGroup {
-		id: String
+    policies: [String]
+  }
+  input UpdateOneGroup {
+    groupId: String
     groupName: String
-		policies: [String]
-	}
-	input DeleteOneGroup {
-		id: String
-	}
-	input SearchOneGroup {
-		id: String
+    policies: [String]
+  }
+  input DeleteOneGroup {
+    groupId: String
+  }
+  input SearchOneGroup {
+    groupId: String
     groupName: String
-	}
-	
-	type Mutation {
-  	createOneGroup(data: CreateOneGroup): Group @authentication @logger
-		updateOneGroup(data: UpdateOneGroup): Group @authentication @logger
-		deleteOneGroup(data: DeleteOneGroup): Group @authentication @logger
-	}
+  }
+
+  type Mutation {
+    createOneGroupV1(data: CreateOneGroup): Group @authentication @logger
+    updateOneGroupV1(data: UpdateOneGroup): Group @authentication @logger
+    deleteOneGroupV1(data: DeleteOneGroup): Group @authentication @logger
+  }
   type Query {
-  	searchOneGroup(data: SearchOneGroup): Group @authentication @logger
-		searchManyGroup(data: [SearchOneGroup]): [Group] @authentication @logger
-	}
+    searchOneGroupV1(data: SearchOneGroup): Group @authentication @logger
+    searchManyGroupV1(data: [SearchOneGroup]): [Group] @authentication @logger
+  }
 `;
 
 export const resolvers = {
-	Mutation: {
-		createOneGroup: async (_: any, { data }: { data: ICreateGroup }, { token }: IContext): Promise<IGroup> => {
-			const result = await createOneGroup(data, token!);
-			return result;
-		},
-		updateOneGroup: async (_: any, { data }: { data: IUpdateGroup }, { token }: IContext): Promise<IGroup | null> => {
-			const result = await updateOneGroup(data, token!);
-			return result;
-		},
-		deleteOneGroup: async (_: any, { data }: { data: IDeleteGroup }, { token }: IContext): Promise<IGroup | null> => {
-			const result = await deleteOneGroup(data, token!);
-			return result;
-		},
-	},
-	Query: {
-		searchOneGroup: async (_: object, { data }: { data: Partial<ISearchGroup> }, { token }: IContext): Promise<IGroup | null> => {
-			const result = await searchOneGroup(data, token!);
-			return result;
-		},
-		searchManyGroup: async (_: object, { data }: { data: Partial<ISearchGroup>[] }, { token }: IContext): Promise<IGroup[]> => {
-			const result = await searchManyGroup(data, token!);
-			return result;
-		},
-	},
-	Group: {
-		policies: async (parent: IGroup, _: any, { token }: IContext): Promise<IPolicy[]> => {
-			const { policies } = parent;
-			const ids = policies.length == 0 ? [{ id: '' }] : policies.map(id => ({ id }));
-			const result = await searchManyPolicy(ids, token!);
-			return result;
-		}
-	}
+  Mutation: {
+    createOneGroupV1: async (_: any, { data }: { data: ICreateGroup }): Promise<IGroup> => {
+      const result = await createOneGroupV1(data);
+      return result;
+    },
+    updateOneGroupV1: async (_: any, { data }: { data: IUpdateGroup }): Promise<IGroup | null> => {
+      const result = await updateOneGroupV1(data);
+      return result;
+    },
+    deleteOneGroupV1: async (_: any, { data }: { data: IDeleteGroup }): Promise<IGroup | null> => {
+      const result = await deleteOneGroupV1(data);
+      return result;
+    },
+  },
+  Query: {
+    searchOneGroupV1: async (_: object, { data }: { data: Partial<ISearchGroup> }): Promise<IGroup | null> => {
+      const result = await searchOneGroupV1(data);
+      return result;
+    },
+    searchManyGroupV1: async (_: object, { data }: { data: Partial<ISearchGroup>[] }): Promise<IGroup[]> => {
+      const result = await searchManyGroupV1(data);
+      return result;
+    },
+  },
+  Group: {
+    policies: async (parent: IGroup, _: any): Promise<IPolicy[]> => {
+      const { policies } = parent;
+      const ids = policies.length == 0 ? [{ policyId: '' }] : policies.map((policyId) => ({ policyId }));
+      const result = await searchManyPolicyV1(ids);
+      return result;
+    },
+  },
 };

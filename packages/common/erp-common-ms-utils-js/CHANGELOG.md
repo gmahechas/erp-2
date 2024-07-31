@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.29 (2022-06-08)</small>
+
+* refactor: catch redis error ([346a45b](https://github.com/gmahechas/erp/commit/346a45b))
+* refactor: change auth by authentication error ([bcf5a01](https://github.com/gmahechas/erp/commit/bcf5a01))
+* refactor: change DB_CONNECTION by MONGO ([4c23672](https://github.com/gmahechas/erp/commit/4c23672))
+* refactor: filebeat ([2ebe4f7](https://github.com/gmahechas/erp/commit/2ebe4f7))
+* refactor: handle mongoose connection error ([ccde750](https://github.com/gmahechas/erp/commit/ccde750))
+* refactor: hast genSalt ([1d15ebc](https://github.com/gmahechas/erp/commit/1d15ebc))
+* refactor: lambdas ([aae94e0](https://github.com/gmahechas/erp/commit/aae94e0))
+* refactor: ms/mf context ([f6f4ee3](https://github.com/gmahechas/erp/commit/f6f4ee3))
+* refactor: python ([43026f1](https://github.com/gmahechas/erp/commit/43026f1))
+* refactor: remove elastic search ([4e0b24e](https://github.com/gmahechas/erp/commit/4e0b24e))
+* refactor: rename erp-common ([1376c8a](https://github.com/gmahechas/erp/commit/1376c8a))
+* refactor: send token to ms and verify it ([82e5d37](https://github.com/gmahechas/erp/commit/82e5d37))
+* refactor: std lambda ([284ecec](https://github.com/gmahechas/erp/commit/284ecec))
+* refactor: timestamp in log ([fa579c2](https://github.com/gmahechas/erp/commit/fa579c2))
+* refactor: use vault url from env ([ef1c2fe](https://github.com/gmahechas/erp/commit/ef1c2fe))
+* refactor: vault ([2afe591](https://github.com/gmahechas/erp/commit/2afe591))
+* feat: clear context ([1071822](https://github.com/gmahechas/erp/commit/1071822))
+* feat: context for ms ([46f0cf0](https://github.com/gmahechas/erp/commit/46f0cf0))
+* feat: cookie setting to vault ([813b067](https://github.com/gmahechas/erp/commit/813b067))
+* feat: fix context ([965d56a](https://github.com/gmahechas/erp/commit/965d56a))
+* feat: helmet installed and configured ([7e17f38](https://github.com/gmahechas/erp/commit/7e17f38))
+* feat: install cors ([21e822c](https://github.com/gmahechas/erp/commit/21e822c))
+* feat: logger in all ms ([a12c84e](https://github.com/gmahechas/erp/commit/a12c84e))
+* feat: requestId in lambdas ([e0eb1fb](https://github.com/gmahechas/erp/commit/e0eb1fb))
+* feat: requestId ms-0 ([97458aa](https://github.com/gmahechas/erp/commit/97458aa))
+* feat: setup daily rotate ([7185788](https://github.com/gmahechas/erp/commit/7185788))
+* feat: winston ([17027ff](https://github.com/gmahechas/erp/commit/17027ff))
+* fix: auth middleware ([ed88ab3](https://github.com/gmahechas/erp/commit/ed88ab3))
+* fix: catch error for vault ([20c0eb4](https://github.com/gmahechas/erp/commit/20c0eb4))
+* fix: catch mongo errpr ([c84e46e](https://github.com/gmahechas/erp/commit/c84e46e))
+* fix: context ([e83b66b](https://github.com/gmahechas/erp/commit/e83b66b))
+
+
+
+
+
 ## <small>0.0.28 (2022-03-08)</small>
 
 * feat: auth key in vault ([8aa7290](https://github.com/gmahechas/erp/commit/8aa7290))

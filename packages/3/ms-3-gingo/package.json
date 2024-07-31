@@ -1,0 +1,11 @@
+{
+    "name": "ms-3-gingo",
+    "version": "0.0.29",
+    "description": "ms-3-gingo",
+    "author": "gmahechas",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "go run main.go"
+    }
+}

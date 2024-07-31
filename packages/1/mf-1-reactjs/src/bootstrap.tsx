@@ -7,7 +7,7 @@ import {
     MemoryHistory,
     Location,
 } from 'history';
-import { ISigninAuth } from '@gmahechas/erp-common';
+import { ISigninAuth } from '@gmahechas/erp-common-js';
 
 import '@mf-1/index.css';
 import Core from '@mf-1/core/containers/Core';

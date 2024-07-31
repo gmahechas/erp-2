@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { History, MemoryHistory } from 'history';
-import { ISigninAuth } from '@gmahechas/erp-common';
+import { ISigninAuth } from '@gmahechas/erp-common-js';
 
 import WithStore from '@mf-1/core/store/WithStore';
 import WithRouter from '@mf-1/core/router/WithRouter';

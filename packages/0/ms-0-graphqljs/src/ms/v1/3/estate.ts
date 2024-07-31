@@ -1,84 +1,100 @@
-import { ICreateEstate, IDeleteEstate, IEstate, ISearchEstate, IUpdateEstate, ICountry, ICity } from '@gmahechas/erp-common';
-import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
-import { createOneEstate, updateOneEstate, deleteOneEstate, searchOneEstate, searchManyEstate, searchOneCountry, searchManyCity } from '@gmahechas/erp-common-ms-0-js';
+import {
+  ICreateEstate,
+  IDeleteEstate,
+  IEstate,
+  ISearchEstate,
+  IUpdateEstate,
+  ICountry,
+  ICity,
+} from '@gmahechas/erp-common-js';
+import { gql } from '@gmahechas/erp-common-graphqljs';
+import {
+  createOneEstateV1,
+  updateOneEstateV1,
+  deleteOneEstateV1,
+  searchOneEstateV1,
+  searchManyEstateV1,
+  searchOneCountryV1,
+  searchManyCityV1,
+} from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
-	type Estate {
-		id: String
-  	estateName: String
-  	estateCode: String
-  	countryId: String
-		country: Country
-		cities: [City]
-	}
+  type Estate {
+    estateId: String
+    estateName: String
+    estateCode: String
+    countryId: String
+    country: Country
+    cities: [City]
+  }
 
-	input CreateOneEstate {
-  	estateName: String
-  	estateCode: String
-  	countryId: String
-	}
-	input UpdateOneEstate {
-		id: String
-  	estateName: String
-  	estateCode: String
-  	countryId: String
-	}
-	input DeleteOneEstate {
-		id: String
-	}
-	input SearchOneEstate {
-		id: String
-  	estateName: String
-  	estateCode: String
-  	countryId: String
-	}
+  input CreateOneEstate {
+    estateName: String
+    estateCode: String
+    countryId: String
+  }
+  input UpdateOneEstate {
+    estateId: String
+    estateName: String
+    estateCode: String
+    countryId: String
+  }
+  input DeleteOneEstate {
+    estateId: String
+  }
+  input SearchOneEstate {
+    estateId: String
+    estateName: String
+    estateCode: String
+    countryId: String
+  }
 
-	type Mutation {
-  	createOneEstate(data: CreateOneEstate): Estate @authentication @logger
-		updateOneEstate(data: UpdateOneEstate): Estate @authentication @logger
-		deleteOneEstate(data: DeleteOneEstate): Estate @authentication @logger
-	}
+  type Mutation {
+    createOneEstateV1(data: CreateOneEstate): Estate @authentication @logger
+    updateOneEstateV1(data: UpdateOneEstate): Estate @authentication @logger
+    deleteOneEstateV1(data: DeleteOneEstate): Estate @authentication @logger
+  }
   type Query {
-  	searchOneEstate(data: SearchOneEstate): Estate @authentication @logger
-		searchManyEstate(data: [SearchOneEstate]): [Estate] @authentication @logger
-	}
+    searchOneEstateV1(data: SearchOneEstate): Estate @authentication @logger
+    searchManyEstateV1(data: [SearchOneEstate]): [Estate] @authentication @logger
+  }
 `;
 
 export const resolvers = {
-	Mutation: {
-		createOneEstate: async (_: object, { data }: { data: ICreateEstate }, { token }: IContext): Promise<IEstate> => {
-			const result = await createOneEstate(data, token!);
-			return result;
-		},
-		updateOneEstate: async (_: any, { data }: { data: IUpdateEstate }, { token }: IContext): Promise<IEstate | null> => {
-			const result = await updateOneEstate(data, token!);
-			return result;
-		},
-		deleteOneEstate: async (_: any, { data }: { data: IDeleteEstate }, { token }: IContext): Promise<IEstate | null> => {
-			const result = await deleteOneEstate(data, token!);
-			return result;
-		},
-	},
-	Query: {
-		searchOneEstate: async (_: object, { data }: { data: Partial<ISearchEstate> }, { token }: IContext): Promise<IEstate | null> => {
-			const result = await searchOneEstate(data, token!);
-			return result;
-		},
-		searchManyEstate: async (_: object, { data }: { data: Partial<ISearchEstate>[] }, { token }: IContext): Promise<IEstate[]> => {
-			const result = await searchManyEstate(data, token!);
-			return result;
-		},
-	},
-	Estate: {
-		country: async (parent: IEstate, _: object, { token }: IContext): Promise<ICountry | null> => {
-			const { countryId } = parent;
-			const result = await searchOneCountry({ id: countryId }, token!);
-			return result;
-		},
-		cities: async (parent: IEstate, _: object, { token }: IContext): Promise<ICity[]> => {
-			const { id } = parent;
-			const result = await searchManyCity([{ estateId: id }], token!);
-			return result;
-		}
-	}
+  Mutation: {
+    createOneEstateV1: async (_: object, { data }: { data: ICreateEstate }): Promise<IEstate> => {
+      const result = await createOneEstateV1(data);
+      return result;
+    },
+    updateOneEstateV1: async (_: any, { data }: { data: IUpdateEstate }): Promise<IEstate | null> => {
+      const result = await updateOneEstateV1(data);
+      return result;
+    },
+    deleteOneEstateV1: async (_: any, { data }: { data: IDeleteEstate }): Promise<IEstate | null> => {
+      const result = await deleteOneEstateV1(data);
+      return result;
+    },
+  },
+  Query: {
+    searchOneEstateV1: async (_: object, { data }: { data: Partial<ISearchEstate> }): Promise<IEstate | null> => {
+      const result = await searchOneEstateV1(data);
+      return result;
+    },
+    searchManyEstateV1: async (_: object, { data }: { data: Partial<ISearchEstate>[] }): Promise<IEstate[]> => {
+      const result = await searchManyEstateV1(data);
+      return result;
+    },
+  },
+  Estate: {
+    country: async (parent: IEstate, _: object): Promise<ICountry | null> => {
+      const { countryId } = parent;
+      const result = await searchOneCountryV1({ countryId });
+      return result;
+    },
+    cities: async (parent: IEstate, _: object): Promise<ICity[]> => {
+      const { estateId } = parent;
+      const result = await searchManyCityV1([{ estateId }]);
+      return result;
+    },
+  },
 };

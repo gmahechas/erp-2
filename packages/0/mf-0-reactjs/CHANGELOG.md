@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.29 (2022-06-08)</small>
+
+* refactor: mf-0 auth routes ([0bd11c7](https://github.com/gmahechas/erp/commit/0bd11c7))
+* refactor: remove unnecessary func ([ccd7472](https://github.com/gmahechas/erp/commit/ccd7472))
+* refactor: rename erp-common ([1376c8a](https://github.com/gmahechas/erp/commit/1376c8a))
+* refactor: simple ([954d832](https://github.com/gmahechas/erp/commit/954d832))
+* feat: local storage ([4a25426](https://github.com/gmahechas/erp/commit/4a25426))
+* feat: signout ([73a0d57](https://github.com/gmahechas/erp/commit/73a0d57))
+
+
+
+
+
 ## <small>0.0.28 (2022-03-08)</small>
 
 * chore: remove env test ([4ece6ac](https://github.com/gmahechas/erp/commit/4ece6ac))

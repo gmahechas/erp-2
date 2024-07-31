@@ -1,74 +1,80 @@
-import { ICompany, ICreateCompany, IUpdateCompany, IDeleteCompany, ISearchCompany } from '@gmahechas/erp-common';
-import { gql, IContext } from '@gmahechas/erp-common-graphqljs';
-import { createOneCompany, updateOneCompany, deleteOneCompany, searchOneCompany, searchManyCompany } from '@gmahechas/erp-common-ms-0-js';
+import { ICompany, ICreateCompany, IUpdateCompany, IDeleteCompany, ISearchCompany } from '@gmahechas/erp-common-js';
+import { gql } from '@gmahechas/erp-common-graphqljs';
+import {
+  createOneCompanyV1,
+  updateOneCompanyV1,
+  deleteOneCompanyV1,
+  searchOneCompanyV1,
+  searchManyCompanyV1,
+} from '@gmahechas/erp-common-ms-0-js';
 
 export const typeDefs = gql`
-	type Company {
-		id: String
-  	companyName: String
-  	companyIdentification: String
-  	companyKey: String
-  	cityId: String
-	}
+  type Company {
+    companyId: String
+    companyName: String
+    companyIdentification: String
+    companyKey: String
+    cityId: String
+  }
 
-	input CreateOneCompany {
-  	companyName: String
-  	companyIdentification: String
-  	companyKey: String
-  	cityId: String
-	}
-	input UpdateOneCompany {
-		id: String
-  	companyName: String
-  	companyIdentification: String
-  	companyKey: String
-  	cityId: String
-	}
-	input DeleteOneCompany {
-		id: String
-	}
-	input SearchOneCompany {
-		id: String
-  	companyName: String
-  	companyIdentification: String
-  	companyKey: String
-  	cityId: String
-	}
-	
-	type Mutation {
-  	createOneCompany(data: CreateOneCompany): Company @authentication @logger
-		updateOneCompany(data: UpdateOneCompany): Company @authentication @logger
-		deleteOneCompany(data: DeleteOneCompany): Company @authentication @logger
-	}
+  input CreateOneCompany {
+    companyName: String
+    companyIdentification: String
+    companyKey: String
+    cityId: String
+  }
+  input UpdateOneCompany {
+    companyId: String
+    companyName: String
+    companyIdentification: String
+    companyKey: String
+    cityId: String
+  }
+  input DeleteOneCompany {
+    companyId: String
+  }
+  input SearchOneCompany {
+    companyId: String
+    companyName: String
+    companyIdentification: String
+    companyKey: String
+    cityId: String
+  }
+
+  type Mutation {
+    createOneCompanyV1(data: CreateOneCompany): Company @authentication @logger
+    updateOneCompanyV1(data: UpdateOneCompany): Company @authentication @logger
+    deleteOneCompanyV1(data: DeleteOneCompany): Company @authentication @logger
+  }
   type Query {
-  	searchOneCompany(data: SearchOneCompany): Company @authentication @logger
-		searchManyCompany(data: [SearchOneCompany]): [Company] @authentication @logger
-	}
+    searchOneCompanyV1(data: SearchOneCompany): Company @authentication @logger
+    searchManyCompanyV1(data: [SearchOneCompany]): [Company] @authentication @logger
+  }
 `;
 
 export const resolvers = {
-	Mutation: {
-		createOneCompany: async (_: any, { data }: { data: ICreateCompany }, { token }: IContext): Promise<ICompany> => {
-			const result = await createOneCompany(data, token!);
-			return result;
-		},
-		updateOneCompany: async (_: any, { data }: { data: IUpdateCompany }, { token }: IContext): Promise<ICompany | null> => {
-			const result = await updateOneCompany(data, token!);
-			return result;
-		},
-		deleteOneCompany: async (_: any, { data }: { data: IDeleteCompany }, { token }: IContext): Promise<ICompany | null> => {
-			const result = await deleteOneCompany(data, token!);
-			return result;
-		}
-	},
-	Query: {
-		searchOneCompany: async (_: object, { data }: { data: Partial<ISearchCompany> }, { token }: IContext): Promise<ICompany | null> => {
-			const result = await searchOneCompany(data, token!);
-			return result;
-		},
-		searchManyCompany: async (_: object, { data }: { data: Partial<ISearchCompany>[] }, { token }: IContext): Promise<ICompany[]> => {
-			const result = await searchManyCompany(data, token!);
-			return result;
-		}
-	},
+  Mutation: {
+    createOneCompanyV1: async (_: any, { data }: { data: ICreateCompany }): Promise<ICompany> => {
+      const result = await createOneCompanyV1(data);
+      return result;
+    },
+    updateOneCompanyV1: async (_: any, { data }: { data: IUpdateCompany }): Promise<ICompany | null> => {
+      const result = await updateOneCompanyV1(data);
+      return result;
+    },
+    deleteOneCompanyV1: async (_: any, { data }: { data: IDeleteCompany }): Promise<ICompany | null> => {
+      const result = await deleteOneCompanyV1(data);
+      return result;
+    },
+  },
+  Query: {
+    searchOneCompanyV1: async (_: object, { data }: { data: Partial<ISearchCompany> }): Promise<ICompany | null> => {
+      const result = await searchOneCompanyV1(data);
+      return result;
+    },
+    searchManyCompanyV1: async (_: object, { data }: { data: Partial<ISearchCompany>[] }): Promise<ICompany[]> => {
+      const result = await searchManyCompanyV1(data);
+      return result;
+    },
+  },
 };

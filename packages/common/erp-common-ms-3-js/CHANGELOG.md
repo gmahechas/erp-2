@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.29 (2022-06-08)</small>
+
+* refactor: change DB_CONNECTION by MONGO ([4c23672](https://github.com/gmahechas/erp/commit/4c23672))
+* refactor: remove kafka producer n listeners ([597027b](https://github.com/gmahechas/erp/commit/597027b))
+* refactor: rename erp-common ([1376c8a](https://github.com/gmahechas/erp/commit/1376c8a))
+* feat: city module ([67de160](https://github.com/gmahechas/erp/commit/67de160))
+
+
+
+
+
 ## <small>0.0.28 (2022-03-08)</small>
 
 * refactor: auth ([d8b7d52](https://github.com/gmahechas/erp/commit/d8b7d52))

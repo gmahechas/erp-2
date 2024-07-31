@@ -1,4 +1,4 @@
-import { ICountry } from '@gmahechas/erp-common';
+import { ICountry } from '@gmahechas/erp-common-js';
 import { EntityTypes, EntityActionTypes } from '../actions';
 
 export interface State {

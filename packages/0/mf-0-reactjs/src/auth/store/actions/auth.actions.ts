@@ -1,4 +1,4 @@
-import { ISigninAuth, IAuth } from '@gmahechas/erp-common';
+import { ISigninAuth, IAuth } from '@gmahechas/erp-common-js';
 
 export enum AuthTypes {
 	SIGNIN = '[Auth] Signin',

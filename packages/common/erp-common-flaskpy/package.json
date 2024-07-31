@@ -1,0 +1,10 @@
+{
+    "name": "@gmahechas/erp-common-flaskpy",
+    "version": "0.0.29",
+    "description": "erp-common-flaskpy",
+    "author": "gmahechas",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+    }
+}

@@ -3,9 +3,9 @@
 import type { Menu as _menu_Menu, Menu__Output as _menu_Menu__Output } from '../menu/Menu';
 
 export interface Many {
-  'data'?: (_menu_Menu)[];
+  data?: _menu_Menu[];
 }
 
 export interface Many__Output {
-  'data': (_menu_Menu__Output)[];
+  data: _menu_Menu__Output[];
 }

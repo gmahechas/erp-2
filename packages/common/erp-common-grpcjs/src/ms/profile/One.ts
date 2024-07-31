@@ -3,9 +3,9 @@
 import type { Profile as _profile_Profile, Profile__Output as _profile_Profile__Output } from '../profile/Profile';
 
 export interface One {
-  'data'?: (_profile_Profile | null);
+  data?: _profile_Profile | null;
 }
 
 export interface One__Output {
-  'data': (_profile_Profile__Output | null);
+  data: _profile_Profile__Output | null;
 }

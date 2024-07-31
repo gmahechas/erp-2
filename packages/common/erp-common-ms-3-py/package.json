@@ -1,0 +1,10 @@
+{
+    "name": "@gmahechas/erp-common-ms-3-py",
+    "version": "0.0.29",
+    "description": "erp-common-ms-3-py",
+    "author": "gmahechas",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+    }
+}

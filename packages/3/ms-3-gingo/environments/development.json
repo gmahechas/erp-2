@@ -1,0 +1,19 @@
+{
+    "environment": "development",
+    "ms-3": {
+        "app": {
+            "name": "ms-3",
+            "port": 50003
+        },
+        "databases": {
+            "mongo": {
+                "uri": null
+            }
+        },
+        "auth": {
+            "jwt": {
+                "publicKey": null
+            }
+        }
+    }
+}

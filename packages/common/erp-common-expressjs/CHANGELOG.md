@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.0.29 (2022-06-08)</small>
+
+* refactor: filebeat ([2ebe4f7](https://github.com/gmahechas/erp/commit/2ebe4f7))
+* refactor: lambdas ([aae94e0](https://github.com/gmahechas/erp/commit/aae94e0))
+* refactor: logger ([ab4de2c](https://github.com/gmahechas/erp/commit/ab4de2c))
+* refactor: remove console-log ([989f208](https://github.com/gmahechas/erp/commit/989f208))
+* refactor: remove console.logs ([36d81c4](https://github.com/gmahechas/erp/commit/36d81c4))
+* refactor: rename erp-common ([1376c8a](https://github.com/gmahechas/erp/commit/1376c8a))
+* refactor: send token to ms and verify it ([82e5d37](https://github.com/gmahechas/erp/commit/82e5d37))
+* feat: authorization middleware ([385df5f](https://github.com/gmahechas/erp/commit/385df5f))
+* feat: clear context ([1071822](https://github.com/gmahechas/erp/commit/1071822))
+* feat: context for ms ([46f0cf0](https://github.com/gmahechas/erp/commit/46f0cf0))
+* feat: logger for all ([0861326](https://github.com/gmahechas/erp/commit/0861326))
+* feat: logger in all ms ([a12c84e](https://github.com/gmahechas/erp/commit/a12c84e))
+* feat: requestId express ms ([ff0bda1](https://github.com/gmahechas/erp/commit/ff0bda1))
+* feat: setup daily rotate ([7185788](https://github.com/gmahechas/erp/commit/7185788))
+* Revert "refactor: remove logger middleware and direcctive" ([622c9c6](https://github.com/gmahechas/erp/commit/622c9c6))
+* fix: authenticaion middleware ([da3a290](https://github.com/gmahechas/erp/commit/da3a290))
+
+
+
+
+
 ## <small>0.0.28 (2022-03-08)</small>
 
 * fix: mongoose error type ([1982824](https://github.com/gmahechas/erp/commit/1982824))

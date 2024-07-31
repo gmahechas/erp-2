@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ISigninAuth } from '@gmahechas/erp-common';
+import { ISigninAuth } from '@gmahechas/erp-common-js';
 import Login from '../components/Login';
 
 interface IProps {
